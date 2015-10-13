@@ -15,4 +15,8 @@ Public Class mainpage
 
         End Sub
     End Class
+
+    Private Sub mainpage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Login.Close()
+    End Sub
 End Class

@@ -92,10 +92,10 @@ Partial Class Login
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
 
 End Class
