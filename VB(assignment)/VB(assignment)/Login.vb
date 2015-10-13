@@ -13,6 +13,8 @@ Public Class Login
     End Sub
 
     Private Sub MaterialFlatButton1_Click(sender As Object, e As EventArgs) Handles MaterialFlatButton1.Click
-
+        Dim mn As mainpage = New mainpage
+        mn.Show()
+        Me.Dispose()
     End Sub
 End Class

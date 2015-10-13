@@ -32,6 +32,6 @@ C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assign
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\MaterialSkin.dll
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).vbprojResolveAssemblyReference.cache
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.Login.resources
-C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.mainpage.resources
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.Resources.resources
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).vbproj.GenerateResource.Cache
+C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.mainpage.resources
