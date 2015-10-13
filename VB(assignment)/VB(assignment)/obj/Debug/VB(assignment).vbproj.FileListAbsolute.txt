@@ -10,3 +10,15 @@ C:\Users\User\Documents\Visual Studio 2013\Projects\VB(assignment)\VB(assignment
 C:\Users\User\Documents\Visual Studio 2013\Projects\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).exe
 C:\Users\User\Documents\Visual Studio 2013\Projects\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).xml
 C:\Users\User\Documents\Visual Studio 2013\Projects\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).pdb
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).exe.config
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).exe
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).xml
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).pdb
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).vbprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.Login.resources
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.Resources.resources
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).vbproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).exe
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).pdb
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).xml
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\MaterialSkin.dll
