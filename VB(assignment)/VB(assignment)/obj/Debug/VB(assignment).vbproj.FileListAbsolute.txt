@@ -22,7 +22,6 @@ C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\
 C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).pdb
 C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).xml
 C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\MaterialSkin.dll
-C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.mainpage.resources
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\bin\Debug\VB(assignment).exe.config
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).exe
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB(assignment).xml
