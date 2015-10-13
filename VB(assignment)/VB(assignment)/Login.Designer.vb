@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Login
+Partial Class login
     Inherits MaterialSkin.Controls.MaterialForm
 
     'Form overrides dispose to clean up the component list.
@@ -43,6 +43,7 @@ Partial Class Login
         Me.MaterialFlatButton1.TabIndex = 0
         Me.MaterialFlatButton1.Text = "Login"
         Me.MaterialFlatButton1.UseVisualStyleBackColor = True
+        Me.MaterialFlatButton1.UseWaitCursor = True
         '
         'Label1
         '
@@ -52,6 +53,7 @@ Partial Class Login
         Me.Label1.Size = New System.Drawing.Size(55, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Username"
+        Me.Label1.UseWaitCursor = True
         '
         'Label2
         '
@@ -61,6 +63,7 @@ Partial Class Login
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Password"
+        Me.Label2.UseWaitCursor = True
         '
         'TextBox1
         '
@@ -68,6 +71,7 @@ Partial Class Login
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 20)
         Me.TextBox1.TabIndex = 3
+        Me.TextBox1.UseWaitCursor = True
         '
         'TextBox2
         '
@@ -75,8 +79,9 @@ Partial Class Login
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(160, 20)
         Me.TextBox2.TabIndex = 4
+        Me.TextBox2.UseWaitCursor = True
         '
-        'Login
+        'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -86,8 +91,9 @@ Partial Class Login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MaterialFlatButton1)
-        Me.Name = "Login"
-        Me.Text = "Form1"
+        Me.Name = "login"
+        Me.Text = "Login"
+        Me.UseWaitCursor = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
