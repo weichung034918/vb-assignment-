@@ -4,6 +4,10 @@ Public Class login
         Inherits MaterialSkin.Controls.MaterialForm
       
     End Class
+
+    Private Sub login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        mainpage.Dispose()
+    End Sub
    
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
