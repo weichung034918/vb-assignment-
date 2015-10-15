@@ -6,7 +6,9 @@ Public Class login
     End Class
 
     Private Sub login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'just hide this form when login complete, if forcefully quit it will also quit the main program
         mainpage.Dispose()
+
     End Sub
    
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
