@@ -21,4 +21,8 @@ Public Class login
     End Sub
 
    
+    Private Sub MaterialFlatButton1_Click(sender As Object, e As EventArgs) Handles MaterialFlatButton1.Click
+        Me.Hide()
+        mainpage.Enabled = True
+    End Sub
 End Class

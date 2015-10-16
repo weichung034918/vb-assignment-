@@ -23,10 +23,10 @@ Partial Class login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.SuspendLayout()
         '
         'MaterialFlatButton1
@@ -35,7 +35,7 @@ Partial Class login
         Me.MaterialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.MaterialFlatButton1.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.MaterialFlatButton1.Depth = 0
-        Me.MaterialFlatButton1.Location = New System.Drawing.Point(102, 192)
+        Me.MaterialFlatButton1.Location = New System.Drawing.Point(96, 197)
         Me.MaterialFlatButton1.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.MaterialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialFlatButton1.Name = "MaterialFlatButton1"
@@ -45,30 +45,10 @@ Partial Class login
         Me.MaterialFlatButton1.Text = "Login"
         Me.MaterialFlatButton1.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Label1.Location = New System.Drawing.Point(47, 99)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Username"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.Label2.Location = New System.Drawing.Point(50, 146)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Password"
-        '
         'TextBox1
         '
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.TextBox1.Location = New System.Drawing.Point(50, 116)
+        Me.TextBox1.Location = New System.Drawing.Point(44, 121)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(160, 20)
         Me.TextBox1.TabIndex = 3
@@ -76,20 +56,46 @@ Partial Class login
         'TextBox2
         '
         Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.TextBox2.Location = New System.Drawing.Point(50, 163)
+        Me.TextBox2.Location = New System.Drawing.Point(44, 168)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(160, 20)
         Me.TextBox2.TabIndex = 4
+        '
+        'MaterialLabel1
+        '
+        Me.MaterialLabel1.AutoSize = True
+        Me.MaterialLabel1.Depth = 0
+        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel1.Location = New System.Drawing.Point(43, 99)
+        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel1.Name = "MaterialLabel1"
+        Me.MaterialLabel1.Size = New System.Drawing.Size(77, 19)
+        Me.MaterialLabel1.TabIndex = 5
+        Me.MaterialLabel1.Text = "Username"
+        '
+        'MaterialLabel2
+        '
+        Me.MaterialLabel2.AutoSize = True
+        Me.MaterialLabel2.Depth = 0
+        Me.MaterialLabel2.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel2.Location = New System.Drawing.Point(44, 148)
+        Me.MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel2.Name = "MaterialLabel2"
+        Me.MaterialLabel2.Size = New System.Drawing.Size(75, 19)
+        Me.MaterialLabel2.TabIndex = 6
+        Me.MaterialLabel2.Text = "Password"
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(258, 276)
+        Me.Controls.Add(Me.MaterialLabel2)
+        Me.Controls.Add(Me.MaterialLabel1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MaterialFlatButton1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Name = "login"
@@ -99,10 +105,10 @@ Partial Class login
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
 
 End Class
