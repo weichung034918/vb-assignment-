@@ -3,6 +3,8 @@
 Public Class mainpage
 
 
+
+
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
@@ -21,7 +23,26 @@ Public Class mainpage
 
 
     End Sub
+
+    Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
+
+    End Sub
+
+    Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_remove_search.Click
+        btn_remove.Visible = True
+    End Sub
+
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+
+    End Sub
+
+    Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
+        btn_update.Visible = True
+    End Sub
 End Class
+
+
+
 
 
 
