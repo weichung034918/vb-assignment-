@@ -873,8 +873,8 @@ Partial Class mainpage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(835, 583)
-        Me.Controls.Add(Me.MaterialTabControl1)
         Me.Controls.Add(Me.MaterialTabSelector1)
+        Me.Controls.Add(Me.MaterialTabControl1)
         Me.Enabled = False
         Me.Name = "mainpage"
         Me.Text = "Main Page"
