@@ -3,8 +3,6 @@
 Public Class mainpage
 
 
-
-
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
@@ -25,6 +23,7 @@ Public Class mainpage
     End Sub
 
     Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
+        MsgBox("are you sure?", vbYesNo)
 
     End Sub
 
@@ -33,13 +32,34 @@ Public Class mainpage
     End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
-
+        MsgBox("are you sure?", vbYesNo)
     End Sub
 
     Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
         btn_update.Visible = True
     End Sub
+
+    Private Sub txt_payment_delete_submit_Click(sender As Object, e As EventArgs) Handles txt_payment_delete_submit.Click
+        MsgBox("are you sure?", vbYesNo)
+    End Sub
+
+    Private Sub txt_payment_submit_Click(sender As Object, e As EventArgs) Handles txt_payment_submit.Click
+        MsgBox("Form Submitted")
+    End Sub
+
+    Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
+        MsgBox("Member Added!")
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub combobox_remove_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_membertype.SelectedIndexChanged
+
+    End Sub
 End Class
+
 
 
 
