@@ -47,6 +47,7 @@ Public Class mainpage
 
     Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
         btn_update.Visible = True
+
     End Sub
 
     Private Sub txt_payment_delete_submit_Click(sender As Object, e As EventArgs) Handles txt_payment_delete_submit.Click
@@ -96,8 +97,69 @@ Public Class mainpage
     End Sub
 
     Private Sub combobox_add_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_add_membertype.SelectedIndexChanged
+        If combobox_add_membertype.Text = "Deluxe" Then
+            label_add_shipid.Text = "D"
+            Else If combobox_add_membertype.Text = "Non-Deluxe" then
+            label_add_shipid.Text = "ND"
+        ElseIf combobox_add_membertype.Text = "Weekday" Then
+            label_add_shipid.Text = "WD"
+        End If
 
     End Sub
+
+    Private Sub combobox_remove_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_membertype.SelectedIndexChanged
+        If combobox_remove_membertype.Text = "Deluxe" Then
+            label_remove_shipid.Text = "D"
+        ElseIf combobox_remove_membertype.Text = "Non-Deluxe" Then
+            label_remove_shipid.Text = "ND"
+        ElseIf combobox_remove_membertype.Text = "Weekday" Then
+            label_remove_shipid.Text = "WD"
+        End If
+    End Sub
+
+    Private Sub combobox_update_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_membertype.SelectedIndexChanged
+        If combobox_update_membertype.Text = "Deluxe" Then
+            label_update_shipid.Text = "D"
+        ElseIf combobox_update_membertype.Text = "Non-Deluxe" Then
+            label_update_shipid.Text = "ND"
+        ElseIf combobox_update_membertype.Text = "Weekday" Then
+            label_update_shipid.Text = "WD"
+        End If
+    End Sub
+
+    Private Sub combobox_payment_submit_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_submit_membertype.SelectedIndexChanged
+        If combobox_payment_submit_membertype.Text = "Deluxe" Then
+            label_payment_submit_shipid.Text = "D"
+        ElseIf combobox_payment_submit_membertype.Text = "Non-Deluxe" Then
+            label_payment_submit_shipid.Text = "ND"
+        ElseIf combobox_payment_submit_membertype.Text = "Weekday" Then
+            label_payment_submit_shipid.Text = "WD"
+        End If
+    End Sub
+
+    Private Sub combobox_payment_edit_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_edit_membertype.SelectedIndexChanged
+        If combobox_payment_edit_membertype.Text = "Deluxe" Then
+            label_payment_edit_shipid.Text = "D"
+        ElseIf combobox_payment_edit_membertype.Text = "Non-Deluxe" Then
+            label_payment_edit_shipid.Text = "ND"
+        ElseIf combobox_payment_edit_membertype.Text = "Weekday" Then
+            label_payment_edit_shipid.Text = "WD"
+        End If
+    End Sub
+
+    Private Sub combobox_payment_delete_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_delete_membertype.SelectedIndexChanged
+        If combobox_payment_delete_membertype.Text = "Deluxe" Then
+            label_payment_delete_shipid.Text = "D"
+        ElseIf combobox_payment_delete_membertype.Text = "Non-Deluxe" Then
+            label_payment_delete_shipid.Text = "ND"
+        ElseIf combobox_payment_delete_membertype.Text = "Weekday" Then
+            label_payment_delete_shipid.Text = "WD"
+        End If
+    End Sub
+
+    
+   
+   
 End Class
 
 
