@@ -22,6 +22,7 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -91,6 +92,9 @@ Partial Class login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(267, 296)
         Me.Controls.Add(Me.MaterialLabel2)
         Me.Controls.Add(Me.MaterialLabel1)
@@ -98,7 +102,11 @@ Partial Class login
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.MaterialFlatButton1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.ForeColor = System.Drawing.SystemColors.Control
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "login"
+        Me.ShowInTaskbar = False
         Me.Text = "Login"
         Me.TopMost = True
         Me.ResumeLayout(False)

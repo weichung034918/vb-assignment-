@@ -26,7 +26,7 @@ Partial Class mainpage
         Me.MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.label_add_shipid = New MaterialSkin.Controls.MaterialLabel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.txt_add_shipid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_add_membertype = New System.Windows.Forms.ComboBox()
         Me.Add = New MaterialSkin.Controls.MaterialRaisedButton()
@@ -110,6 +110,7 @@ Partial Class mainpage
         Me.MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel16 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.btn_payment_edit_search = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_payment_edit_search = New System.Windows.Forms.TextBox()
         Me.label_payment_edit_shipid = New MaterialSkin.Controls.MaterialLabel()
@@ -137,6 +138,9 @@ Partial Class mainpage
         Me.MaterialLabel36 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.btn_payment_delete_search = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_payment_delete_search = New System.Windows.Forms.TextBox()
         Me.label_payment_delete_shipid = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_payment_delete_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel50 = New MaterialSkin.Controls.MaterialLabel()
@@ -162,10 +166,6 @@ Partial Class mainpage
         Me.MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_payment_delete_search = New System.Windows.Forms.TextBox()
-        Me.btn_payment_edit_search = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_payment_delete_search = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -198,7 +198,7 @@ Partial Class mainpage
         Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage1.Controls.Add(Me.label_add_shipid)
-        Me.TabPage1.Controls.Add(Me.TextBox6)
+        Me.TabPage1.Controls.Add(Me.txt_add_shipid)
         Me.TabPage1.Controls.Add(Me.MaterialLabel29)
         Me.TabPage1.Controls.Add(Me.combobox_add_membertype)
         Me.TabPage1.Controls.Add(Me.Add)
@@ -234,12 +234,12 @@ Partial Class mainpage
         Me.label_add_shipid.TabIndex = 16
         Me.label_add_shipid.Text = "ID"
         '
-        'TextBox6
+        'txt_add_shipid
         '
-        Me.TextBox6.Location = New System.Drawing.Point(559, 228)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(86, 20)
-        Me.TextBox6.TabIndex = 15
+        Me.txt_add_shipid.Location = New System.Drawing.Point(559, 228)
+        Me.txt_add_shipid.Name = "txt_add_shipid"
+        Me.txt_add_shipid.Size = New System.Drawing.Size(86, 20)
+        Me.txt_add_shipid.TabIndex = 15
         '
         'MaterialLabel29
         '
@@ -1228,6 +1228,19 @@ Partial Class mainpage
         Me.TabPage5.Text = "Edit Payment"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'btn_payment_edit_search
+        '
+        Me.btn_payment_edit_search.Depth = 0
+        Me.btn_payment_edit_search.Location = New System.Drawing.Point(636, 49)
+        Me.btn_payment_edit_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_payment_edit_search.Name = "btn_payment_edit_search"
+        Me.btn_payment_edit_search.Primary = True
+        Me.btn_payment_edit_search.Size = New System.Drawing.Size(75, 23)
+        Me.btn_payment_edit_search.TabIndex = 66
+        Me.btn_payment_edit_search.Text = "search"
+        Me.btn_payment_edit_search.UseVisualStyleBackColor = True
+        Me.btn_payment_edit_search.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -1554,6 +1567,37 @@ Partial Class mainpage
         Me.TabPage6.Text = "Delete Payment"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
+        'btn_payment_delete_search
+        '
+        Me.btn_payment_delete_search.Depth = 0
+        Me.btn_payment_delete_search.Location = New System.Drawing.Point(636, 49)
+        Me.btn_payment_delete_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_payment_delete_search.Name = "btn_payment_delete_search"
+        Me.btn_payment_delete_search.Primary = True
+        Me.btn_payment_delete_search.Size = New System.Drawing.Size(75, 23)
+        Me.btn_payment_delete_search.TabIndex = 84
+        Me.btn_payment_delete_search.Text = "search"
+        Me.btn_payment_delete_search.UseVisualStyleBackColor = True
+        Me.btn_payment_delete_search.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(514, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(10, 13)
+        Me.Label2.TabIndex = 83
+        Me.Label2.Text = ":"
+        Me.Label2.Visible = False
+        '
+        'txt_payment_delete_search
+        '
+        Me.txt_payment_delete_search.Location = New System.Drawing.Point(530, 51)
+        Me.txt_payment_delete_search.Name = "txt_payment_delete_search"
+        Me.txt_payment_delete_search.Size = New System.Drawing.Size(100, 20)
+        Me.txt_payment_delete_search.TabIndex = 82
+        Me.txt_payment_delete_search.Visible = False
+        '
         'label_payment_delete_shipid
         '
         Me.label_payment_delete_shipid.AutoSize = True
@@ -1838,50 +1882,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 1
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(514, 52)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(10, 13)
-        Me.Label2.TabIndex = 83
-        Me.Label2.Text = ":"
-        Me.Label2.Visible = False
-        '
-        'txt_payment_delete_search
-        '
-        Me.txt_payment_delete_search.Location = New System.Drawing.Point(530, 51)
-        Me.txt_payment_delete_search.Name = "txt_payment_delete_search"
-        Me.txt_payment_delete_search.Size = New System.Drawing.Size(100, 20)
-        Me.txt_payment_delete_search.TabIndex = 82
-        Me.txt_payment_delete_search.Visible = False
-        '
-        'btn_payment_edit_search
-        '
-        Me.btn_payment_edit_search.Depth = 0
-        Me.btn_payment_edit_search.Location = New System.Drawing.Point(636, 49)
-        Me.btn_payment_edit_search.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_payment_edit_search.Name = "btn_payment_edit_search"
-        Me.btn_payment_edit_search.Primary = True
-        Me.btn_payment_edit_search.Size = New System.Drawing.Size(75, 23)
-        Me.btn_payment_edit_search.TabIndex = 66
-        Me.btn_payment_edit_search.Text = "search"
-        Me.btn_payment_edit_search.UseVisualStyleBackColor = True
-        Me.btn_payment_edit_search.Visible = False
-        '
-        'btn_payment_delete_search
-        '
-        Me.btn_payment_delete_search.Depth = 0
-        Me.btn_payment_delete_search.Location = New System.Drawing.Point(636, 49)
-        Me.btn_payment_delete_search.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_payment_delete_search.Name = "btn_payment_delete_search"
-        Me.btn_payment_delete_search.Primary = True
-        Me.btn_payment_delete_search.Size = New System.Drawing.Size(75, 23)
-        Me.btn_payment_delete_search.TabIndex = 84
-        Me.btn_payment_delete_search.Text = "search"
-        Me.btn_payment_delete_search.UseVisualStyleBackColor = True
-        Me.btn_payment_delete_search.Visible = False
-        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1966,7 +1966,7 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel19 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents combobox_update_search As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel20 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_add_shipid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel29 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialTabControl2 As MaterialSkin.Controls.MaterialTabControl
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage

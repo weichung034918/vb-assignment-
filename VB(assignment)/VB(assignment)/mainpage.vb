@@ -64,7 +64,18 @@ Public Class mainpage
     End Sub
 
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
-        MsgBox("Member Added!")
+        If String.IsNullOrEmpty(txt_add_id.Text) Then
+            MsgBox("Please enter member ID")
+        ElseIf String.IsNullOrEmpty(txt_add_firstname.Text) Then
+            MsgBox("Please enter first name")
+        ElseIf String.IsNullOrEmpty(combobox_add_membertype.Text) Then
+            MsgBox("Please select member type")
+        ElseIf String.IsNullOrEmpty(txt_add_shipid.Text) Then
+            MsgBox("Please insert Membership ID ")
+        Else
+            MsgBox("Member Added!")
+        End If
+
     End Sub
 
 
@@ -92,7 +103,7 @@ Public Class mainpage
         label_update_search.Text = combobox_update_search.Text & ":"
     End Sub
 
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles txt_add_shipid.TextChanged
 
     End Sub
 
@@ -159,7 +170,7 @@ Public Class mainpage
 
     
    
-   
+
 End Class
 
 
