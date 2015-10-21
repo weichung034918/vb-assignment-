@@ -68,11 +68,14 @@ Public Class mainpage
             MsgBox("Please enter member ID")
         ElseIf String.IsNullOrEmpty(txt_add_firstname.Text) Then
             MsgBox("Please enter first name")
+        ElseIf String.IsNullOrEmpty(txt_add_lastname.Text) Then
+            MsgBox("Please enter last name")
         ElseIf String.IsNullOrEmpty(combobox_add_membertype.Text) Then
             MsgBox("Please select member type")
         ElseIf String.IsNullOrEmpty(txt_add_shipid.Text) Then
             MsgBox("Please insert Membership ID ")
         Else
+            'INSERT FUNCTION TO ADD HERE
             MsgBox("Member Added!")
         End If
 
@@ -89,8 +92,17 @@ Public Class mainpage
         End If
     End Sub
 
-    Private Sub combobox_remove_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
-        label_remove_search.Text = combobox_remove_search.Text & ":"
+    Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
+        'DESIGN START
+        If combobox_remove_search.Text <> String.Empty Then
+            txt_remove_search.Enabled = True
+            label_remove_search.Enabled = True
+            label_remove_search.Text = combobox_remove_search.Text & ":"
+        Else
+            txt_remove_search.Enabled = False
+
+        End If
+        'DESIGN END
     End Sub
 
 
@@ -103,7 +115,7 @@ Public Class mainpage
         label_update_search.Text = combobox_update_search.Text & ":"
     End Sub
 
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles txt_add_shipid.TextChanged
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -171,7 +183,33 @@ Public Class mainpage
     
    
 
+    Private Sub txt_remove_search_TextChanged(sender As Object, e As EventArgs)
+
+        If String.IsNullOrEmpty(txt_remove_search.Text) Then
+            btn_remove_search.Visible = False
+        ElseIf txt_remove_search.Text <> String.Empty Then
+            btn_remove_search.Visible = True
+
+        End If
+    End Sub
+
+    Private Sub txt_add_lastname_Click(sender As Object, e As EventArgs) Handles txt_add_lastname.Click
+
+    End Sub
+
+    Private Sub txt_remove_id_Click(sender As Object, e As EventArgs) Handles txt_remove_id.Click
+
+    End Sub
+
+    Private Sub txt_payment_edit_paymentid_Click(sender As Object, e As EventArgs) Handles txt_payment_edit_paymentid.Click
+
+    End Sub
+
+    
 End Class
+
+
+
 
 
 

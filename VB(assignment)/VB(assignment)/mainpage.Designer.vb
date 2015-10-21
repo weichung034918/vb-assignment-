@@ -22,19 +22,18 @@ Partial Class mainpage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainpage))
         Me.MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.txt_add_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_add_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_add_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_add_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_add_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_add_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label_add_shipid = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_add_shipid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_add_membertype = New System.Windows.Forms.ComboBox()
         Me.Add = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.txt_add_email = New System.Windows.Forms.TextBox()
-        Me.txt_add_cont = New System.Windows.Forms.TextBox()
-        Me.txt_add_lastname = New System.Windows.Forms.TextBox()
-        Me.txt_add_firstname = New System.Windows.Forms.TextBox()
-        Me.txt_add_id = New System.Windows.Forms.TextBox()
         Me.MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
@@ -42,20 +41,20 @@ Partial Class mainpage
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txt_remove_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_remove_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_remove_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.text_remove_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_remove_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_remove_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_remove_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label_remove_shipid = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_remove_search = New System.Windows.Forms.TextBox()
         Me.label_remove_search = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_remove_shipid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_remove_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel21 = New MaterialSkin.Controls.MaterialLabel()
         Me.btn_remove = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_remove_search = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.txt_remove_email = New System.Windows.Forms.TextBox()
-        Me.txt_remove_cont = New System.Windows.Forms.TextBox()
-        Me.text_remove_lastname = New System.Windows.Forms.TextBox()
-        Me.txt_remove_firstname = New System.Windows.Forms.TextBox()
-        Me.txt_remove_id = New System.Windows.Forms.TextBox()
         Me.MaterialLabel8 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel9 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel11 = New MaterialSkin.Controls.MaterialLabel()
@@ -63,21 +62,21 @@ Partial Class mainpage
         Me.MaterialLabel13 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_remove_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_update_id = New System.Windows.Forms.TabPage()
+        Me.tabpgae = New System.Windows.Forms.TabPage()
+        Me.txt_update_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_update_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_update_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_update_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_update_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_update_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_update_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label_update_shipid = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_update_search = New System.Windows.Forms.TextBox()
         Me.label_update_search = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_update_shipid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_update_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel10 = New MaterialSkin.Controls.MaterialLabel()
         Me.btn_update = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_update_search = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.txt_update_email = New System.Windows.Forms.TextBox()
-        Me.txt_update_cont = New System.Windows.Forms.TextBox()
-        Me.txt_update_lastname = New System.Windows.Forms.TextBox()
-        Me.txt_update_firstname = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.MaterialLabel14 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel15 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel17 = New MaterialSkin.Controls.MaterialLabel()
@@ -89,18 +88,18 @@ Partial Class mainpage
         Me.MaterialTabSelector2 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.MaterialTabControl2 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.txt_payment_submit_date = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_submit_entrydate = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_submit_paid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_submit_due = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_submit_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_submit_memberid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_submit_paymentid = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label_payment_submit_shipid = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_payment_submit_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel46 = New MaterialSkin.Controls.MaterialLabel()
         Me.txt_payment_submit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.txt_payment_submit_description = New System.Windows.Forms.RichTextBox()
-        Me.txt_payment_submit_date = New System.Windows.Forms.TextBox()
-        Me.txt_payment_submit_paid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_submit_due = New System.Windows.Forms.TextBox()
-        Me.txt_payment_submit_entrydate = New System.Windows.Forms.TextBox()
-        Me.txt_payment_submit_shipid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_submit_memberid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_submit_paymentid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel28 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel27 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel26 = New MaterialSkin.Controls.MaterialLabel()
@@ -110,9 +109,16 @@ Partial Class mainpage
         Me.MaterialLabel22 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel16 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.txt_payment_edit_date = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_entrydate = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_paid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_due = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_paymentid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_edit_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.btn_payment_edit_search = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_payment_edit_search = New System.Windows.Forms.TextBox()
         Me.label_payment_edit_shipid = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_payment_edit_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel49 = New MaterialSkin.Controls.MaterialLabel()
@@ -122,13 +128,6 @@ Partial Class mainpage
         Me.radio_edit_shipid = New System.Windows.Forms.RadioButton()
         Me.txt_payment_edit_submit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.txt_payment_edit_description = New System.Windows.Forms.RichTextBox()
-        Me.txt_payment_edit_date = New System.Windows.Forms.TextBox()
-        Me.txt_payment_edit_paid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_edit_due = New System.Windows.Forms.TextBox()
-        Me.txt_payment_edit_entrydate = New System.Windows.Forms.TextBox()
-        Me.txt_payment_edit_shipid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_edit_memberid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_edit_paymentid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel30 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel31 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel32 = New MaterialSkin.Controls.MaterialLabel()
@@ -138,9 +137,16 @@ Partial Class mainpage
         Me.MaterialLabel36 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel37 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.txt_payment_delete_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_paymentid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_date = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_entrydate = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_paid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_due = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_payment_delete_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.btn_payment_delete_search = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_payment_delete_search = New System.Windows.Forms.TextBox()
         Me.label_payment_delete_shipid = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_payment_delete_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel50 = New MaterialSkin.Controls.MaterialLabel()
@@ -150,13 +156,6 @@ Partial Class mainpage
         Me.radio_delete_membershipid = New System.Windows.Forms.RadioButton()
         Me.txt_payment_delete_submit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.txt_payment_delete_description = New System.Windows.Forms.RichTextBox()
-        Me.txt_payment_delete_date = New System.Windows.Forms.TextBox()
-        Me.txt_payment_delete_paid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_delete_due = New System.Windows.Forms.TextBox()
-        Me.txt_payment_delete_entrydate = New System.Windows.Forms.TextBox()
-        Me.txt_payment_delete_shipid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_delete_memberid = New System.Windows.Forms.TextBox()
-        Me.txt_payment_delete_paymentid = New System.Windows.Forms.TextBox()
         Me.MaterialLabel38 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel39 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel40 = New MaterialSkin.Controls.MaterialLabel()
@@ -169,7 +168,7 @@ Partial Class mainpage
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.txt_update_id.SuspendLayout()
+        Me.tabpgae.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.MaterialTabControl2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -183,7 +182,7 @@ Partial Class mainpage
         '
         Me.MaterialTabControl1.Controls.Add(Me.TabPage1)
         Me.MaterialTabControl1.Controls.Add(Me.TabPage2)
-        Me.MaterialTabControl1.Controls.Add(Me.txt_update_id)
+        Me.MaterialTabControl1.Controls.Add(Me.tabpgae)
         Me.MaterialTabControl1.Controls.Add(Me.TabPage4)
         Me.MaterialTabControl1.Depth = 0
         Me.MaterialTabControl1.Location = New System.Drawing.Point(0, 103)
@@ -195,18 +194,18 @@ Partial Class mainpage
         '
         'TabPage1
         '
-        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.TabPage1.Controls.Add(Me.label_add_shipid)
-        Me.TabPage1.Controls.Add(Me.txt_add_shipid)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel29)
-        Me.TabPage1.Controls.Add(Me.combobox_add_membertype)
-        Me.TabPage1.Controls.Add(Me.Add)
         Me.TabPage1.Controls.Add(Me.txt_add_email)
         Me.TabPage1.Controls.Add(Me.txt_add_cont)
+        Me.TabPage1.Controls.Add(Me.txt_add_shipid)
         Me.TabPage1.Controls.Add(Me.txt_add_lastname)
         Me.TabPage1.Controls.Add(Me.txt_add_firstname)
         Me.TabPage1.Controls.Add(Me.txt_add_id)
+        Me.TabPage1.Controls.Add(Me.label_add_shipid)
+        Me.TabPage1.Controls.Add(Me.MaterialLabel29)
+        Me.TabPage1.Controls.Add(Me.combobox_add_membertype)
+        Me.TabPage1.Controls.Add(Me.Add)
         Me.TabPage1.Controls.Add(Me.MaterialLabel6)
         Me.TabPage1.Controls.Add(Me.MaterialLabel5)
         Me.TabPage1.Controls.Add(Me.MaterialLabel4)
@@ -219,7 +218,96 @@ Partial Class mainpage
         Me.TabPage1.Size = New System.Drawing.Size(829, 454)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Add Members"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'txt_add_email
+        '
+        Me.txt_add_email.Depth = 0
+        Me.txt_add_email.Hint = ""
+        Me.txt_add_email.Location = New System.Drawing.Point(504, 312)
+        Me.txt_add_email.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_email.Name = "txt_add_email"
+        Me.txt_add_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_email.SelectedText = ""
+        Me.txt_add_email.SelectionLength = 0
+        Me.txt_add_email.SelectionStart = 0
+        Me.txt_add_email.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_email.TabIndex = 22
+        Me.txt_add_email.UseSystemPasswordChar = False
+        '
+        'txt_add_cont
+        '
+        Me.txt_add_cont.Depth = 0
+        Me.txt_add_cont.Hint = ""
+        Me.txt_add_cont.Location = New System.Drawing.Point(504, 273)
+        Me.txt_add_cont.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_cont.Name = "txt_add_cont"
+        Me.txt_add_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_cont.SelectedText = ""
+        Me.txt_add_cont.SelectionLength = 0
+        Me.txt_add_cont.SelectionStart = 0
+        Me.txt_add_cont.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_cont.TabIndex = 21
+        Me.txt_add_cont.UseSystemPasswordChar = False
+        '
+        'txt_add_shipid
+        '
+        Me.txt_add_shipid.Depth = 0
+        Me.txt_add_shipid.Hint = ""
+        Me.txt_add_shipid.Location = New System.Drawing.Point(559, 224)
+        Me.txt_add_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_shipid.Name = "txt_add_shipid"
+        Me.txt_add_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_shipid.SelectedText = ""
+        Me.txt_add_shipid.SelectionLength = 0
+        Me.txt_add_shipid.SelectionStart = 0
+        Me.txt_add_shipid.Size = New System.Drawing.Size(86, 23)
+        Me.txt_add_shipid.TabIndex = 20
+        Me.txt_add_shipid.UseSystemPasswordChar = False
+        '
+        'txt_add_lastname
+        '
+        Me.txt_add_lastname.Depth = 0
+        Me.txt_add_lastname.Hint = ""
+        Me.txt_add_lastname.Location = New System.Drawing.Point(504, 139)
+        Me.txt_add_lastname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_lastname.Name = "txt_add_lastname"
+        Me.txt_add_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_lastname.SelectedText = ""
+        Me.txt_add_lastname.SelectionLength = 0
+        Me.txt_add_lastname.SelectionStart = 0
+        Me.txt_add_lastname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_lastname.TabIndex = 19
+        Me.txt_add_lastname.UseSystemPasswordChar = False
+        '
+        'txt_add_firstname
+        '
+        Me.txt_add_firstname.Depth = 0
+        Me.txt_add_firstname.Hint = ""
+        Me.txt_add_firstname.Location = New System.Drawing.Point(504, 96)
+        Me.txt_add_firstname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_firstname.Name = "txt_add_firstname"
+        Me.txt_add_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_firstname.SelectedText = ""
+        Me.txt_add_firstname.SelectionLength = 0
+        Me.txt_add_firstname.SelectionStart = 0
+        Me.txt_add_firstname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_firstname.TabIndex = 18
+        Me.txt_add_firstname.UseSystemPasswordChar = False
+        '
+        'txt_add_id
+        '
+        Me.txt_add_id.Depth = 0
+        Me.txt_add_id.Hint = ""
+        Me.txt_add_id.Location = New System.Drawing.Point(504, 53)
+        Me.txt_add_id.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_id.Name = "txt_add_id"
+        Me.txt_add_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_id.SelectedText = ""
+        Me.txt_add_id.SelectionLength = 0
+        Me.txt_add_id.SelectionStart = 0
+        Me.txt_add_id.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_id.TabIndex = 17
+        Me.txt_add_id.UseSystemPasswordChar = False
         '
         'label_add_shipid
         '
@@ -233,13 +321,6 @@ Partial Class mainpage
         Me.label_add_shipid.Size = New System.Drawing.Size(23, 19)
         Me.label_add_shipid.TabIndex = 16
         Me.label_add_shipid.Text = "ID"
-        '
-        'txt_add_shipid
-        '
-        Me.txt_add_shipid.Location = New System.Drawing.Point(559, 228)
-        Me.txt_add_shipid.Name = "txt_add_shipid"
-        Me.txt_add_shipid.Size = New System.Drawing.Size(86, 20)
-        Me.txt_add_shipid.TabIndex = 15
         '
         'MaterialLabel29
         '
@@ -274,41 +355,6 @@ Partial Class mainpage
         Me.Add.TabIndex = 12
         Me.Add.Text = "Add"
         Me.Add.UseVisualStyleBackColor = True
-        '
-        'txt_add_email
-        '
-        Me.txt_add_email.Location = New System.Drawing.Point(504, 315)
-        Me.txt_add_email.Name = "txt_add_email"
-        Me.txt_add_email.Size = New System.Drawing.Size(141, 20)
-        Me.txt_add_email.TabIndex = 11
-        '
-        'txt_add_cont
-        '
-        Me.txt_add_cont.Location = New System.Drawing.Point(504, 272)
-        Me.txt_add_cont.Name = "txt_add_cont"
-        Me.txt_add_cont.Size = New System.Drawing.Size(141, 20)
-        Me.txt_add_cont.TabIndex = 10
-        '
-        'txt_add_lastname
-        '
-        Me.txt_add_lastname.Location = New System.Drawing.Point(504, 142)
-        Me.txt_add_lastname.Name = "txt_add_lastname"
-        Me.txt_add_lastname.Size = New System.Drawing.Size(141, 20)
-        Me.txt_add_lastname.TabIndex = 8
-        '
-        'txt_add_firstname
-        '
-        Me.txt_add_firstname.Location = New System.Drawing.Point(504, 99)
-        Me.txt_add_firstname.Name = "txt_add_firstname"
-        Me.txt_add_firstname.Size = New System.Drawing.Size(141, 20)
-        Me.txt_add_firstname.TabIndex = 7
-        '
-        'txt_add_id
-        '
-        Me.txt_add_id.Location = New System.Drawing.Point(504, 56)
-        Me.txt_add_id.Name = "txt_add_id"
-        Me.txt_add_id.Size = New System.Drawing.Size(141, 20)
-        Me.txt_add_id.TabIndex = 6
         '
         'MaterialLabel6
         '
@@ -390,23 +436,23 @@ Partial Class mainpage
         '
         'TabPage2
         '
-        Me.TabPage2.BackgroundImage = CType(resources.GetObject("TabPage2.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabPage2.Controls.Add(Me.label_remove_shipid)
-        Me.TabPage2.Controls.Add(Me.txt_remove_search)
-        Me.TabPage2.Controls.Add(Me.label_remove_search)
+        Me.TabPage2.Controls.Add(Me.txt_remove_email)
+        Me.TabPage2.Controls.Add(Me.txt_remove_cont)
         Me.TabPage2.Controls.Add(Me.txt_remove_shipid)
+        Me.TabPage2.Controls.Add(Me.text_remove_lastname)
+        Me.TabPage2.Controls.Add(Me.txt_remove_firstname)
+        Me.TabPage2.Controls.Add(Me.txt_remove_id)
+        Me.TabPage2.Controls.Add(Me.txt_remove_search)
+        Me.TabPage2.Controls.Add(Me.label_remove_shipid)
+        Me.TabPage2.Controls.Add(Me.label_remove_search)
         Me.TabPage2.Controls.Add(Me.MaterialLabel47)
         Me.TabPage2.Controls.Add(Me.combobox_remove_membertype)
         Me.TabPage2.Controls.Add(Me.MaterialLabel21)
         Me.TabPage2.Controls.Add(Me.btn_remove)
         Me.TabPage2.Controls.Add(Me.btn_remove_search)
-        Me.TabPage2.Controls.Add(Me.txt_remove_email)
-        Me.TabPage2.Controls.Add(Me.txt_remove_cont)
-        Me.TabPage2.Controls.Add(Me.text_remove_lastname)
-        Me.TabPage2.Controls.Add(Me.txt_remove_firstname)
-        Me.TabPage2.Controls.Add(Me.txt_remove_id)
         Me.TabPage2.Controls.Add(Me.MaterialLabel8)
         Me.TabPage2.Controls.Add(Me.MaterialLabel9)
         Me.TabPage2.Controls.Add(Me.MaterialLabel11)
@@ -420,12 +466,124 @@ Partial Class mainpage
         Me.TabPage2.Size = New System.Drawing.Size(829, 454)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Remove Members"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'txt_remove_email
+        '
+        Me.txt_remove_email.Depth = 0
+        Me.txt_remove_email.Enabled = False
+        Me.txt_remove_email.Hint = ""
+        Me.txt_remove_email.Location = New System.Drawing.Point(567, 295)
+        Me.txt_remove_email.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_email.Name = "txt_remove_email"
+        Me.txt_remove_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_email.SelectedText = ""
+        Me.txt_remove_email.SelectionLength = 0
+        Me.txt_remove_email.SelectionStart = 0
+        Me.txt_remove_email.Size = New System.Drawing.Size(141, 23)
+        Me.txt_remove_email.TabIndex = 40
+        Me.txt_remove_email.UseSystemPasswordChar = False
+        '
+        'txt_remove_cont
+        '
+        Me.txt_remove_cont.Depth = 0
+        Me.txt_remove_cont.Enabled = False
+        Me.txt_remove_cont.Hint = ""
+        Me.txt_remove_cont.Location = New System.Drawing.Point(567, 256)
+        Me.txt_remove_cont.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_cont.Name = "txt_remove_cont"
+        Me.txt_remove_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_cont.SelectedText = ""
+        Me.txt_remove_cont.SelectionLength = 0
+        Me.txt_remove_cont.SelectionStart = 0
+        Me.txt_remove_cont.Size = New System.Drawing.Size(141, 23)
+        Me.txt_remove_cont.TabIndex = 39
+        Me.txt_remove_cont.UseSystemPasswordChar = False
+        '
+        'txt_remove_shipid
+        '
+        Me.txt_remove_shipid.Depth = 0
+        Me.txt_remove_shipid.Enabled = False
+        Me.txt_remove_shipid.Hint = ""
+        Me.txt_remove_shipid.Location = New System.Drawing.Point(622, 213)
+        Me.txt_remove_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_shipid.Name = "txt_remove_shipid"
+        Me.txt_remove_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_shipid.SelectedText = ""
+        Me.txt_remove_shipid.SelectionLength = 0
+        Me.txt_remove_shipid.SelectionStart = 0
+        Me.txt_remove_shipid.Size = New System.Drawing.Size(86, 23)
+        Me.txt_remove_shipid.TabIndex = 38
+        Me.txt_remove_shipid.UseSystemPasswordChar = False
+        '
+        'text_remove_lastname
+        '
+        Me.text_remove_lastname.Depth = 0
+        Me.text_remove_lastname.Enabled = False
+        Me.text_remove_lastname.Hint = ""
+        Me.text_remove_lastname.Location = New System.Drawing.Point(567, 138)
+        Me.text_remove_lastname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.text_remove_lastname.Name = "text_remove_lastname"
+        Me.text_remove_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.text_remove_lastname.SelectedText = ""
+        Me.text_remove_lastname.SelectionLength = 0
+        Me.text_remove_lastname.SelectionStart = 0
+        Me.text_remove_lastname.Size = New System.Drawing.Size(141, 23)
+        Me.text_remove_lastname.TabIndex = 37
+        Me.text_remove_lastname.UseSystemPasswordChar = False
+        '
+        'txt_remove_firstname
+        '
+        Me.txt_remove_firstname.Depth = 0
+        Me.txt_remove_firstname.Enabled = False
+        Me.txt_remove_firstname.Hint = ""
+        Me.txt_remove_firstname.Location = New System.Drawing.Point(567, 99)
+        Me.txt_remove_firstname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_firstname.Name = "txt_remove_firstname"
+        Me.txt_remove_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_firstname.SelectedText = ""
+        Me.txt_remove_firstname.SelectionLength = 0
+        Me.txt_remove_firstname.SelectionStart = 0
+        Me.txt_remove_firstname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_remove_firstname.TabIndex = 36
+        Me.txt_remove_firstname.UseSystemPasswordChar = False
+        '
+        'txt_remove_id
+        '
+        Me.txt_remove_id.Depth = 0
+        Me.txt_remove_id.Enabled = False
+        Me.txt_remove_id.Hint = ""
+        Me.txt_remove_id.Location = New System.Drawing.Point(567, 60)
+        Me.txt_remove_id.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_id.Name = "txt_remove_id"
+        Me.txt_remove_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_id.SelectedText = ""
+        Me.txt_remove_id.SelectionLength = 0
+        Me.txt_remove_id.SelectionStart = 0
+        Me.txt_remove_id.Size = New System.Drawing.Size(141, 23)
+        Me.txt_remove_id.TabIndex = 35
+        Me.txt_remove_id.UseSystemPasswordChar = False
+        '
+        'txt_remove_search
+        '
+        Me.txt_remove_search.Depth = 0
+        Me.txt_remove_search.Hint = ""
+        Me.txt_remove_search.Location = New System.Drawing.Point(206, 170)
+        Me.txt_remove_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_search.Name = "txt_remove_search"
+        Me.txt_remove_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_search.SelectedText = ""
+        Me.txt_remove_search.SelectionLength = 0
+        Me.txt_remove_search.SelectionStart = 0
+        Me.txt_remove_search.Size = New System.Drawing.Size(121, 23)
+        Me.txt_remove_search.TabIndex = 34
+        Me.txt_remove_search.UseSystemPasswordChar = False
+        Me.txt_remove_search.Visible = False
         '
         'label_remove_shipid
         '
         Me.label_remove_shipid.AutoSize = True
         Me.label_remove_shipid.Depth = 0
+        Me.label_remove_shipid.Enabled = False
         Me.label_remove_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_remove_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.label_remove_shipid.Location = New System.Drawing.Point(567, 217)
@@ -435,17 +593,11 @@ Partial Class mainpage
         Me.label_remove_shipid.TabIndex = 32
         Me.label_remove_shipid.Text = "ID"
         '
-        'txt_remove_search
-        '
-        Me.txt_remove_search.Location = New System.Drawing.Point(206, 175)
-        Me.txt_remove_search.Name = "txt_remove_search"
-        Me.txt_remove_search.Size = New System.Drawing.Size(121, 20)
-        Me.txt_remove_search.TabIndex = 31
-        '
         'label_remove_search
         '
         Me.label_remove_search.AutoSize = True
         Me.label_remove_search.Depth = 0
+        Me.label_remove_search.Enabled = False
         Me.label_remove_search.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_remove_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.label_remove_search.Location = New System.Drawing.Point(63, 174)
@@ -455,19 +607,10 @@ Partial Class mainpage
         Me.label_remove_search.TabIndex = 30
         Me.label_remove_search.Text = "Search:"
         '
-        'txt_remove_shipid
-        '
-        Me.txt_remove_shipid.Enabled = False
-        Me.txt_remove_shipid.Location = New System.Drawing.Point(622, 217)
-        Me.txt_remove_shipid.Name = "txt_remove_shipid"
-        Me.txt_remove_shipid.Size = New System.Drawing.Size(86, 20)
-        Me.txt_remove_shipid.TabIndex = 29
-        '
         'MaterialLabel47
         '
         Me.MaterialLabel47.AutoSize = True
         Me.MaterialLabel47.Depth = 0
-        Me.MaterialLabel47.Enabled = False
         Me.MaterialLabel47.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel47.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel47.Location = New System.Drawing.Point(369, 217)
@@ -492,7 +635,6 @@ Partial Class mainpage
         '
         Me.MaterialLabel21.AutoSize = True
         Me.MaterialLabel21.Depth = 0
-        Me.MaterialLabel21.Enabled = False
         Me.MaterialLabel21.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel21.Location = New System.Drawing.Point(369, 177)
@@ -518,6 +660,7 @@ Partial Class mainpage
         'btn_remove_search
         '
         Me.btn_remove_search.Depth = 0
+        Me.btn_remove_search.Enabled = False
         Me.btn_remove_search.Location = New System.Drawing.Point(206, 229)
         Me.btn_remove_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_remove_search.Name = "btn_remove_search"
@@ -526,52 +669,12 @@ Partial Class mainpage
         Me.btn_remove_search.TabIndex = 24
         Me.btn_remove_search.Text = "Search"
         Me.btn_remove_search.UseVisualStyleBackColor = True
-        '
-        'txt_remove_email
-        '
-        Me.txt_remove_email.Enabled = False
-        Me.txt_remove_email.Location = New System.Drawing.Point(567, 295)
-        Me.txt_remove_email.Name = "txt_remove_email"
-        Me.txt_remove_email.Size = New System.Drawing.Size(141, 20)
-        Me.txt_remove_email.TabIndex = 23
-        '
-        'txt_remove_cont
-        '
-        Me.txt_remove_cont.Enabled = False
-        Me.txt_remove_cont.Location = New System.Drawing.Point(567, 256)
-        Me.txt_remove_cont.Name = "txt_remove_cont"
-        Me.txt_remove_cont.Size = New System.Drawing.Size(141, 20)
-        Me.txt_remove_cont.TabIndex = 22
-        '
-        'text_remove_lastname
-        '
-        Me.text_remove_lastname.Enabled = False
-        Me.text_remove_lastname.Location = New System.Drawing.Point(567, 138)
-        Me.text_remove_lastname.Name = "text_remove_lastname"
-        Me.text_remove_lastname.Size = New System.Drawing.Size(141, 20)
-        Me.text_remove_lastname.TabIndex = 20
-        '
-        'txt_remove_firstname
-        '
-        Me.txt_remove_firstname.Enabled = False
-        Me.txt_remove_firstname.Location = New System.Drawing.Point(567, 99)
-        Me.txt_remove_firstname.Name = "txt_remove_firstname"
-        Me.txt_remove_firstname.Size = New System.Drawing.Size(141, 20)
-        Me.txt_remove_firstname.TabIndex = 19
-        '
-        'txt_remove_id
-        '
-        Me.txt_remove_id.Enabled = False
-        Me.txt_remove_id.Location = New System.Drawing.Point(567, 60)
-        Me.txt_remove_id.Name = "txt_remove_id"
-        Me.txt_remove_id.Size = New System.Drawing.Size(141, 20)
-        Me.txt_remove_id.TabIndex = 18
+        Me.btn_remove_search.Visible = False
         '
         'MaterialLabel8
         '
         Me.MaterialLabel8.AutoSize = True
         Me.MaterialLabel8.Depth = 0
-        Me.MaterialLabel8.Enabled = False
         Me.MaterialLabel8.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel8.Location = New System.Drawing.Point(368, 295)
@@ -585,7 +688,6 @@ Partial Class mainpage
         '
         Me.MaterialLabel9.AutoSize = True
         Me.MaterialLabel9.Depth = 0
-        Me.MaterialLabel9.Enabled = False
         Me.MaterialLabel9.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel9.Location = New System.Drawing.Point(368, 256)
@@ -599,7 +701,6 @@ Partial Class mainpage
         '
         Me.MaterialLabel11.AutoSize = True
         Me.MaterialLabel11.Depth = 0
-        Me.MaterialLabel11.Enabled = False
         Me.MaterialLabel11.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel11.Location = New System.Drawing.Point(368, 138)
@@ -613,7 +714,6 @@ Partial Class mainpage
         '
         Me.MaterialLabel12.AutoSize = True
         Me.MaterialLabel12.Depth = 0
-        Me.MaterialLabel12.Enabled = False
         Me.MaterialLabel12.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel12.Location = New System.Drawing.Point(369, 99)
@@ -627,7 +727,6 @@ Partial Class mainpage
         '
         Me.MaterialLabel13.AutoSize = True
         Me.MaterialLabel13.Depth = 0
-        Me.MaterialLabel13.Enabled = False
         Me.MaterialLabel13.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.MaterialLabel13.Location = New System.Drawing.Point(368, 60)
@@ -660,37 +759,142 @@ Partial Class mainpage
         Me.MaterialLabel7.TabIndex = 1
         Me.MaterialLabel7.Text = "Search By:"
         '
+        'tabpgae
+        '
+        Me.tabpgae.BackColor = System.Drawing.SystemColors.Control
+        Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.tabpgae.Controls.Add(Me.txt_update_email)
+        Me.tabpgae.Controls.Add(Me.txt_update_cont)
+        Me.tabpgae.Controls.Add(Me.txt_update_shipid)
+        Me.tabpgae.Controls.Add(Me.txt_update_lastname)
+        Me.tabpgae.Controls.Add(Me.txt_update_firstname)
+        Me.tabpgae.Controls.Add(Me.txt_update_id)
+        Me.tabpgae.Controls.Add(Me.txt_update_search)
+        Me.tabpgae.Controls.Add(Me.label_update_shipid)
+        Me.tabpgae.Controls.Add(Me.label_update_search)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel48)
+        Me.tabpgae.Controls.Add(Me.combobox_update_membertype)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel10)
+        Me.tabpgae.Controls.Add(Me.btn_update)
+        Me.tabpgae.Controls.Add(Me.btn_update_search)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel14)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel15)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel17)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel18)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel19)
+        Me.tabpgae.Controls.Add(Me.combobox_update_search)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel20)
+        Me.tabpgae.Location = New System.Drawing.Point(4, 22)
+        Me.tabpgae.Name = "tabpgae"
+        Me.tabpgae.Size = New System.Drawing.Size(829, 454)
+        Me.tabpgae.TabIndex = 2
+        Me.tabpgae.Text = "Update Members"
+        '
+        'txt_update_email
+        '
+        Me.txt_update_email.Depth = 0
+        Me.txt_update_email.Hint = ""
+        Me.txt_update_email.Location = New System.Drawing.Point(563, 304)
+        Me.txt_update_email.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_update_email.Name = "txt_update_email"
+        Me.txt_update_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_email.SelectedText = ""
+        Me.txt_update_email.SelectionLength = 0
+        Me.txt_update_email.SelectionStart = 0
+        Me.txt_update_email.Size = New System.Drawing.Size(141, 23)
+        Me.txt_update_email.TabIndex = 56
+        Me.txt_update_email.UseSystemPasswordChar = False
+        '
+        'txt_update_cont
+        '
+        Me.txt_update_cont.Depth = 0
+        Me.txt_update_cont.Hint = ""
+        Me.txt_update_cont.Location = New System.Drawing.Point(563, 265)
+        Me.txt_update_cont.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_update_cont.Name = "txt_update_cont"
+        Me.txt_update_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_cont.SelectedText = ""
+        Me.txt_update_cont.SelectionLength = 0
+        Me.txt_update_cont.SelectionStart = 0
+        Me.txt_update_cont.Size = New System.Drawing.Size(141, 23)
+        Me.txt_update_cont.TabIndex = 55
+        Me.txt_update_cont.UseSystemPasswordChar = False
+        '
+        'txt_update_shipid
+        '
+        Me.txt_update_shipid.Depth = 0
+        Me.txt_update_shipid.Hint = ""
+        Me.txt_update_shipid.Location = New System.Drawing.Point(618, 226)
+        Me.txt_update_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_update_shipid.Name = "txt_update_shipid"
+        Me.txt_update_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_shipid.SelectedText = ""
+        Me.txt_update_shipid.SelectionLength = 0
+        Me.txt_update_shipid.SelectionStart = 0
+        Me.txt_update_shipid.Size = New System.Drawing.Size(86, 23)
+        Me.txt_update_shipid.TabIndex = 54
+        Me.txt_update_shipid.UseSystemPasswordChar = False
+        '
+        'txt_update_lastname
+        '
+        Me.txt_update_lastname.Depth = 0
+        Me.txt_update_lastname.Hint = ""
+        Me.txt_update_lastname.Location = New System.Drawing.Point(563, 147)
+        Me.txt_update_lastname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_update_lastname.Name = "txt_update_lastname"
+        Me.txt_update_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_lastname.SelectedText = ""
+        Me.txt_update_lastname.SelectionLength = 0
+        Me.txt_update_lastname.SelectionStart = 0
+        Me.txt_update_lastname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_update_lastname.TabIndex = 53
+        Me.txt_update_lastname.UseSystemPasswordChar = False
+        '
+        'txt_update_firstname
+        '
+        Me.txt_update_firstname.Depth = 0
+        Me.txt_update_firstname.Hint = ""
+        Me.txt_update_firstname.Location = New System.Drawing.Point(563, 108)
+        Me.txt_update_firstname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_update_firstname.Name = "txt_update_firstname"
+        Me.txt_update_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_firstname.SelectedText = ""
+        Me.txt_update_firstname.SelectionLength = 0
+        Me.txt_update_firstname.SelectionStart = 0
+        Me.txt_update_firstname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_update_firstname.TabIndex = 52
+        Me.txt_update_firstname.UseSystemPasswordChar = False
+        '
         'txt_update_id
         '
-        Me.txt_update_id.BackgroundImage = CType(resources.GetObject("txt_update_id.BackgroundImage"), System.Drawing.Image)
-        Me.txt_update_id.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.txt_update_id.Controls.Add(Me.label_update_shipid)
-        Me.txt_update_id.Controls.Add(Me.txt_update_search)
-        Me.txt_update_id.Controls.Add(Me.label_update_search)
-        Me.txt_update_id.Controls.Add(Me.txt_update_shipid)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel48)
-        Me.txt_update_id.Controls.Add(Me.combobox_update_membertype)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel10)
-        Me.txt_update_id.Controls.Add(Me.btn_update)
-        Me.txt_update_id.Controls.Add(Me.btn_update_search)
-        Me.txt_update_id.Controls.Add(Me.txt_update_email)
-        Me.txt_update_id.Controls.Add(Me.txt_update_cont)
-        Me.txt_update_id.Controls.Add(Me.txt_update_lastname)
-        Me.txt_update_id.Controls.Add(Me.txt_update_firstname)
-        Me.txt_update_id.Controls.Add(Me.TextBox5)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel14)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel15)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel17)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel18)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel19)
-        Me.txt_update_id.Controls.Add(Me.combobox_update_search)
-        Me.txt_update_id.Controls.Add(Me.MaterialLabel20)
-        Me.txt_update_id.Location = New System.Drawing.Point(4, 22)
+        Me.txt_update_id.Depth = 0
+        Me.txt_update_id.Hint = ""
+        Me.txt_update_id.Location = New System.Drawing.Point(563, 69)
+        Me.txt_update_id.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_id.Name = "txt_update_id"
-        Me.txt_update_id.Size = New System.Drawing.Size(829, 454)
-        Me.txt_update_id.TabIndex = 2
-        Me.txt_update_id.Text = "Update Members"
-        Me.txt_update_id.UseVisualStyleBackColor = True
+        Me.txt_update_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_id.SelectedText = ""
+        Me.txt_update_id.SelectionLength = 0
+        Me.txt_update_id.SelectionStart = 0
+        Me.txt_update_id.Size = New System.Drawing.Size(141, 23)
+        Me.txt_update_id.TabIndex = 51
+        Me.txt_update_id.UseSystemPasswordChar = False
+        '
+        'txt_update_search
+        '
+        Me.txt_update_search.Depth = 0
+        Me.txt_update_search.Enabled = False
+        Me.txt_update_search.Hint = ""
+        Me.txt_update_search.Location = New System.Drawing.Point(209, 158)
+        Me.txt_update_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_update_search.Name = "txt_update_search"
+        Me.txt_update_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_update_search.SelectedText = ""
+        Me.txt_update_search.SelectionLength = 0
+        Me.txt_update_search.SelectionStart = 0
+        Me.txt_update_search.Size = New System.Drawing.Size(121, 23)
+        Me.txt_update_search.TabIndex = 50
+        Me.txt_update_search.UseSystemPasswordChar = False
         '
         'label_update_shipid
         '
@@ -705,13 +909,6 @@ Partial Class mainpage
         Me.label_update_shipid.TabIndex = 49
         Me.label_update_shipid.Text = "ID"
         '
-        'txt_update_search
-        '
-        Me.txt_update_search.Location = New System.Drawing.Point(209, 159)
-        Me.txt_update_search.Name = "txt_update_search"
-        Me.txt_update_search.Size = New System.Drawing.Size(121, 20)
-        Me.txt_update_search.TabIndex = 48
-        '
         'label_update_search
         '
         Me.label_update_search.AutoSize = True
@@ -724,13 +921,6 @@ Partial Class mainpage
         Me.label_update_search.Size = New System.Drawing.Size(59, 19)
         Me.label_update_search.TabIndex = 47
         Me.label_update_search.Text = "Search:"
-        '
-        'txt_update_shipid
-        '
-        Me.txt_update_shipid.Location = New System.Drawing.Point(618, 226)
-        Me.txt_update_shipid.Name = "txt_update_shipid"
-        Me.txt_update_shipid.Size = New System.Drawing.Size(86, 20)
-        Me.txt_update_shipid.TabIndex = 45
         '
         'MaterialLabel48
         '
@@ -792,41 +982,6 @@ Partial Class mainpage
         Me.btn_update_search.TabIndex = 40
         Me.btn_update_search.Text = "Search"
         Me.btn_update_search.UseVisualStyleBackColor = True
-        '
-        'txt_update_email
-        '
-        Me.txt_update_email.Location = New System.Drawing.Point(563, 304)
-        Me.txt_update_email.Name = "txt_update_email"
-        Me.txt_update_email.Size = New System.Drawing.Size(141, 20)
-        Me.txt_update_email.TabIndex = 39
-        '
-        'txt_update_cont
-        '
-        Me.txt_update_cont.Location = New System.Drawing.Point(563, 265)
-        Me.txt_update_cont.Name = "txt_update_cont"
-        Me.txt_update_cont.Size = New System.Drawing.Size(141, 20)
-        Me.txt_update_cont.TabIndex = 38
-        '
-        'txt_update_lastname
-        '
-        Me.txt_update_lastname.Location = New System.Drawing.Point(563, 147)
-        Me.txt_update_lastname.Name = "txt_update_lastname"
-        Me.txt_update_lastname.Size = New System.Drawing.Size(141, 20)
-        Me.txt_update_lastname.TabIndex = 37
-        '
-        'txt_update_firstname
-        '
-        Me.txt_update_firstname.Location = New System.Drawing.Point(563, 108)
-        Me.txt_update_firstname.Name = "txt_update_firstname"
-        Me.txt_update_firstname.Size = New System.Drawing.Size(141, 20)
-        Me.txt_update_firstname.TabIndex = 36
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(563, 68)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox5.TabIndex = 35
         '
         'MaterialLabel14
         '
@@ -953,20 +1108,20 @@ Partial Class mainpage
         '
         'TabPage3
         '
-        Me.TabPage3.BackgroundImage = CType(resources.GetObject("TabPage3.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_date)
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_entrydate)
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_paid)
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_due)
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_shipid)
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_memberid)
+        Me.TabPage3.Controls.Add(Me.txt_payment_submit_paymentid)
         Me.TabPage3.Controls.Add(Me.label_payment_submit_shipid)
         Me.TabPage3.Controls.Add(Me.combobox_payment_submit_membertype)
         Me.TabPage3.Controls.Add(Me.MaterialLabel46)
         Me.TabPage3.Controls.Add(Me.txt_payment_submit)
         Me.TabPage3.Controls.Add(Me.txt_payment_submit_description)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_date)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_paid)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_due)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_entrydate)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_shipid)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_memberid)
-        Me.TabPage3.Controls.Add(Me.txt_payment_submit_paymentid)
         Me.TabPage3.Controls.Add(Me.MaterialLabel28)
         Me.TabPage3.Controls.Add(Me.MaterialLabel27)
         Me.TabPage3.Controls.Add(Me.MaterialLabel26)
@@ -981,7 +1136,111 @@ Partial Class mainpage
         Me.TabPage3.Size = New System.Drawing.Size(822, 379)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Submit payment"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'txt_payment_submit_date
+        '
+        Me.txt_payment_submit_date.Depth = 0
+        Me.txt_payment_submit_date.Hint = ""
+        Me.txt_payment_submit_date.Location = New System.Drawing.Point(595, 174)
+        Me.txt_payment_submit_date.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_date.Name = "txt_payment_submit_date"
+        Me.txt_payment_submit_date.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_date.SelectedText = ""
+        Me.txt_payment_submit_date.SelectionLength = 0
+        Me.txt_payment_submit_date.SelectionStart = 0
+        Me.txt_payment_submit_date.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_submit_date.TabIndex = 53
+        Me.txt_payment_submit_date.UseSystemPasswordChar = False
+        '
+        'txt_payment_submit_entrydate
+        '
+        Me.txt_payment_submit_entrydate.Depth = 0
+        Me.txt_payment_submit_entrydate.Hint = ""
+        Me.txt_payment_submit_entrydate.Location = New System.Drawing.Point(595, 134)
+        Me.txt_payment_submit_entrydate.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_entrydate.Name = "txt_payment_submit_entrydate"
+        Me.txt_payment_submit_entrydate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_entrydate.SelectedText = ""
+        Me.txt_payment_submit_entrydate.SelectionLength = 0
+        Me.txt_payment_submit_entrydate.SelectionStart = 0
+        Me.txt_payment_submit_entrydate.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_submit_entrydate.TabIndex = 52
+        Me.txt_payment_submit_entrydate.UseSystemPasswordChar = False
+        '
+        'txt_payment_submit_paid
+        '
+        Me.txt_payment_submit_paid.Depth = 0
+        Me.txt_payment_submit_paid.Hint = ""
+        Me.txt_payment_submit_paid.Location = New System.Drawing.Point(595, 97)
+        Me.txt_payment_submit_paid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_paid.Name = "txt_payment_submit_paid"
+        Me.txt_payment_submit_paid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_paid.SelectedText = ""
+        Me.txt_payment_submit_paid.SelectionLength = 0
+        Me.txt_payment_submit_paid.SelectionStart = 0
+        Me.txt_payment_submit_paid.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_submit_paid.TabIndex = 51
+        Me.txt_payment_submit_paid.UseSystemPasswordChar = False
+        '
+        'txt_payment_submit_due
+        '
+        Me.txt_payment_submit_due.Depth = 0
+        Me.txt_payment_submit_due.Hint = ""
+        Me.txt_payment_submit_due.Location = New System.Drawing.Point(595, 58)
+        Me.txt_payment_submit_due.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_due.Name = "txt_payment_submit_due"
+        Me.txt_payment_submit_due.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_due.SelectedText = ""
+        Me.txt_payment_submit_due.SelectionLength = 0
+        Me.txt_payment_submit_due.SelectionStart = 0
+        Me.txt_payment_submit_due.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_submit_due.TabIndex = 50
+        Me.txt_payment_submit_due.UseSystemPasswordChar = False
+        '
+        'txt_payment_submit_shipid
+        '
+        Me.txt_payment_submit_shipid.Depth = 0
+        Me.txt_payment_submit_shipid.Hint = ""
+        Me.txt_payment_submit_shipid.Location = New System.Drawing.Point(279, 134)
+        Me.txt_payment_submit_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_shipid.Name = "txt_payment_submit_shipid"
+        Me.txt_payment_submit_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_shipid.SelectedText = ""
+        Me.txt_payment_submit_shipid.SelectionLength = 0
+        Me.txt_payment_submit_shipid.SelectionStart = 0
+        Me.txt_payment_submit_shipid.Size = New System.Drawing.Size(86, 23)
+        Me.txt_payment_submit_shipid.TabIndex = 49
+        Me.txt_payment_submit_shipid.UseSystemPasswordChar = False
+        '
+        'txt_payment_submit_memberid
+        '
+        Me.txt_payment_submit_memberid.Depth = 0
+        Me.txt_payment_submit_memberid.Hint = ""
+        Me.txt_payment_submit_memberid.Location = New System.Drawing.Point(214, 63)
+        Me.txt_payment_submit_memberid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_memberid.Name = "txt_payment_submit_memberid"
+        Me.txt_payment_submit_memberid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_memberid.SelectedText = ""
+        Me.txt_payment_submit_memberid.SelectionLength = 0
+        Me.txt_payment_submit_memberid.SelectionStart = 0
+        Me.txt_payment_submit_memberid.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_submit_memberid.TabIndex = 48
+        Me.txt_payment_submit_memberid.UseSystemPasswordChar = False
+        '
+        'txt_payment_submit_paymentid
+        '
+        Me.txt_payment_submit_paymentid.Depth = 0
+        Me.txt_payment_submit_paymentid.Hint = ""
+        Me.txt_payment_submit_paymentid.Location = New System.Drawing.Point(214, 24)
+        Me.txt_payment_submit_paymentid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_submit_paymentid.Name = "txt_payment_submit_paymentid"
+        Me.txt_payment_submit_paymentid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_submit_paymentid.SelectedText = ""
+        Me.txt_payment_submit_paymentid.SelectionLength = 0
+        Me.txt_payment_submit_paymentid.SelectionStart = 0
+        Me.txt_payment_submit_paymentid.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_submit_paymentid.TabIndex = 47
+        Me.txt_payment_submit_paymentid.UseSystemPasswordChar = False
         '
         'label_payment_submit_shipid
         '
@@ -1038,55 +1297,6 @@ Partial Class mainpage
         Me.txt_payment_submit_description.Size = New System.Drawing.Size(151, 96)
         Me.txt_payment_submit_description.TabIndex = 37
         Me.txt_payment_submit_description.Text = ""
-        '
-        'txt_payment_submit_date
-        '
-        Me.txt_payment_submit_date.Location = New System.Drawing.Point(595, 175)
-        Me.txt_payment_submit_date.Name = "txt_payment_submit_date"
-        Me.txt_payment_submit_date.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_submit_date.TabIndex = 36
-        '
-        'txt_payment_submit_paid
-        '
-        Me.txt_payment_submit_paid.Location = New System.Drawing.Point(595, 98)
-        Me.txt_payment_submit_paid.Name = "txt_payment_submit_paid"
-        Me.txt_payment_submit_paid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_submit_paid.TabIndex = 35
-        '
-        'txt_payment_submit_due
-        '
-        Me.txt_payment_submit_due.Location = New System.Drawing.Point(595, 59)
-        Me.txt_payment_submit_due.Name = "txt_payment_submit_due"
-        Me.txt_payment_submit_due.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_submit_due.TabIndex = 34
-        '
-        'txt_payment_submit_entrydate
-        '
-        Me.txt_payment_submit_entrydate.Location = New System.Drawing.Point(595, 136)
-        Me.txt_payment_submit_entrydate.Name = "txt_payment_submit_entrydate"
-        Me.txt_payment_submit_entrydate.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_submit_entrydate.TabIndex = 33
-        '
-        'txt_payment_submit_shipid
-        '
-        Me.txt_payment_submit_shipid.Location = New System.Drawing.Point(279, 134)
-        Me.txt_payment_submit_shipid.Name = "txt_payment_submit_shipid"
-        Me.txt_payment_submit_shipid.Size = New System.Drawing.Size(86, 20)
-        Me.txt_payment_submit_shipid.TabIndex = 32
-        '
-        'txt_payment_submit_memberid
-        '
-        Me.txt_payment_submit_memberid.Location = New System.Drawing.Point(214, 62)
-        Me.txt_payment_submit_memberid.Name = "txt_payment_submit_memberid"
-        Me.txt_payment_submit_memberid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_submit_memberid.TabIndex = 31
-        '
-        'txt_payment_submit_paymentid
-        '
-        Me.txt_payment_submit_paymentid.Location = New System.Drawing.Point(214, 23)
-        Me.txt_payment_submit_paymentid.Name = "txt_payment_submit_paymentid"
-        Me.txt_payment_submit_paymentid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_submit_paymentid.TabIndex = 30
         '
         'MaterialLabel28
         '
@@ -1194,24 +1404,24 @@ Partial Class mainpage
         '
         'TabPage5
         '
-        Me.TabPage5.BackgroundImage = CType(resources.GetObject("TabPage5.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage5.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_date)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_entrydate)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_paid)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_due)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_shipid)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_id)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_paymentid)
+        Me.TabPage5.Controls.Add(Me.txt_payment_edit_search)
         Me.TabPage5.Controls.Add(Me.btn_payment_edit_search)
         Me.TabPage5.Controls.Add(Me.Label1)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_search)
         Me.TabPage5.Controls.Add(Me.label_payment_edit_shipid)
         Me.TabPage5.Controls.Add(Me.combobox_payment_edit_membertype)
         Me.TabPage5.Controls.Add(Me.MaterialLabel49)
         Me.TabPage5.Controls.Add(Me.GroupBox1)
         Me.TabPage5.Controls.Add(Me.txt_payment_edit_submit)
         Me.TabPage5.Controls.Add(Me.txt_payment_edit_description)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_date)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_paid)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_due)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_entrydate)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_shipid)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_memberid)
-        Me.TabPage5.Controls.Add(Me.txt_payment_edit_paymentid)
         Me.TabPage5.Controls.Add(Me.MaterialLabel30)
         Me.TabPage5.Controls.Add(Me.MaterialLabel31)
         Me.TabPage5.Controls.Add(Me.MaterialLabel32)
@@ -1226,7 +1436,126 @@ Partial Class mainpage
         Me.TabPage5.Size = New System.Drawing.Size(822, 379)
         Me.TabPage5.TabIndex = 1
         Me.TabPage5.Text = "Edit Payment"
-        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'txt_payment_edit_date
+        '
+        Me.txt_payment_edit_date.Depth = 0
+        Me.txt_payment_edit_date.Hint = ""
+        Me.txt_payment_edit_date.Location = New System.Drawing.Point(595, 210)
+        Me.txt_payment_edit_date.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_date.Name = "txt_payment_edit_date"
+        Me.txt_payment_edit_date.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_date.SelectedText = ""
+        Me.txt_payment_edit_date.SelectionLength = 0
+        Me.txt_payment_edit_date.SelectionStart = 0
+        Me.txt_payment_edit_date.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_edit_date.TabIndex = 74
+        Me.txt_payment_edit_date.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_entrydate
+        '
+        Me.txt_payment_edit_entrydate.Depth = 0
+        Me.txt_payment_edit_entrydate.Hint = ""
+        Me.txt_payment_edit_entrydate.Location = New System.Drawing.Point(595, 172)
+        Me.txt_payment_edit_entrydate.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_entrydate.Name = "txt_payment_edit_entrydate"
+        Me.txt_payment_edit_entrydate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_entrydate.SelectedText = ""
+        Me.txt_payment_edit_entrydate.SelectionLength = 0
+        Me.txt_payment_edit_entrydate.SelectionStart = 0
+        Me.txt_payment_edit_entrydate.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_edit_entrydate.TabIndex = 73
+        Me.txt_payment_edit_entrydate.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_paid
+        '
+        Me.txt_payment_edit_paid.Depth = 0
+        Me.txt_payment_edit_paid.Hint = ""
+        Me.txt_payment_edit_paid.Location = New System.Drawing.Point(595, 132)
+        Me.txt_payment_edit_paid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_paid.Name = "txt_payment_edit_paid"
+        Me.txt_payment_edit_paid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_paid.SelectedText = ""
+        Me.txt_payment_edit_paid.SelectionLength = 0
+        Me.txt_payment_edit_paid.SelectionStart = 0
+        Me.txt_payment_edit_paid.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_edit_paid.TabIndex = 72
+        Me.txt_payment_edit_paid.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_due
+        '
+        Me.txt_payment_edit_due.Depth = 0
+        Me.txt_payment_edit_due.Hint = ""
+        Me.txt_payment_edit_due.Location = New System.Drawing.Point(595, 93)
+        Me.txt_payment_edit_due.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_due.Name = "txt_payment_edit_due"
+        Me.txt_payment_edit_due.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_due.SelectedText = ""
+        Me.txt_payment_edit_due.SelectionLength = 0
+        Me.txt_payment_edit_due.SelectionStart = 0
+        Me.txt_payment_edit_due.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_edit_due.TabIndex = 71
+        Me.txt_payment_edit_due.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_shipid
+        '
+        Me.txt_payment_edit_shipid.Depth = 0
+        Me.txt_payment_edit_shipid.Hint = ""
+        Me.txt_payment_edit_shipid.Location = New System.Drawing.Point(279, 210)
+        Me.txt_payment_edit_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_shipid.Name = "txt_payment_edit_shipid"
+        Me.txt_payment_edit_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_shipid.SelectedText = ""
+        Me.txt_payment_edit_shipid.SelectionLength = 0
+        Me.txt_payment_edit_shipid.SelectionStart = 0
+        Me.txt_payment_edit_shipid.Size = New System.Drawing.Size(75, 23)
+        Me.txt_payment_edit_shipid.TabIndex = 70
+        Me.txt_payment_edit_shipid.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_id
+        '
+        Me.txt_payment_edit_id.Depth = 0
+        Me.txt_payment_edit_id.Hint = ""
+        Me.txt_payment_edit_id.Location = New System.Drawing.Point(214, 132)
+        Me.txt_payment_edit_id.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_id.Name = "txt_payment_edit_id"
+        Me.txt_payment_edit_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_id.SelectedText = ""
+        Me.txt_payment_edit_id.SelectionLength = 0
+        Me.txt_payment_edit_id.SelectionStart = 0
+        Me.txt_payment_edit_id.Size = New System.Drawing.Size(150, 23)
+        Me.txt_payment_edit_id.TabIndex = 69
+        Me.txt_payment_edit_id.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_paymentid
+        '
+        Me.txt_payment_edit_paymentid.Depth = 0
+        Me.txt_payment_edit_paymentid.Hint = ""
+        Me.txt_payment_edit_paymentid.Location = New System.Drawing.Point(214, 93)
+        Me.txt_payment_edit_paymentid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_paymentid.Name = "txt_payment_edit_paymentid"
+        Me.txt_payment_edit_paymentid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_paymentid.SelectedText = ""
+        Me.txt_payment_edit_paymentid.SelectionLength = 0
+        Me.txt_payment_edit_paymentid.SelectionStart = 0
+        Me.txt_payment_edit_paymentid.Size = New System.Drawing.Size(150, 23)
+        Me.txt_payment_edit_paymentid.TabIndex = 68
+        Me.txt_payment_edit_paymentid.UseSystemPasswordChar = False
+        '
+        'txt_payment_edit_search
+        '
+        Me.txt_payment_edit_search.Depth = 0
+        Me.txt_payment_edit_search.Hint = ""
+        Me.txt_payment_edit_search.Location = New System.Drawing.Point(531, 51)
+        Me.txt_payment_edit_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_edit_search.Name = "txt_payment_edit_search"
+        Me.txt_payment_edit_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_edit_search.SelectedText = ""
+        Me.txt_payment_edit_search.SelectionLength = 0
+        Me.txt_payment_edit_search.SelectionStart = 0
+        Me.txt_payment_edit_search.Size = New System.Drawing.Size(99, 23)
+        Me.txt_payment_edit_search.TabIndex = 67
+        Me.txt_payment_edit_search.UseSystemPasswordChar = False
         '
         'btn_payment_edit_search
         '
@@ -1250,14 +1579,6 @@ Partial Class mainpage
         Me.Label1.TabIndex = 65
         Me.Label1.Text = ":"
         Me.Label1.Visible = False
-        '
-        'txt_payment_edit_search
-        '
-        Me.txt_payment_edit_search.Location = New System.Drawing.Point(530, 51)
-        Me.txt_payment_edit_search.Name = "txt_payment_edit_search"
-        Me.txt_payment_edit_search.Size = New System.Drawing.Size(100, 20)
-        Me.txt_payment_edit_search.TabIndex = 64
-        Me.txt_payment_edit_search.Visible = False
         '
         'label_payment_edit_shipid
         '
@@ -1363,62 +1684,6 @@ Partial Class mainpage
         Me.txt_payment_edit_description.Size = New System.Drawing.Size(151, 96)
         Me.txt_payment_edit_description.TabIndex = 54
         Me.txt_payment_edit_description.Text = ""
-        '
-        'txt_payment_edit_date
-        '
-        Me.txt_payment_edit_date.Enabled = False
-        Me.txt_payment_edit_date.Location = New System.Drawing.Point(595, 210)
-        Me.txt_payment_edit_date.Name = "txt_payment_edit_date"
-        Me.txt_payment_edit_date.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_edit_date.TabIndex = 53
-        '
-        'txt_payment_edit_paid
-        '
-        Me.txt_payment_edit_paid.Enabled = False
-        Me.txt_payment_edit_paid.Location = New System.Drawing.Point(595, 133)
-        Me.txt_payment_edit_paid.Name = "txt_payment_edit_paid"
-        Me.txt_payment_edit_paid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_edit_paid.TabIndex = 52
-        '
-        'txt_payment_edit_due
-        '
-        Me.txt_payment_edit_due.Enabled = False
-        Me.txt_payment_edit_due.Location = New System.Drawing.Point(595, 94)
-        Me.txt_payment_edit_due.Name = "txt_payment_edit_due"
-        Me.txt_payment_edit_due.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_edit_due.TabIndex = 51
-        '
-        'txt_payment_edit_entrydate
-        '
-        Me.txt_payment_edit_entrydate.Enabled = False
-        Me.txt_payment_edit_entrydate.Location = New System.Drawing.Point(595, 171)
-        Me.txt_payment_edit_entrydate.Name = "txt_payment_edit_entrydate"
-        Me.txt_payment_edit_entrydate.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_edit_entrydate.TabIndex = 50
-        '
-        'txt_payment_edit_shipid
-        '
-        Me.txt_payment_edit_shipid.Enabled = False
-        Me.txt_payment_edit_shipid.Location = New System.Drawing.Point(279, 210)
-        Me.txt_payment_edit_shipid.Name = "txt_payment_edit_shipid"
-        Me.txt_payment_edit_shipid.Size = New System.Drawing.Size(86, 20)
-        Me.txt_payment_edit_shipid.TabIndex = 49
-        '
-        'txt_payment_edit_memberid
-        '
-        Me.txt_payment_edit_memberid.Enabled = False
-        Me.txt_payment_edit_memberid.Location = New System.Drawing.Point(214, 131)
-        Me.txt_payment_edit_memberid.Name = "txt_payment_edit_memberid"
-        Me.txt_payment_edit_memberid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_edit_memberid.TabIndex = 48
-        '
-        'txt_payment_edit_paymentid
-        '
-        Me.txt_payment_edit_paymentid.Enabled = False
-        Me.txt_payment_edit_paymentid.Location = New System.Drawing.Point(214, 92)
-        Me.txt_payment_edit_paymentid.Name = "txt_payment_edit_paymentid"
-        Me.txt_payment_edit_paymentid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_edit_paymentid.TabIndex = 47
         '
         'MaterialLabel30
         '
@@ -1534,24 +1799,24 @@ Partial Class mainpage
         '
         'TabPage6
         '
-        Me.TabPage6.BackgroundImage = CType(resources.GetObject("TabPage6.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage6.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_shipid)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_paymentid)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_id)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_date)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_entrydate)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_paid)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_due)
+        Me.TabPage6.Controls.Add(Me.txt_payment_delete_search)
         Me.TabPage6.Controls.Add(Me.btn_payment_delete_search)
         Me.TabPage6.Controls.Add(Me.Label2)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_search)
         Me.TabPage6.Controls.Add(Me.label_payment_delete_shipid)
         Me.TabPage6.Controls.Add(Me.combobox_payment_delete_membertype)
         Me.TabPage6.Controls.Add(Me.MaterialLabel50)
         Me.TabPage6.Controls.Add(Me.GroupBox2)
         Me.TabPage6.Controls.Add(Me.txt_payment_delete_submit)
         Me.TabPage6.Controls.Add(Me.txt_payment_delete_description)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_date)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_paid)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_due)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_entrydate)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_shipid)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_memberid)
-        Me.TabPage6.Controls.Add(Me.txt_payment_delete_paymentid)
         Me.TabPage6.Controls.Add(Me.MaterialLabel38)
         Me.TabPage6.Controls.Add(Me.MaterialLabel39)
         Me.TabPage6.Controls.Add(Me.MaterialLabel40)
@@ -1565,7 +1830,126 @@ Partial Class mainpage
         Me.TabPage6.Size = New System.Drawing.Size(822, 379)
         Me.TabPage6.TabIndex = 2
         Me.TabPage6.Text = "Delete Payment"
-        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'txt_payment_delete_shipid
+        '
+        Me.txt_payment_delete_shipid.Depth = 0
+        Me.txt_payment_delete_shipid.Hint = ""
+        Me.txt_payment_delete_shipid.Location = New System.Drawing.Point(279, 210)
+        Me.txt_payment_delete_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_shipid.Name = "txt_payment_delete_shipid"
+        Me.txt_payment_delete_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_shipid.SelectedText = ""
+        Me.txt_payment_delete_shipid.SelectionLength = 0
+        Me.txt_payment_delete_shipid.SelectionStart = 0
+        Me.txt_payment_delete_shipid.Size = New System.Drawing.Size(85, 23)
+        Me.txt_payment_delete_shipid.TabIndex = 92
+        Me.txt_payment_delete_shipid.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_paymentid
+        '
+        Me.txt_payment_delete_paymentid.Depth = 0
+        Me.txt_payment_delete_paymentid.Hint = ""
+        Me.txt_payment_delete_paymentid.Location = New System.Drawing.Point(214, 93)
+        Me.txt_payment_delete_paymentid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_paymentid.Name = "txt_payment_delete_paymentid"
+        Me.txt_payment_delete_paymentid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_paymentid.SelectedText = ""
+        Me.txt_payment_delete_paymentid.SelectionLength = 0
+        Me.txt_payment_delete_paymentid.SelectionStart = 0
+        Me.txt_payment_delete_paymentid.Size = New System.Drawing.Size(150, 23)
+        Me.txt_payment_delete_paymentid.TabIndex = 91
+        Me.txt_payment_delete_paymentid.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_id
+        '
+        Me.txt_payment_delete_id.Depth = 0
+        Me.txt_payment_delete_id.Hint = ""
+        Me.txt_payment_delete_id.Location = New System.Drawing.Point(214, 128)
+        Me.txt_payment_delete_id.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_id.Name = "txt_payment_delete_id"
+        Me.txt_payment_delete_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_id.SelectedText = ""
+        Me.txt_payment_delete_id.SelectionLength = 0
+        Me.txt_payment_delete_id.SelectionStart = 0
+        Me.txt_payment_delete_id.Size = New System.Drawing.Size(150, 23)
+        Me.txt_payment_delete_id.TabIndex = 90
+        Me.txt_payment_delete_id.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_date
+        '
+        Me.txt_payment_delete_date.Depth = 0
+        Me.txt_payment_delete_date.Hint = ""
+        Me.txt_payment_delete_date.Location = New System.Drawing.Point(595, 210)
+        Me.txt_payment_delete_date.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_date.Name = "txt_payment_delete_date"
+        Me.txt_payment_delete_date.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_date.SelectedText = ""
+        Me.txt_payment_delete_date.SelectionLength = 0
+        Me.txt_payment_delete_date.SelectionStart = 0
+        Me.txt_payment_delete_date.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_delete_date.TabIndex = 89
+        Me.txt_payment_delete_date.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_entrydate
+        '
+        Me.txt_payment_delete_entrydate.Depth = 0
+        Me.txt_payment_delete_entrydate.Hint = ""
+        Me.txt_payment_delete_entrydate.Location = New System.Drawing.Point(595, 171)
+        Me.txt_payment_delete_entrydate.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_entrydate.Name = "txt_payment_delete_entrydate"
+        Me.txt_payment_delete_entrydate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_entrydate.SelectedText = ""
+        Me.txt_payment_delete_entrydate.SelectionLength = 0
+        Me.txt_payment_delete_entrydate.SelectionStart = 0
+        Me.txt_payment_delete_entrydate.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_delete_entrydate.TabIndex = 88
+        Me.txt_payment_delete_entrydate.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_paid
+        '
+        Me.txt_payment_delete_paid.Depth = 0
+        Me.txt_payment_delete_paid.Hint = ""
+        Me.txt_payment_delete_paid.Location = New System.Drawing.Point(595, 131)
+        Me.txt_payment_delete_paid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_paid.Name = "txt_payment_delete_paid"
+        Me.txt_payment_delete_paid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_paid.SelectedText = ""
+        Me.txt_payment_delete_paid.SelectionLength = 0
+        Me.txt_payment_delete_paid.SelectionStart = 0
+        Me.txt_payment_delete_paid.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_delete_paid.TabIndex = 87
+        Me.txt_payment_delete_paid.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_due
+        '
+        Me.txt_payment_delete_due.Depth = 0
+        Me.txt_payment_delete_due.Hint = ""
+        Me.txt_payment_delete_due.Location = New System.Drawing.Point(595, 93)
+        Me.txt_payment_delete_due.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_due.Name = "txt_payment_delete_due"
+        Me.txt_payment_delete_due.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_due.SelectedText = ""
+        Me.txt_payment_delete_due.SelectionLength = 0
+        Me.txt_payment_delete_due.SelectionStart = 0
+        Me.txt_payment_delete_due.Size = New System.Drawing.Size(151, 23)
+        Me.txt_payment_delete_due.TabIndex = 86
+        Me.txt_payment_delete_due.UseSystemPasswordChar = False
+        '
+        'txt_payment_delete_search
+        '
+        Me.txt_payment_delete_search.Depth = 0
+        Me.txt_payment_delete_search.Hint = ""
+        Me.txt_payment_delete_search.Location = New System.Drawing.Point(530, 50)
+        Me.txt_payment_delete_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_payment_delete_search.Name = "txt_payment_delete_search"
+        Me.txt_payment_delete_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_payment_delete_search.SelectedText = ""
+        Me.txt_payment_delete_search.SelectionLength = 0
+        Me.txt_payment_delete_search.SelectionStart = 0
+        Me.txt_payment_delete_search.Size = New System.Drawing.Size(100, 23)
+        Me.txt_payment_delete_search.TabIndex = 85
+        Me.txt_payment_delete_search.UseSystemPasswordChar = False
         '
         'btn_payment_delete_search
         '
@@ -1589,14 +1973,6 @@ Partial Class mainpage
         Me.Label2.TabIndex = 83
         Me.Label2.Text = ":"
         Me.Label2.Visible = False
-        '
-        'txt_payment_delete_search
-        '
-        Me.txt_payment_delete_search.Location = New System.Drawing.Point(530, 51)
-        Me.txt_payment_delete_search.Name = "txt_payment_delete_search"
-        Me.txt_payment_delete_search.Size = New System.Drawing.Size(100, 20)
-        Me.txt_payment_delete_search.TabIndex = 82
-        Me.txt_payment_delete_search.Visible = False
         '
         'label_payment_delete_shipid
         '
@@ -1702,62 +2078,6 @@ Partial Class mainpage
         Me.txt_payment_delete_description.Size = New System.Drawing.Size(151, 96)
         Me.txt_payment_delete_description.TabIndex = 76
         Me.txt_payment_delete_description.Text = ""
-        '
-        'txt_payment_delete_date
-        '
-        Me.txt_payment_delete_date.Enabled = False
-        Me.txt_payment_delete_date.Location = New System.Drawing.Point(595, 210)
-        Me.txt_payment_delete_date.Name = "txt_payment_delete_date"
-        Me.txt_payment_delete_date.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_delete_date.TabIndex = 75
-        '
-        'txt_payment_delete_paid
-        '
-        Me.txt_payment_delete_paid.Enabled = False
-        Me.txt_payment_delete_paid.Location = New System.Drawing.Point(595, 133)
-        Me.txt_payment_delete_paid.Name = "txt_payment_delete_paid"
-        Me.txt_payment_delete_paid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_delete_paid.TabIndex = 74
-        '
-        'txt_payment_delete_due
-        '
-        Me.txt_payment_delete_due.Enabled = False
-        Me.txt_payment_delete_due.Location = New System.Drawing.Point(595, 94)
-        Me.txt_payment_delete_due.Name = "txt_payment_delete_due"
-        Me.txt_payment_delete_due.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_delete_due.TabIndex = 73
-        '
-        'txt_payment_delete_entrydate
-        '
-        Me.txt_payment_delete_entrydate.Enabled = False
-        Me.txt_payment_delete_entrydate.Location = New System.Drawing.Point(595, 171)
-        Me.txt_payment_delete_entrydate.Name = "txt_payment_delete_entrydate"
-        Me.txt_payment_delete_entrydate.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_delete_entrydate.TabIndex = 72
-        '
-        'txt_payment_delete_shipid
-        '
-        Me.txt_payment_delete_shipid.Enabled = False
-        Me.txt_payment_delete_shipid.Location = New System.Drawing.Point(279, 210)
-        Me.txt_payment_delete_shipid.Name = "txt_payment_delete_shipid"
-        Me.txt_payment_delete_shipid.Size = New System.Drawing.Size(86, 20)
-        Me.txt_payment_delete_shipid.TabIndex = 71
-        '
-        'txt_payment_delete_memberid
-        '
-        Me.txt_payment_delete_memberid.Enabled = False
-        Me.txt_payment_delete_memberid.Location = New System.Drawing.Point(214, 131)
-        Me.txt_payment_delete_memberid.Name = "txt_payment_delete_memberid"
-        Me.txt_payment_delete_memberid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_delete_memberid.TabIndex = 70
-        '
-        'txt_payment_delete_paymentid
-        '
-        Me.txt_payment_delete_paymentid.Enabled = False
-        Me.txt_payment_delete_paymentid.Location = New System.Drawing.Point(214, 92)
-        Me.txt_payment_delete_paymentid.Name = "txt_payment_delete_paymentid"
-        Me.txt_payment_delete_paymentid.Size = New System.Drawing.Size(151, 20)
-        Me.txt_payment_delete_paymentid.TabIndex = 69
         '
         'MaterialLabel38
         '
@@ -1898,8 +2218,8 @@ Partial Class mainpage
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        Me.txt_update_id.ResumeLayout(False)
-        Me.txt_update_id.PerformLayout()
+        Me.tabpgae.ResumeLayout(False)
+        Me.tabpgae.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.MaterialTabControl2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
@@ -1919,7 +2239,7 @@ Partial Class mainpage
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents MaterialTabSelector1 As MaterialSkin.Controls.MaterialTabSelector
-    Friend WithEvents txt_update_id As System.Windows.Forms.TabPage
+    Friend WithEvents tabpgae As System.Windows.Forms.TabPage
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents MaterialLabel6 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
@@ -1927,17 +2247,7 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel3 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_add_id As System.Windows.Forms.TextBox
-    Friend WithEvents txt_add_email As System.Windows.Forms.TextBox
-    Friend WithEvents txt_add_cont As System.Windows.Forms.TextBox
-    Friend WithEvents txt_add_lastname As System.Windows.Forms.TextBox
-    Friend WithEvents txt_add_firstname As System.Windows.Forms.TextBox
     Friend WithEvents Add As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents txt_remove_email As System.Windows.Forms.TextBox
-    Friend WithEvents txt_remove_cont As System.Windows.Forms.TextBox
-    Friend WithEvents text_remove_lastname As System.Windows.Forms.TextBox
-    Friend WithEvents txt_remove_firstname As System.Windows.Forms.TextBox
-    Friend WithEvents txt_remove_id As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel8 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel9 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel11 As MaterialSkin.Controls.MaterialLabel
@@ -1954,11 +2264,6 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel10 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents btn_update As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_update_search As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents txt_update_email As System.Windows.Forms.TextBox
-    Friend WithEvents txt_update_cont As System.Windows.Forms.TextBox
-    Friend WithEvents txt_update_lastname As System.Windows.Forms.TextBox
-    Friend WithEvents txt_update_firstname As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel14 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel15 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel17 As MaterialSkin.Controls.MaterialLabel
@@ -1966,7 +2271,6 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel19 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents combobox_update_search As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel20 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_add_shipid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel29 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialTabControl2 As MaterialSkin.Controls.MaterialTabControl
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
@@ -1974,13 +2278,6 @@ Partial Class mainpage
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
     Friend WithEvents txt_payment_submit As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents txt_payment_submit_description As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_payment_submit_date As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_submit_paid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_submit_due As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_submit_entrydate As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_submit_shipid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_submit_memberid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_submit_paymentid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel28 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel27 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel26 As MaterialSkin.Controls.MaterialLabel
@@ -1995,12 +2292,6 @@ Partial Class mainpage
     Friend WithEvents radio_edit_paymentid As System.Windows.Forms.RadioButton
     Friend WithEvents txt_payment_edit_submit As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents txt_payment_edit_description As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_payment_edit_paid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_edit_due As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_edit_entrydate As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_edit_shipid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_edit_memberid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_edit_paymentid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel30 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel31 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel32 As MaterialSkin.Controls.MaterialLabel
@@ -2016,13 +2307,6 @@ Partial Class mainpage
     Friend WithEvents radio_delete_membershipid As System.Windows.Forms.RadioButton
     Friend WithEvents txt_payment_delete_submit As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents txt_payment_delete_description As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_payment_delete_date As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_delete_paid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_delete_due As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_delete_entrydate As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_delete_shipid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_delete_memberid As System.Windows.Forms.TextBox
-    Friend WithEvents txt_payment_delete_paymentid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel38 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel39 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel40 As MaterialSkin.Controls.MaterialLabel
@@ -2031,16 +2315,11 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel43 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel44 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel45 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_payment_edit_date As System.Windows.Forms.TextBox
     Friend WithEvents combobox_payment_submit_membertype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel46 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_remove_search As System.Windows.Forms.TextBox
     Friend WithEvents label_remove_search As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_remove_shipid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel47 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_update_shipid As System.Windows.Forms.TextBox
     Friend WithEvents MaterialLabel48 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents txt_update_search As System.Windows.Forms.TextBox
     Friend WithEvents label_update_search As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_add_shipid As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_remove_shipid As MaterialSkin.Controls.MaterialLabel
@@ -2053,9 +2332,50 @@ Partial Class mainpage
     Friend WithEvents label_payment_edit_shipid As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_payment_delete_shipid As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txt_payment_edit_search As System.Windows.Forms.TextBox
     Friend WithEvents btn_payment_edit_search As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_payment_delete_search As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txt_payment_delete_search As System.Windows.Forms.TextBox
+    Friend WithEvents txt_add_firstname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_add_id As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_add_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_add_email As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_add_cont As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_add_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_id As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_search As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_cont As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents text_remove_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_firstname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_email As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_search As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_email As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_cont As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_firstname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_update_id As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_date As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_entrydate As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_paid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_due As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_memberid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_submit_paymentid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_paymentid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_search As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_date As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_entrydate As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_paid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_due As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_edit_id As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_paymentid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_id As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_date As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_entrydate As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_paid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_due As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_payment_delete_search As MaterialSkin.Controls.MaterialSingleLineTextField
 End Class

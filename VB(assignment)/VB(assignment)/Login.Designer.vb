@@ -22,12 +22,11 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
+        Me.username = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.password = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SuspendLayout()
         '
         'MaterialFlatButton1
@@ -45,22 +44,6 @@ Partial Class login
         Me.MaterialFlatButton1.TabIndex = 0
         Me.MaterialFlatButton1.Text = "Login"
         Me.MaterialFlatButton1.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.TextBox1.Location = New System.Drawing.Point(54, 103)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1.TabIndex = 3
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.TextBox2.Location = New System.Drawing.Point(54, 150)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox2.TabIndex = 4
         '
         'MaterialLabel1
         '
@@ -88,21 +71,54 @@ Partial Class login
         Me.MaterialLabel2.TabIndex = 6
         Me.MaterialLabel2.Text = "Password"
         '
+        'username
+        '
+        Me.username.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.username.Depth = 0
+        Me.username.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.username.Hint = ""
+        Me.username.Location = New System.Drawing.Point(54, 103)
+        Me.username.MouseState = MaterialSkin.MouseState.HOVER
+        Me.username.Name = "username"
+        Me.username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.username.SelectedText = ""
+        Me.username.SelectionLength = 0
+        Me.username.SelectionStart = 0
+        Me.username.Size = New System.Drawing.Size(160, 23)
+        Me.username.TabIndex = 7
+        Me.username.UseSystemPasswordChar = False
+        '
+        'password
+        '
+        Me.password.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.password.Depth = 0
+        Me.password.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.password.Hint = ""
+        Me.password.Location = New System.Drawing.Point(54, 152)
+        Me.password.MouseState = MaterialSkin.MouseState.HOVER
+        Me.password.Name = "password"
+        Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.password.SelectedText = ""
+        Me.password.SelectionLength = 0
+        Me.password.SelectionStart = 0
+        Me.password.Size = New System.Drawing.Size(160, 23)
+        Me.password.TabIndex = 8
+        Me.password.UseSystemPasswordChar = False
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(267, 296)
+        Me.Controls.Add(Me.password)
+        Me.Controls.Add(Me.username)
         Me.Controls.Add(Me.MaterialLabel2)
         Me.Controls.Add(Me.MaterialLabel1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.MaterialFlatButton1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.ForeColor = System.Drawing.SystemColors.Control
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "login"
@@ -113,10 +129,10 @@ Partial Class login
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents username As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents password As MaterialSkin.Controls.MaterialSingleLineTextField
 
 End Class
