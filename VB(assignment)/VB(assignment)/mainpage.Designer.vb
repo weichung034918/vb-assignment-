@@ -2210,7 +2210,6 @@ Partial Class mainpage
         Me.ClientSize = New System.Drawing.Size(835, 583)
         Me.Controls.Add(Me.MaterialTabSelector1)
         Me.Controls.Add(Me.MaterialTabControl1)
-        Me.Enabled = False
         Me.Name = "mainpage"
         Me.Text = "Main Page"
         Me.MaterialTabControl1.ResumeLayout(False)
