@@ -73,10 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connect.Designer.vb">
-      <DependentUpon>Connect.vb</DependentUpon>
+    <Compile Include="Initialise.Designer.vb">
+      <DependentUpon>Initialise.vb</DependentUpon>
     </Compile>
-    <Compile Include="Connect.vb">
+    <Compile Include="Initialise.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login.vb">
@@ -109,8 +109,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Connect.resx">
-      <DependentUpon>Connect.vb</DependentUpon>
+    <EmbeddedResource Include="Initialise.resx">
+      <DependentUpon>Initialise.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
@@ -141,8 +141,8 @@
   <ItemGroup>
     <COMReference Include="ADOX">
       <Guid>{00000600-0000-0010-8000-00AA006D2EA4}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
