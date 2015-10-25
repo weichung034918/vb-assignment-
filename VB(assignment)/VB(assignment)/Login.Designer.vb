@@ -111,7 +111,7 @@ Partial Class login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(267, 296)
+        Me.ClientSize = New System.Drawing.Size(271, 263)
         Me.Controls.Add(Me.password)
         Me.Controls.Add(Me.username)
         Me.Controls.Add(Me.MaterialLabel2)
