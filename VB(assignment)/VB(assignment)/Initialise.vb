@@ -8,10 +8,6 @@ Public Class Initialise
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
     Dim con As New OleDbConnection
-    Dim da As OleDbDataAdapter
-    Dim ds As New DataSet
-    Dim totrec As Integer
-    Dim currec As Integer
     Dim cmd As New OleDbCommand
     Dim sql As String
 
@@ -68,8 +64,6 @@ Public Class Initialise
             MessageBox.Show("Cannot connect to database!", "Database Error")
         End Try
 
-        'Dim dbSchema As DataTable = con.GetOleDbSchemaTable(OleDb.OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, "Admin", "TABLE"})
-
         Call create_table()
 
         con.Close()
@@ -121,14 +115,7 @@ Public Class Initialise
         add_element()
     End Sub
     Public Sub create_table()
-        cmd = New OleDbCommand("CREATE TABLE [Admin] ([ID] COUNTER PRIMARY KEY, [Username] MEMO, [Password] MEMO)", con)
-        Try
-            cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        
-        cmd = New OleDbCommand("CREATE TABLE [Staffs] ([ID] COUNTER PRIMARY KEY, [Username] MEMO, [Password] MEMO)", con)
+        cmd = New OleDbCommand("CREATE TABLE [Admin] ([Username] TEXT PRIMARY KEY, [Password] MEMO, [Permission] TEXT)", con)
         Try
             cmd.ExecuteNonQuery()
         Catch ex As Exception
@@ -178,6 +165,7 @@ Public Class Initialise
             MessageBox.Show("Password must be at least 6 characters", "Password")
             field_pwd.Text = Nothing
             field_conpwd.Text = Nothing
+            Return
         End If
 
         If field_pwd.Text <> field_conpwd.Text Then
@@ -188,8 +176,20 @@ Public Class Initialise
         End If
 
         con.Open()
+        sql = "insert into Admin values ('" + field_uname.Text + "', '" + field_pwd.Text + "', 'Admin')"
+        MessageBox.Show("You are inserting [" + sql + "] into the database", "Debug purpose") 'for debug purpose, will delete
+        cmd = New OleDbCommand(sql, con)
+        Try
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Administrator account has been created.", "Successful")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return
+        End Try
+        con.Close()
 
-
+        login.Show()
+        Me.Close()
 
     End Sub
 

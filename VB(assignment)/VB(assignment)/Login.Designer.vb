@@ -22,28 +22,28 @@ Partial Class login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MaterialFlatButton1 = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.login_btn = New MaterialSkin.Controls.MaterialFlatButton()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
-        Me.username = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.password = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.field_username = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.field_pwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SuspendLayout()
         '
-        'MaterialFlatButton1
+        'login_btn
         '
-        Me.MaterialFlatButton1.AutoSize = True
-        Me.MaterialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.MaterialFlatButton1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.MaterialFlatButton1.Depth = 0
-        Me.MaterialFlatButton1.Location = New System.Drawing.Point(106, 179)
-        Me.MaterialFlatButton1.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.MaterialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialFlatButton1.Name = "MaterialFlatButton1"
-        Me.MaterialFlatButton1.Primary = False
-        Me.MaterialFlatButton1.Size = New System.Drawing.Size(52, 36)
-        Me.MaterialFlatButton1.TabIndex = 0
-        Me.MaterialFlatButton1.Text = "Login"
-        Me.MaterialFlatButton1.UseVisualStyleBackColor = True
+        Me.login_btn.AutoSize = True
+        Me.login_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.login_btn.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.login_btn.Depth = 0
+        Me.login_btn.Location = New System.Drawing.Point(106, 179)
+        Me.login_btn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.login_btn.MouseState = MaterialSkin.MouseState.HOVER
+        Me.login_btn.Name = "login_btn"
+        Me.login_btn.Primary = False
+        Me.login_btn.Size = New System.Drawing.Size(52, 36)
+        Me.login_btn.TabIndex = 0
+        Me.login_btn.Text = "Login"
+        Me.login_btn.UseVisualStyleBackColor = True
         '
         'MaterialLabel1
         '
@@ -71,39 +71,39 @@ Partial Class login
         Me.MaterialLabel2.TabIndex = 6
         Me.MaterialLabel2.Text = "Password"
         '
-        'username
+        'field_username
         '
-        Me.username.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.username.Depth = 0
-        Me.username.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.username.Hint = ""
-        Me.username.Location = New System.Drawing.Point(54, 103)
-        Me.username.MouseState = MaterialSkin.MouseState.HOVER
-        Me.username.Name = "username"
-        Me.username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.username.SelectedText = ""
-        Me.username.SelectionLength = 0
-        Me.username.SelectionStart = 0
-        Me.username.Size = New System.Drawing.Size(160, 23)
-        Me.username.TabIndex = 7
-        Me.username.UseSystemPasswordChar = False
+        Me.field_username.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.field_username.Depth = 0
+        Me.field_username.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.field_username.Hint = ""
+        Me.field_username.Location = New System.Drawing.Point(54, 103)
+        Me.field_username.MouseState = MaterialSkin.MouseState.HOVER
+        Me.field_username.Name = "field_username"
+        Me.field_username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.field_username.SelectedText = ""
+        Me.field_username.SelectionLength = 0
+        Me.field_username.SelectionStart = 0
+        Me.field_username.Size = New System.Drawing.Size(160, 23)
+        Me.field_username.TabIndex = 7
+        Me.field_username.UseSystemPasswordChar = False
         '
-        'password
+        'field_pwd
         '
-        Me.password.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.password.Depth = 0
-        Me.password.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.password.Hint = ""
-        Me.password.Location = New System.Drawing.Point(54, 152)
-        Me.password.MouseState = MaterialSkin.MouseState.HOVER
-        Me.password.Name = "password"
-        Me.password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.password.SelectedText = ""
-        Me.password.SelectionLength = 0
-        Me.password.SelectionStart = 0
-        Me.password.Size = New System.Drawing.Size(160, 23)
-        Me.password.TabIndex = 8
-        Me.password.UseSystemPasswordChar = False
+        Me.field_pwd.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.field_pwd.Depth = 0
+        Me.field_pwd.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.field_pwd.Hint = ""
+        Me.field_pwd.Location = New System.Drawing.Point(54, 152)
+        Me.field_pwd.MouseState = MaterialSkin.MouseState.HOVER
+        Me.field_pwd.Name = "field_pwd"
+        Me.field_pwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.field_pwd.SelectedText = ""
+        Me.field_pwd.SelectionLength = 0
+        Me.field_pwd.SelectionStart = 0
+        Me.field_pwd.Size = New System.Drawing.Size(160, 23)
+        Me.field_pwd.TabIndex = 8
+        Me.field_pwd.UseSystemPasswordChar = False
         '
         'login
         '
@@ -112,11 +112,11 @@ Partial Class login
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(271, 263)
-        Me.Controls.Add(Me.password)
-        Me.Controls.Add(Me.username)
+        Me.Controls.Add(Me.field_pwd)
+        Me.Controls.Add(Me.field_username)
         Me.Controls.Add(Me.MaterialLabel2)
         Me.Controls.Add(Me.MaterialLabel1)
-        Me.Controls.Add(Me.MaterialFlatButton1)
+        Me.Controls.Add(Me.login_btn)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.MaximizeBox = False
@@ -129,10 +129,10 @@ Partial Class login
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MaterialFlatButton1 As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents login_btn As MaterialSkin.Controls.MaterialFlatButton
     Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel2 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents username As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents password As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents field_username As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents field_pwd As MaterialSkin.Controls.MaterialSingleLineTextField
 
 End Class
