@@ -12,6 +12,7 @@ Public Class mainpage
 
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
+
     End Class
 
     
@@ -91,19 +92,24 @@ Public Class mainpage
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
         If String.IsNullOrEmpty(txt_add_id.Text) Then
             MsgBox("Please enter member ID")
+            Return
         ElseIf String.IsNullOrEmpty(txt_add_firstname.Text) Then
             MsgBox("Please enter first name")
+            Return
         ElseIf String.IsNullOrEmpty(txt_add_lastname.Text) Then
             MsgBox("Please enter last name")
+            Return
         ElseIf String.IsNullOrEmpty(combobox_add_membertype.Text) Then
             MsgBox("Please select member type")
+            Return
         ElseIf String.IsNullOrEmpty(txt_add_shipid.Text) Then
             MsgBox("Please insert Membership ID ")
-        Else
-            'INSERT FUNCTION TO ADD HERE
-            MsgBox("Member Added!")
+            Return
         End If
 
+
+            'INSERT FUNCTION TO ADD HERE
+            MsgBox("Member Added!")
     End Sub
 
 
@@ -230,9 +236,28 @@ Public Class mainpage
 
     End Sub
 
-    Private Sub txt_add_id_Click(sender As Object, e As EventArgs) Handles txt_add_id.Click
+    Private Sub txt_add_id_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_id.KeyPress
+        If Char.IsDigit(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then 'lock the goddamn anything except controls and numbers
+            e.Handled = True
+        End If
+            
+
 
     End Sub
+
+    Private Sub txt_add_id_TextChanged(sender As Object, e As EventArgs) Handles txt_add_id.TextChanged
+        If txt_add_id.TextLength > 10 Then
+            MessageBox.Show("Member ID must be less than 10 numbers.", "Member ID")
+        End If
+        Dim strPaste As String = txt_add_id.Text
+        For i = 0 To txt_add_id.TextLength - 1 'loop for checking each position (array position) of your string
+            If Char.IsLetter(strPaste.Chars(i)) Then 'check if that thing you pasted contains letters or not
+                txt_add_id.Text = Nothing
+                MessageBox.Show("Member ID must only consist of numerical values.", "Member ID") 'goddamn looped x times if your string pasted length is x long, need fix
+            End If
+        Next
+    End Sub
+
 End Class
 
 
