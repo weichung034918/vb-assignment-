@@ -231,7 +231,8 @@ Partial Class mainpage
         Me.txt_add_email.SelectionLength = 0
         Me.txt_add_email.SelectionStart = 0
         Me.txt_add_email.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_email.TabIndex = 22
+        Me.txt_add_email.TabIndex = 7
+        Me.txt_add_email.TabStop = False
         Me.txt_add_email.UseSystemPasswordChar = False
         '
         'txt_add_cont
@@ -246,7 +247,8 @@ Partial Class mainpage
         Me.txt_add_cont.SelectionLength = 0
         Me.txt_add_cont.SelectionStart = 0
         Me.txt_add_cont.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_cont.TabIndex = 21
+        Me.txt_add_cont.TabIndex = 6
+        Me.txt_add_cont.TabStop = False
         Me.txt_add_cont.UseSystemPasswordChar = False
         '
         'txt_add_shipid
@@ -261,7 +263,8 @@ Partial Class mainpage
         Me.txt_add_shipid.SelectionLength = 0
         Me.txt_add_shipid.SelectionStart = 0
         Me.txt_add_shipid.Size = New System.Drawing.Size(86, 23)
-        Me.txt_add_shipid.TabIndex = 20
+        Me.txt_add_shipid.TabIndex = 5
+        Me.txt_add_shipid.TabStop = False
         Me.txt_add_shipid.UseSystemPasswordChar = False
         '
         'txt_add_lastname
@@ -276,7 +279,8 @@ Partial Class mainpage
         Me.txt_add_lastname.SelectionLength = 0
         Me.txt_add_lastname.SelectionStart = 0
         Me.txt_add_lastname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_lastname.TabIndex = 19
+        Me.txt_add_lastname.TabIndex = 3
+        Me.txt_add_lastname.TabStop = False
         Me.txt_add_lastname.UseSystemPasswordChar = False
         '
         'txt_add_firstname
@@ -291,7 +295,8 @@ Partial Class mainpage
         Me.txt_add_firstname.SelectionLength = 0
         Me.txt_add_firstname.SelectionStart = 0
         Me.txt_add_firstname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_firstname.TabIndex = 18
+        Me.txt_add_firstname.TabIndex = 2
+        Me.txt_add_firstname.TabStop = False
         Me.txt_add_firstname.UseSystemPasswordChar = False
         '
         'txt_add_id
@@ -306,7 +311,8 @@ Partial Class mainpage
         Me.txt_add_id.SelectionLength = 0
         Me.txt_add_id.SelectionStart = 0
         Me.txt_add_id.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_id.TabIndex = 17
+        Me.txt_add_id.TabIndex = 1
+        Me.txt_add_id.TabStop = False
         Me.txt_add_id.UseSystemPasswordChar = False
         '
         'label_add_shipid
@@ -342,7 +348,8 @@ Partial Class mainpage
         Me.combobox_add_membertype.Location = New System.Drawing.Point(504, 185)
         Me.combobox_add_membertype.Name = "combobox_add_membertype"
         Me.combobox_add_membertype.Size = New System.Drawing.Size(141, 21)
-        Me.combobox_add_membertype.TabIndex = 13
+        Me.combobox_add_membertype.TabIndex = 4
+        Me.combobox_add_membertype.TabStop = False
         '
         'Add
         '
