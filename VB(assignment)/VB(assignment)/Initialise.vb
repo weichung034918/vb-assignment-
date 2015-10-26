@@ -69,13 +69,6 @@ Public Class Initialise
         End Try
 
         'Dim dbSchema As DataTable = con.GetOleDbSchemaTable(OleDb.OleDbSchemaGuid.Tables, New Object() {Nothing, Nothing, "Admin", "TABLE"})
-        cmd = New OleDbCommand("CREATE TABLE [Admin] ([ID] COUNTER PRIMARY KEY, [Username] MEMO, " +
-                               "[Password] MEMO, [First_Name] MEMO, [Last_Name] MEMO, [Contact_Number] INT)", con)
-        Try
-            cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
 
         Call create_table()
 
@@ -129,29 +122,46 @@ Public Class Initialise
     End Sub
     Public Sub create_table()
         cmd = New OleDbCommand("CREATE TABLE [Admin] ([ID] COUNTER PRIMARY KEY, [Username] MEMO, [Password] MEMO)", con)
-        cmd.ExecuteNonQuery()
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
         
-
         cmd = New OleDbCommand("CREATE TABLE [Staffs] ([ID] COUNTER PRIMARY KEY, [Username] MEMO, [Password] MEMO)", con)
-        cmd.ExecuteNonQuery()
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
         cmd = New OleDbCommand("CREATE TABLE [Membership] ([MSHIP_ID] TEXT(10) PRIMARY KEY, [Member_Type] MEMO, " +
                                "[Reg_Fee] DECIMAL(10,2), [Monthly_Fee] DECIMAL(10,2))", con)
-        cmd.ExecuteNonQuery()
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
         cmd = New OleDbCommand("CREATE TABLE [Members] ([MID] TEXT(10) PRIMARY KEY, [First_Name] MEMO, [Last_Name] MEMO, " +
-                               "[MSHIP_ID] TEXT(10) FOREIGN KEY REFERENCES Membership(MSHIP_ID), [Contact_Number] INT, " +
-                               "[Email] TEXT(30), [Status] TEXT(30))", con)
-        cmd.ExecuteNonQuery()
+                               "[MSHIP_ID] TEXT(10), [Contact_Number] INT, [Email] TEXT(30), [Status] TEXT(30), " +
+                               "CONSTRAINT FKMembersMSHIP_ID FOREIGN KEY (MSHIP_ID) REFERENCES Membership(MSHIP_ID) ON UPDATE CASCADE ON DELETE CASCADE)", con)
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
         
-        cmd = New OleDbCommand("CREATE TABLE [Payment] ([PID] INT PRIMARY KEY, [MID] TEXT(10) FOREIGN KEY REFERENCES Members(MID), " +
-                               "[MSHIP_ID] TEXT(10) FOREIGN KEY REFERENCES Membership(MSHIP_ID))", con)
-        cmd.ExecuteNonQuery()
-        'Try
-        '    cmd.ExecuteNonQuery()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'End Try
+        cmd = New OleDbCommand("CREATE TABLE [Payment] ([PID] INT PRIMARY KEY, " +
+                               "[MID] TEXT(10), CONSTRAINT FKPaymentMID FOREIGN KEY (MID) REFERENCES Members(MID) ON UPDATE CASCADE ON DELETE CASCADE, " +
+                               "[MSHIP_ID] TEXT(10), CONSTRAINT FKPaymentMSHIP_ID FOREIGN KEY (MSHIP_ID) REFERENCES Membership(MSHIP_ID) ON UPDATE CASCADE ON DELETE CASCADE, " +
+                               "[Date_of_Entry] TEXT, [Logged_by] TEXT, [DESC] MEMO, [Amount_Due] DECIMAL(10,2), [Payment_Date] TEXT)", con)
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub next_btn_Click(sender As Object, e As EventArgs) Handles next_btn.Click
