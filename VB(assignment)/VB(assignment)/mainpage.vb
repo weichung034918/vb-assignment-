@@ -1,7 +1,14 @@
 ﻿Imports MaterialSkin
+Imports System.Data.OleDb
 
 Public Class mainpage
-
+    Dim dirdb As String = Application.StartupPath + "\database.mdb"
+    Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
+    Dim da As OleDbDataAdapter
+    Dim dt As DataTable
+    Dim con As New OleDbConnection
+    Dim cmd As New OleDbCommand
+    Dim sql As String
 
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
@@ -15,7 +22,28 @@ Public Class mainpage
         skinmanager.AddFormToManage(Me)
         skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
         skinmanager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepPurple100, TextShade.WHITE)
-
+        Try
+            con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
+                    "Data Source=" & dirdb)
+            con.Open()
+        Catch
+            Try
+                con = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dirdb2)
+                con.Open()
+            Catch
+                Try
+                    con = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.14.0;Data Source=" + dirdb2)
+                    con.Open()
+                Catch
+                    Try
+                        con = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.15.0;Data Source=" + dirdb2)
+                        con.Open()
+                    Catch ex As Exception
+                        MessageBox.Show("Cannot connect to database!", "Database Error")
+                    End Try
+                End Try
+            End Try
+        End Try
 
     End Sub
 
@@ -202,7 +230,9 @@ Public Class mainpage
 
     End Sub
 
-    
+    Private Sub txt_add_id_Click(sender As Object, e As EventArgs) Handles txt_add_id.Click
+
+    End Sub
 End Class
 
 

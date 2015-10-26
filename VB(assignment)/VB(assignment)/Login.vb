@@ -6,10 +6,7 @@ Public Class login
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
     Dim da As OleDbDataAdapter
     Dim dt As DataTable
-    Dim ds As New DataSet
     Dim con As New OleDbConnection
-    Dim totrec As Integer
-    Dim currec As Integer
     Dim cmd As New OleDbCommand
     Dim sql As String
 
@@ -23,6 +20,7 @@ Public Class login
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
         SkinManager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepOrange700, TextShade.WHITE)
+        field_pwd.PasswordChar = "•"
 
         Try
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
@@ -46,7 +44,7 @@ Public Class login
                 End Try
             End Try
         End Try 'a simple misusage of try...catch as exception, but very fun to use and easy to use lol
-
+        
 
     End Sub
 
@@ -55,16 +53,22 @@ Public Class login
         Dim uname As String = field_username.Text
         Dim pwd As String = field_pwd.Text
 
-        sql = "select Username, Password from Admin where Username='" + uname + "' and Password='" + pwd + "'"
+        sql = "select Username, Password, Permission from Admin where Username='" + uname + "' and Password='" + pwd + "'"
         da = New OleDbDataAdapter(sql, con)
         dt = New DataTable
         da.Fill(dt)
-        If dt.Rows.Count > 0 Then
-            MessageBox.Show("Login successful")
+        If dt.Rows.Count > 0 Then 'this is one of the simple ways to detect the presence of the account, curi ayam style
+            Dim per As String = dt.Rows(0).Item(2)
+            Dim name As String = dt.Rows(0).Item(0)
+            MessageBox.Show("You're logged as: " + name + Environment.NewLine + "Permission: " + per, "Login Successful")
         Else
-            MessageBox.Show("Invalid user")
+            MessageBox.Show("Username or password not match.", "Login Failed")
+            field_username.Text = Nothing
+            field_pwd.Text = Nothing
             Return
         End If
+
+        con.Close()
 
         mainpage.Show()
         Me.Close()

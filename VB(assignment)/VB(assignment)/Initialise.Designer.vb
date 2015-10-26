@@ -44,7 +44,7 @@ Partial Class Initialise
         Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel1.Name = "MaterialLabel1"
         Me.MaterialLabel1.Size = New System.Drawing.Size(108, 19)
-        Me.MaterialLabel1.TabIndex = 2
+        Me.MaterialLabel1.TabIndex = 0
         Me.MaterialLabel1.Text = "MaterialLabel1"
         '
         'mdb_btn
@@ -56,7 +56,7 @@ Partial Class Initialise
         Me.mdb_btn.Name = "mdb_btn"
         Me.mdb_btn.Primary = True
         Me.mdb_btn.Size = New System.Drawing.Size(193, 35)
-        Me.mdb_btn.TabIndex = 3
+        Me.mdb_btn.TabIndex = 0
         Me.mdb_btn.Text = "Create MDB Database"
         Me.mdb_btn.UseVisualStyleBackColor = True
         '
@@ -69,7 +69,7 @@ Partial Class Initialise
         Me.accdb_btn.Name = "accdb_btn"
         Me.accdb_btn.Primary = True
         Me.accdb_btn.Size = New System.Drawing.Size(193, 33)
-        Me.accdb_btn.TabIndex = 4
+        Me.accdb_btn.TabIndex = 0
         Me.accdb_btn.Text = "Create ACCDB Database"
         Me.accdb_btn.UseVisualStyleBackColor = True
         '
@@ -83,7 +83,7 @@ Partial Class Initialise
         Me.label_uname.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_uname.Name = "label_uname"
         Me.label_uname.Size = New System.Drawing.Size(81, 19)
-        Me.label_uname.TabIndex = 5
+        Me.label_uname.TabIndex = 0
         Me.label_uname.Text = "Username:"
         '
         'label_pwd
@@ -96,7 +96,7 @@ Partial Class Initialise
         Me.label_pwd.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_pwd.Name = "label_pwd"
         Me.label_pwd.Size = New System.Drawing.Size(79, 19)
-        Me.label_pwd.TabIndex = 6
+        Me.label_pwd.TabIndex = 0
         Me.label_pwd.Text = "Password:"
         '
         'label_conpwd
@@ -109,7 +109,7 @@ Partial Class Initialise
         Me.label_conpwd.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_conpwd.Name = "label_conpwd"
         Me.label_conpwd.Size = New System.Drawing.Size(137, 19)
-        Me.label_conpwd.TabIndex = 7
+        Me.label_conpwd.TabIndex = 0
         Me.label_conpwd.Text = "Confirm Password:"
         '
         'field_uname
@@ -124,7 +124,8 @@ Partial Class Initialise
         Me.field_uname.SelectionLength = 0
         Me.field_uname.SelectionStart = 0
         Me.field_uname.Size = New System.Drawing.Size(75, 23)
-        Me.field_uname.TabIndex = 8
+        Me.field_uname.TabIndex = 1
+        Me.field_uname.TabStop = False
         Me.field_uname.UseSystemPasswordChar = False
         '
         'field_pwd
@@ -139,7 +140,8 @@ Partial Class Initialise
         Me.field_pwd.SelectionLength = 0
         Me.field_pwd.SelectionStart = 0
         Me.field_pwd.Size = New System.Drawing.Size(75, 23)
-        Me.field_pwd.TabIndex = 9
+        Me.field_pwd.TabIndex = 2
+        Me.field_pwd.TabStop = False
         Me.field_pwd.UseSystemPasswordChar = False
         '
         'field_conpwd
@@ -154,7 +156,8 @@ Partial Class Initialise
         Me.field_conpwd.SelectionLength = 0
         Me.field_conpwd.SelectionStart = 0
         Me.field_conpwd.Size = New System.Drawing.Size(75, 23)
-        Me.field_conpwd.TabIndex = 10
+        Me.field_conpwd.TabIndex = 3
+        Me.field_conpwd.TabStop = False
         Me.field_conpwd.UseSystemPasswordChar = False
         '
         'next_btn
@@ -165,7 +168,7 @@ Partial Class Initialise
         Me.next_btn.Name = "next_btn"
         Me.next_btn.Primary = True
         Me.next_btn.Size = New System.Drawing.Size(75, 23)
-        Me.next_btn.TabIndex = 11
+        Me.next_btn.TabIndex = 0
         Me.next_btn.Text = "Next"
         Me.next_btn.UseVisualStyleBackColor = True
         '

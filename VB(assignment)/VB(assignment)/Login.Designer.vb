@@ -41,7 +41,7 @@ Partial Class login
         Me.login_btn.Name = "login_btn"
         Me.login_btn.Primary = False
         Me.login_btn.Size = New System.Drawing.Size(52, 36)
-        Me.login_btn.TabIndex = 0
+        Me.login_btn.TabIndex = 3
         Me.login_btn.Text = "Login"
         Me.login_btn.UseVisualStyleBackColor = True
         '
@@ -55,7 +55,7 @@ Partial Class login
         Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel1.Name = "MaterialLabel1"
         Me.MaterialLabel1.Size = New System.Drawing.Size(77, 19)
-        Me.MaterialLabel1.TabIndex = 5
+        Me.MaterialLabel1.TabIndex = 1
         Me.MaterialLabel1.Text = "Username"
         '
         'MaterialLabel2
@@ -68,7 +68,7 @@ Partial Class login
         Me.MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel2.Name = "MaterialLabel2"
         Me.MaterialLabel2.Size = New System.Drawing.Size(75, 19)
-        Me.MaterialLabel2.TabIndex = 6
+        Me.MaterialLabel2.TabIndex = 2
         Me.MaterialLabel2.Text = "Password"
         '
         'field_username
@@ -85,7 +85,8 @@ Partial Class login
         Me.field_username.SelectionLength = 0
         Me.field_username.SelectionStart = 0
         Me.field_username.Size = New System.Drawing.Size(160, 23)
-        Me.field_username.TabIndex = 7
+        Me.field_username.TabIndex = 1
+        Me.field_username.TabStop = False
         Me.field_username.UseSystemPasswordChar = False
         '
         'field_pwd
@@ -102,7 +103,8 @@ Partial Class login
         Me.field_pwd.SelectionLength = 0
         Me.field_pwd.SelectionStart = 0
         Me.field_pwd.Size = New System.Drawing.Size(160, 23)
-        Me.field_pwd.TabIndex = 8
+        Me.field_pwd.TabIndex = 2
+        Me.field_pwd.TabStop = False
         Me.field_pwd.UseSystemPasswordChar = False
         '
         'login
