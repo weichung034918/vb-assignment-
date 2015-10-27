@@ -165,6 +165,9 @@ Partial Class mainpage
         Me.MaterialLabel44 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel45 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
+        Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
+        Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Test2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -176,6 +179,7 @@ Partial Class mainpage
         Me.GroupBox1.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.MaterialContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MaterialTabControl1
@@ -2209,12 +2213,34 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 1
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
+        'MaterialContextMenuStrip1
+        '
+        Me.MaterialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MaterialContextMenuStrip1.Depth = 0
+        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermissionToolStripMenuItem, Me.Test2ToolStripMenuItem})
+        Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
+        '
+        'PermissionToolStripMenuItem
+        '
+        Me.PermissionToolStripMenuItem.Name = "PermissionToolStripMenuItem"
+        Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PermissionToolStripMenuItem.Text = "Permission"
+        '
+        'Test2ToolStripMenuItem
+        '
+        Me.Test2ToolStripMenuItem.Name = "Test2ToolStripMenuItem"
+        Me.Test2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Test2ToolStripMenuItem.Text = "test2"
+        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(835, 583)
+        Me.ContextMenuStrip = Me.MaterialContextMenuStrip1
         Me.Controls.Add(Me.MaterialTabSelector1)
         Me.Controls.Add(Me.MaterialTabControl1)
         Me.Name = "mainpage"
@@ -2238,6 +2264,7 @@ Partial Class mainpage
         Me.TabPage6.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.MaterialContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -2384,4 +2411,7 @@ Partial Class mainpage
     Friend WithEvents txt_payment_delete_paid As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_payment_delete_due As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_payment_delete_search As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
+    Friend WithEvents PermissionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Test2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

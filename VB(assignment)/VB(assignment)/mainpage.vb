@@ -258,6 +258,18 @@ Public Class mainpage
         Next
     End Sub
 
+    Private Sub MaterialContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaterialContextMenuStrip1.Opening
+
+
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
+        Permission.Show()
+    End Sub
 End Class
 
 

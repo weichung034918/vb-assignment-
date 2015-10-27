@@ -107,6 +107,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Permission.Designer.vb">
+      <DependentUpon>Permission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Initialise.resx">
@@ -123,6 +129,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permission.resx">
+      <DependentUpon>Permission.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
