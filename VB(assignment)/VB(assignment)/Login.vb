@@ -21,7 +21,7 @@ Public Class login
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
         SkinManager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepOrange700, TextShade.WHITE)
         field_pwd.PasswordChar = "•"
-
+        login_design()
         Try
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
                     "Data Source=" & dirdb)
@@ -74,5 +74,25 @@ Public Class login
         Me.Close()
     End Sub
 
+    Public Sub login_design()
+        MyBase.Height = 280
+        MyBase.Width = 260
+      
+        login_btn.Left = (Me.Width / 2) - (login_btn.Width / 2)
+        field_username.Left = (Me.Width / 2) - (field_username.Width / 2)
+        field_pwd.Left = (Me.Width / 2) - (field_pwd.Width / 2)
+        login_btn.Top = (field_pwd.Top + 30)
+        login_btn.Left = (Me.Width / 2) - (login_btn.Width / 2)
+        MaterialLabel1.Left = field_username.Left
+        MaterialLabel2.Left = field_pwd.Left
+    End Sub
 
+    Private Sub field_username_Click(sender As Object, e As EventArgs) Handles field_username.Click
+
+    End Sub
+
+    Private Sub MaterialLabel1_Click(sender As Object, e As EventArgs) Handles MaterialLabel1.Click
+
+    End Sub
 End Class
+

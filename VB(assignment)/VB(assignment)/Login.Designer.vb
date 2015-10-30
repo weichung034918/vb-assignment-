@@ -35,7 +35,7 @@ Partial Class login
         Me.login_btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.login_btn.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.login_btn.Depth = 0
-        Me.login_btn.Location = New System.Drawing.Point(106, 179)
+        Me.login_btn.Location = New System.Drawing.Point(103, 184)
         Me.login_btn.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.login_btn.MouseState = MaterialSkin.MouseState.HOVER
         Me.login_btn.Name = "login_btn"
@@ -113,7 +113,7 @@ Partial Class login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(271, 263)
+        Me.ClientSize = New System.Drawing.Size(281, 263)
         Me.Controls.Add(Me.field_pwd)
         Me.Controls.Add(Me.field_username)
         Me.Controls.Add(Me.MaterialLabel2)
