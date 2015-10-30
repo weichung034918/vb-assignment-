@@ -17,10 +17,12 @@ Public Class Permission
 
     End Sub
     Private Sub permission_format()
-        permission_search.Left = (Me.Width / 2) - (permission_search.Width / 2)
+        Me.Width = 520
+        Me.Height = 330
+        permission_search.Left = (Me.Width / 5 * 2.5) - (permission_search.Width / 2)
         MaterialLabel1.Left = permission_search.Left - 70
         MaterialLabel1.Top = permission_search.Top
-        permission_username.Left = (Me.Width / 3) - (permission_username.Width / 2)
+        permission_username.Left = (Me.Width / 5 * 2) - (permission_username.Width / 2)
         permission_username.Top = permission_search.Top + 50
         permission_username.Width = 100
         permission_username.Height = 20
@@ -38,5 +40,18 @@ Public Class Permission
         MaterialLabel3.Top = permission_password.Top
         MaterialLabel4.Left = MaterialLabel3.Left
         MaterialLabel4.Top = MaterialLabel4.Top
+        'button configuration
+        permission_add.Left = (Me.Width / 5 * 4) - (permission_add.Width / 2)
+        permission_add.Top = permission_username.Top
+        permission_add.Width = 80
+        permission_add.Height = 20
+        permission_edit.Top = permission_password.Top
+        permission_edit.Left = permission_add.Left
+        permission_edit.Width = permission_add.Width
+        permission_edit.Height = permission_add.Height
+        permission_delete.Top = permission_role.Top
+        permission_delete.Left = permission_edit.Left
+        permission_delete.Height = permission_add.Height
+        permission_delete.Width = permission_add.Width
     End Sub
 End Class

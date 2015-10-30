@@ -135,7 +135,7 @@ Partial Class Permission
         'permission_edit
         '
         Me.permission_edit.Depth = 0
-        Me.permission_edit.Location = New System.Drawing.Point(532, 185)
+        Me.permission_edit.Location = New System.Drawing.Point(409, 198)
         Me.permission_edit.MouseState = MaterialSkin.MouseState.HOVER
         Me.permission_edit.Name = "permission_edit"
         Me.permission_edit.Primary = True
@@ -147,7 +147,7 @@ Partial Class Permission
         'permission_delete
         '
         Me.permission_delete.Depth = 0
-        Me.permission_delete.Location = New System.Drawing.Point(532, 214)
+        Me.permission_delete.Location = New System.Drawing.Point(409, 242)
         Me.permission_delete.MouseState = MaterialSkin.MouseState.HOVER
         Me.permission_delete.Name = "permission_delete"
         Me.permission_delete.Primary = True
@@ -159,11 +159,11 @@ Partial Class Permission
         'permission_add
         '
         Me.permission_add.Depth = 0
-        Me.permission_add.Location = New System.Drawing.Point(532, 156)
+        Me.permission_add.Location = New System.Drawing.Point(409, 169)
         Me.permission_add.MouseState = MaterialSkin.MouseState.HOVER
         Me.permission_add.Name = "permission_add"
         Me.permission_add.Primary = True
-        Me.permission_add.Size = New System.Drawing.Size(75, 23)
+        Me.permission_add.Size = New System.Drawing.Size(95, 23)
         Me.permission_add.TabIndex = 10
         Me.permission_add.Text = "Add"
         Me.permission_add.UseVisualStyleBackColor = True
@@ -181,7 +181,7 @@ Partial Class Permission
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(681, 293)
+        Me.ClientSize = New System.Drawing.Size(543, 334)
         Me.Controls.Add(Me.permission_role)
         Me.Controls.Add(Me.permission_add)
         Me.Controls.Add(Me.permission_delete)
