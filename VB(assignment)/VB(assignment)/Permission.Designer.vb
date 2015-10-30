@@ -98,10 +98,9 @@ Partial Class Permission
         Me.permission_username.SelectedText = ""
         Me.permission_username.SelectionLength = 0
         Me.permission_username.SelectionStart = 0
-        Me.permission_username.Size = New System.Drawing.Size(103, 23)
+        Me.permission_username.Size = New System.Drawing.Size(111, 23)
         Me.permission_username.TabIndex = 4
         Me.permission_username.UseSystemPasswordChar = False
-        Me.permission_username.Visible = False
         '
         'permission_password
         '
@@ -117,7 +116,6 @@ Partial Class Permission
         Me.permission_password.Size = New System.Drawing.Size(103, 23)
         Me.permission_password.TabIndex = 5
         Me.permission_password.UseSystemPasswordChar = False
-        Me.permission_password.Visible = False
         '
         'permission_search
         '
