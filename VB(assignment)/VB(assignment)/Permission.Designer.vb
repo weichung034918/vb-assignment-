@@ -33,6 +33,15 @@ Partial Class Permission
         Me.permission_delete = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.permission_add = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.permission_role = New System.Windows.Forms.ComboBox()
+        Me.admin_username = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.permission_btn_search = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.edit_username = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.edit_password = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.choice_back = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.usernamelabel = New MaterialSkin.Controls.MaterialLabel()
+        Me.reusername = New MaterialSkin.Controls.MaterialLabel()
+        Me.chg_uname_field = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.retype_uname_field = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.SuspendLayout()
         '
         'MaterialLabel1
@@ -90,6 +99,7 @@ Partial Class Permission
         'permission_username
         '
         Me.permission_username.Depth = 0
+        Me.permission_username.Enabled = False
         Me.permission_username.Hint = ""
         Me.permission_username.Location = New System.Drawing.Point(219, 169)
         Me.permission_username.MouseState = MaterialSkin.MouseState.HOVER
@@ -105,6 +115,7 @@ Partial Class Permission
         'permission_password
         '
         Me.permission_password.Depth = 0
+        Me.permission_password.Enabled = False
         Me.permission_password.Hint = ""
         Me.permission_password.Location = New System.Drawing.Point(219, 208)
         Me.permission_password.MouseState = MaterialSkin.MouseState.HOVER
@@ -120,6 +131,7 @@ Partial Class Permission
         'permission_search
         '
         Me.permission_search.Depth = 0
+        Me.permission_search.ForeColor = System.Drawing.Color.Gray
         Me.permission_search.Hint = ""
         Me.permission_search.Location = New System.Drawing.Point(350, 91)
         Me.permission_search.MouseState = MaterialSkin.MouseState.HOVER
@@ -130,6 +142,7 @@ Partial Class Permission
         Me.permission_search.SelectionStart = 0
         Me.permission_search.Size = New System.Drawing.Size(103, 23)
         Me.permission_search.TabIndex = 7
+        Me.permission_search.Text = "Enter Username"
         Me.permission_search.UseSystemPasswordChar = False
         '
         'permission_edit
@@ -170,6 +183,7 @@ Partial Class Permission
         '
         'permission_role
         '
+        Me.permission_role.Enabled = False
         Me.permission_role.FormattingEnabled = True
         Me.permission_role.Items.AddRange(New Object() {"Admin", "Staff"})
         Me.permission_role.Location = New System.Drawing.Point(219, 246)
@@ -177,11 +191,150 @@ Partial Class Permission
         Me.permission_role.Size = New System.Drawing.Size(103, 21)
         Me.permission_role.TabIndex = 11
         '
+        'admin_username
+        '
+        Me.admin_username.AutoSize = True
+        Me.admin_username.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.admin_username.Depth = 0
+        Me.admin_username.Location = New System.Drawing.Point(267, 276)
+        Me.admin_username.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.admin_username.MouseState = MaterialSkin.MouseState.HOVER
+        Me.admin_username.Name = "admin_username"
+        Me.admin_username.Primary = False
+        Me.admin_username.Size = New System.Drawing.Size(118, 36)
+        Me.admin_username.TabIndex = 12
+        Me.admin_username.Text = "usernamehere"
+        Me.admin_username.UseVisualStyleBackColor = True
+        '
+        'permission_btn_search
+        '
+        Me.permission_btn_search.Depth = 0
+        Me.permission_btn_search.Location = New System.Drawing.Point(429, 129)
+        Me.permission_btn_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.permission_btn_search.Name = "permission_btn_search"
+        Me.permission_btn_search.Primary = True
+        Me.permission_btn_search.Size = New System.Drawing.Size(75, 23)
+        Me.permission_btn_search.TabIndex = 13
+        Me.permission_btn_search.Text = "Search"
+        Me.permission_btn_search.UseVisualStyleBackColor = True
+        Me.permission_btn_search.Visible = False
+        '
+        'edit_username
+        '
+        Me.edit_username.Depth = 0
+        Me.edit_username.Location = New System.Drawing.Point(672, 129)
+        Me.edit_username.MouseState = MaterialSkin.MouseState.HOVER
+        Me.edit_username.Name = "edit_username"
+        Me.edit_username.Primary = True
+        Me.edit_username.Size = New System.Drawing.Size(75, 23)
+        Me.edit_username.TabIndex = 14
+        Me.edit_username.Text = "Edit Username"
+        Me.edit_username.UseVisualStyleBackColor = True
+        Me.edit_username.Visible = False
+        '
+        'edit_password
+        '
+        Me.edit_password.Depth = 0
+        Me.edit_password.Location = New System.Drawing.Point(754, 198)
+        Me.edit_password.MouseState = MaterialSkin.MouseState.HOVER
+        Me.edit_password.Name = "edit_password"
+        Me.edit_password.Primary = True
+        Me.edit_password.Size = New System.Drawing.Size(75, 23)
+        Me.edit_password.TabIndex = 15
+        Me.edit_password.Text = "Edit Password"
+        Me.edit_password.UseVisualStyleBackColor = True
+        Me.edit_password.Visible = False
+        '
+        'choice_back
+        '
+        Me.choice_back.AutoSize = True
+        Me.choice_back.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.choice_back.Depth = 0
+        Me.choice_back.Location = New System.Drawing.Point(754, 276)
+        Me.choice_back.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.choice_back.MouseState = MaterialSkin.MouseState.HOVER
+        Me.choice_back.Name = "choice_back"
+        Me.choice_back.Primary = False
+        Me.choice_back.Size = New System.Drawing.Size(47, 36)
+        Me.choice_back.TabIndex = 16
+        Me.choice_back.Text = "back"
+        Me.choice_back.UseVisualStyleBackColor = True
+        Me.choice_back.Visible = False
+        '
+        'usernamelabel
+        '
+        Me.usernamelabel.AutoSize = True
+        Me.usernamelabel.Depth = 0
+        Me.usernamelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.usernamelabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.usernamelabel.Location = New System.Drawing.Point(752, 144)
+        Me.usernamelabel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.usernamelabel.Name = "usernamelabel"
+        Me.usernamelabel.Size = New System.Drawing.Size(85, 18)
+        Me.usernamelabel.TabIndex = 17
+        Me.usernamelabel.Text = "Username :"
+        Me.usernamelabel.Visible = False
+        '
+        'reusername
+        '
+        Me.reusername.AutoSize = True
+        Me.reusername.Depth = 0
+        Me.reusername.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.reusername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.reusername.Location = New System.Drawing.Point(751, 162)
+        Me.reusername.MouseState = MaterialSkin.MouseState.HOVER
+        Me.reusername.Name = "reusername"
+        Me.reusername.Size = New System.Drawing.Size(130, 19)
+        Me.reusername.TabIndex = 18
+        Me.reusername.Text = "Retype Username:"
+        Me.reusername.Visible = False
+        '
+        'chg_uname_field
+        '
+        Me.chg_uname_field.Depth = 0
+        Me.chg_uname_field.Hint = ""
+        Me.chg_uname_field.Location = New System.Drawing.Point(830, 243)
+        Me.chg_uname_field.MouseState = MaterialSkin.MouseState.HOVER
+        Me.chg_uname_field.Name = "chg_uname_field"
+        Me.chg_uname_field.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.chg_uname_field.SelectedText = ""
+        Me.chg_uname_field.SelectionLength = 0
+        Me.chg_uname_field.SelectionStart = 0
+        Me.chg_uname_field.Size = New System.Drawing.Size(75, 23)
+        Me.chg_uname_field.TabIndex = 19
+        Me.chg_uname_field.UseSystemPasswordChar = False
+        Me.chg_uname_field.Visible = False
+        '
+        'retype_uname_field
+        '
+        Me.retype_uname_field.Depth = 0
+        Me.retype_uname_field.Hint = ""
+        Me.retype_uname_field.Location = New System.Drawing.Point(829, 273)
+        Me.retype_uname_field.MouseState = MaterialSkin.MouseState.HOVER
+        Me.retype_uname_field.Name = "retype_uname_field"
+        Me.retype_uname_field.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.retype_uname_field.SelectedText = ""
+        Me.retype_uname_field.SelectionLength = 0
+        Me.retype_uname_field.SelectionStart = 0
+        Me.retype_uname_field.Size = New System.Drawing.Size(75, 23)
+        Me.retype_uname_field.TabIndex = 20
+        Me.retype_uname_field.UseSystemPasswordChar = False
+        Me.retype_uname_field.Visible = False
+        '
         'Permission
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(543, 334)
+        Me.ClientSize = New System.Drawing.Size(317, 273)
+        Me.Controls.Add(Me.retype_uname_field)
+        Me.Controls.Add(Me.chg_uname_field)
+        Me.Controls.Add(Me.reusername)
+        Me.Controls.Add(Me.usernamelabel)
+        Me.Controls.Add(Me.choice_back)
+        Me.Controls.Add(Me.edit_password)
+        Me.Controls.Add(Me.edit_username)
+        Me.Controls.Add(Me.permission_btn_search)
+        Me.Controls.Add(Me.admin_username)
         Me.Controls.Add(Me.permission_role)
         Me.Controls.Add(Me.permission_add)
         Me.Controls.Add(Me.permission_delete)
@@ -193,8 +346,10 @@ Partial Class Permission
         Me.Controls.Add(Me.MaterialLabel3)
         Me.Controls.Add(Me.MaterialLabel2)
         Me.Controls.Add(Me.MaterialLabel1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Permission"
-        Me.Text = "Permission"
+        Me.Text = "Admin Settings"
         Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -211,4 +366,13 @@ Partial Class Permission
     Friend WithEvents permission_delete As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents permission_add As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents permission_role As System.Windows.Forms.ComboBox
+    Friend WithEvents admin_username As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents permission_btn_search As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents edit_username As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents edit_password As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents choice_back As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents usernamelabel As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents reusername As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents chg_uname_field As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents retype_uname_field As MaterialSkin.Controls.MaterialSingleLineTextField
 End Class

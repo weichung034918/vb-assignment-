@@ -167,7 +167,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Test2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -2217,22 +2216,16 @@ Partial Class mainpage
         '
         Me.MaterialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MaterialContextMenuStrip1.Depth = 0
-        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermissionToolStripMenuItem, Me.Test2ToolStripMenuItem})
+        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermissionToolStripMenuItem})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(156, 48)
         '
         'PermissionToolStripMenuItem
         '
         Me.PermissionToolStripMenuItem.Name = "PermissionToolStripMenuItem"
-        Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PermissionToolStripMenuItem.Text = "Permission"
-        '
-        'Test2ToolStripMenuItem
-        '
-        Me.Test2ToolStripMenuItem.Name = "Test2ToolStripMenuItem"
-        Me.Test2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.Test2ToolStripMenuItem.Text = "test2"
+        Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.PermissionToolStripMenuItem.Text = "Admin Settings"
         '
         'mainpage
         '
@@ -2413,5 +2406,4 @@ Partial Class mainpage
     Friend WithEvents txt_payment_delete_search As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
     Friend WithEvents PermissionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Test2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
