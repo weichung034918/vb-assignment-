@@ -1,21 +1,21 @@
 ﻿Imports MaterialSkin
 Imports System.Data.OleDb
+Imports System.Text.RegularExpressions
 
 Public Class mainpage
-    Dim dirdb As String = Application.StartupPath + "\database.mdb"
-    Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
     Dim da As OleDbDataAdapter
     Dim dt As DataTable
-    Dim con As New OleDbConnection
+    Dim con As New OleDb.OleDbConnection
+    Dim dirdb As String = Application.StartupPath + "\database.mdb"
+    Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
     Dim cmd As New OleDbCommand
     Dim sql As String
 
+
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
-
     End Class
 
-    
 
     Private Sub mainpage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         
@@ -35,58 +35,29 @@ Public Class mainpage
                 Try
                     con = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.14.0;Data Source=" + dirdb2)
                     con.Open()
+
                 Catch
                     Try
                         con = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.15.0;Data Source=" + dirdb2)
                         con.Open()
                     Catch ex As Exception
-                        MessageBox.Show("Cannot connect to database!", "Database Error")
+                        MessageBox.Show(ex.Message, "Database Error")
                     End Try
                 End Try
             End Try
         End Try
 
     End Sub
-
-    Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
-        MsgBox("are you sure?", vbYesNo)
-        If vbYes Then
-
-        ElseIf vbNo Then
-
-        End If
-
+    Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
+        Permission.Show()
     End Sub
 
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_remove_search.Click
         btn_remove.Visible = True
     End Sub
 
-    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
-        MsgBox("are you sure?", vbYesNo)
-        If vbYes Then
-
-        ElseIf vbNo Then
-
-        End If
-    End Sub
-
     Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
         btn_update.Visible = True
-
-    End Sub
-
-    Private Sub txt_payment_delete_submit_Click(sender As Object, e As EventArgs) Handles txt_payment_delete_submit.Click
-        MsgBox("are you sure?", vbYesNo)
-        If vbYes Then
-
-        ElseIf vbNo Then
-
-        End If
-    End Sub
-
-    Private Sub txt_payment_submit_Click(sender As Object, e As EventArgs) Handles txt_payment_submit.Click
-        MsgBox("Form Submitted")
     End Sub
 
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
@@ -106,21 +77,30 @@ Public Class mainpage
             MsgBox("Please insert Membership ID ")
             Return
         End If
+        sql = "insert into Membership values ('" & label_add_shipid.Text & txt_add_shipid.Text & "', '" &
+            combobox_add_membertype.Text & "', 1, 2)"
+        cmd = New OleDbCommand(sql, con)
+        Try
+            MsgBox(sql)
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+            Return
+        End Try
 
-
-            'INSERT FUNCTION TO ADD HERE
+        sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
+            txt_add_lastname.Text & "', '" & label_add_shipid.Text & txt_add_shipid.Text & "', " &
+            txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
+        cmd = New OleDbCommand(sql, con)
+        Try
+            MsgBox(sql)
+            cmd.ExecuteNonQuery()
             MsgBox("Member Added!")
-    End Sub
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+            Return
+        End Try
 
-
-
-    Private Sub txt_payment_edit_submit_Click(sender As Object, e As EventArgs) Handles txt_payment_edit_submit.Click
-        MsgBox("are you sure?", vbYesNo)
-        If vbYes Then
-
-        ElseIf vbNo Then
-
-        End If
     End Sub
 
     Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
@@ -136,24 +116,11 @@ Public Class mainpage
         'DESIGN END
     End Sub
 
-
-
-    Private Sub label_update_search_Click(sender As Object, e As EventArgs) Handles label_update_search.Click
-
-    End Sub
-
-    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
-        label_update_search.Text = combobox_update_search.Text & ":"
-    End Sub
-
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub combobox_add_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_add_membertype.SelectedIndexChanged
+
         If combobox_add_membertype.Text = "Deluxe" Then
-            label_add_shipid.Text = "D"
-            Else If combobox_add_membertype.Text = "Non-Deluxe" then
+            label_add_shipid.Text = "DE"
+        ElseIf combobox_add_membertype.Text = "Non-Deluxe" Then
             label_add_shipid.Text = "ND"
         ElseIf combobox_add_membertype.Text = "Weekday" Then
             label_add_shipid.Text = "WD"
@@ -163,7 +130,7 @@ Public Class mainpage
 
     Private Sub combobox_remove_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_membertype.SelectedIndexChanged
         If combobox_remove_membertype.Text = "Deluxe" Then
-            label_remove_shipid.Text = "D"
+            label_remove_shipid.Text = "DE"
         ElseIf combobox_remove_membertype.Text = "Non-Deluxe" Then
             label_remove_shipid.Text = "ND"
         ElseIf combobox_remove_membertype.Text = "Weekday" Then
@@ -173,7 +140,7 @@ Public Class mainpage
 
     Private Sub combobox_update_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_membertype.SelectedIndexChanged
         If combobox_update_membertype.Text = "Deluxe" Then
-            label_update_shipid.Text = "D"
+            label_update_shipid.Text = "DE"
         ElseIf combobox_update_membertype.Text = "Non-Deluxe" Then
             label_update_shipid.Text = "ND"
         ElseIf combobox_update_membertype.Text = "Weekday" Then
@@ -183,7 +150,7 @@ Public Class mainpage
 
     Private Sub combobox_payment_submit_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_submit_membertype.SelectedIndexChanged
         If combobox_payment_submit_membertype.Text = "Deluxe" Then
-            label_payment_submit_shipid.Text = "D"
+            label_payment_submit_shipid.Text = "DE"
         ElseIf combobox_payment_submit_membertype.Text = "Non-Deluxe" Then
             label_payment_submit_shipid.Text = "ND"
         ElseIf combobox_payment_submit_membertype.Text = "Weekday" Then
@@ -193,7 +160,7 @@ Public Class mainpage
 
     Private Sub combobox_payment_edit_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_edit_membertype.SelectedIndexChanged
         If combobox_payment_edit_membertype.Text = "Deluxe" Then
-            label_payment_edit_shipid.Text = "D"
+            label_payment_edit_shipid.Text = "DE"
         ElseIf combobox_payment_edit_membertype.Text = "Non-Deluxe" Then
             label_payment_edit_shipid.Text = "ND"
         ElseIf combobox_payment_edit_membertype.Text = "Weekday" Then
@@ -211,9 +178,6 @@ Public Class mainpage
         End If
     End Sub
 
-    
-   
-
     Private Sub txt_remove_search_TextChanged(sender As Object, e As EventArgs)
 
         If String.IsNullOrEmpty(txt_remove_search.Text) Then
@@ -224,65 +188,131 @@ Public Class mainpage
         End If
     End Sub
 
-    Private Sub txt_add_lastname_Click(sender As Object, e As EventArgs) Handles txt_add_lastname.Click
-
-    End Sub
-
-    Private Sub txt_remove_id_Click(sender As Object, e As EventArgs) Handles txt_remove_id.Click
-
-    End Sub
-
-    Private Sub txt_payment_edit_paymentid_Click(sender As Object, e As EventArgs) Handles txt_payment_edit_paymentid.Click
-
-    End Sub
-
     Private Sub txt_add_id_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_id.KeyPress
-        If Char.IsDigit(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then 'lock the goddamn anything except controls and numbers
+        'lock the goddamn anything except controls and numbers
+        If Char.IsDigit(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
             e.Handled = True
         End If
-            
 
+    End Sub
 
+    Private Sub txt_add_id_Leave(sender As Object, e As EventArgs) Handles txt_add_id.Leave
+        For i = 0 To 9
+            If txt_add_id.TextLength < 10 Then
+                txt_add_id.Text = "0" + txt_add_id.Text
+            End If
+        Next i
     End Sub
 
     Private Sub txt_add_id_TextChanged(sender As Object, e As EventArgs) Handles txt_add_id.TextChanged
-        If txt_add_id.TextLength > 10 Then
-            MessageBox.Show("Member ID must be less than 10 numbers.", "Member ID")
-        End If
         Dim strPaste As String = txt_add_id.Text
         For i = 0 To txt_add_id.TextLength - 1 'loop for checking each position (array position) of your string
             If Char.IsLetter(strPaste.Chars(i)) Then 'check if that thing you pasted contains letters or not
                 txt_add_id.Text = Nothing
-                MessageBox.Show("Member ID must only consist of numerical values.", "Member ID") 'goddamn looped x times if your string pasted length is x long, need fix
+                MessageBox.Show("Member ID must only consist of numerical values.", "Member ID")
+                Return
             End If
         Next
+
+        If txt_add_id.TextLength > 10 Then
+            MessageBox.Show("Member ID must be less than 10 numbers.", "Member ID")
+            txt_add_id.Text = Nothing
+            Return
+
+        End If
+        
     End Sub
 
-    Private Sub MaterialContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MaterialContextMenuStrip1.Opening
+    Private Sub txt_add_firstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_firstname.KeyPress
+        If Char.IsLetter(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+            If txt_add_firstname.TextLength > 0 And e.KeyChar = ChrW(Keys.Space) Then
+                e.Handled = False
+            End If
+        End If
+    End Sub
 
+    Private Sub txt_add_firstname_Leave(sender As Object, e As EventArgs) Handles txt_add_firstname.Leave
+
+        Dim str As String = txt_add_firstname.Text
+        txt_add_firstname.Text = Regex.Replace(str, " {2,}", " ")
+        'regex (regular expression) needs import system.text.regularexpressions
+        'space followed by the quantifier {2,}, matches a space, repeated two or more times
+        'then replace with single space only
+        'check out the quantifiers at https://msdn.microsoft.com/en-us/library/3206d374(v=vs.110).aspx
+    End Sub
+
+    Private Sub txt_add_firstname_TextChanged(sender As Object, e As EventArgs) Handles txt_add_firstname.TextChanged
+
+        Dim str As String = txt_add_firstname.Text
+        For i = 0 To txt_add_firstname.TextLength - 1 'loop for checking each position (array position) of your string
+            If Char.IsLetter(str.Chars(i)) = False Then 'check if that thing you pasted contains letters or not
+                txt_add_firstname.Text = Nothing
+                MessageBox.Show("Member's First Name must only consist of numerical values.", "Member's First Name")
+                Return
+            End If
+        Next
 
     End Sub
 
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+    Private Sub txt_add_lastname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_lastname.KeyPress
+        If Char.IsLetter(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+            If txt_add_lastname.TextLength > 0 And e.KeyChar = ChrW(Keys.Space) Then
+                e.Handled = False
+            End If
+        End If
+    End Sub
+
+    Private Sub txt_add_lastname_Leave(sender As Object, e As EventArgs) Handles txt_add_lastname.Leave
+
+        Dim str As String = txt_add_lastname.Text
+        txt_add_lastname.Text = Regex.Replace(str, " {2,}", " ")
 
     End Sub
 
-    Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
-        Permission.Show()
+    Private Sub txt_add_lastname_TextChanged(sender As Object, e As EventArgs) Handles txt_add_lastname.TextChanged
+
+        Dim str As String = txt_add_lastname.Text
+        For i = 0 To txt_add_lastname.TextLength - 1 'loop for checking each position (array position) of your string
+            If Char.IsLetter(str.Chars(i)) = False Then 'check if that thing you pasted contains letters or not
+                txt_add_lastname.Text = Nothing
+                MessageBox.Show("Member's Last Name must only consist of numerical values.", "Member's Last Name")
+                Return
+            End If
+        Next
+
+    End Sub
+
+    Private Sub txt_add_shipid_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_shipid.KeyPress
+        If Char.IsDigit(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txt_add_shipid_Leave(sender As Object, e As EventArgs) Handles txt_add_shipid.Leave
+        For i = 0 To 7
+            If txt_add_shipid.TextLength < 8 Then
+                txt_add_shipid.Text = "0" + txt_add_shipid.Text
+            End If
+        Next i
+    End Sub
+
+    Private Sub txt_add_shipid_TextChanged(sender As Object, e As EventArgs) Handles txt_add_shipid.TextChanged
+        Dim str As String = txt_add_shipid.Text
+        For i = 0 To txt_add_shipid.TextLength - 1 'loop for checking each position (array position) of your string
+            If Char.IsLetter(str.Chars(i)) Then 'check if that thing you pasted contains letters or not
+                txt_add_shipid.Text = Nothing
+                MessageBox.Show("Membership ID must only consist of numerical values.", "Membership ID")
+                Return
+            End If
+        Next
+
+        If txt_add_shipid.TextLength > 8 Then
+            MessageBox.Show("Membership ID must be less than 8 numbers.", "Membership ID")
+            txt_add_shipid.Text = Nothing
+            Return
+
+        End If
     End Sub
 End Class
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

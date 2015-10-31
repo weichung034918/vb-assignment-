@@ -7,7 +7,7 @@ Public Class Initialise
     Dim cat As Catalog = New Catalog()
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
-    Dim con As New OleDbConnection
+    Dim con As New OleDb.OleDbConnection
     Dim cmd As New OleDbCommand
     Dim sql As String
 

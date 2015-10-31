@@ -119,6 +119,7 @@
     <Compile Include="Permission.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="opencon.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Initialise.resx">

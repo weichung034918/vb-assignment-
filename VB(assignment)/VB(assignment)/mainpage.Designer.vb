@@ -234,7 +234,7 @@ Partial Class mainpage
         Me.txt_add_email.SelectionLength = 0
         Me.txt_add_email.SelectionStart = 0
         Me.txt_add_email.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_email.TabIndex = 7
+        Me.txt_add_email.TabIndex = 6
         Me.txt_add_email.TabStop = False
         Me.txt_add_email.UseSystemPasswordChar = False
         '
@@ -250,7 +250,7 @@ Partial Class mainpage
         Me.txt_add_cont.SelectionLength = 0
         Me.txt_add_cont.SelectionStart = 0
         Me.txt_add_cont.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_cont.TabIndex = 6
+        Me.txt_add_cont.TabIndex = 5
         Me.txt_add_cont.TabStop = False
         Me.txt_add_cont.UseSystemPasswordChar = False
         '
@@ -266,7 +266,7 @@ Partial Class mainpage
         Me.txt_add_shipid.SelectionLength = 0
         Me.txt_add_shipid.SelectionStart = 0
         Me.txt_add_shipid.Size = New System.Drawing.Size(86, 23)
-        Me.txt_add_shipid.TabIndex = 5
+        Me.txt_add_shipid.TabIndex = 4
         Me.txt_add_shipid.TabStop = False
         Me.txt_add_shipid.UseSystemPasswordChar = False
         '
@@ -282,7 +282,7 @@ Partial Class mainpage
         Me.txt_add_lastname.SelectionLength = 0
         Me.txt_add_lastname.SelectionStart = 0
         Me.txt_add_lastname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_lastname.TabIndex = 3
+        Me.txt_add_lastname.TabIndex = 2
         Me.txt_add_lastname.TabStop = False
         Me.txt_add_lastname.UseSystemPasswordChar = False
         '
@@ -298,7 +298,7 @@ Partial Class mainpage
         Me.txt_add_firstname.SelectionLength = 0
         Me.txt_add_firstname.SelectionStart = 0
         Me.txt_add_firstname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_firstname.TabIndex = 2
+        Me.txt_add_firstname.TabIndex = 1
         Me.txt_add_firstname.TabStop = False
         Me.txt_add_firstname.UseSystemPasswordChar = False
         '
@@ -314,7 +314,7 @@ Partial Class mainpage
         Me.txt_add_id.SelectionLength = 0
         Me.txt_add_id.SelectionStart = 0
         Me.txt_add_id.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_id.TabIndex = 1
+        Me.txt_add_id.TabIndex = 0
         Me.txt_add_id.TabStop = False
         Me.txt_add_id.UseSystemPasswordChar = False
         '
@@ -346,12 +346,14 @@ Partial Class mainpage
         '
         'combobox_add_membertype
         '
+        Me.combobox_add_membertype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.combobox_add_membertype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.combobox_add_membertype.FormattingEnabled = True
         Me.combobox_add_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
         Me.combobox_add_membertype.Location = New System.Drawing.Point(504, 185)
         Me.combobox_add_membertype.Name = "combobox_add_membertype"
         Me.combobox_add_membertype.Size = New System.Drawing.Size(141, 21)
-        Me.combobox_add_membertype.TabIndex = 4
+        Me.combobox_add_membertype.TabIndex = 3
         Me.combobox_add_membertype.TabStop = False
         '
         'Add
@@ -362,7 +364,7 @@ Partial Class mainpage
         Me.Add.Name = "Add"
         Me.Add.Primary = True
         Me.Add.Size = New System.Drawing.Size(97, 36)
-        Me.Add.TabIndex = 12
+        Me.Add.TabIndex = 7
         Me.Add.Text = "Add"
         Me.Add.UseVisualStyleBackColor = True
         '
@@ -2219,7 +2221,7 @@ Partial Class mainpage
         Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermissionToolStripMenuItem})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(156, 48)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(156, 26)
         '
         'PermissionToolStripMenuItem
         '
