@@ -374,17 +374,43 @@ Public Class mainpage
     Private Sub btn_remove_search_Click(sender As Object, e As EventArgs) Handles btn_remove_search.Click
 
         If combobox_remove_search.SelectedIndex = 0 Then
+
+            For i = 0 To 9
+                If txt_remove_search.TextLength < 10 Then
+                    txt_remove_search.Text = "0" + txt_remove_search.Text
+                End If
+            Next i
             sql = "select * from Members where MID='" & txt_remove_search.Text & "'"
+
         ElseIf combobox_remove_search.SelectedIndex = 1 Then
+
             sql = "select * from Members where First_Name='" & txt_remove_search.Text & "'"
+
         ElseIf combobox_remove_search.SelectedIndex = 2 Then
+
             sql = "select * from Members where Last_Name='" & txt_remove_search.Text & "'"
+
         ElseIf combobox_remove_search.SelectedIndex = 3 Then
+
+
             sql = "select * from Members, Membership where MSHIP_ID='" & txt_remove_search.Text & "'"
+
         End If
-        da = New OleDbDataAdapter(sql, con)
-        da.Fill(ds, "TempSet")
-        txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
+
+        'clear the dataset first, else data will be cached! Works like fflush(stdin) but this one is dataset not stdin
+        ds.Clear()
+
+        If combobox_remove_search.SelectedIndex >= 0 AndAlso combobox_remove_search.SelectedIndex < 3 Then
+            da = New OleDbDataAdapter(sql, con)
+            da.Fill(ds, "TempSet")
+            txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
+        End If
+        If combobox_remove_search.SelectedIndex = 3 Then
+            da = New OleDbDataAdapter(sql, con)
+            da.Fill(ds, "TempSet")
+            txt_remove_id.Text = ds.Tables(1).Rows(0).Item(0)
+        End If
+        
 
         btn_remove.Visible = True
 
