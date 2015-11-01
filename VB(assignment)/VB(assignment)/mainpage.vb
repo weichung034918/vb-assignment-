@@ -391,9 +391,13 @@ Public Class mainpage
             sql = "select * from Members where Last_Name='" & txt_remove_search.Text & "'"
 
         ElseIf combobox_remove_search.SelectedIndex = 3 Then
-
-
-            sql = "select * from Members, Membership where MSHIP_ID='" & txt_remove_search.Text & "'"
+            ds.Clear()
+            sql = "select * from Members INNER JOIN Membership on Members.MID=Membership.MID where Membership.MSHIP_ID='" &
+                txt_remove_search.Text & "'"
+            da = New OleDbDataAdapter(sql, con)
+            da.Fill(ds, "Mem")
+            txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
+            txt_remove_shipid.Text = ds.Tables(0).Rows(0).Item(7)
 
         End If
 
@@ -405,12 +409,8 @@ Public Class mainpage
             da.Fill(ds, "TempSet")
             txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
         End If
-        If combobox_remove_search.SelectedIndex = 3 Then
-            da = New OleDbDataAdapter(sql, con)
-            da.Fill(ds, "TempSet")
-            txt_remove_id.Text = ds.Tables(1).Rows(0).Item(0)
-        End If
-        
+
+        'ND00000002
 
         btn_remove.Visible = True
 
