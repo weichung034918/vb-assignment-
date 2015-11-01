@@ -672,7 +672,6 @@ Partial Class mainpage
         'btn_remove_search
         '
         Me.btn_remove_search.Depth = 0
-        Me.btn_remove_search.Enabled = False
         Me.btn_remove_search.Location = New System.Drawing.Point(206, 229)
         Me.btn_remove_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_remove_search.Name = "btn_remove_search"
@@ -681,7 +680,6 @@ Partial Class mainpage
         Me.btn_remove_search.TabIndex = 24
         Me.btn_remove_search.Text = "Search"
         Me.btn_remove_search.UseVisualStyleBackColor = True
-        Me.btn_remove_search.Visible = False
         '
         'MaterialLabel8
         '
@@ -751,6 +749,8 @@ Partial Class mainpage
         'combobox_remove_search
         '
         Me.combobox_remove_search.AutoCompleteCustomSource.AddRange(New String() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
+        Me.combobox_remove_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.combobox_remove_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.combobox_remove_search.FormattingEnabled = True
         Me.combobox_remove_search.Items.AddRange(New Object() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
         Me.combobox_remove_search.Location = New System.Drawing.Point(206, 120)

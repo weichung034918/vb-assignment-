@@ -4,7 +4,7 @@ Imports System.Text.RegularExpressions
 
 Public Class mainpage
     Dim da As OleDbDataAdapter
-    Dim dt As DataTable
+    Dim ds As New DataSet
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -54,84 +54,8 @@ Public Class mainpage
         Permission.Show()
     End Sub
 
-    Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_remove_search.Click
-        btn_remove.Visible = True
-    End Sub
-
     Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
         btn_update.Visible = True
-    End Sub
-
-    Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
-        If String.IsNullOrEmpty(txt_add_id.Text) Then
-            MsgBox("Please enter member ID")
-            Return
-        ElseIf String.IsNullOrEmpty(txt_add_firstname.Text) Then
-            MsgBox("Please enter first name")
-            Return
-        ElseIf String.IsNullOrEmpty(txt_add_lastname.Text) Then
-            MsgBox("Please enter last name")
-            Return
-        ElseIf String.IsNullOrEmpty(combobox_add_membertype.Text) Then
-            MsgBox("Please select member type")
-            Return
-        ElseIf String.IsNullOrEmpty(txt_add_shipid.Text) Then
-            MsgBox("Please insert Membership ID ")
-            Return
-        End If
-
-        sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
-            txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
-        cmd = New OleDbCommand(sql, con)
-        Try
-            MessageBox.Show(sql, "Debug purpose")
-            cmd.ExecuteNonQuery()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
-            Return
-        End Try
-
-        sql = "insert into Membership values ('" & txt_add_id.Text & "', '" & label_add_shipid.Text & txt_add_shipid.Text &
-            "', '"
-        If combobox_add_membertype.SelectedIndex = 0 Then
-            sql = sql & combobox_add_membertype.Items(0).ToString & "', 500.00, 120.00)"
-        ElseIf combobox_add_membertype.SelectedIndex = 1 Then
-            sql = sql & combobox_add_membertype.Items(1).ToString & "', 300.00, 100.00)"
-        ElseIf combobox_add_membertype.SelectedIndex = 2 Then
-            sql = sql & combobox_add_membertype.Items(2).ToString & "', 180.00, 75.00)"
-        Else
-            MessageBox.Show("Please select only one of the 3 membership types.", "Membership Type")
-            Return
-        End If
-        cmd = New OleDbCommand(sql, con)
-        Try
-            MessageBox.Show(sql, "Debug purpose")
-            cmd.ExecuteNonQuery()
-            MsgBox("Member Added!")
-            txt_add_cont.Clear()
-            txt_add_email.Clear()
-            txt_add_firstname.Clear()
-            txt_add_lastname.Clear()
-            txt_add_id.Clear()
-            txt_add_shipid.Clear()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
-            Return
-        End Try
-
-    End Sub
-
-    Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
-        'DESIGN START
-        If combobox_remove_search.Text <> String.Empty Then
-            txt_remove_search.Enabled = True
-            label_remove_search.Enabled = True
-            label_remove_search.Text = combobox_remove_search.Text & ":"
-        Else
-            txt_remove_search.Enabled = False
-
-        End If
-        'DESIGN END
     End Sub
 
     Private Sub combobox_add_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_add_membertype.SelectedIndexChanged
@@ -204,6 +128,65 @@ Public Class mainpage
             btn_remove_search.Visible = True
 
         End If
+    End Sub
+    '-------------------------------Add member function starts-------------------------------------
+    Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
+        If String.IsNullOrEmpty(txt_add_id.Text) Then
+            MsgBox("Please enter member ID")
+            Return
+        ElseIf String.IsNullOrEmpty(txt_add_firstname.Text) Then
+            MsgBox("Please enter first name")
+            Return
+        ElseIf String.IsNullOrEmpty(txt_add_lastname.Text) Then
+            MsgBox("Please enter last name")
+            Return
+        ElseIf String.IsNullOrEmpty(combobox_add_membertype.Text) Then
+            MsgBox("Please select member type")
+            Return
+        ElseIf String.IsNullOrEmpty(txt_add_shipid.Text) Then
+            MsgBox("Please insert Membership ID ")
+            Return
+        End If
+
+        sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
+            txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
+        cmd = New OleDbCommand(sql, con)
+        Try
+            MessageBox.Show(sql, "Debug purpose")
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+            Return
+        End Try
+
+        sql = "insert into Membership values ('" & txt_add_id.Text & "', '" & label_add_shipid.Text & txt_add_shipid.Text &
+            "', '"
+        If combobox_add_membertype.SelectedIndex = 0 Then
+            sql = sql & combobox_add_membertype.Items(0).ToString & "', 500.00, 120.00)"
+        ElseIf combobox_add_membertype.SelectedIndex = 1 Then
+            sql = sql & combobox_add_membertype.Items(1).ToString & "', 300.00, 100.00)"
+        ElseIf combobox_add_membertype.SelectedIndex = 2 Then
+            sql = sql & combobox_add_membertype.Items(2).ToString & "', 180.00, 75.00)"
+        Else
+            MessageBox.Show("Please select only one of the 3 membership types.", "Membership Type")
+            Return
+        End If
+        cmd = New OleDbCommand(sql, con)
+        Try
+            MessageBox.Show(sql, "Debug purpose")
+            cmd.ExecuteNonQuery()
+            MsgBox("Member Added!")
+            txt_add_cont.Clear()
+            txt_add_email.Clear()
+            txt_add_firstname.Clear()
+            txt_add_lastname.Clear()
+            txt_add_id.Clear()
+            txt_add_shipid.Clear()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+            Return
+        End Try
+
     End Sub
 
     Private Sub txt_add_id_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_id.KeyPress
@@ -370,6 +353,44 @@ Public Class mainpage
             txt_add_email.Text = Nothing
             Return
         End If
+    End Sub
+    '---------------------------------Add member function ends---------------------------------------
+
+    '-------------------------------Delete member function starts------------------------------------
+    Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
+        'DESIGN START
+        If combobox_remove_search.Text <> String.Empty Then
+            txt_remove_search.Visible = True
+            label_remove_search.Enabled = True
+            label_remove_search.Text = combobox_remove_search.Text & ":"
+        Else
+            txt_remove_search.Visible = False
+        End If
+        'DESIGN END
+
 
     End Sub
+
+    Private Sub btn_remove_search_Click(sender As Object, e As EventArgs) Handles btn_remove_search.Click
+
+        If combobox_remove_search.SelectedIndex = 0 Then
+            sql = "select * from Members where MID='" & txt_remove_search.Text & "'"
+        ElseIf combobox_remove_search.SelectedIndex = 1 Then
+            sql = "select * from Members where First_Name='" & txt_remove_search.Text & "'"
+        ElseIf combobox_remove_search.SelectedIndex = 2 Then
+            sql = "select * from Members where Last_Name='" & txt_remove_search.Text & "'"
+        ElseIf combobox_remove_search.SelectedIndex = 3 Then
+            sql = "select * from Members, Membership where MSHIP_ID='" & txt_remove_search.Text & "'"
+        End If
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(ds, "TempSet")
+        txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
+
+        btn_remove.Visible = True
+
+    End Sub
+
+
+
+    '--------------------------------Delete member function ends--------------------------------------
 End Class
