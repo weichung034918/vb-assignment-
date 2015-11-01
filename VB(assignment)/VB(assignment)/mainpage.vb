@@ -47,6 +47,8 @@ Public Class mainpage
             End Try
         End Try
 
+        Add.Left = (Me.Width / 2) - (Add.Width / 2)
+
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
         Permission.Show()
@@ -77,25 +79,41 @@ Public Class mainpage
             MsgBox("Please insert Membership ID ")
             Return
         End If
-        sql = "insert into Membership values ('" & label_add_shipid.Text & txt_add_shipid.Text & "', '" &
-            combobox_add_membertype.Text & "', 1, 2)"
+
+        sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
+            txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
         cmd = New OleDbCommand(sql, con)
         Try
-            MsgBox(sql)
+            MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
             Return
         End Try
 
-        sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
-            txt_add_lastname.Text & "', '" & label_add_shipid.Text & txt_add_shipid.Text & "', " &
-            txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
+        sql = "insert into Membership values ('" & txt_add_id.Text & "', '" & label_add_shipid.Text & txt_add_shipid.Text &
+            "', '"
+        If combobox_add_membertype.SelectedIndex = 0 Then
+            sql = sql & combobox_add_membertype.Items(0).ToString & "', 500.00, 120.00)"
+        ElseIf combobox_add_membertype.SelectedIndex = 1 Then
+            sql = sql & combobox_add_membertype.Items(1).ToString & "', 300.00, 100.00)"
+        ElseIf combobox_add_membertype.SelectedIndex = 2 Then
+            sql = sql & combobox_add_membertype.Items(2).ToString & "', 180.00, 75.00)"
+        Else
+            MessageBox.Show("Please select only one of the 3 membership types.", "Membership Type")
+            Return
+        End If
         cmd = New OleDbCommand(sql, con)
         Try
-            MsgBox(sql)
+            MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
             MsgBox("Member Added!")
+            txt_add_cont.Clear()
+            txt_add_email.Clear()
+            txt_add_firstname.Clear()
+            txt_add_lastname.Clear()
+            txt_add_id.Clear()
+            txt_add_shipid.Clear()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
             Return
@@ -300,8 +318,8 @@ Public Class mainpage
 
     Private Sub txt_add_shipid_TextChanged(sender As Object, e As EventArgs) Handles txt_add_shipid.TextChanged
         Dim str As String = txt_add_shipid.Text
-        For i = 0 To txt_add_shipid.TextLength - 1 'loop for checking each position (array position) of your string
-            If Char.IsLetter(str.Chars(i)) Then 'check if that thing you pasted contains letters or not
+        For i = 0 To txt_add_shipid.TextLength - 1
+            If Char.IsLetter(str.Chars(i)) Then
                 txt_add_shipid.Text = Nothing
                 MessageBox.Show("Membership ID must only consist of numerical values.", "Membership ID")
                 Return
@@ -312,7 +330,46 @@ Public Class mainpage
             MessageBox.Show("Membership ID must be less than 8 numbers.", "Membership ID")
             txt_add_shipid.Text = Nothing
             Return
-
         End If
+    End Sub
+
+    Private Sub txt_add_cont_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_add_cont.KeyPress
+
+        If Char.IsDigit(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub txt_add_cont_TextChanged(sender As Object, e As EventArgs) Handles txt_add_cont.TextChanged
+
+        Dim str As String = txt_add_cont.Text
+        For i = 0 To txt_add_cont.TextLength - 1
+            If Char.IsLetter(str.Chars(i)) Then
+                txt_add_cont.Text = Nothing
+                MessageBox.Show("Contact number must only consist of numerical values.", "Contact Number")
+                Return
+            End If
+        Next
+
+    End Sub
+
+    Private Sub txt_add_email_Leave(sender As Object, e As EventArgs) Handles txt_add_email.Leave
+
+        If Not txt_add_email.Text.Contains("@") Then
+            MessageBox.Show("This doesn't look like an E-mail address, please re-enter a valid E-mail address.", "E-mail Address")
+            Return
+        End If
+
+    End Sub
+
+    Private Sub txt_add_email_TextChanged(sender As Object, e As EventArgs) Handles txt_add_email.TextChanged
+
+        If txt_add_email.TextLength > 30 Then
+            MessageBox.Show("The E-mail address length is too long!", "E-mail Address")
+            txt_add_email.Text = Nothing
+            Return
+        End If
+
     End Sub
 End Class

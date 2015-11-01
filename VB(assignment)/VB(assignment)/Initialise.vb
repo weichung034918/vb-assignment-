@@ -122,17 +122,18 @@ Public Class Initialise
             MsgBox(ex.Message)
         End Try
 
-        cmd = New OleDbCommand("CREATE TABLE [Membership] ([MSHIP_ID] TEXT(10) PRIMARY KEY, [Member_Type] MEMO, " +
-                               "[Reg_Fee] DECIMAL(10,2), [Monthly_Fee] DECIMAL(10,2))", con)
+        cmd = New OleDbCommand("CREATE TABLE [Members] ([MID] TEXT(10) PRIMARY KEY, [First_Name] MEMO, [Last_Name] MEMO, " +
+                                "[Contact_Number] INT, [Email] TEXT(30), [Status] TEXT(30))", con)
+
         Try
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
-        cmd = New OleDbCommand("CREATE TABLE [Members] ([MID] TEXT(10) PRIMARY KEY, [First_Name] MEMO, [Last_Name] MEMO, " +
-                               "[MSHIP_ID] TEXT(10), [Contact_Number] INT, [Email] TEXT(30), [Status] TEXT(30), " +
-                               "CONSTRAINT FKMembersMSHIP_ID FOREIGN KEY (MSHIP_ID) REFERENCES Membership(MSHIP_ID) ON UPDATE CASCADE ON DELETE CASCADE)", con)
+        cmd = New OleDbCommand("CREATE TABLE [Membership] ([MID] TEXT(10), [MSHIP_ID] TEXT(10) PRIMARY KEY, [Member_Type] MEMO, " +
+                              "[Reg_Fee] DECIMAL(10,2), [Monthly_Fee] DECIMAL(10,2), " +
+                              "CONSTRAINT FKMembershipMID FOREIGN KEY (MID) REFERENCES Members(MID) ON UPDATE CASCADE ON DELETE CASCADE)", con)
         Try
             cmd.ExecuteNonQuery()
         Catch ex As Exception
