@@ -183,6 +183,7 @@ Partial Class Permission
         '
         'permission_role
         '
+        Me.permission_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.permission_role.Enabled = False
         Me.permission_role.FormattingEnabled = True
         Me.permission_role.Items.AddRange(New Object() {"Admin", "Staff"})
@@ -265,12 +266,12 @@ Partial Class Permission
         '
         Me.usernamelabel.AutoSize = True
         Me.usernamelabel.Depth = 0
-        Me.usernamelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.usernamelabel.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.usernamelabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.usernamelabel.Location = New System.Drawing.Point(752, 144)
         Me.usernamelabel.MouseState = MaterialSkin.MouseState.HOVER
         Me.usernamelabel.Name = "usernamelabel"
-        Me.usernamelabel.Size = New System.Drawing.Size(85, 18)
+        Me.usernamelabel.Size = New System.Drawing.Size(85, 19)
         Me.usernamelabel.TabIndex = 17
         Me.usernamelabel.Text = "Username :"
         Me.usernamelabel.Visible = False
@@ -325,7 +326,7 @@ Partial Class Permission
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(317, 273)
+        Me.ClientSize = New System.Drawing.Size(1017, 380)
         Me.Controls.Add(Me.retype_uname_field)
         Me.Controls.Add(Me.chg_uname_field)
         Me.Controls.Add(Me.reusername)

@@ -354,14 +354,32 @@ Public Class mainpage
             Return
         End If
     End Sub
+
+    Private Sub combobox_remove_search_LostFocus(sender As Object, e As EventArgs) Handles combobox_remove_search.LostFocus
+        If combobox_remove_search.Text.Equals("Membership ID") <> True Then
+            combobox_remove_search_membershiptype.Visible = False
+            MaterialLabel52.Visible = False
+        End If
+    End Sub
     '---------------------------------Add member function ends---------------------------------------
 
     '-------------------------------Delete member function starts------------------------------------
     Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
         'DESIGN START
+       
         If combobox_remove_search.Text <> String.Empty Then
+           
+            If combobox_remove_search.Text.Equals("Membership ID") = True Then
+                combobox_remove_search_membershiptype.Visible = True
+                MaterialLabel52.Visible = True
+              
+        Else
+            combobox_remove_search_membershiptype.Visible = False
+            MaterialLabel52.Visible = False
+            End If
+            label_remove_search.Left = txt_remove_search.Left - 150
             txt_remove_search.Visible = True
-            label_remove_search.Enabled = True
+            label_remove_search.Visible = True
             label_remove_search.Text = combobox_remove_search.Text & ":"
         Else
             txt_remove_search.Visible = False
@@ -449,5 +467,69 @@ Public Class mainpage
             MessageBox.Show(ex.Message, "Error")
         End Try
     End Sub
+
+
+   
+   
+   
+   
+    
+    Private Sub combobox_remove_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_search_membershiptype.SelectedIndexChanged
+        If combobox_remove_search_membershiptype.Text = "Deluxe" Then
+            label_remove_search.Left = txt_remove_search.Left - 50
+            label_remove_search.Text = "DE"
+        ElseIf combobox_remove_search_membershiptype.Text = "Non-Deluxe" Then
+            label_remove_search.Left = txt_remove_search.Left - 50
+            label_remove_search.Text = "ND"
+        ElseIf combobox_remove_search_membershiptype.Text = "Weekday" Then
+            label_remove_search.Left = txt_remove_search.Left - 50
+            label_remove_search.Text = "WD"
+        End If
+    End Sub
+
+  
+    Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search_membershiptype.SelectedIndexChanged
+        If combobox_update_search_membershiptype.Text = "Deluxe" Then
+            label_update_search.Left = txt_update_search.Left - 50
+            label_update_search.Text = "DE"
+        ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
+            label_update_search.Left = txt_update_search.Left - 50
+            label_update_search.Text = "ND"
+        ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
+            label_update_search.Left = txt_update_search.Left - 50
+            label_update_search.Text = "WD"
+        End If
+    End Sub
+
+    Private Sub combobox_update_search_LostFocus(sender As Object, e As EventArgs) Handles combobox_update_search.LostFocus
+        If combobox_update_search.Text.Equals("Membership ID") <> True Then
+            combobox_update_search_membershiptype.Visible = False
+            MaterialLabel51.Visible = False
+        End If
+    End Sub
+
+    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
+        If combobox_update_search.Text <> String.Empty Then
+
+            If combobox_update_search.Text.Equals("Membership ID") = True Then
+                combobox_update_search_membershiptype.Visible = True
+                MaterialLabel51.Visible = True
+
+            Else
+                combobox_update_search_membershiptype.Visible = False
+                MaterialLabel51.Visible = False
+            End If
+            label_update_search.Left = txt_update_search.Left - 150
+            txt_update_search.Visible = True
+            label_update_search.Visible = True
+            label_update_search.Text = combobox_update_search.Text & ":"
+        Else
+            txt_update_search.Visible = False
+        End If
+    End Sub
+
+   
+   
+    
 End Class
 '--------------------------------Delete member function ends--------------------------------------

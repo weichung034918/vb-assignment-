@@ -41,6 +41,8 @@ Partial Class mainpage
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.combobox_remove_search_membershiptype = New System.Windows.Forms.ComboBox()
+        Me.MaterialLabel52 = New MaterialSkin.Controls.MaterialLabel()
         Me.txt_remove_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -63,6 +65,8 @@ Partial Class mainpage
         Me.combobox_remove_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
         Me.tabpgae = New System.Windows.Forms.TabPage()
+        Me.combobox_update_search_membershiptype = New System.Windows.Forms.ComboBox()
+        Me.MaterialLabel51 = New MaterialSkin.Controls.MaterialLabel()
         Me.txt_update_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_update_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_update_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -348,6 +352,7 @@ Partial Class mainpage
         '
         Me.combobox_add_membertype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.combobox_add_membertype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.combobox_add_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_add_membertype.FormattingEnabled = True
         Me.combobox_add_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
         Me.combobox_add_membertype.Location = New System.Drawing.Point(504, 185)
@@ -451,6 +456,8 @@ Partial Class mainpage
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage2.Controls.Add(Me.combobox_remove_search_membershiptype)
+        Me.TabPage2.Controls.Add(Me.MaterialLabel52)
         Me.TabPage2.Controls.Add(Me.txt_remove_email)
         Me.TabPage2.Controls.Add(Me.txt_remove_cont)
         Me.TabPage2.Controls.Add(Me.txt_remove_shipid)
@@ -479,12 +486,38 @@ Partial Class mainpage
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Remove Members"
         '
+        'combobox_remove_search_membershiptype
+        '
+        Me.combobox_remove_search_membershiptype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_remove_search_membershiptype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_remove_search_membershiptype.FormattingEnabled = True
+        Me.combobox_remove_search_membershiptype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_remove_search_membershiptype.Location = New System.Drawing.Point(188, 96)
+        Me.combobox_remove_search_membershiptype.Name = "combobox_remove_search_membershiptype"
+        Me.combobox_remove_search_membershiptype.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_remove_search_membershiptype.TabIndex = 60
+        Me.combobox_remove_search_membershiptype.Visible = False
+        '
+        'MaterialLabel52
+        '
+        Me.MaterialLabel52.AutoSize = True
+        Me.MaterialLabel52.Depth = 0
+        Me.MaterialLabel52.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel52.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel52.Location = New System.Drawing.Point(50, 98)
+        Me.MaterialLabel52.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel52.Name = "MaterialLabel52"
+        Me.MaterialLabel52.Size = New System.Drawing.Size(132, 19)
+        Me.MaterialLabel52.TabIndex = 59
+        Me.MaterialLabel52.Text = "Membership Type:"
+        Me.MaterialLabel52.Visible = False
+        '
         'txt_remove_email
         '
         Me.txt_remove_email.Depth = 0
         Me.txt_remove_email.Enabled = False
         Me.txt_remove_email.Hint = ""
-        Me.txt_remove_email.Location = New System.Drawing.Point(567, 295)
+        Me.txt_remove_email.Location = New System.Drawing.Point(595, 294)
         Me.txt_remove_email.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_email.Name = "txt_remove_email"
         Me.txt_remove_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -500,7 +533,7 @@ Partial Class mainpage
         Me.txt_remove_cont.Depth = 0
         Me.txt_remove_cont.Enabled = False
         Me.txt_remove_cont.Hint = ""
-        Me.txt_remove_cont.Location = New System.Drawing.Point(567, 256)
+        Me.txt_remove_cont.Location = New System.Drawing.Point(595, 255)
         Me.txt_remove_cont.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_cont.Name = "txt_remove_cont"
         Me.txt_remove_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -516,7 +549,7 @@ Partial Class mainpage
         Me.txt_remove_shipid.Depth = 0
         Me.txt_remove_shipid.Enabled = False
         Me.txt_remove_shipid.Hint = ""
-        Me.txt_remove_shipid.Location = New System.Drawing.Point(622, 213)
+        Me.txt_remove_shipid.Location = New System.Drawing.Point(650, 216)
         Me.txt_remove_shipid.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_shipid.Name = "txt_remove_shipid"
         Me.txt_remove_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -532,7 +565,7 @@ Partial Class mainpage
         Me.txt_remove_lastname.Depth = 0
         Me.txt_remove_lastname.Enabled = False
         Me.txt_remove_lastname.Hint = ""
-        Me.txt_remove_lastname.Location = New System.Drawing.Point(567, 138)
+        Me.txt_remove_lastname.Location = New System.Drawing.Point(595, 137)
         Me.txt_remove_lastname.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_lastname.Name = "txt_remove_lastname"
         Me.txt_remove_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -548,7 +581,7 @@ Partial Class mainpage
         Me.txt_remove_firstname.Depth = 0
         Me.txt_remove_firstname.Enabled = False
         Me.txt_remove_firstname.Hint = ""
-        Me.txt_remove_firstname.Location = New System.Drawing.Point(567, 99)
+        Me.txt_remove_firstname.Location = New System.Drawing.Point(595, 98)
         Me.txt_remove_firstname.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_firstname.Name = "txt_remove_firstname"
         Me.txt_remove_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -564,7 +597,7 @@ Partial Class mainpage
         Me.txt_remove_id.Depth = 0
         Me.txt_remove_id.Enabled = False
         Me.txt_remove_id.Hint = ""
-        Me.txt_remove_id.Location = New System.Drawing.Point(567, 60)
+        Me.txt_remove_id.Location = New System.Drawing.Point(595, 59)
         Me.txt_remove_id.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_id.Name = "txt_remove_id"
         Me.txt_remove_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -579,7 +612,7 @@ Partial Class mainpage
         '
         Me.txt_remove_search.Depth = 0
         Me.txt_remove_search.Hint = ""
-        Me.txt_remove_search.Location = New System.Drawing.Point(206, 170)
+        Me.txt_remove_search.Location = New System.Drawing.Point(188, 133)
         Me.txt_remove_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_remove_search.Name = "txt_remove_search"
         Me.txt_remove_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -598,7 +631,7 @@ Partial Class mainpage
         Me.label_remove_shipid.Enabled = False
         Me.label_remove_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_remove_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_remove_shipid.Location = New System.Drawing.Point(567, 217)
+        Me.label_remove_shipid.Location = New System.Drawing.Point(595, 216)
         Me.label_remove_shipid.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_remove_shipid.Name = "label_remove_shipid"
         Me.label_remove_shipid.Size = New System.Drawing.Size(23, 19)
@@ -609,15 +642,15 @@ Partial Class mainpage
         '
         Me.label_remove_search.AutoSize = True
         Me.label_remove_search.Depth = 0
-        Me.label_remove_search.Enabled = False
         Me.label_remove_search.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_remove_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_remove_search.Location = New System.Drawing.Point(63, 174)
+        Me.label_remove_search.Location = New System.Drawing.Point(7, 133)
         Me.label_remove_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_remove_search.Name = "label_remove_search"
         Me.label_remove_search.Size = New System.Drawing.Size(59, 19)
         Me.label_remove_search.TabIndex = 30
         Me.label_remove_search.Text = "Search:"
+        Me.label_remove_search.Visible = False
         '
         'MaterialLabel47
         '
@@ -625,7 +658,7 @@ Partial Class mainpage
         Me.MaterialLabel47.Depth = 0
         Me.MaterialLabel47.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel47.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel47.Location = New System.Drawing.Point(369, 217)
+        Me.MaterialLabel47.Location = New System.Drawing.Point(397, 216)
         Me.MaterialLabel47.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel47.Name = "MaterialLabel47"
         Me.MaterialLabel47.Size = New System.Drawing.Size(114, 19)
@@ -635,10 +668,11 @@ Partial Class mainpage
         'combobox_remove_membertype
         '
         Me.combobox_remove_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_remove_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_remove_membertype.Enabled = False
         Me.combobox_remove_membertype.FormattingEnabled = True
         Me.combobox_remove_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_remove_membertype.Location = New System.Drawing.Point(567, 177)
+        Me.combobox_remove_membertype.Location = New System.Drawing.Point(595, 176)
         Me.combobox_remove_membertype.Name = "combobox_remove_membertype"
         Me.combobox_remove_membertype.Size = New System.Drawing.Size(141, 21)
         Me.combobox_remove_membertype.TabIndex = 27
@@ -649,7 +683,7 @@ Partial Class mainpage
         Me.MaterialLabel21.Depth = 0
         Me.MaterialLabel21.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel21.Location = New System.Drawing.Point(369, 177)
+        Me.MaterialLabel21.Location = New System.Drawing.Point(397, 176)
         Me.MaterialLabel21.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel21.Name = "MaterialLabel21"
         Me.MaterialLabel21.Size = New System.Drawing.Size(132, 19)
@@ -659,7 +693,7 @@ Partial Class mainpage
         'btn_remove
         '
         Me.btn_remove.Depth = 0
-        Me.btn_remove.Location = New System.Drawing.Point(466, 355)
+        Me.btn_remove.Location = New System.Drawing.Point(494, 354)
         Me.btn_remove.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_remove.Name = "btn_remove"
         Me.btn_remove.Primary = True
@@ -672,7 +706,7 @@ Partial Class mainpage
         'btn_remove_search
         '
         Me.btn_remove_search.Depth = 0
-        Me.btn_remove_search.Location = New System.Drawing.Point(206, 229)
+        Me.btn_remove_search.Location = New System.Drawing.Point(234, 228)
         Me.btn_remove_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_remove_search.Name = "btn_remove_search"
         Me.btn_remove_search.Primary = True
@@ -687,7 +721,7 @@ Partial Class mainpage
         Me.MaterialLabel8.Depth = 0
         Me.MaterialLabel8.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel8.Location = New System.Drawing.Point(368, 295)
+        Me.MaterialLabel8.Location = New System.Drawing.Point(396, 294)
         Me.MaterialLabel8.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel8.Name = "MaterialLabel8"
         Me.MaterialLabel8.Size = New System.Drawing.Size(114, 19)
@@ -700,7 +734,7 @@ Partial Class mainpage
         Me.MaterialLabel9.Depth = 0
         Me.MaterialLabel9.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel9.Location = New System.Drawing.Point(368, 256)
+        Me.MaterialLabel9.Location = New System.Drawing.Point(396, 255)
         Me.MaterialLabel9.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel9.Name = "MaterialLabel9"
         Me.MaterialLabel9.Size = New System.Drawing.Size(123, 19)
@@ -713,7 +747,7 @@ Partial Class mainpage
         Me.MaterialLabel11.Depth = 0
         Me.MaterialLabel11.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel11.Location = New System.Drawing.Point(368, 138)
+        Me.MaterialLabel11.Location = New System.Drawing.Point(396, 137)
         Me.MaterialLabel11.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel11.Name = "MaterialLabel11"
         Me.MaterialLabel11.Size = New System.Drawing.Size(145, 19)
@@ -726,7 +760,7 @@ Partial Class mainpage
         Me.MaterialLabel12.Depth = 0
         Me.MaterialLabel12.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel12.Location = New System.Drawing.Point(369, 99)
+        Me.MaterialLabel12.Location = New System.Drawing.Point(397, 98)
         Me.MaterialLabel12.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel12.Name = "MaterialLabel12"
         Me.MaterialLabel12.Size = New System.Drawing.Size(146, 19)
@@ -739,7 +773,7 @@ Partial Class mainpage
         Me.MaterialLabel13.Depth = 0
         Me.MaterialLabel13.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel13.Location = New System.Drawing.Point(368, 60)
+        Me.MaterialLabel13.Location = New System.Drawing.Point(396, 59)
         Me.MaterialLabel13.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel13.Name = "MaterialLabel13"
         Me.MaterialLabel13.Size = New System.Drawing.Size(86, 19)
@@ -751,9 +785,10 @@ Partial Class mainpage
         Me.combobox_remove_search.AutoCompleteCustomSource.AddRange(New String() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
         Me.combobox_remove_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.combobox_remove_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.combobox_remove_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_remove_search.FormattingEnabled = True
         Me.combobox_remove_search.Items.AddRange(New Object() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
-        Me.combobox_remove_search.Location = New System.Drawing.Point(206, 120)
+        Me.combobox_remove_search.Location = New System.Drawing.Point(188, 59)
         Me.combobox_remove_search.Name = "combobox_remove_search"
         Me.combobox_remove_search.Size = New System.Drawing.Size(121, 21)
         Me.combobox_remove_search.TabIndex = 3
@@ -764,7 +799,7 @@ Partial Class mainpage
         Me.MaterialLabel7.Depth = 0
         Me.MaterialLabel7.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel7.Location = New System.Drawing.Point(121, 120)
+        Me.MaterialLabel7.Location = New System.Drawing.Point(103, 59)
         Me.MaterialLabel7.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel7.Name = "MaterialLabel7"
         Me.MaterialLabel7.Size = New System.Drawing.Size(79, 19)
@@ -775,6 +810,8 @@ Partial Class mainpage
         '
         Me.tabpgae.BackColor = System.Drawing.SystemColors.Control
         Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.tabpgae.Controls.Add(Me.combobox_update_search_membershiptype)
+        Me.tabpgae.Controls.Add(Me.MaterialLabel51)
         Me.tabpgae.Controls.Add(Me.txt_update_email)
         Me.tabpgae.Controls.Add(Me.txt_update_cont)
         Me.tabpgae.Controls.Add(Me.txt_update_shipid)
@@ -802,11 +839,37 @@ Partial Class mainpage
         Me.tabpgae.TabIndex = 2
         Me.tabpgae.Text = "Update Members"
         '
+        'combobox_update_search_membershiptype
+        '
+        Me.combobox_update_search_membershiptype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_update_search_membershiptype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_update_search_membershiptype.FormattingEnabled = True
+        Me.combobox_update_search_membershiptype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_update_search_membershiptype.Location = New System.Drawing.Point(189, 97)
+        Me.combobox_update_search_membershiptype.Name = "combobox_update_search_membershiptype"
+        Me.combobox_update_search_membershiptype.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_update_search_membershiptype.TabIndex = 58
+        Me.combobox_update_search_membershiptype.Visible = False
+        '
+        'MaterialLabel51
+        '
+        Me.MaterialLabel51.AutoSize = True
+        Me.MaterialLabel51.Depth = 0
+        Me.MaterialLabel51.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel51.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel51.Location = New System.Drawing.Point(51, 99)
+        Me.MaterialLabel51.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel51.Name = "MaterialLabel51"
+        Me.MaterialLabel51.Size = New System.Drawing.Size(132, 19)
+        Me.MaterialLabel51.TabIndex = 57
+        Me.MaterialLabel51.Text = "Membership Type:"
+        Me.MaterialLabel51.Visible = False
+        '
         'txt_update_email
         '
         Me.txt_update_email.Depth = 0
         Me.txt_update_email.Hint = ""
-        Me.txt_update_email.Location = New System.Drawing.Point(563, 304)
+        Me.txt_update_email.Location = New System.Drawing.Point(596, 295)
         Me.txt_update_email.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_email.Name = "txt_update_email"
         Me.txt_update_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -821,7 +884,7 @@ Partial Class mainpage
         '
         Me.txt_update_cont.Depth = 0
         Me.txt_update_cont.Hint = ""
-        Me.txt_update_cont.Location = New System.Drawing.Point(563, 265)
+        Me.txt_update_cont.Location = New System.Drawing.Point(596, 256)
         Me.txt_update_cont.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_cont.Name = "txt_update_cont"
         Me.txt_update_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -836,7 +899,7 @@ Partial Class mainpage
         '
         Me.txt_update_shipid.Depth = 0
         Me.txt_update_shipid.Hint = ""
-        Me.txt_update_shipid.Location = New System.Drawing.Point(618, 226)
+        Me.txt_update_shipid.Location = New System.Drawing.Point(651, 217)
         Me.txt_update_shipid.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_shipid.Name = "txt_update_shipid"
         Me.txt_update_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -851,7 +914,7 @@ Partial Class mainpage
         '
         Me.txt_update_lastname.Depth = 0
         Me.txt_update_lastname.Hint = ""
-        Me.txt_update_lastname.Location = New System.Drawing.Point(563, 147)
+        Me.txt_update_lastname.Location = New System.Drawing.Point(596, 138)
         Me.txt_update_lastname.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_lastname.Name = "txt_update_lastname"
         Me.txt_update_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -866,7 +929,7 @@ Partial Class mainpage
         '
         Me.txt_update_firstname.Depth = 0
         Me.txt_update_firstname.Hint = ""
-        Me.txt_update_firstname.Location = New System.Drawing.Point(563, 108)
+        Me.txt_update_firstname.Location = New System.Drawing.Point(596, 99)
         Me.txt_update_firstname.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_firstname.Name = "txt_update_firstname"
         Me.txt_update_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -881,7 +944,7 @@ Partial Class mainpage
         '
         Me.txt_update_id.Depth = 0
         Me.txt_update_id.Hint = ""
-        Me.txt_update_id.Location = New System.Drawing.Point(563, 69)
+        Me.txt_update_id.Location = New System.Drawing.Point(596, 60)
         Me.txt_update_id.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_id.Name = "txt_update_id"
         Me.txt_update_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -897,7 +960,7 @@ Partial Class mainpage
         Me.txt_update_search.Depth = 0
         Me.txt_update_search.Enabled = False
         Me.txt_update_search.Hint = ""
-        Me.txt_update_search.Location = New System.Drawing.Point(209, 158)
+        Me.txt_update_search.Location = New System.Drawing.Point(189, 134)
         Me.txt_update_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_update_search.Name = "txt_update_search"
         Me.txt_update_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -907,6 +970,7 @@ Partial Class mainpage
         Me.txt_update_search.Size = New System.Drawing.Size(121, 23)
         Me.txt_update_search.TabIndex = 50
         Me.txt_update_search.UseSystemPasswordChar = False
+        Me.txt_update_search.Visible = False
         '
         'label_update_shipid
         '
@@ -914,7 +978,7 @@ Partial Class mainpage
         Me.label_update_shipid.Depth = 0
         Me.label_update_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_update_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_update_shipid.Location = New System.Drawing.Point(563, 226)
+        Me.label_update_shipid.Location = New System.Drawing.Point(596, 217)
         Me.label_update_shipid.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_update_shipid.Name = "label_update_shipid"
         Me.label_update_shipid.Size = New System.Drawing.Size(23, 19)
@@ -927,12 +991,13 @@ Partial Class mainpage
         Me.label_update_search.Depth = 0
         Me.label_update_search.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_update_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_update_search.Location = New System.Drawing.Point(67, 158)
+        Me.label_update_search.Location = New System.Drawing.Point(8, 134)
         Me.label_update_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_update_search.Name = "label_update_search"
         Me.label_update_search.Size = New System.Drawing.Size(59, 19)
         Me.label_update_search.TabIndex = 47
         Me.label_update_search.Text = "Search:"
+        Me.label_update_search.Visible = False
         '
         'MaterialLabel48
         '
@@ -940,7 +1005,7 @@ Partial Class mainpage
         Me.MaterialLabel48.Depth = 0
         Me.MaterialLabel48.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel48.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel48.Location = New System.Drawing.Point(377, 226)
+        Me.MaterialLabel48.Location = New System.Drawing.Point(398, 217)
         Me.MaterialLabel48.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel48.Name = "MaterialLabel48"
         Me.MaterialLabel48.Size = New System.Drawing.Size(114, 19)
@@ -950,9 +1015,10 @@ Partial Class mainpage
         'combobox_update_membertype
         '
         Me.combobox_update_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_update_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_update_membertype.FormattingEnabled = True
         Me.combobox_update_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_update_membertype.Location = New System.Drawing.Point(563, 186)
+        Me.combobox_update_membertype.Location = New System.Drawing.Point(596, 177)
         Me.combobox_update_membertype.Name = "combobox_update_membertype"
         Me.combobox_update_membertype.Size = New System.Drawing.Size(141, 21)
         Me.combobox_update_membertype.TabIndex = 43
@@ -963,7 +1029,7 @@ Partial Class mainpage
         Me.MaterialLabel10.Depth = 0
         Me.MaterialLabel10.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel10.Location = New System.Drawing.Point(377, 186)
+        Me.MaterialLabel10.Location = New System.Drawing.Point(398, 177)
         Me.MaterialLabel10.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel10.Name = "MaterialLabel10"
         Me.MaterialLabel10.Size = New System.Drawing.Size(132, 19)
@@ -973,7 +1039,7 @@ Partial Class mainpage
         'btn_update
         '
         Me.btn_update.Depth = 0
-        Me.btn_update.Location = New System.Drawing.Point(474, 348)
+        Me.btn_update.Location = New System.Drawing.Point(495, 355)
         Me.btn_update.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Primary = True
@@ -986,7 +1052,7 @@ Partial Class mainpage
         'btn_update_search
         '
         Me.btn_update_search.Depth = 0
-        Me.btn_update_search.Location = New System.Drawing.Point(209, 208)
+        Me.btn_update_search.Location = New System.Drawing.Point(235, 229)
         Me.btn_update_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_update_search.Name = "btn_update_search"
         Me.btn_update_search.Primary = True
@@ -1001,7 +1067,7 @@ Partial Class mainpage
         Me.MaterialLabel14.Depth = 0
         Me.MaterialLabel14.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel14.Location = New System.Drawing.Point(376, 304)
+        Me.MaterialLabel14.Location = New System.Drawing.Point(397, 295)
         Me.MaterialLabel14.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel14.Name = "MaterialLabel14"
         Me.MaterialLabel14.Size = New System.Drawing.Size(114, 19)
@@ -1014,7 +1080,7 @@ Partial Class mainpage
         Me.MaterialLabel15.Depth = 0
         Me.MaterialLabel15.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel15.Location = New System.Drawing.Point(376, 265)
+        Me.MaterialLabel15.Location = New System.Drawing.Point(397, 256)
         Me.MaterialLabel15.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel15.Name = "MaterialLabel15"
         Me.MaterialLabel15.Size = New System.Drawing.Size(123, 19)
@@ -1027,7 +1093,7 @@ Partial Class mainpage
         Me.MaterialLabel17.Depth = 0
         Me.MaterialLabel17.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel17.Location = New System.Drawing.Point(376, 147)
+        Me.MaterialLabel17.Location = New System.Drawing.Point(397, 138)
         Me.MaterialLabel17.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel17.Name = "MaterialLabel17"
         Me.MaterialLabel17.Size = New System.Drawing.Size(145, 19)
@@ -1040,7 +1106,7 @@ Partial Class mainpage
         Me.MaterialLabel18.Depth = 0
         Me.MaterialLabel18.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel18.Location = New System.Drawing.Point(377, 108)
+        Me.MaterialLabel18.Location = New System.Drawing.Point(398, 99)
         Me.MaterialLabel18.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel18.Name = "MaterialLabel18"
         Me.MaterialLabel18.Size = New System.Drawing.Size(146, 19)
@@ -1053,7 +1119,7 @@ Partial Class mainpage
         Me.MaterialLabel19.Depth = 0
         Me.MaterialLabel19.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel19.Location = New System.Drawing.Point(376, 69)
+        Me.MaterialLabel19.Location = New System.Drawing.Point(397, 60)
         Me.MaterialLabel19.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel19.Name = "MaterialLabel19"
         Me.MaterialLabel19.Size = New System.Drawing.Size(86, 19)
@@ -1063,9 +1129,10 @@ Partial Class mainpage
         'combobox_update_search
         '
         Me.combobox_update_search.AutoCompleteCustomSource.AddRange(New String() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
+        Me.combobox_update_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_update_search.FormattingEnabled = True
         Me.combobox_update_search.Items.AddRange(New Object() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
-        Me.combobox_update_search.Location = New System.Drawing.Point(209, 111)
+        Me.combobox_update_search.Location = New System.Drawing.Point(189, 60)
         Me.combobox_update_search.Name = "combobox_update_search"
         Me.combobox_update_search.Size = New System.Drawing.Size(121, 21)
         Me.combobox_update_search.TabIndex = 29
@@ -1076,7 +1143,7 @@ Partial Class mainpage
         Me.MaterialLabel20.Depth = 0
         Me.MaterialLabel20.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel20.Location = New System.Drawing.Point(124, 111)
+        Me.MaterialLabel20.Location = New System.Drawing.Point(104, 60)
         Me.MaterialLabel20.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel20.Name = "MaterialLabel20"
         Me.MaterialLabel20.Size = New System.Drawing.Size(79, 19)
@@ -1270,6 +1337,7 @@ Partial Class mainpage
         'combobox_payment_submit_membertype
         '
         Me.combobox_payment_submit_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_payment_submit_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_payment_submit_membertype.FormattingEnabled = True
         Me.combobox_payment_submit_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
         Me.combobox_payment_submit_membertype.Location = New System.Drawing.Point(215, 98)
@@ -1609,6 +1677,7 @@ Partial Class mainpage
         'combobox_payment_edit_membertype
         '
         Me.combobox_payment_edit_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_payment_edit_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_payment_edit_membertype.Enabled = False
         Me.combobox_payment_edit_membertype.FormattingEnabled = True
         Me.combobox_payment_edit_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
@@ -2003,6 +2072,7 @@ Partial Class mainpage
         'combobox_payment_delete_membertype
         '
         Me.combobox_payment_delete_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_payment_delete_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_payment_delete_membertype.Enabled = False
         Me.combobox_payment_delete_membertype.FormattingEnabled = True
         Me.combobox_payment_delete_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
@@ -2408,4 +2478,8 @@ Partial Class mainpage
     Friend WithEvents txt_payment_delete_search As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
     Friend WithEvents PermissionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents combobox_remove_search_membershiptype As System.Windows.Forms.ComboBox
+    Friend WithEvents MaterialLabel52 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents combobox_update_search_membershiptype As System.Windows.Forms.ComboBox
+    Friend WithEvents MaterialLabel51 As MaterialSkin.Controls.MaterialLabel
 End Class

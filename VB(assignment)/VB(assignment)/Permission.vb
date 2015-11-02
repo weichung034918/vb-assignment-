@@ -13,12 +13,11 @@ Public Class Permission
     End Sub
 
    
-    Private Sub MaterialLabel1_Click(sender As Object, e As EventArgs) Handles MaterialLabel1.Click
-
-    End Sub
+   
     Private Sub permission_format()
         Me.Width = 520
         Me.Height = 330
+        permission_search.Width = 110
         permission_search.Location = New Point(permission_search.Left, 90)
         permission_search.Left = (Me.Width / 5 * 2.5) - (permission_search.Width / 2)
         MaterialLabel1.Left = permission_search.Left - 70
@@ -86,16 +85,20 @@ Public Class Permission
         End If
         If permission_search.Text = "" Then
             permission_btn_search.Visible = False
+            permission_username.Enabled = False
+            permission_password.Enabled = False
+            permission_role.Enabled = False
         ElseIf permission_search.ForeColor = Color.Gray Then
             permission_btn_search.Visible = False
+            permission_username.Enabled = False
+            permission_password.Enabled = False
+            permission_role.Enabled = False
         ElseIf permission_search.ForeColor = Color.White Then
             permission_btn_search.Visible = True
         End If
     End Sub
 
-    Private Sub permission_search_Click(sender As Object, e As EventArgs) Handles permission_search.Click
-
-    End Sub
+ 
 
     Private Sub admin_username_Click(sender As Object, e As EventArgs) Handles admin_username.Click
 
@@ -134,6 +137,9 @@ Public Class Permission
 
     
     Private Sub permission_search_TextChanged(sender As Object, e As EventArgs) Handles permission_search.TextChanged
+        permission_username.Enabled = False
+        permission_password.Enabled = False
+        permission_role.Enabled = False
         If permission_search.ForeColor = Color.Gray Then
             permission_btn_search.Visible = False
 
@@ -144,8 +150,9 @@ Public Class Permission
     End Sub
 
     Private Sub edit_username_Click(sender As Object, e As EventArgs) Handles edit_username.Click
-        edit_username.Dispose()
-        edit_password.Dispose()
+        Dim edit_username As New Control
+        Dim edit_password As New Control
+        Dim edit_selection As New List(Of Control)
         Me.Width = 300
         Me.Height = 270
         usernamelabel.Visible = True
@@ -160,4 +167,9 @@ Public Class Permission
     End Sub
 
 
+    Private Sub permission_btn_search_Click(sender As Object, e As EventArgs) Handles permission_btn_search.Click
+        permission_username.Enabled = True
+        permission_password.Enabled = True
+        permission_role.Enabled = True
+    End Sub
 End Class
