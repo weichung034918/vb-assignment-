@@ -380,20 +380,24 @@ Public Class mainpage
                     txt_remove_search.Text = "0" + txt_remove_search.Text
                 End If
             Next i
-            sql = "select * from Members where MID='" & txt_remove_search.Text & "'"
+
+            'using inner join and identical value,
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where MID='" & txt_remove_search.Text & "'"
 
         ElseIf combobox_remove_search.SelectedIndex = 1 Then
 
-            sql = "select * from Members where First_Name='" & txt_remove_search.Text & "'"
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.First_Name='" & txt_remove_search.Text & "'"
 
         ElseIf combobox_remove_search.SelectedIndex = 2 Then
 
-            sql = "select * from Members where Last_Name='" & txt_remove_search.Text & "'"
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.Last_Name='" & txt_remove_search.Text & "'"
 
         ElseIf combobox_remove_search.SelectedIndex = 3 Then
             ds.Clear()
-            'using inner join and identical value,
-            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type, Ms.Reg_Fee, Ms.Monthly_Fee from Members as M " &
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members as M " &
                 "INNER JOIN Membership as Ms on M.MID=Ms.MID where Ms.MSHIP_ID='" & txt_remove_search.Text & "'"
             da = New OleDbDataAdapter(sql, con)
             da.Fill(ds, "Mem")
@@ -402,22 +406,33 @@ Public Class mainpage
 
         End If
 
-        'clear the dataset first, else data will be cached! Works like fflush(stdin) but this one is dataset not stdin
-        ds.Clear()
+
 
         If combobox_remove_search.SelectedIndex >= 0 AndAlso combobox_remove_search.SelectedIndex < 3 Then
+            'clear the dataset first, else data will be cached! Works like fflush(stdin) but this one is dataset not stdin
+            ds.Clear()
             da = New OleDbDataAdapter(sql, con)
             da.Fill(ds, "TempSet")
             txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
+            Dim mshipid2 As String = ds.Tables(0).Rows(0).Item(6)
+            txt_remove_shipid.Text = mshipid2.TrimStart("D", "E", "N", "W")
+            txt_remove_firstname.Text = ds.Tables(0).Rows(0).Item(1)
+            txt_remove_lastname.Text = ds.Tables(0).Rows(0).Item(2)
+            Dim mtype2 As String = ds.Tables(0).Rows(0).Item(7)
+            If mtype2 = "Deluxe" Then
+                combobox_remove_membertype.SelectedIndex = 0
+            ElseIf mtype2 = "Non-Deluxe" Then
+                combobox_remove_membertype.SelectedIndex = 1
+            ElseIf mtype2 = "Weekday" Then
+                combobox_remove_membertype.SelectedIndex = 2
+            End If
+            txt_remove_cont.Text = ds.Tables(0).Rows(0).Item(3)
+            txt_remove_email.Text = ds.Tables(0).Rows(0).Item(4)
         End If
 
         'ND00000002
 
         btn_remove.Visible = True
-
-    End Sub
-
-    Public Sub fill012()
 
     End Sub
 

@@ -44,7 +44,7 @@ Partial Class mainpage
         Me.txt_remove_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.text_remove_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_remove_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_remove_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -454,7 +454,7 @@ Partial Class mainpage
         Me.TabPage2.Controls.Add(Me.txt_remove_email)
         Me.TabPage2.Controls.Add(Me.txt_remove_cont)
         Me.TabPage2.Controls.Add(Me.txt_remove_shipid)
-        Me.TabPage2.Controls.Add(Me.text_remove_lastname)
+        Me.TabPage2.Controls.Add(Me.txt_remove_lastname)
         Me.TabPage2.Controls.Add(Me.txt_remove_firstname)
         Me.TabPage2.Controls.Add(Me.txt_remove_id)
         Me.TabPage2.Controls.Add(Me.txt_remove_search)
@@ -527,21 +527,21 @@ Partial Class mainpage
         Me.txt_remove_shipid.TabIndex = 38
         Me.txt_remove_shipid.UseSystemPasswordChar = False
         '
-        'text_remove_lastname
+        'txt_remove_lastname
         '
-        Me.text_remove_lastname.Depth = 0
-        Me.text_remove_lastname.Enabled = False
-        Me.text_remove_lastname.Hint = ""
-        Me.text_remove_lastname.Location = New System.Drawing.Point(567, 138)
-        Me.text_remove_lastname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.text_remove_lastname.Name = "text_remove_lastname"
-        Me.text_remove_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.text_remove_lastname.SelectedText = ""
-        Me.text_remove_lastname.SelectionLength = 0
-        Me.text_remove_lastname.SelectionStart = 0
-        Me.text_remove_lastname.Size = New System.Drawing.Size(141, 23)
-        Me.text_remove_lastname.TabIndex = 37
-        Me.text_remove_lastname.UseSystemPasswordChar = False
+        Me.txt_remove_lastname.Depth = 0
+        Me.txt_remove_lastname.Enabled = False
+        Me.txt_remove_lastname.Hint = ""
+        Me.txt_remove_lastname.Location = New System.Drawing.Point(567, 138)
+        Me.txt_remove_lastname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_remove_lastname.Name = "txt_remove_lastname"
+        Me.txt_remove_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remove_lastname.SelectedText = ""
+        Me.txt_remove_lastname.SelectionLength = 0
+        Me.txt_remove_lastname.SelectionStart = 0
+        Me.txt_remove_lastname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_remove_lastname.TabIndex = 37
+        Me.txt_remove_lastname.UseSystemPasswordChar = False
         '
         'txt_remove_firstname
         '
@@ -2373,7 +2373,7 @@ Partial Class mainpage
     Friend WithEvents txt_remove_search As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_remove_cont As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_remove_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents text_remove_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_remove_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_remove_firstname As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_remove_email As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_update_search As MaterialSkin.Controls.MaterialSingleLineTextField
