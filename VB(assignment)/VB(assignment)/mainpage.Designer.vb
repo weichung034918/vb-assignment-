@@ -41,32 +41,34 @@ Partial Class mainpage
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.combobox_modeselect = New System.Windows.Forms.ComboBox()
+        Me.btn_update = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_last = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_next = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_prev = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_first = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.combobox_remove_search_membershiptype = New System.Windows.Forms.ComboBox()
+        Me.combobox_reup_search_membershiptype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel52 = New MaterialSkin.Controls.MaterialLabel()
-        Me.txt_remove_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_remove_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_remove_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_remove_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_remove_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_remove_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_remove_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.label_remove_shipid = New MaterialSkin.Controls.MaterialLabel()
-        Me.label_remove_search = New MaterialSkin.Controls.MaterialLabel()
+        Me.txt_reup_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_reup_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_reup_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_reup_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_reup_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_reup_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_reup_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.label_reup_shipid = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_reup_search = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel47 = New MaterialSkin.Controls.MaterialLabel()
-        Me.combobox_remove_membertype = New System.Windows.Forms.ComboBox()
+        Me.combobox_reup_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel21 = New MaterialSkin.Controls.MaterialLabel()
         Me.btn_remove = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_remove_search = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_reup_search = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialLabel8 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel9 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel11 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel12 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel13 = New MaterialSkin.Controls.MaterialLabel()
-        Me.combobox_remove_search = New System.Windows.Forms.ComboBox()
+        Me.combobox_reup_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
         Me.tabpgae = New System.Windows.Forms.TabPage()
         Me.btn_last2 = New MaterialSkin.Controls.MaterialRaisedButton()
@@ -87,7 +89,6 @@ Partial Class mainpage
         Me.MaterialLabel48 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_update_membertype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel10 = New MaterialSkin.Controls.MaterialLabel()
-        Me.btn_update = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_update_search = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialLabel14 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel15 = New MaterialSkin.Controls.MaterialLabel()
@@ -464,32 +465,34 @@ Partial Class mainpage
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage2.Controls.Add(Me.combobox_modeselect)
+        Me.TabPage2.Controls.Add(Me.btn_update)
         Me.TabPage2.Controls.Add(Me.btn_last)
         Me.TabPage2.Controls.Add(Me.btn_next)
         Me.TabPage2.Controls.Add(Me.btn_prev)
         Me.TabPage2.Controls.Add(Me.btn_first)
-        Me.TabPage2.Controls.Add(Me.combobox_remove_search_membershiptype)
+        Me.TabPage2.Controls.Add(Me.combobox_reup_search_membershiptype)
         Me.TabPage2.Controls.Add(Me.MaterialLabel52)
-        Me.TabPage2.Controls.Add(Me.txt_remove_email)
-        Me.TabPage2.Controls.Add(Me.txt_remove_cont)
-        Me.TabPage2.Controls.Add(Me.txt_remove_shipid)
-        Me.TabPage2.Controls.Add(Me.txt_remove_lastname)
-        Me.TabPage2.Controls.Add(Me.txt_remove_firstname)
-        Me.TabPage2.Controls.Add(Me.txt_remove_id)
-        Me.TabPage2.Controls.Add(Me.txt_remove_search)
-        Me.TabPage2.Controls.Add(Me.label_remove_shipid)
-        Me.TabPage2.Controls.Add(Me.label_remove_search)
+        Me.TabPage2.Controls.Add(Me.txt_reup_email)
+        Me.TabPage2.Controls.Add(Me.txt_reup_cont)
+        Me.TabPage2.Controls.Add(Me.txt_reup_shipid)
+        Me.TabPage2.Controls.Add(Me.txt_reup_lastname)
+        Me.TabPage2.Controls.Add(Me.txt_reup_firstname)
+        Me.TabPage2.Controls.Add(Me.txt_reup_id)
+        Me.TabPage2.Controls.Add(Me.txt_reup_search)
+        Me.TabPage2.Controls.Add(Me.label_reup_shipid)
+        Me.TabPage2.Controls.Add(Me.label_reup_search)
         Me.TabPage2.Controls.Add(Me.MaterialLabel47)
-        Me.TabPage2.Controls.Add(Me.combobox_remove_membertype)
+        Me.TabPage2.Controls.Add(Me.combobox_reup_membertype)
         Me.TabPage2.Controls.Add(Me.MaterialLabel21)
         Me.TabPage2.Controls.Add(Me.btn_remove)
-        Me.TabPage2.Controls.Add(Me.btn_remove_search)
+        Me.TabPage2.Controls.Add(Me.btn_reup_search)
         Me.TabPage2.Controls.Add(Me.MaterialLabel8)
         Me.TabPage2.Controls.Add(Me.MaterialLabel9)
         Me.TabPage2.Controls.Add(Me.MaterialLabel11)
         Me.TabPage2.Controls.Add(Me.MaterialLabel12)
         Me.TabPage2.Controls.Add(Me.MaterialLabel13)
-        Me.TabPage2.Controls.Add(Me.combobox_remove_search)
+        Me.TabPage2.Controls.Add(Me.combobox_reup_search)
         Me.TabPage2.Controls.Add(Me.MaterialLabel7)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -497,6 +500,30 @@ Partial Class mainpage
         Me.TabPage2.Size = New System.Drawing.Size(829, 454)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Remove Members"
+        '
+        'combobox_modeselect
+        '
+        Me.combobox_modeselect.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_modeselect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_modeselect.FormattingEnabled = True
+        Me.combobox_modeselect.Items.AddRange(New Object() {"Delete Members", "Update Members"})
+        Me.combobox_modeselect.Location = New System.Drawing.Point(0, 2)
+        Me.combobox_modeselect.Name = "combobox_modeselect"
+        Me.combobox_modeselect.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_modeselect.TabIndex = 71
+        '
+        'btn_update
+        '
+        Me.btn_update.Depth = 0
+        Me.btn_update.Location = New System.Drawing.Point(395, 374)
+        Me.btn_update.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Primary = True
+        Me.btn_update.Size = New System.Drawing.Size(115, 39)
+        Me.btn_update.TabIndex = 70
+        Me.btn_update.Text = "Update"
+        Me.btn_update.UseVisualStyleBackColor = True
+        Me.btn_update.Visible = False
         '
         'btn_last
         '
@@ -550,17 +577,17 @@ Partial Class mainpage
         Me.btn_first.UseVisualStyleBackColor = True
         Me.btn_first.Visible = False
         '
-        'combobox_remove_search_membershiptype
+        'combobox_reup_search_membershiptype
         '
-        Me.combobox_remove_search_membershiptype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_remove_search_membershiptype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combobox_remove_search_membershiptype.FormattingEnabled = True
-        Me.combobox_remove_search_membershiptype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_remove_search_membershiptype.Location = New System.Drawing.Point(188, 96)
-        Me.combobox_remove_search_membershiptype.Name = "combobox_remove_search_membershiptype"
-        Me.combobox_remove_search_membershiptype.Size = New System.Drawing.Size(141, 21)
-        Me.combobox_remove_search_membershiptype.TabIndex = 60
-        Me.combobox_remove_search_membershiptype.Visible = False
+        Me.combobox_reup_search_membershiptype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_reup_search_membershiptype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_reup_search_membershiptype.FormattingEnabled = True
+        Me.combobox_reup_search_membershiptype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_reup_search_membershiptype.Location = New System.Drawing.Point(188, 96)
+        Me.combobox_reup_search_membershiptype.Name = "combobox_reup_search_membershiptype"
+        Me.combobox_reup_search_membershiptype.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_reup_search_membershiptype.TabIndex = 60
+        Me.combobox_reup_search_membershiptype.Visible = False
         '
         'MaterialLabel52
         '
@@ -576,145 +603,145 @@ Partial Class mainpage
         Me.MaterialLabel52.Text = "Membership Type:"
         Me.MaterialLabel52.Visible = False
         '
-        'txt_remove_email
+        'txt_reup_email
         '
-        Me.txt_remove_email.Depth = 0
-        Me.txt_remove_email.Enabled = False
-        Me.txt_remove_email.Hint = ""
-        Me.txt_remove_email.Location = New System.Drawing.Point(595, 294)
-        Me.txt_remove_email.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_email.Name = "txt_remove_email"
-        Me.txt_remove_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_email.SelectedText = ""
-        Me.txt_remove_email.SelectionLength = 0
-        Me.txt_remove_email.SelectionStart = 0
-        Me.txt_remove_email.Size = New System.Drawing.Size(141, 23)
-        Me.txt_remove_email.TabIndex = 40
-        Me.txt_remove_email.UseSystemPasswordChar = False
+        Me.txt_reup_email.Depth = 0
+        Me.txt_reup_email.Enabled = False
+        Me.txt_reup_email.Hint = ""
+        Me.txt_reup_email.Location = New System.Drawing.Point(595, 294)
+        Me.txt_reup_email.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_email.Name = "txt_reup_email"
+        Me.txt_reup_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_email.SelectedText = ""
+        Me.txt_reup_email.SelectionLength = 0
+        Me.txt_reup_email.SelectionStart = 0
+        Me.txt_reup_email.Size = New System.Drawing.Size(141, 23)
+        Me.txt_reup_email.TabIndex = 40
+        Me.txt_reup_email.UseSystemPasswordChar = False
         '
-        'txt_remove_cont
+        'txt_reup_cont
         '
-        Me.txt_remove_cont.Depth = 0
-        Me.txt_remove_cont.Enabled = False
-        Me.txt_remove_cont.Hint = ""
-        Me.txt_remove_cont.Location = New System.Drawing.Point(595, 255)
-        Me.txt_remove_cont.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_cont.Name = "txt_remove_cont"
-        Me.txt_remove_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_cont.SelectedText = ""
-        Me.txt_remove_cont.SelectionLength = 0
-        Me.txt_remove_cont.SelectionStart = 0
-        Me.txt_remove_cont.Size = New System.Drawing.Size(141, 23)
-        Me.txt_remove_cont.TabIndex = 39
-        Me.txt_remove_cont.UseSystemPasswordChar = False
+        Me.txt_reup_cont.Depth = 0
+        Me.txt_reup_cont.Enabled = False
+        Me.txt_reup_cont.Hint = ""
+        Me.txt_reup_cont.Location = New System.Drawing.Point(595, 255)
+        Me.txt_reup_cont.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_cont.Name = "txt_reup_cont"
+        Me.txt_reup_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_cont.SelectedText = ""
+        Me.txt_reup_cont.SelectionLength = 0
+        Me.txt_reup_cont.SelectionStart = 0
+        Me.txt_reup_cont.Size = New System.Drawing.Size(141, 23)
+        Me.txt_reup_cont.TabIndex = 39
+        Me.txt_reup_cont.UseSystemPasswordChar = False
         '
-        'txt_remove_shipid
+        'txt_reup_shipid
         '
-        Me.txt_remove_shipid.Depth = 0
-        Me.txt_remove_shipid.Enabled = False
-        Me.txt_remove_shipid.Hint = ""
-        Me.txt_remove_shipid.Location = New System.Drawing.Point(650, 216)
-        Me.txt_remove_shipid.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_shipid.Name = "txt_remove_shipid"
-        Me.txt_remove_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_shipid.SelectedText = ""
-        Me.txt_remove_shipid.SelectionLength = 0
-        Me.txt_remove_shipid.SelectionStart = 0
-        Me.txt_remove_shipid.Size = New System.Drawing.Size(86, 23)
-        Me.txt_remove_shipid.TabIndex = 38
-        Me.txt_remove_shipid.UseSystemPasswordChar = False
+        Me.txt_reup_shipid.Depth = 0
+        Me.txt_reup_shipid.Enabled = False
+        Me.txt_reup_shipid.Hint = ""
+        Me.txt_reup_shipid.Location = New System.Drawing.Point(650, 216)
+        Me.txt_reup_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_shipid.Name = "txt_reup_shipid"
+        Me.txt_reup_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_shipid.SelectedText = ""
+        Me.txt_reup_shipid.SelectionLength = 0
+        Me.txt_reup_shipid.SelectionStart = 0
+        Me.txt_reup_shipid.Size = New System.Drawing.Size(86, 23)
+        Me.txt_reup_shipid.TabIndex = 38
+        Me.txt_reup_shipid.UseSystemPasswordChar = False
         '
-        'txt_remove_lastname
+        'txt_reup_lastname
         '
-        Me.txt_remove_lastname.Depth = 0
-        Me.txt_remove_lastname.Enabled = False
-        Me.txt_remove_lastname.Hint = ""
-        Me.txt_remove_lastname.Location = New System.Drawing.Point(595, 137)
-        Me.txt_remove_lastname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_lastname.Name = "txt_remove_lastname"
-        Me.txt_remove_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_lastname.SelectedText = ""
-        Me.txt_remove_lastname.SelectionLength = 0
-        Me.txt_remove_lastname.SelectionStart = 0
-        Me.txt_remove_lastname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_remove_lastname.TabIndex = 37
-        Me.txt_remove_lastname.UseSystemPasswordChar = False
+        Me.txt_reup_lastname.Depth = 0
+        Me.txt_reup_lastname.Enabled = False
+        Me.txt_reup_lastname.Hint = ""
+        Me.txt_reup_lastname.Location = New System.Drawing.Point(595, 137)
+        Me.txt_reup_lastname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_lastname.Name = "txt_reup_lastname"
+        Me.txt_reup_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_lastname.SelectedText = ""
+        Me.txt_reup_lastname.SelectionLength = 0
+        Me.txt_reup_lastname.SelectionStart = 0
+        Me.txt_reup_lastname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_reup_lastname.TabIndex = 37
+        Me.txt_reup_lastname.UseSystemPasswordChar = False
         '
-        'txt_remove_firstname
+        'txt_reup_firstname
         '
-        Me.txt_remove_firstname.Depth = 0
-        Me.txt_remove_firstname.Enabled = False
-        Me.txt_remove_firstname.Hint = ""
-        Me.txt_remove_firstname.Location = New System.Drawing.Point(595, 98)
-        Me.txt_remove_firstname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_firstname.Name = "txt_remove_firstname"
-        Me.txt_remove_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_firstname.SelectedText = ""
-        Me.txt_remove_firstname.SelectionLength = 0
-        Me.txt_remove_firstname.SelectionStart = 0
-        Me.txt_remove_firstname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_remove_firstname.TabIndex = 36
-        Me.txt_remove_firstname.UseSystemPasswordChar = False
+        Me.txt_reup_firstname.Depth = 0
+        Me.txt_reup_firstname.Enabled = False
+        Me.txt_reup_firstname.Hint = ""
+        Me.txt_reup_firstname.Location = New System.Drawing.Point(595, 98)
+        Me.txt_reup_firstname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_firstname.Name = "txt_reup_firstname"
+        Me.txt_reup_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_firstname.SelectedText = ""
+        Me.txt_reup_firstname.SelectionLength = 0
+        Me.txt_reup_firstname.SelectionStart = 0
+        Me.txt_reup_firstname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_reup_firstname.TabIndex = 36
+        Me.txt_reup_firstname.UseSystemPasswordChar = False
         '
-        'txt_remove_id
+        'txt_reup_id
         '
-        Me.txt_remove_id.Depth = 0
-        Me.txt_remove_id.Enabled = False
-        Me.txt_remove_id.Hint = ""
-        Me.txt_remove_id.Location = New System.Drawing.Point(595, 59)
-        Me.txt_remove_id.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_id.Name = "txt_remove_id"
-        Me.txt_remove_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_id.SelectedText = ""
-        Me.txt_remove_id.SelectionLength = 0
-        Me.txt_remove_id.SelectionStart = 0
-        Me.txt_remove_id.Size = New System.Drawing.Size(141, 23)
-        Me.txt_remove_id.TabIndex = 35
-        Me.txt_remove_id.UseSystemPasswordChar = False
+        Me.txt_reup_id.Depth = 0
+        Me.txt_reup_id.Enabled = False
+        Me.txt_reup_id.Hint = ""
+        Me.txt_reup_id.Location = New System.Drawing.Point(595, 59)
+        Me.txt_reup_id.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_id.Name = "txt_reup_id"
+        Me.txt_reup_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_id.SelectedText = ""
+        Me.txt_reup_id.SelectionLength = 0
+        Me.txt_reup_id.SelectionStart = 0
+        Me.txt_reup_id.Size = New System.Drawing.Size(141, 23)
+        Me.txt_reup_id.TabIndex = 35
+        Me.txt_reup_id.UseSystemPasswordChar = False
         '
-        'txt_remove_search
+        'txt_reup_search
         '
-        Me.txt_remove_search.Depth = 0
-        Me.txt_remove_search.Hint = ""
-        Me.txt_remove_search.Location = New System.Drawing.Point(188, 133)
-        Me.txt_remove_search.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_remove_search.Name = "txt_remove_search"
-        Me.txt_remove_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_remove_search.SelectedText = ""
-        Me.txt_remove_search.SelectionLength = 0
-        Me.txt_remove_search.SelectionStart = 0
-        Me.txt_remove_search.Size = New System.Drawing.Size(121, 23)
-        Me.txt_remove_search.TabIndex = 34
-        Me.txt_remove_search.UseSystemPasswordChar = False
-        Me.txt_remove_search.Visible = False
+        Me.txt_reup_search.Depth = 0
+        Me.txt_reup_search.Hint = ""
+        Me.txt_reup_search.Location = New System.Drawing.Point(188, 133)
+        Me.txt_reup_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reup_search.Name = "txt_reup_search"
+        Me.txt_reup_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reup_search.SelectedText = ""
+        Me.txt_reup_search.SelectionLength = 0
+        Me.txt_reup_search.SelectionStart = 0
+        Me.txt_reup_search.Size = New System.Drawing.Size(121, 23)
+        Me.txt_reup_search.TabIndex = 34
+        Me.txt_reup_search.UseSystemPasswordChar = False
+        Me.txt_reup_search.Visible = False
         '
-        'label_remove_shipid
+        'label_reup_shipid
         '
-        Me.label_remove_shipid.AutoSize = True
-        Me.label_remove_shipid.Depth = 0
-        Me.label_remove_shipid.Enabled = False
-        Me.label_remove_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_remove_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_remove_shipid.Location = New System.Drawing.Point(595, 216)
-        Me.label_remove_shipid.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_remove_shipid.Name = "label_remove_shipid"
-        Me.label_remove_shipid.Size = New System.Drawing.Size(23, 19)
-        Me.label_remove_shipid.TabIndex = 32
-        Me.label_remove_shipid.Text = "ID"
+        Me.label_reup_shipid.AutoSize = True
+        Me.label_reup_shipid.Depth = 0
+        Me.label_reup_shipid.Enabled = False
+        Me.label_reup_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_reup_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_reup_shipid.Location = New System.Drawing.Point(595, 216)
+        Me.label_reup_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_reup_shipid.Name = "label_reup_shipid"
+        Me.label_reup_shipid.Size = New System.Drawing.Size(23, 19)
+        Me.label_reup_shipid.TabIndex = 32
+        Me.label_reup_shipid.Text = "ID"
         '
-        'label_remove_search
+        'label_reup_search
         '
-        Me.label_remove_search.Depth = 0
-        Me.label_remove_search.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_remove_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_remove_search.Location = New System.Drawing.Point(29, 137)
-        Me.label_remove_search.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_remove_search.Name = "label_remove_search"
-        Me.label_remove_search.Size = New System.Drawing.Size(153, 19)
-        Me.label_remove_search.TabIndex = 30
-        Me.label_remove_search.Text = "Search:"
-        Me.label_remove_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.label_remove_search.Visible = False
+        Me.label_reup_search.Depth = 0
+        Me.label_reup_search.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_reup_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_reup_search.Location = New System.Drawing.Point(29, 137)
+        Me.label_reup_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_reup_search.Name = "label_reup_search"
+        Me.label_reup_search.Size = New System.Drawing.Size(153, 19)
+        Me.label_reup_search.TabIndex = 30
+        Me.label_reup_search.Text = "Search:"
+        Me.label_reup_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.label_reup_search.Visible = False
         '
         'MaterialLabel47
         '
@@ -729,17 +756,17 @@ Partial Class mainpage
         Me.MaterialLabel47.TabIndex = 28
         Me.MaterialLabel47.Text = "Membership ID:"
         '
-        'combobox_remove_membertype
+        'combobox_reup_membertype
         '
-        Me.combobox_remove_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_remove_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combobox_remove_membertype.Enabled = False
-        Me.combobox_remove_membertype.FormattingEnabled = True
-        Me.combobox_remove_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_remove_membertype.Location = New System.Drawing.Point(595, 176)
-        Me.combobox_remove_membertype.Name = "combobox_remove_membertype"
-        Me.combobox_remove_membertype.Size = New System.Drawing.Size(141, 21)
-        Me.combobox_remove_membertype.TabIndex = 27
+        Me.combobox_reup_membertype.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_reup_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_reup_membertype.Enabled = False
+        Me.combobox_reup_membertype.FormattingEnabled = True
+        Me.combobox_reup_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_reup_membertype.Location = New System.Drawing.Point(595, 176)
+        Me.combobox_reup_membertype.Name = "combobox_reup_membertype"
+        Me.combobox_reup_membertype.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_reup_membertype.TabIndex = 27
         '
         'MaterialLabel21
         '
@@ -767,17 +794,18 @@ Partial Class mainpage
         Me.btn_remove.UseVisualStyleBackColor = True
         Me.btn_remove.Visible = False
         '
-        'btn_remove_search
+        'btn_reup_search
         '
-        Me.btn_remove_search.Depth = 0
-        Me.btn_remove_search.Location = New System.Drawing.Point(234, 228)
-        Me.btn_remove_search.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_remove_search.Name = "btn_remove_search"
-        Me.btn_remove_search.Primary = True
-        Me.btn_remove_search.Size = New System.Drawing.Size(75, 23)
-        Me.btn_remove_search.TabIndex = 24
-        Me.btn_remove_search.Text = "Search"
-        Me.btn_remove_search.UseVisualStyleBackColor = True
+        Me.btn_reup_search.Depth = 0
+        Me.btn_reup_search.Location = New System.Drawing.Point(234, 228)
+        Me.btn_reup_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_reup_search.Name = "btn_reup_search"
+        Me.btn_reup_search.Primary = True
+        Me.btn_reup_search.Size = New System.Drawing.Size(75, 23)
+        Me.btn_reup_search.TabIndex = 24
+        Me.btn_reup_search.Text = "Search"
+        Me.btn_reup_search.UseVisualStyleBackColor = True
+        Me.btn_reup_search.Visible = False
         '
         'MaterialLabel8
         '
@@ -844,18 +872,19 @@ Partial Class mainpage
         Me.MaterialLabel13.TabIndex = 12
         Me.MaterialLabel13.Text = "Member ID:"
         '
-        'combobox_remove_search
+        'combobox_reup_search
         '
-        Me.combobox_remove_search.AutoCompleteCustomSource.AddRange(New String() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
-        Me.combobox_remove_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.combobox_remove_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.combobox_remove_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combobox_remove_search.FormattingEnabled = True
-        Me.combobox_remove_search.Items.AddRange(New Object() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
-        Me.combobox_remove_search.Location = New System.Drawing.Point(188, 59)
-        Me.combobox_remove_search.Name = "combobox_remove_search"
-        Me.combobox_remove_search.Size = New System.Drawing.Size(121, 21)
-        Me.combobox_remove_search.TabIndex = 3
+        Me.combobox_reup_search.AutoCompleteCustomSource.AddRange(New String() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
+        Me.combobox_reup_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.combobox_reup_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.combobox_reup_search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_reup_search.FormattingEnabled = True
+        Me.combobox_reup_search.Items.AddRange(New Object() {"Member ID", "Member First Name", "Member Last Name", "Membership ID"})
+        Me.combobox_reup_search.Location = New System.Drawing.Point(188, 59)
+        Me.combobox_reup_search.Name = "combobox_reup_search"
+        Me.combobox_reup_search.Size = New System.Drawing.Size(121, 21)
+        Me.combobox_reup_search.TabIndex = 3
+        Me.combobox_reup_search.Visible = False
         '
         'MaterialLabel7
         '
@@ -892,7 +921,6 @@ Partial Class mainpage
         Me.tabpgae.Controls.Add(Me.MaterialLabel48)
         Me.tabpgae.Controls.Add(Me.combobox_update_membertype)
         Me.tabpgae.Controls.Add(Me.MaterialLabel10)
-        Me.tabpgae.Controls.Add(Me.btn_update)
         Me.tabpgae.Controls.Add(Me.btn_update_search)
         Me.tabpgae.Controls.Add(Me.MaterialLabel14)
         Me.tabpgae.Controls.Add(Me.MaterialLabel15)
@@ -1155,19 +1183,6 @@ Partial Class mainpage
         Me.MaterialLabel10.Size = New System.Drawing.Size(132, 19)
         Me.MaterialLabel10.TabIndex = 42
         Me.MaterialLabel10.Text = "Membership Type:"
-        '
-        'btn_update
-        '
-        Me.btn_update.Depth = 0
-        Me.btn_update.Location = New System.Drawing.Point(495, 355)
-        Me.btn_update.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_update.Name = "btn_update"
-        Me.btn_update.Primary = True
-        Me.btn_update.Size = New System.Drawing.Size(115, 39)
-        Me.btn_update.TabIndex = 41
-        Me.btn_update.Text = "Update"
-        Me.btn_update.UseVisualStyleBackColor = True
-        Me.btn_update.Visible = False
         '
         'btn_update_search
         '
@@ -2471,16 +2486,15 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel11 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel12 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel13 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents combobox_remove_search As System.Windows.Forms.ComboBox
+    Friend WithEvents combobox_reup_search As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel7 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents btn_remove_search As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_reup_search As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_remove As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents combobox_add_membertype As System.Windows.Forms.ComboBox
-    Friend WithEvents combobox_remove_membertype As System.Windows.Forms.ComboBox
+    Friend WithEvents combobox_reup_membertype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel21 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents combobox_update_membertype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel10 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents btn_update As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_update_search As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents MaterialLabel14 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel15 As MaterialSkin.Controls.MaterialLabel
@@ -2535,12 +2549,12 @@ Partial Class mainpage
     Friend WithEvents MaterialLabel45 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents combobox_payment_submit_membertype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel46 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents label_remove_search As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_reup_search As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel47 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel48 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_update_search As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_add_shipid As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents label_remove_shipid As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_reup_shipid As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_update_shipid As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents combobox_payment_edit_membertype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel49 As MaterialSkin.Controls.MaterialLabel
@@ -2559,13 +2573,13 @@ Partial Class mainpage
     Friend WithEvents txt_add_email As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_add_cont As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_add_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_id As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_search As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_cont As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_firstname As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents txt_remove_email As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_id As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_search As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_cont As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_shipid As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_lastname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_firstname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_reup_email As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_update_search As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_update_email As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_update_cont As MaterialSkin.Controls.MaterialSingleLineTextField
@@ -2598,7 +2612,7 @@ Partial Class mainpage
     Friend WithEvents txt_payment_delete_search As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents MaterialContextMenuStrip1 As MaterialSkin.Controls.MaterialContextMenuStrip
     Friend WithEvents PermissionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents combobox_remove_search_membershiptype As System.Windows.Forms.ComboBox
+    Friend WithEvents combobox_reup_search_membershiptype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel52 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents combobox_update_search_membershiptype As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel51 As MaterialSkin.Controls.MaterialLabel
@@ -2610,4 +2624,6 @@ Partial Class mainpage
     Friend WithEvents btn_next2 As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_prev2 As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_first2 As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_update As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents combobox_modeselect As System.Windows.Forms.ComboBox
 End Class
