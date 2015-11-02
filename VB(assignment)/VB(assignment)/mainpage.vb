@@ -392,12 +392,13 @@ Public Class mainpage
 
         ElseIf combobox_remove_search.SelectedIndex = 3 Then
             ds.Clear()
-            sql = "select * from Members INNER JOIN Membership on Members.MID=Membership.MID where Membership.MSHIP_ID='" &
-                txt_remove_search.Text & "'"
+            'using inner join and identical value,
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type, Ms.Reg_Fee, Ms.Monthly_Fee from Members as M " &
+                "INNER JOIN Membership as Ms on M.MID=Ms.MID where Ms.MSHIP_ID='" & txt_remove_search.Text & "'"
             da = New OleDbDataAdapter(sql, con)
             da.Fill(ds, "Mem")
             txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
-            txt_remove_shipid.Text = ds.Tables(0).Rows(0).Item(7)
+            txt_remove_shipid.Text = ds.Tables(0).Rows(0).Item(6)
 
         End If
 
@@ -416,7 +417,9 @@ Public Class mainpage
 
     End Sub
 
+    Public Sub fill012()
 
+    End Sub
 
     '--------------------------------Delete member function ends--------------------------------------
 End Class
