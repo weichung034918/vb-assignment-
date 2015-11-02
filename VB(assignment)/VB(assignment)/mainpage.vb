@@ -10,7 +10,8 @@ Public Class mainpage
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
     Dim cmd As New OleDbCommand
     Dim sql As String
-
+    Dim totrec As Integer
+    Dim currec As Integer
 
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
@@ -48,6 +49,18 @@ Public Class mainpage
         End Try
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
+        combobox_remove_search.Width = combobox_remove_search_membershiptype.Width
+        txt_remove_search.Width = combobox_remove_search.Width
+        btn_first.Left = 396
+        btn_first.Top = MaterialLabel8.Top + 39
+        btn_last.Left = 595 + 141 - btn_last.Width
+        btn_last.Top = btn_first.Top
+        btn_prev.Left = btn_first.Left + btn_first.Width + 13
+        btn_prev.Top = MaterialLabel8.Top + 39
+        btn_next.Left = btn_prev.Left + btn_prev.Width + 13
+        btn_next.Top = btn_first.Top
+        btn_remove.Left = 396 + ((btn_last.Left + btn_last.Width - 396) / 2) - (btn_remove.Width / 2)
+
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -129,6 +142,61 @@ Public Class mainpage
 
         End If
     End Sub
+
+    Private Sub combobox_remove_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_search_membershiptype.SelectedIndexChanged
+        If combobox_remove_search_membershiptype.Text = "Deluxe" Then
+            label_remove_search.Left = txt_remove_search.Left - 50
+            label_remove_search.Text = "DE"
+        ElseIf combobox_remove_search_membershiptype.Text = "Non-Deluxe" Then
+            label_remove_search.Left = txt_remove_search.Left - 50
+            label_remove_search.Text = "ND"
+        ElseIf combobox_remove_search_membershiptype.Text = "Weekday" Then
+            label_remove_search.Left = txt_remove_search.Left - 50
+            label_remove_search.Text = "WD"
+        End If
+    End Sub
+
+
+    Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search_membershiptype.SelectedIndexChanged
+        If combobox_update_search_membershiptype.Text = "Deluxe" Then
+            label_update_search.Left = txt_update_search.Left - 50
+            label_update_search.Text = "DE"
+        ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
+            label_update_search.Left = txt_update_search.Left - 50
+            label_update_search.Text = "ND"
+        ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
+            label_update_search.Left = txt_update_search.Left - 50
+            label_update_search.Text = "WD"
+        End If
+    End Sub
+
+    Private Sub combobox_update_search_LostFocus(sender As Object, e As EventArgs) Handles combobox_update_search.LostFocus
+        If combobox_update_search.Text.Equals("Membership ID") <> True Then
+            combobox_update_search_membershiptype.Visible = False
+            MaterialLabel51.Visible = False
+        End If
+    End Sub
+
+    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
+        If combobox_update_search.Text <> String.Empty Then
+
+            If combobox_update_search.Text.Equals("Membership ID") = True Then
+                combobox_update_search_membershiptype.Visible = True
+                MaterialLabel51.Visible = True
+
+            Else
+                combobox_update_search_membershiptype.Visible = False
+                MaterialLabel51.Visible = False
+            End If
+            label_update_search.Left = txt_update_search.Left - 150
+            txt_update_search.Visible = True
+            label_update_search.Visible = True
+            label_update_search.Text = combobox_update_search.Text & ":"
+        Else
+            txt_update_search.Visible = False
+        End If
+    End Sub
+
     '-------------------------------Add member function starts-------------------------------------
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
         If String.IsNullOrEmpty(txt_add_id.Text) Then
@@ -363,7 +431,7 @@ Public Class mainpage
     End Sub
     '---------------------------------Add member function ends---------------------------------------
 
-    '-------------------------------Delete member function starts------------------------------------
+    '===============================Delete member function starts====================================
     Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_remove_search.SelectedIndexChanged
         'DESIGN START
        
@@ -373,11 +441,11 @@ Public Class mainpage
                 combobox_remove_search_membershiptype.Visible = True
                 MaterialLabel52.Visible = True
               
-        Else
-            combobox_remove_search_membershiptype.Visible = False
-            MaterialLabel52.Visible = False
+            Else
+                combobox_remove_search_membershiptype.Visible = False
+                MaterialLabel52.Visible = False
             End If
-            label_remove_search.Left = txt_remove_search.Left - 150
+            
             txt_remove_search.Visible = True
             label_remove_search.Visible = True
             label_remove_search.Text = combobox_remove_search.Text & ":"
@@ -397,11 +465,11 @@ Public Class mainpage
                 If txt_remove_search.TextLength < 10 Then
                     txt_remove_search.Text = "0" + txt_remove_search.Text
                 End If
-            Next i
+            Next
 
             'using inner join and identical value,
             sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
-                "INNER JOIN Membership Ms on M.MID=Ms.MID where MID='" & txt_remove_search.Text & "'"
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.MID='" & txt_remove_search.Text & "'"
 
         ElseIf combobox_remove_search.SelectedIndex = 1 Then
 
@@ -425,27 +493,37 @@ Public Class mainpage
             ds.Clear()
             da = New OleDbDataAdapter(sql, con)
             da.Fill(ds, "TempSet")
-            txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
-            Dim mshipid As String = ds.Tables(0).Rows(0).Item(6)
-            txt_remove_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
-            txt_remove_firstname.Text = ds.Tables(0).Rows(0).Item(1)
-            txt_remove_lastname.Text = ds.Tables(0).Rows(0).Item(2)
-            Dim mtype As String = ds.Tables(0).Rows(0).Item(7)
-            If mtype = "Deluxe" Then
-                combobox_remove_membertype.SelectedIndex = 0
-            ElseIf mtype = "Non-Deluxe" Then
-                combobox_remove_membertype.SelectedIndex = 1
-            ElseIf mtype = "Weekday" Then
-                combobox_remove_membertype.SelectedIndex = 2
-            End If
-            txt_remove_cont.Text = ds.Tables(0).Rows(0).Item(3)
-            txt_remove_email.Text = ds.Tables(0).Rows(0).Item(4)
+            Call addset()
         End If
 
         'ND00000002
 
         btn_remove.Visible = True
 
+        If ds.Tables(0).Rows.Count > 1 Then
+            btn_first.Visible = True
+            btn_prev.Visible = True
+            btn_next.Visible = True
+            btn_last.Visible = True
+        End If
+
+    End Sub
+    Public Sub addset()
+        txt_remove_id.Text = ds.Tables(0).Rows(0).Item(0)
+        Dim mshipid As String = ds.Tables(0).Rows(0).Item(6)
+        txt_remove_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
+        txt_remove_firstname.Text = ds.Tables(0).Rows(0).Item(1)
+        txt_remove_lastname.Text = ds.Tables(0).Rows(0).Item(2)
+        Dim mtype As String = ds.Tables(0).Rows(0).Item(7)
+        If mtype = "Deluxe" Then
+            combobox_remove_membertype.SelectedIndex = 0
+        ElseIf mtype = "Non-Deluxe" Then
+            combobox_remove_membertype.SelectedIndex = 1
+        ElseIf mtype = "Weekday" Then
+            combobox_remove_membertype.SelectedIndex = 2
+        End If
+        txt_remove_cont.Text = ds.Tables(0).Rows(0).Item(3)
+        txt_remove_email.Text = ds.Tables(0).Rows(0).Item(4)
     End Sub
 
     Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
@@ -469,67 +547,46 @@ Public Class mainpage
     End Sub
 
 
-   
-   
-   
-   
-    
-    Private Sub combobox_remove_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_search_membershiptype.SelectedIndexChanged
-        If combobox_remove_search_membershiptype.Text = "Deluxe" Then
-            label_remove_search.Left = txt_remove_search.Left - 50
-            label_remove_search.Text = "DE"
-        ElseIf combobox_remove_search_membershiptype.Text = "Non-Deluxe" Then
-            label_remove_search.Left = txt_remove_search.Left - 50
-            label_remove_search.Text = "ND"
-        ElseIf combobox_remove_search_membershiptype.Text = "Weekday" Then
-            label_remove_search.Left = txt_remove_search.Left - 50
-            label_remove_search.Text = "WD"
+    Private Sub btn_first_Click(sender As Object, e As EventArgs) Handles btn_first.Click
+        currec = 0
+        Call addset()
+    End Sub
+
+    Public Sub addset2()
+        txt_remove_id.Text = ds.Tables(0).Rows(currec).Item(0)
+        Dim mshipid As String = ds.Tables(0).Rows(currec).Item(6)
+        txt_remove_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
+        txt_remove_firstname.Text = ds.Tables(0).Rows(currec).Item(1)
+        txt_remove_lastname.Text = ds.Tables(0).Rows(currec).Item(2)
+        Dim mtype As String = ds.Tables(0).Rows(currec).Item(7)
+        If mtype = "Deluxe" Then
+            combobox_remove_membertype.SelectedIndex = 0
+        ElseIf mtype = "Non-Deluxe" Then
+            combobox_remove_membertype.SelectedIndex = 1
+        ElseIf mtype = "Weekday" Then
+            combobox_remove_membertype.SelectedIndex = 2
+        End If
+        txt_remove_cont.Text = ds.Tables(0).Rows(currec).Item(3)
+        txt_remove_email.Text = ds.Tables(0).Rows(currec).Item(4)
+    End Sub
+
+    Private Sub btn_prev_Click(sender As Object, e As EventArgs) Handles btn_prev.Click
+        If currec <> 0 Then
+            currec -= 1
+            addset2()
         End If
     End Sub
 
-  
-    Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search_membershiptype.SelectedIndexChanged
-        If combobox_update_search_membershiptype.Text = "Deluxe" Then
-            label_update_search.Left = txt_update_search.Left - 50
-            label_update_search.Text = "DE"
-        ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
-            label_update_search.Left = txt_update_search.Left - 50
-            label_update_search.Text = "ND"
-        ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
-            label_update_search.Left = txt_update_search.Left - 50
-            label_update_search.Text = "WD"
+    Private Sub btn_next_Click(sender As Object, e As EventArgs) Handles btn_next.Click
+        If currec <> ds.Tables(0).Rows.Count - 1 Then
+            currec += 1
+            addset2()
         End If
     End Sub
 
-    Private Sub combobox_update_search_LostFocus(sender As Object, e As EventArgs) Handles combobox_update_search.LostFocus
-        If combobox_update_search.Text.Equals("Membership ID") <> True Then
-            combobox_update_search_membershiptype.Visible = False
-            MaterialLabel51.Visible = False
-        End If
+    Private Sub btn_last_Click(sender As Object, e As EventArgs) Handles btn_last.Click
+        currec = ds.Tables(0).Rows.Count - 1
+        addset2()
     End Sub
-
-    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
-        If combobox_update_search.Text <> String.Empty Then
-
-            If combobox_update_search.Text.Equals("Membership ID") = True Then
-                combobox_update_search_membershiptype.Visible = True
-                MaterialLabel51.Visible = True
-
-            Else
-                combobox_update_search_membershiptype.Visible = False
-                MaterialLabel51.Visible = False
-            End If
-            label_update_search.Left = txt_update_search.Left - 150
-            txt_update_search.Visible = True
-            label_update_search.Visible = True
-            label_update_search.Text = combobox_update_search.Text & ":"
-        Else
-            txt_update_search.Visible = False
-        End If
-    End Sub
-
-   
-   
-    
 End Class
-'--------------------------------Delete member function ends--------------------------------------
+'================================Delete member function ends=====================================
