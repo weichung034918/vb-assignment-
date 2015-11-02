@@ -53,7 +53,7 @@ Public Class mainpage
         combobox_update_search.Width = combobox_reup_search.Width
         txt_reup_search.Width = combobox_reup_search.Width
         btn_first.Left = 396
-        btn_first.Top = MaterialLabel8.Top + 39
+        btn_first.Top = MaterialLabel53.Top + 39
         btn_last.Left = 595 + 141 - btn_last.Width
         btn_last.Top = btn_first.Top
         btn_prev.Left = btn_first.Left + btn_first.Width + 13
@@ -62,6 +62,7 @@ Public Class mainpage
         btn_next.Top = btn_first.Top
         btn_remove.Left = 396 + ((btn_last.Left + btn_last.Width - 396) / 2) - (btn_remove.Width / 2)
 
+        btn_remove.Top = btn_first.Top + 39
         btn_update.Left = btn_remove.Left
         btn_update.Top = btn_remove.Top
 
@@ -508,6 +509,11 @@ Public Class mainpage
         End If
         txt_reup_cont.Text = ds.Tables(0).Rows(0).Item(3)
         txt_reup_email.Text = ds.Tables(0).Rows(0).Item(4)
+        If ds.Tables(0).Rows(0).Item(5).ToString = "Active" Then
+            combobox_reup_status.SelectedIndex = 0
+        ElseIf ds.Tables(0).Rows(0).Item(5).ToString = "Closed" Then
+            combobox_reup_status.SelectedIndex = 1
+        End If
     End Sub
 
     Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
@@ -598,62 +604,22 @@ Public Class mainpage
     End Sub
     Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
 
-        If combobox_update_search.SelectedIndex = 0 Then
-
-            For i = 0 To 9
-                If txt_update_search.TextLength < 10 Then
-                    txt_update_search.Text = "0" + txt_update_search.Text
-                End If
-            Next
-
-            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
-                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.MID='" & txt_update_search.Text & "'"
-
-        ElseIf combobox_update_search.SelectedIndex = 1 Then
-
-            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
-                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.First_Name='" & txt_update_search.Text & "'"
-
-        ElseIf combobox_update_search.SelectedIndex = 2 Then
-
-            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
-                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.Last_Name='" & txt_update_search.Text & "'"
-
-        ElseIf combobox_update_search.SelectedIndex = 3 Then
-            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members as M " &
-                "INNER JOIN Membership as Ms on M.MID=Ms.MID where Ms.MSHIP_ID='" & txt_update_search.Text & "'"
-        Else
-            Return
-        End If
-
-
-
-        If combobox_update_search.SelectedIndex >= 0 AndAlso combobox_update_search.SelectedIndex < 4 Then
-            ds.Clear()
-            da = New OleDbDataAdapter(sql, con)
-            da.Fill(ds, "TempSet")
-            Call addset()
-        End If
-
-
-        btn_update.Visible = True
-
-        If ds.Tables(0).Rows.Count > 1 Then
-            btn_first2.Visible = True
-            btn_prev2.Visible = True
-            btn_next2.Visible = True
-            btn_last2.Visible = True
-        End If
-
-        btn_update.Visible = True
-
     End Sub
-    ' i think i dowan to do update members liao, i will move update codes into remove tab and add an update btn
+    ' i think i dowan to do update members liao, i will move update codes into remove tab and add an update btn, below onwards
 
     Private Sub combobox_modeselect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_modeselect.SelectedIndexChanged
         If combobox_modeselect.SelectedIndex = 0 Then
             btn_remove.Visible = True
             combobox_reup_search.Visible = True
+            txt_reup_cont.Enabled = False
+            txt_reup_email.Enabled = False
+            txt_reup_firstname.Enabled = False
+            txt_reup_id.Enabled = False
+            txt_reup_lastname.Enabled = False
+            txt_reup_shipid.Enabled = False
+            combobox_reup_membertype.Enabled = False
+            label_reup_shipid.Enabled = True
+
         ElseIf combobox_modeselect.SelectedIndex = 1 Then
             btn_update.Visible = True
             combobox_reup_search.Visible = True
@@ -663,10 +629,57 @@ Public Class mainpage
             txt_reup_id.Enabled = True
             txt_reup_lastname.Enabled = True
             txt_reup_shipid.Enabled = True
+            combobox_reup_status.Enabled = True
             combobox_reup_membertype.Enabled = True
             label_reup_shipid.Enabled = True 'no point disabling the goddamn label wei chung...
         Else
             Return
         End If
+    End Sub
+
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        sql = "UPDATE Members SET First_Name='" & txt_reup_firstname.Text & "', Last_Name='" &
+            txt_reup_lastname.Text & "', Contact_Number=" & txt_reup_cont.Text & ", Email='" &
+            txt_reup_email.Text & "', Status='"
+
+        If combobox_reup_status.SelectedIndex = 0 Then
+            sql = sql & combobox_reup_status.Items(0).ToString & "' where MID='" & txt_reup_id.Text & "'"
+        ElseIf combobox_reup_status.SelectedIndex = 1 Then
+            sql = sql & combobox_reup_status.Items(1).ToString & "' where MID='" & txt_reup_id.Text & "'"
+        Else
+            Return
+        End If
+
+        Try
+            cmd = New OleDbCommand(sql, con)
+            cmd.ExecuteNonQuery()
+            MsgBox("Success update")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
+
+        sql = "UPDATE Membership SET Member_Type='"
+
+        If combobox_reup_membertype.SelectedIndex = 0 Then
+            sql = sql & combobox_reup_membertype.Items(0).ToString & "', MSHIP_ID='" &
+            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee='500.00', Monthly_Fee='120.00' where MID='" & txt_reup_id.Text & "'"
+
+        ElseIf combobox_reup_membertype.SelectedIndex = 1 Then
+            sql = sql & combobox_reup_membertype.Items(1).ToString & "', MSHIP_ID='" &
+            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee='300.00', Monthly_Fee='100.00' where MID='" & txt_reup_id.Text & "'"
+
+        ElseIf combobox_reup_membertype.SelectedIndex = 2 Then
+            sql = sql & combobox_reup_membertype.Items(2).ToString & "', MSHIP_ID='" &
+            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee='180.00', Monthly_Fee='75.00' where MID='" & txt_reup_id.Text & "'"
+
+        End If
+        Try
+            cmd = New OleDbCommand(sql, con)
+            cmd.ExecuteNonQuery()
+            MsgBox("Success update")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
+
     End Sub
 End Class
