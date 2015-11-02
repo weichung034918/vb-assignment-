@@ -430,5 +430,24 @@ Public Class mainpage
 
     End Sub
 
-    '--------------------------------Delete member function ends--------------------------------------
+    Private Sub btn_remove_Click(sender As Object, e As EventArgs) Handles btn_remove.Click
+        'reason why i no need to del from 2 tables because i have foreign key set as on delete cascade
+        sql = "delete * from Members where MID ='" & txt_remove_id.Text & "'"
+        Try
+            cmd = New OleDbCommand(sql, con)
+            cmd.ExecuteNonQuery()
+            MsgBox("Deleted")
+            ds.Clear()
+            txt_remove_search.Clear()
+            txt_remove_id.Clear()
+            txt_remove_firstname.Clear()
+            txt_remove_lastname.Clear()
+            txt_remove_shipid.Clear()
+            txt_remove_cont.Clear()
+            txt_remove_email.Clear()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
+    End Sub
 End Class
+'--------------------------------Delete member function ends--------------------------------------
