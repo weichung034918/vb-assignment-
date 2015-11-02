@@ -50,6 +50,7 @@ Public Class mainpage
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
         combobox_remove_search.Width = combobox_remove_search_membershiptype.Width
+        combobox_update_search.Width = combobox_remove_search.Width
         txt_remove_search.Width = combobox_remove_search.Width
         btn_first.Left = 396
         btn_first.Top = MaterialLabel8.Top + 39
@@ -65,10 +66,6 @@ Public Class mainpage
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
         Permission.Show()
-    End Sub
-
-    Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
-        btn_update.Visible = True
     End Sub
 
     Private Sub combobox_add_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_add_membertype.SelectedIndexChanged
@@ -125,7 +122,7 @@ Public Class mainpage
 
     Private Sub combobox_payment_delete_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_delete_membertype.SelectedIndexChanged
         If combobox_payment_delete_membertype.Text = "Deluxe" Then
-            label_payment_delete_shipid.Text = "D"
+            label_payment_delete_shipid.Text = "DE"
         ElseIf combobox_payment_delete_membertype.Text = "Non-Deluxe" Then
             label_payment_delete_shipid.Text = "ND"
         ElseIf combobox_payment_delete_membertype.Text = "Weekday" Then
@@ -145,13 +142,13 @@ Public Class mainpage
 
     Private Sub combobox_remove_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_remove_search_membershiptype.SelectedIndexChanged
         If combobox_remove_search_membershiptype.Text = "Deluxe" Then
-            label_remove_search.Left = txt_remove_search.Left - 50
+            'label_remove_search.Left = txt_remove_search.Left - 50
             label_remove_search.Text = "DE"
         ElseIf combobox_remove_search_membershiptype.Text = "Non-Deluxe" Then
-            label_remove_search.Left = txt_remove_search.Left - 50
+            'label_remove_search.Left = txt_remove_search.Left - 50
             label_remove_search.Text = "ND"
         ElseIf combobox_remove_search_membershiptype.Text = "Weekday" Then
-            label_remove_search.Left = txt_remove_search.Left - 50
+            'label_remove_search.Left = txt_remove_search.Left - 50
             label_remove_search.Text = "WD"
         End If
     End Sub
@@ -159,13 +156,13 @@ Public Class mainpage
 
     Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search_membershiptype.SelectedIndexChanged
         If combobox_update_search_membershiptype.Text = "Deluxe" Then
-            label_update_search.Left = txt_update_search.Left - 50
+            'label_update_search.Left = txt_update_search.Left - 50
             label_update_search.Text = "DE"
         ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
-            label_update_search.Left = txt_update_search.Left - 50
+            'label_update_search.Left = txt_update_search.Left - 50
             label_update_search.Text = "ND"
         ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
-            label_update_search.Left = txt_update_search.Left - 50
+            'label_update_search.Left = txt_update_search.Left - 50
             label_update_search.Text = "WD"
         End If
     End Sub
@@ -174,26 +171,6 @@ Public Class mainpage
         If combobox_update_search.Text.Equals("Membership ID") <> True Then
             combobox_update_search_membershiptype.Visible = False
             MaterialLabel51.Visible = False
-        End If
-    End Sub
-
-    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
-        If combobox_update_search.Text <> String.Empty Then
-
-            If combobox_update_search.Text.Equals("Membership ID") = True Then
-                combobox_update_search_membershiptype.Visible = True
-                MaterialLabel51.Visible = True
-
-            Else
-                combobox_update_search_membershiptype.Visible = False
-                MaterialLabel51.Visible = False
-            End If
-            label_update_search.Left = txt_update_search.Left - 150
-            txt_update_search.Visible = True
-            label_update_search.Visible = True
-            label_update_search.Text = combobox_update_search.Text & ":"
-        Else
-            txt_update_search.Visible = False
         End If
     End Sub
 
@@ -471,6 +448,10 @@ Public Class mainpage
             sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
                 "INNER JOIN Membership Ms on M.MID=Ms.MID where M.MID='" & txt_remove_search.Text & "'"
 
+            'notice how i use .selectedindex instead of combobox.text = "something" >>> this is not safe at all when
+            'a person tampered with the text. if the text = "Deluxe" then he go and add till become "Deluxeaaa", all condition
+            'will be not matched! User .selectedindex instead since after selection, up to him to tamper the text as long
+            'as the index is selected.
         ElseIf combobox_remove_search.SelectedIndex = 1 Then
 
             sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
@@ -484,6 +465,8 @@ Public Class mainpage
         ElseIf combobox_remove_search.SelectedIndex = 3 Then
             sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members as M " &
                 "INNER JOIN Membership as Ms on M.MID=Ms.MID where Ms.MSHIP_ID='" & txt_remove_search.Text & "'"
+        Else
+            Return 'heh, if nothing is selected, next codes aren't proceeded.
         End If
 
 
@@ -549,10 +532,10 @@ Public Class mainpage
 
     Private Sub btn_first_Click(sender As Object, e As EventArgs) Handles btn_first.Click
         currec = 0
-        Call addset()
+        Call addset() 'since row in addset is 0 so i just call the addset() instead of addset2()
     End Sub
 
-    Public Sub addset2()
+    Public Sub addset2() 'for prev, next, last
         txt_remove_id.Text = ds.Tables(0).Rows(currec).Item(0)
         Dim mshipid As String = ds.Tables(0).Rows(currec).Item(6)
         txt_remove_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
@@ -588,5 +571,81 @@ Public Class mainpage
         currec = ds.Tables(0).Rows.Count - 1
         addset2()
     End Sub
+    '================================Delete member function ends=====================================
+
+    'I really feel that if we combine the delete and update to one tab i can save tonnes of works...i in fact don't know
+    'why u separate delete and update to two tabs T_T
+
+    '===============================Update member function starts====================================
+    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
+        If combobox_update_search.Text <> String.Empty Then
+
+            If combobox_update_search.Text.Equals("Membership ID") = True Then
+                combobox_update_search_membershiptype.Visible = True
+                MaterialLabel51.Visible = True
+
+            Else
+                combobox_update_search_membershiptype.Visible = False
+                MaterialLabel51.Visible = False
+            End If
+            txt_update_search.Visible = True
+            label_update_search.Visible = True
+            label_update_search.Text = combobox_update_search.Text & ":"
+        Else
+            txt_update_search.Visible = False
+        End If
+    End Sub
+    Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
+
+        If combobox_update_search.SelectedIndex = 0 Then
+
+            For i = 0 To 9
+                If txt_update_search.TextLength < 10 Then
+                    txt_update_search.Text = "0" + txt_update_search.Text
+                End If
+            Next
+
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.MID='" & txt_update_search.Text & "'"
+
+        ElseIf combobox_update_search.SelectedIndex = 1 Then
+
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.First_Name='" & txt_update_search.Text & "'"
+
+        ElseIf combobox_update_search.SelectedIndex = 2 Then
+
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID where M.Last_Name='" & txt_update_search.Text & "'"
+
+        ElseIf combobox_update_search.SelectedIndex = 3 Then
+            sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members as M " &
+                "INNER JOIN Membership as Ms on M.MID=Ms.MID where Ms.MSHIP_ID='" & txt_update_search.Text & "'"
+        Else
+            Return
+        End If
+
+
+
+        If combobox_update_search.SelectedIndex >= 0 AndAlso combobox_update_search.SelectedIndex < 4 Then
+            ds.Clear()
+            da = New OleDbDataAdapter(sql, con)
+            da.Fill(ds, "TempSet")
+            Call addset()
+        End If
+
+
+        btn_update.Visible = True
+
+        If ds.Tables(0).Rows.Count > 1 Then
+            btn_first2.Visible = True
+            btn_prev2.Visible = True
+            btn_next2.Visible = True
+            btn_last2.Visible = True
+        End If
+
+        btn_update.Visible = True
+
+    End Sub
+
 End Class
-'================================Delete member function ends=====================================

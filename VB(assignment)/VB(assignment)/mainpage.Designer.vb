@@ -41,6 +41,10 @@ Partial Class mainpage
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btn_last = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_next = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_prev = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_first = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.combobox_remove_search_membershiptype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel52 = New MaterialSkin.Controls.MaterialLabel()
         Me.txt_remove_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -65,6 +69,10 @@ Partial Class mainpage
         Me.combobox_remove_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
         Me.tabpgae = New System.Windows.Forms.TabPage()
+        Me.btn_last2 = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_next2 = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_prev2 = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_first2 = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.combobox_update_search_membershiptype = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel51 = New MaterialSkin.Controls.MaterialLabel()
         Me.txt_update_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -171,10 +179,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_first = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_prev = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_next = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_last = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -493,6 +497,58 @@ Partial Class mainpage
         Me.TabPage2.Size = New System.Drawing.Size(829, 454)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Remove Members"
+        '
+        'btn_last
+        '
+        Me.btn_last.Depth = 0
+        Me.btn_last.Location = New System.Drawing.Point(720, 419)
+        Me.btn_last.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_last.Name = "btn_last"
+        Me.btn_last.Primary = True
+        Me.btn_last.Size = New System.Drawing.Size(75, 23)
+        Me.btn_last.TabIndex = 64
+        Me.btn_last.Text = "Last"
+        Me.btn_last.UseVisualStyleBackColor = True
+        Me.btn_last.Visible = False
+        '
+        'btn_next
+        '
+        Me.btn_next.Depth = 0
+        Me.btn_next.Location = New System.Drawing.Point(720, 390)
+        Me.btn_next.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_next.Name = "btn_next"
+        Me.btn_next.Primary = True
+        Me.btn_next.Size = New System.Drawing.Size(75, 23)
+        Me.btn_next.TabIndex = 63
+        Me.btn_next.Text = ">>"
+        Me.btn_next.UseVisualStyleBackColor = True
+        Me.btn_next.Visible = False
+        '
+        'btn_prev
+        '
+        Me.btn_prev.Depth = 0
+        Me.btn_prev.Location = New System.Drawing.Point(720, 362)
+        Me.btn_prev.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_prev.Name = "btn_prev"
+        Me.btn_prev.Primary = True
+        Me.btn_prev.Size = New System.Drawing.Size(75, 23)
+        Me.btn_prev.TabIndex = 62
+        Me.btn_prev.Text = "<<"
+        Me.btn_prev.UseVisualStyleBackColor = True
+        Me.btn_prev.Visible = False
+        '
+        'btn_first
+        '
+        Me.btn_first.Depth = 0
+        Me.btn_first.Location = New System.Drawing.Point(720, 333)
+        Me.btn_first.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_first.Name = "btn_first"
+        Me.btn_first.Primary = True
+        Me.btn_first.Size = New System.Drawing.Size(75, 23)
+        Me.btn_first.TabIndex = 61
+        Me.btn_first.Text = "First"
+        Me.btn_first.UseVisualStyleBackColor = True
+        Me.btn_first.Visible = False
         '
         'combobox_remove_search_membershiptype
         '
@@ -818,6 +874,10 @@ Partial Class mainpage
         '
         Me.tabpgae.BackColor = System.Drawing.SystemColors.Control
         Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.tabpgae.Controls.Add(Me.btn_last2)
+        Me.tabpgae.Controls.Add(Me.btn_next2)
+        Me.tabpgae.Controls.Add(Me.btn_prev2)
+        Me.tabpgae.Controls.Add(Me.btn_first2)
         Me.tabpgae.Controls.Add(Me.combobox_update_search_membershiptype)
         Me.tabpgae.Controls.Add(Me.MaterialLabel51)
         Me.tabpgae.Controls.Add(Me.txt_update_email)
@@ -846,6 +906,58 @@ Partial Class mainpage
         Me.tabpgae.Size = New System.Drawing.Size(829, 454)
         Me.tabpgae.TabIndex = 2
         Me.tabpgae.Text = "Update Members"
+        '
+        'btn_last2
+        '
+        Me.btn_last2.Depth = 0
+        Me.btn_last2.Location = New System.Drawing.Point(651, 423)
+        Me.btn_last2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_last2.Name = "btn_last2"
+        Me.btn_last2.Primary = True
+        Me.btn_last2.Size = New System.Drawing.Size(75, 23)
+        Me.btn_last2.TabIndex = 68
+        Me.btn_last2.Text = "Last"
+        Me.btn_last2.UseVisualStyleBackColor = True
+        Me.btn_last2.Visible = False
+        '
+        'btn_next2
+        '
+        Me.btn_next2.Depth = 0
+        Me.btn_next2.Location = New System.Drawing.Point(651, 394)
+        Me.btn_next2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_next2.Name = "btn_next2"
+        Me.btn_next2.Primary = True
+        Me.btn_next2.Size = New System.Drawing.Size(75, 23)
+        Me.btn_next2.TabIndex = 67
+        Me.btn_next2.Text = ">>"
+        Me.btn_next2.UseVisualStyleBackColor = True
+        Me.btn_next2.Visible = False
+        '
+        'btn_prev2
+        '
+        Me.btn_prev2.Depth = 0
+        Me.btn_prev2.Location = New System.Drawing.Point(651, 366)
+        Me.btn_prev2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_prev2.Name = "btn_prev2"
+        Me.btn_prev2.Primary = True
+        Me.btn_prev2.Size = New System.Drawing.Size(75, 23)
+        Me.btn_prev2.TabIndex = 66
+        Me.btn_prev2.Text = "<<"
+        Me.btn_prev2.UseVisualStyleBackColor = True
+        Me.btn_prev2.Visible = False
+        '
+        'btn_first2
+        '
+        Me.btn_first2.Depth = 0
+        Me.btn_first2.Location = New System.Drawing.Point(651, 337)
+        Me.btn_first2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_first2.Name = "btn_first2"
+        Me.btn_first2.Primary = True
+        Me.btn_first2.Size = New System.Drawing.Size(75, 23)
+        Me.btn_first2.TabIndex = 65
+        Me.btn_first2.Text = "First"
+        Me.btn_first2.UseVisualStyleBackColor = True
+        Me.btn_first2.Visible = False
         '
         'combobox_update_search_membershiptype
         '
@@ -995,16 +1107,16 @@ Partial Class mainpage
         '
         'label_update_search
         '
-        Me.label_update_search.AutoSize = True
         Me.label_update_search.Depth = 0
         Me.label_update_search.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_update_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_update_search.Location = New System.Drawing.Point(8, 134)
+        Me.label_update_search.Location = New System.Drawing.Point(32, 138)
         Me.label_update_search.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_update_search.Name = "label_update_search"
-        Me.label_update_search.Size = New System.Drawing.Size(59, 19)
+        Me.label_update_search.Size = New System.Drawing.Size(151, 19)
         Me.label_update_search.TabIndex = 47
         Me.label_update_search.Text = "Search:"
+        Me.label_update_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.label_update_search.Visible = False
         '
         'MaterialLabel48
@@ -2307,58 +2419,6 @@ Partial Class mainpage
         Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.PermissionToolStripMenuItem.Text = "Admin Settings"
         '
-        'btn_first
-        '
-        Me.btn_first.Depth = 0
-        Me.btn_first.Location = New System.Drawing.Point(720, 333)
-        Me.btn_first.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_first.Name = "btn_first"
-        Me.btn_first.Primary = True
-        Me.btn_first.Size = New System.Drawing.Size(75, 23)
-        Me.btn_first.TabIndex = 61
-        Me.btn_first.Text = "First"
-        Me.btn_first.UseVisualStyleBackColor = True
-        Me.btn_first.Visible = False
-        '
-        'btn_prev
-        '
-        Me.btn_prev.Depth = 0
-        Me.btn_prev.Location = New System.Drawing.Point(720, 362)
-        Me.btn_prev.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_prev.Name = "btn_prev"
-        Me.btn_prev.Primary = True
-        Me.btn_prev.Size = New System.Drawing.Size(75, 23)
-        Me.btn_prev.TabIndex = 62
-        Me.btn_prev.Text = "<<"
-        Me.btn_prev.UseVisualStyleBackColor = True
-        Me.btn_prev.Visible = False
-        '
-        'btn_next
-        '
-        Me.btn_next.Depth = 0
-        Me.btn_next.Location = New System.Drawing.Point(720, 390)
-        Me.btn_next.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_next.Name = "btn_next"
-        Me.btn_next.Primary = True
-        Me.btn_next.Size = New System.Drawing.Size(75, 23)
-        Me.btn_next.TabIndex = 63
-        Me.btn_next.Text = ">>"
-        Me.btn_next.UseVisualStyleBackColor = True
-        Me.btn_next.Visible = False
-        '
-        'btn_last
-        '
-        Me.btn_last.Depth = 0
-        Me.btn_last.Location = New System.Drawing.Point(720, 419)
-        Me.btn_last.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_last.Name = "btn_last"
-        Me.btn_last.Primary = True
-        Me.btn_last.Size = New System.Drawing.Size(75, 23)
-        Me.btn_last.TabIndex = 64
-        Me.btn_last.Text = "Last"
-        Me.btn_last.UseVisualStyleBackColor = True
-        Me.btn_last.Visible = False
-        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -2546,4 +2606,8 @@ Partial Class mainpage
     Friend WithEvents btn_next As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_prev As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_first As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_last2 As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_next2 As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_prev2 As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_first2 As MaterialSkin.Controls.MaterialRaisedButton
 End Class
