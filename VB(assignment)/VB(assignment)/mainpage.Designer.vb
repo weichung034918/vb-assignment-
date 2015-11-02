@@ -41,6 +41,8 @@ Partial Class mainpage
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.combobox_reup_status = New System.Windows.Forms.ComboBox()
+        Me.MaterialLabel53 = New MaterialSkin.Controls.MaterialLabel()
         Me.combobox_modeselect = New System.Windows.Forms.ComboBox()
         Me.btn_update = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_last = New MaterialSkin.Controls.MaterialRaisedButton()
@@ -180,8 +182,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MaterialLabel53 = New MaterialSkin.Controls.MaterialLabel()
-        Me.combobox_reup_status = New System.Windows.Forms.ComboBox()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -504,6 +504,31 @@ Partial Class mainpage
         Me.TabPage2.Size = New System.Drawing.Size(829, 454)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Remove Members"
+        '
+        'combobox_reup_status
+        '
+        Me.combobox_reup_status.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_reup_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_reup_status.Enabled = False
+        Me.combobox_reup_status.FormattingEnabled = True
+        Me.combobox_reup_status.Items.AddRange(New Object() {"Active", "Closed"})
+        Me.combobox_reup_status.Location = New System.Drawing.Point(595, 333)
+        Me.combobox_reup_status.Name = "combobox_reup_status"
+        Me.combobox_reup_status.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_reup_status.TabIndex = 73
+        '
+        'MaterialLabel53
+        '
+        Me.MaterialLabel53.AutoSize = True
+        Me.MaterialLabel53.Depth = 0
+        Me.MaterialLabel53.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel53.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel53.Location = New System.Drawing.Point(397, 333)
+        Me.MaterialLabel53.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel53.Name = "MaterialLabel53"
+        Me.MaterialLabel53.Size = New System.Drawing.Size(56, 19)
+        Me.MaterialLabel53.TabIndex = 72
+        Me.MaterialLabel53.Text = "Status:"
         '
         'combobox_modeselect
         '
@@ -2437,31 +2462,6 @@ Partial Class mainpage
         Me.PermissionToolStripMenuItem.Name = "PermissionToolStripMenuItem"
         Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.PermissionToolStripMenuItem.Text = "Admin Settings"
-        '
-        'MaterialLabel53
-        '
-        Me.MaterialLabel53.AutoSize = True
-        Me.MaterialLabel53.Depth = 0
-        Me.MaterialLabel53.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel53.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel53.Location = New System.Drawing.Point(397, 333)
-        Me.MaterialLabel53.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel53.Name = "MaterialLabel53"
-        Me.MaterialLabel53.Size = New System.Drawing.Size(56, 19)
-        Me.MaterialLabel53.TabIndex = 72
-        Me.MaterialLabel53.Text = "Status:"
-        '
-        'combobox_reup_status
-        '
-        Me.combobox_reup_status.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_reup_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combobox_reup_status.Enabled = False
-        Me.combobox_reup_status.FormattingEnabled = True
-        Me.combobox_reup_status.Items.AddRange(New Object() {"Active", "Closed"})
-        Me.combobox_reup_status.Location = New System.Drawing.Point(595, 333)
-        Me.combobox_reup_status.Name = "combobox_reup_status"
-        Me.combobox_reup_status.Size = New System.Drawing.Size(141, 21)
-        Me.combobox_reup_status.TabIndex = 73
         '
         'mainpage
         '
