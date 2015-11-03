@@ -74,6 +74,16 @@ Partial Class mainpage
         Me.combobox_reup_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
         Me.tabpgae = New System.Windows.Forms.TabPage()
+        Me.payment_listview = New System.Windows.Forms.ListView()
+        Me.list_pid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_mid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_mship_id = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_doe = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_log = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_desc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_paid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_due = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_pdate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -86,16 +96,6 @@ Partial Class mainpage
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_logout = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.list_pid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_mid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_mship_id = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_doe = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_log = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_desc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_paid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_due = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.list_pdate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -840,7 +840,7 @@ Partial Class mainpage
         '
         Me.tabpgae.BackColor = System.Drawing.Color.White
         Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.tabpgae.Controls.Add(Me.ListView1)
+        Me.tabpgae.Controls.Add(Me.payment_listview)
         Me.tabpgae.Enabled = Global.VB_assignment_.My.MySettings.Default.Enabled
         Me.tabpgae.ForeColor = System.Drawing.Color.Transparent
         Me.tabpgae.Location = New System.Drawing.Point(4, 22)
@@ -848,6 +848,61 @@ Partial Class mainpage
         Me.tabpgae.Size = New System.Drawing.Size(829, 454)
         Me.tabpgae.TabIndex = 2
         Me.tabpgae.Text = "Payment"
+        '
+        'payment_listview
+        '
+        Me.payment_listview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list_pid, Me.list_mid, Me.list_mship_id, Me.list_doe, Me.list_log, Me.list_desc, Me.list_paid, Me.list_due, Me.list_pdate})
+        Me.payment_listview.Location = New System.Drawing.Point(8, 122)
+        Me.payment_listview.Name = "payment_listview"
+        Me.payment_listview.Size = New System.Drawing.Size(812, 329)
+        Me.payment_listview.TabIndex = 0
+        Me.payment_listview.UseCompatibleStateImageBehavior = False
+        Me.payment_listview.View = System.Windows.Forms.View.Details
+        '
+        'list_pid
+        '
+        Me.list_pid.Text = "Payment ID"
+        Me.list_pid.Width = 100
+        '
+        'list_mid
+        '
+        Me.list_mid.Text = "Member ID"
+        Me.list_mid.Width = 100
+        '
+        'list_mship_id
+        '
+        Me.list_mship_id.Text = "Membership ID"
+        Me.list_mship_id.Width = 100
+        '
+        'list_doe
+        '
+        Me.list_doe.Text = "Date of Entry"
+        Me.list_doe.Width = 100
+        '
+        'list_log
+        '
+        Me.list_log.Text = "Logged by"
+        Me.list_log.Width = 100
+        '
+        'list_desc
+        '
+        Me.list_desc.Text = "Description"
+        Me.list_desc.Width = 100
+        '
+        'list_paid
+        '
+        Me.list_paid.Text = "Paid"
+        Me.list_paid.Width = 100
+        '
+        'list_due
+        '
+        Me.list_due.Text = "Amount Due"
+        Me.list_due.Width = 100
+        '
+        'list_pdate
+        '
+        Me.list_pdate.Text = "Payment Date"
+        Me.list_pdate.Width = 100
         '
         'TabPage4
         '
@@ -981,61 +1036,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 25
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list_pid, Me.list_mid, Me.list_mship_id, Me.list_doe, Me.list_log, Me.list_desc, Me.list_paid, Me.list_due, Me.list_pdate})
-        Me.ListView1.Location = New System.Drawing.Point(8, 122)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(812, 329)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'list_pid
-        '
-        Me.list_pid.Text = "Payment ID"
-        Me.list_pid.Width = 100
-        '
-        'list_mid
-        '
-        Me.list_mid.Text = "Member ID"
-        Me.list_mid.Width = 100
-        '
-        'list_mship_id
-        '
-        Me.list_mship_id.Text = "Membership ID"
-        Me.list_mship_id.Width = 100
-        '
-        'list_doe
-        '
-        Me.list_doe.Text = "Date of Entry"
-        Me.list_doe.Width = 100
-        '
-        'list_log
-        '
-        Me.list_log.Text = "Logged by"
-        Me.list_log.Width = 100
-        '
-        'list_desc
-        '
-        Me.list_desc.Text = "Description"
-        Me.list_desc.Width = 100
-        '
-        'list_paid
-        '
-        Me.list_paid.Text = "Paid"
-        Me.list_paid.Width = 100
-        '
-        'list_due
-        '
-        Me.list_due.Text = "Amount Due"
-        Me.list_due.Width = 100
-        '
-        'list_pdate
-        '
-        Me.list_pdate.Text = "Payment Date"
-        Me.list_pdate.Width = 100
-        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1123,7 +1123,7 @@ Partial Class mainpage
     Friend WithEvents btn_logout As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents tabpgae As System.Windows.Forms.TabPage
     Friend WithEvents MaterialTabSelector1 As MaterialSkin.Controls.MaterialTabSelector
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents payment_listview As System.Windows.Forms.ListView
     Friend WithEvents list_pid As System.Windows.Forms.ColumnHeader
     Friend WithEvents list_mid As System.Windows.Forms.ColumnHeader
     Friend WithEvents list_mship_id As System.Windows.Forms.ColumnHeader

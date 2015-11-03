@@ -7,6 +7,7 @@ Public Class mainpage
     Dim ds As New DataSet
     Dim dt As New DataTable("TempSet")
     Dim dt2 As New DataTable("TempStore")
+    Dim dt3 As New DataTable("forlistview")
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -52,6 +53,7 @@ Public Class mainpage
 
         ds.Tables.Add(dt)
         ds.Tables.Add(dt2)
+        listviewrec()
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
         combobox_reup_search.Width = combobox_reup_search_membershiptype.Width
@@ -657,7 +659,23 @@ Public Class mainpage
         label_day.Text = System.DateTime.Now.ToString("dddd")
     End Sub
     Public Sub listviewrec()
-
+        ds.Tables.Add(dt3)
+        ds.Tables("forlistview").Clear()
+        sql = "select * from Payment"
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(dt3)
+        Dim listrow As DataRow
+        For Each listrow In dt3.Rows
+            payment_listview.Items.Add(listrow.Item(0))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(1))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(2))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(3))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(4))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(5))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(6))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(7))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(8))
+        Next
     End Sub
 
 End Class
