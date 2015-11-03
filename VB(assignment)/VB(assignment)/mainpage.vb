@@ -5,6 +5,8 @@ Imports System.Text.RegularExpressions
 Public Class mainpage
     Dim da As OleDbDataAdapter
     Dim ds As New DataSet
+    Dim dt As New DataTable("TempSet")
+    Dim dt2 As New DataTable("TempStore")
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -48,6 +50,9 @@ Public Class mainpage
             End Try
         End Try
 
+        ds.Tables.Add(dt)
+        ds.Tables.Add(dt2)
+
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
         combobox_reup_search.Width = combobox_reup_search_membershiptype.Width
         'combobox_update_search.Width = combobox_reup_search.Width
@@ -65,7 +70,6 @@ Public Class mainpage
         btn_remove.Top = btn_first.Top + 39
         btn_update.Left = btn_remove.Left
         btn_update.Top = btn_remove.Top
-        payment_delete.Size = payment_submit.Size
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -91,26 +95,6 @@ Public Class mainpage
             label_reup_shipid.Text = "ND"
         ElseIf combobox_reup_membertype.Text = "Weekday" Then
             label_reup_shipid.Text = "WD"
-        End If
-    End Sub
-
-    Private Sub combobox_payment_submit_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_submit_membertype.SelectedIndexChanged
-        If combobox_payment_submit_membertype.Text = "Deluxe" Then
-            label_payment_submit_shipid.Text = "DE"
-        ElseIf combobox_payment_submit_membertype.Text = "Non-Deluxe" Then
-            label_payment_submit_shipid.Text = "ND"
-        ElseIf combobox_payment_submit_membertype.Text = "Weekday" Then
-            label_payment_submit_shipid.Text = "WD"
-        End If
-    End Sub
-
-    Private Sub combobox_payment_edit_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_membertype.SelectedIndexChanged
-        If combobox_payment_membertype.Text = "Deluxe" Then
-            label_payment_shipid.Text = "DE"
-        ElseIf combobox_payment_membertype.Text = "Non-Deluxe" Then
-            label_payment_shipid.Text = "ND"
-        ElseIf combobox_payment_membertype.Text = "Weekday" Then
-            label_payment_shipid.Text = "WD"
         End If
     End Sub
 
@@ -154,7 +138,7 @@ Public Class mainpage
         End If
         sql = "select M.MID, M.Contact_number, M.Email, Ms.MSHIP_ID from Members M " &
                 "INNER JOIN Membership Ms on M.MID=Ms.MID"
-        ds.Clear()
+        ds.Tables("TempStore").Clear()
         da = New OleDbDataAdapter(sql, con)
         da.Fill(ds, "TempStore")
         For i = 0 To ds.Tables("TempStore").Rows.Count - 1
@@ -415,7 +399,7 @@ Public Class mainpage
 
     End Sub
 
-    Private Sub btn_remove_search_Click(sender As Object, e As EventArgs) Handles btn_reup_search.Click
+    Private Sub btn_reup_search_Click(sender As Object, e As EventArgs) Handles btn_reup_search.Click
 
         If combobox_reup_search.SelectedIndex = 0 Then
 
@@ -454,7 +438,7 @@ Public Class mainpage
 
         If combobox_reup_search.SelectedIndex >= 0 AndAlso combobox_reup_search.SelectedIndex < 4 Then
             'clear the dataset first, else data will be cached! Works like fflush(stdin) but this one is dataset not stdin
-            ds.Clear()
+            ds.Tables("TempSet").Clear()
             da = New OleDbDataAdapter(sql, con)
             da.Fill(ds, "TempSet")
             Call addset()
@@ -477,6 +461,7 @@ Public Class mainpage
             MessageBox.Show("Member list is empty.", "No members found.")
             Return
         End If
+        MsgBox(ds.Tables("TempSet").Rows.Count) ' debug
         txt_reup_id.Text = ds.Tables("TempSet").Rows(0).Item(0)
         Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(6)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
@@ -506,7 +491,7 @@ Public Class mainpage
             cmd = New OleDbCommand(sql, con)
             cmd.ExecuteNonQuery()
             MsgBox("Deleted")
-            ds.Clear()
+            ds.Tables("TempSet").Clear()
             txt_reup_search.Clear()
             txt_reup_id.Clear()
             txt_reup_firstname.Clear()
@@ -671,4 +656,8 @@ Public Class mainpage
         label_date.Text = System.DateTime.Now.ToString("dd/MM/yyyy")
         label_day.Text = System.DateTime.Now.ToString("dddd")
     End Sub
+    Public Sub listviewrec()
+
+    End Sub
+
 End Class
