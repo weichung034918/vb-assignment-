@@ -140,11 +140,7 @@ Public Class Permission
             txt_conpwd.Text = Nothing
             Return
         End If
-        For i = 0 To ds.Tables("UserSet").Rows.Count - 1
-            If txt_uname.Text = ds.Tables("UserSet").Rows(i).Item(0) Then
 
-            End If
-        Next
         sql = "insert into Admin values ('" & txt_uname.Text & "', '" & txt_pwd.Text & "', '" &
             ComboBox_per.Text & "')"
         cmd = New OleDbCommand(sql, con)
@@ -214,12 +210,6 @@ Public Class Permission
             label_edel_per.Top = label_edel_conpwd.Top + 40
             ComboBox_edel_per.Top = label_edel_per.Top
         ElseIf ComboBox_modeselect.SelectedIndex = 1 Then
-            label_edel_per.Visible = True
-            label_edel_uname.Visible = True
-            txt_edel_uname.Visible = True
-            ComboBox_edel_per.Visible = True
-            btn_next.Visible = True
-            btn_prev.Visible = True
             btn_edit.Visible = False
             btn_del.Visible = True
             label_edel_pwd.Visible = False
@@ -249,16 +239,12 @@ Public Class Permission
 
     Private Sub btn_del_Click(sender As Object, e As EventArgs) Handles btn_del.Click
         sql = "delete * from Admin where Username='" & txt_edel_uname.Text & "'"
-        If txt_edel_uname.Text = mainpage.label_uname.Text Then
-            MessageBox.Show("You cannot delete your own account!", "Error")
-            Return
-        End If
         cmd = New OleDbCommand(sql, con)
         Try
             MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
             MsgBox("Removed!")
-
+            
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
             Return
