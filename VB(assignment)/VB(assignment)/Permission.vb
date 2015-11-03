@@ -4,6 +4,10 @@ Public Class Permission
     Partial Class Permission
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
+
+    Private Sub Permission_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        popup.Close()
+    End Sub
     Private Sub Permission_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim skinmanager As MaterialSkin.MaterialSkinManager = MaterialSkinManager.Instance
         skinmanager.AddFormToManage(Me)
