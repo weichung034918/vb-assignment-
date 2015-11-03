@@ -142,7 +142,7 @@ Public Class Permission
         End If
         For i = 0 To ds.Tables("UserSet").Rows.Count - 1
             If txt_uname.Text = ds.Tables("UserSet").Rows(i).Item(0) Then
-
+                MessageBox.Show("Username exists. Please enter a new username.", "")
             End If
         Next
         sql = "insert into Admin values ('" & txt_uname.Text & "', '" & txt_pwd.Text & "', '" &

@@ -94,16 +94,6 @@ Public Class mainpage
         End If
     End Sub
 
-    'Private Sub combobox_update_membertype_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    If combobox_update_membertype.Text = "Deluxe" Then
-    '        label_update_shipid.Text = "DE"
-    '    ElseIf combobox_update_membertype.Text = "Non-Deluxe" Then
-    '        label_update_shipid.Text = "ND"
-    '    ElseIf combobox_update_membertype.Text = "Weekday" Then
-    '        label_update_shipid.Text = "WD"
-    '    End If
-    'End Sub
-
     Private Sub combobox_payment_submit_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_submit_membertype.SelectedIndexChanged
         If combobox_payment_submit_membertype.Text = "Deluxe" Then
             label_payment_submit_shipid.Text = "DE"
@@ -123,16 +113,6 @@ Public Class mainpage
             label_payment_shipid.Text = "WD"
         End If
     End Sub
-
-    'Private Sub combobox_payment_delete_membertype_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    If combobox_payment_delete_membertype.Text = "Deluxe" Then
-    '        label_payment_delete_shipid.Text = "DE"
-    '    ElseIf combobox_payment_delete_membertype.Text = "Non-Deluxe" Then
-    '        label_payment_delete_shipid.Text = "ND"
-    '    ElseIf combobox_payment_delete_membertype.Text = "Weekday" Then
-    '        label_payment_delete_shipid.Text = "WD"
-    '    End If
-    'End Sub
 
     Private Sub txt_remove_search_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_search.TextChanged
 
@@ -154,27 +134,6 @@ Public Class mainpage
         End If
     End Sub
 
-
-    'Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    If combobox_update_search_membershiptype.Text = "Deluxe" Then
-    '        'label_update_search.Left = txt_update_search.Left - 50
-    '        label_update_search.Text = "DE"
-    '    ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
-    '        'label_update_search.Left = txt_update_search.Left - 50
-    '        label_update_search.Text = "ND"
-    '    ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
-    '        'label_update_search.Left = txt_update_search.Left - 50
-    '        label_update_search.Text = "WD"
-    '    End If
-    ' End Sub
-
-    'Private Sub combobox_update_search_LostFocus(sender As Object, e As EventArgs)
-    '    If combobox_update_search.Text.Equals("Membership ID") <> True Then
-    '        combobox_update_search_membershiptype.Visible = False
-    '        MaterialLabel51.Visible = False
-    '    End If
-    'End Sub
-
     '-------------------------------Add member function starts-------------------------------------
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
         If String.IsNullOrEmpty(txt_add_id.Text) Then
@@ -193,7 +152,27 @@ Public Class mainpage
             MsgBox("Please insert Membership ID ")
             Return
         End If
-
+        sql = "select M.MID, M.Contact_number, M.Email, Ms.MSHIP_ID from Members M " &
+                "INNER JOIN Membership Ms on M.MID=Ms.MID"
+        ds.Clear()
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(ds, "TempStore")
+        For i = 0 To ds.Tables("TempStore").Rows.Count - 1
+            If txt_add_id.Text = ds.Tables("TempStore").Rows(i).Item(0) Then
+                MessageBox.Show("Member ID exists in the member list! Please enter a new Member ID.", "")
+                Return
+            ElseIf txt_add_shipid.Text = ds.Tables("TempStore").Rows(i).Item(3) Then
+                MessageBox.Show("Membership ID exists in the member list! Please enter a new Membership ID.", "")
+                Return
+            ElseIf txt_add_cont.Text = ds.Tables("TempStore").Rows(i).Item(1) Then
+                MessageBox.Show("Contact number exists in the member list!", "")
+                Return
+            ElseIf txt_add_email.Text = ds.Tables("TempStore").Rows(i).Item(2) Then
+                MessageBox.Show("E-mail exists in the member list!", "")
+                Return
+            End If
+        Next
+        
         sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
             txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
         cmd = New OleDbCommand(sql, con)
@@ -494,6 +473,10 @@ Public Class mainpage
 
     End Sub
     Public Sub addset()
+        If ds.Tables("TempSet").Rows.Count = 0 Then
+            MessageBox.Show("Member list is empty.", "No members found.")
+            Return
+        End If
         txt_reup_id.Text = ds.Tables("TempSet").Rows(0).Item(0)
         Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(6)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
@@ -687,10 +670,5 @@ Public Class mainpage
         label_time.Text = TimeOfDay.ToString("h:mm:ss tt")
         label_date.Text = System.DateTime.Now.ToString("dd/MM/yyyy")
         label_day.Text = System.DateTime.Now.ToString("dddd")
-    End Sub
-
-  
-    Private Sub paymentmode_choice_SelectedIndexChanged(sender As Object, e As EventArgs) Handles paymentmode_choice.SelectedIndexChanged
-
     End Sub
 End Class

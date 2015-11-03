@@ -159,7 +159,7 @@ Partial Class mainpage
         Me.MaterialTabControl1.Controls.Add(Me.TabPage4)
         Me.MaterialTabControl1.Depth = 0
         Me.MaterialTabControl1.HotTrack = True
-        Me.MaterialTabControl1.Location = New System.Drawing.Point(0, 103)
+        Me.MaterialTabControl1.Location = New System.Drawing.Point(0, 108)
         Me.MaterialTabControl1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialTabControl1.Name = "MaterialTabControl1"
         Me.MaterialTabControl1.SelectedIndex = 0
