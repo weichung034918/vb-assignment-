@@ -22,28 +22,11 @@ Partial Class popup
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txt_con_conpwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_con_urpwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.label_conpwd = New MaterialSkin.Controls.MaterialLabel()
         Me.label_urpwd = New MaterialSkin.Controls.MaterialLabel()
         Me.btn_del = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_edit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.SuspendLayout()
-        '
-        'txt_con_conpwd
-        '
-        Me.txt_con_conpwd.Depth = 0
-        Me.txt_con_conpwd.Hint = ""
-        Me.txt_con_conpwd.Location = New System.Drawing.Point(83, 159)
-        Me.txt_con_conpwd.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_con_conpwd.Name = "txt_con_conpwd"
-        Me.txt_con_conpwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_con_conpwd.SelectedText = ""
-        Me.txt_con_conpwd.SelectionLength = 0
-        Me.txt_con_conpwd.SelectionStart = 0
-        Me.txt_con_conpwd.Size = New System.Drawing.Size(100, 23)
-        Me.txt_con_conpwd.TabIndex = 19
-        Me.txt_con_conpwd.UseSystemPasswordChar = False
         '
         'txt_con_urpwd
         '
@@ -60,19 +43,6 @@ Partial Class popup
         Me.txt_con_urpwd.TabIndex = 18
         Me.txt_con_urpwd.UseSystemPasswordChar = False
         '
-        'label_conpwd
-        '
-        Me.label_conpwd.AutoSize = True
-        Me.label_conpwd.Depth = 0
-        Me.label_conpwd.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_conpwd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_conpwd.Location = New System.Drawing.Point(57, 137)
-        Me.label_conpwd.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_conpwd.Name = "label_conpwd"
-        Me.label_conpwd.Size = New System.Drawing.Size(133, 19)
-        Me.label_conpwd.TabIndex = 17
-        Me.label_conpwd.Text = "Confirm Password"
-        '
         'label_urpwd
         '
         Me.label_urpwd.AutoSize = True
@@ -82,14 +52,14 @@ Partial Class popup
         Me.label_urpwd.Location = New System.Drawing.Point(66, 75)
         Me.label_urpwd.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_urpwd.Name = "label_urpwd"
-        Me.label_urpwd.Size = New System.Drawing.Size(110, 19)
+        Me.label_urpwd.Size = New System.Drawing.Size(114, 19)
         Me.label_urpwd.TabIndex = 16
-        Me.label_urpwd.Text = "Your Password"
+        Me.label_urpwd.Text = "Your Password:"
         '
         'btn_del
         '
         Me.btn_del.Depth = 0
-        Me.btn_del.Location = New System.Drawing.Point(136, 199)
+        Me.btn_del.Location = New System.Drawing.Point(140, 139)
         Me.btn_del.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_del.Name = "btn_del"
         Me.btn_del.Primary = True
@@ -102,7 +72,7 @@ Partial Class popup
         'btn_edit
         '
         Me.btn_edit.Depth = 0
-        Me.btn_edit.Location = New System.Drawing.Point(42, 199)
+        Me.btn_edit.Location = New System.Drawing.Point(46, 139)
         Me.btn_edit.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Primary = True
@@ -116,12 +86,10 @@ Partial Class popup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(264, 248)
+        Me.ClientSize = New System.Drawing.Size(240, 208)
         Me.Controls.Add(Me.btn_del)
         Me.Controls.Add(Me.btn_edit)
-        Me.Controls.Add(Me.txt_con_conpwd)
         Me.Controls.Add(Me.txt_con_urpwd)
-        Me.Controls.Add(Me.label_conpwd)
         Me.Controls.Add(Me.label_urpwd)
         Me.Name = "popup"
         Me.Text = "Edit/Delete User"
@@ -129,9 +97,7 @@ Partial Class popup
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txt_con_conpwd As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_con_urpwd As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents label_conpwd As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_urpwd As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents btn_del As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_edit As MaterialSkin.Controls.MaterialRaisedButton

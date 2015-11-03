@@ -177,8 +177,8 @@ Public Class Initialise
         End If
 
         con.Open()
-        sql = "insert into Admin values ('" + field_uname.Text + "', '" + field_pwd.Text + "', 'Admin')"
-        MessageBox.Show("You are inserting [" + sql + "] into the database", "Debug purpose") 'for debug purpose, will delete
+        sql = "insert into Admin values ('" & field_uname.Text & "', '" & field_pwd.Text & "', 'Admin')"
+        MessageBox.Show("You are inserting [" & sql & "] into the database", "Debug purpose") 'for debug purpose, will delete
         cmd = New OleDbCommand(sql, con)
         Try
             cmd.ExecuteNonQuery()

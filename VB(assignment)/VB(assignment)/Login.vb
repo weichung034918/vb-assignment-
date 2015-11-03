@@ -70,6 +70,7 @@ Public Class login
 
         con.Close()
 
+        mainpage.label_uname.Text = dt.Rows(0).Item(0)
         mainpage.Show()
         Me.Close()
     End Sub
@@ -85,14 +86,6 @@ Public Class login
         login_btn.Left = (Me.Width / 2) - (login_btn.Width / 2)
         MaterialLabel1.Left = field_username.Left
         MaterialLabel2.Left = field_pwd.Left
-    End Sub
-
-    Private Sub field_username_Click(sender As Object, e As EventArgs) Handles field_username.Click
-
-    End Sub
-
-    Private Sub MaterialLabel1_Click(sender As Object, e As EventArgs) Handles MaterialLabel1.Click
-
     End Sub
 End Class
 

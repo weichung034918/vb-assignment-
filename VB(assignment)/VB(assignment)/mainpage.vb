@@ -494,12 +494,12 @@ Public Class mainpage
 
     End Sub
     Public Sub addset()
-        txt_reup_id.Text = ds.Tables(0).Rows(0).Item(0)
-        Dim mshipid As String = ds.Tables(0).Rows(0).Item(6)
+        txt_reup_id.Text = ds.Tables("TempSet").Rows(0).Item(0)
+        Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(6)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
-        txt_reup_firstname.Text = ds.Tables(0).Rows(0).Item(1)
-        txt_reup_lastname.Text = ds.Tables(0).Rows(0).Item(2)
-        Dim mtype As String = ds.Tables(0).Rows(0).Item(7)
+        txt_reup_firstname.Text = ds.Tables("TempSet").Rows(0).Item(1)
+        txt_reup_lastname.Text = ds.Tables("TempSet").Rows(0).Item(2)
+        Dim mtype As String = ds.Tables("TempSet").Rows(0).Item(7)
         If mtype = "Deluxe" Then
             combobox_reup_membertype.SelectedIndex = 0
         ElseIf mtype = "Non-Deluxe" Then
@@ -507,11 +507,11 @@ Public Class mainpage
         ElseIf mtype = "Weekday" Then
             combobox_reup_membertype.SelectedIndex = 2
         End If
-        txt_reup_cont.Text = ds.Tables(0).Rows(0).Item(3)
-        txt_reup_email.Text = ds.Tables(0).Rows(0).Item(4)
-        If ds.Tables(0).Rows(0).Item(5).ToString = "Active" Then
+        txt_reup_cont.Text = ds.Tables("TempSet").Rows(0).Item(3)
+        txt_reup_email.Text = ds.Tables("TempSet").Rows(0).Item(4)
+        If ds.Tables("TempSet").Rows(0).Item(5).ToString = "Active" Then
             combobox_reup_status.SelectedIndex = 0
-        ElseIf ds.Tables(0).Rows(0).Item(5).ToString = "Closed" Then
+        ElseIf ds.Tables("TempSet").Rows(0).Item(5).ToString = "Closed" Then
             combobox_reup_status.SelectedIndex = 1
         End If
     End Sub
@@ -543,12 +543,12 @@ Public Class mainpage
     End Sub
 
     Public Sub addset2() 'for prev, next, last
-        txt_reup_id.Text = ds.Tables(0).Rows(currec).Item(0)
-        Dim mshipid As String = ds.Tables(0).Rows(currec).Item(6)
+        txt_reup_id.Text = ds.Tables("TempSet").Rows(currec).Item(0)
+        Dim mshipid As String = ds.Tables("TempSet").Rows(currec).Item(6)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
-        txt_reup_firstname.Text = ds.Tables(0).Rows(currec).Item(1)
-        txt_reup_lastname.Text = ds.Tables(0).Rows(currec).Item(2)
-        Dim mtype As String = ds.Tables(0).Rows(currec).Item(7)
+        txt_reup_firstname.Text = ds.Tables("TempSet").Rows(currec).Item(1)
+        txt_reup_lastname.Text = ds.Tables("TempSet").Rows(currec).Item(2)
+        Dim mtype As String = ds.Tables("TempSet").Rows(currec).Item(7)
         If mtype = "Deluxe" Then
             combobox_reup_membertype.SelectedIndex = 0
         ElseIf mtype = "Non-Deluxe" Then
@@ -556,8 +556,8 @@ Public Class mainpage
         ElseIf mtype = "Weekday" Then
             combobox_reup_membertype.SelectedIndex = 2
         End If
-        txt_reup_cont.Text = ds.Tables(0).Rows(currec).Item(3)
-        txt_reup_email.Text = ds.Tables(0).Rows(currec).Item(4)
+        txt_reup_cont.Text = ds.Tables("TempSet").Rows(currec).Item(3)
+        txt_reup_email.Text = ds.Tables("TempSet").Rows(currec).Item(4)
     End Sub
 
     Private Sub btn_prev_Click(sender As Object, e As EventArgs) Handles btn_prev.Click
@@ -683,4 +683,9 @@ Public Class mainpage
 
     End Sub
 
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        label_time.Text = TimeOfDay.ToString("h:mm:ss tt")
+        label_date.Text = System.DateTime.Now.ToString("dd/MM/yyyy")
+        label_day.Text = System.DateTime.Now.ToString("dddd")
+    End Sub
 End Class

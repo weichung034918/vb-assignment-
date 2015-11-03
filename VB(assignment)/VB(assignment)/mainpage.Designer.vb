@@ -22,6 +22,7 @@ Partial Class mainpage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.txt_add_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -182,6 +183,14 @@ Partial Class mainpage
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.label_uname = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_unamelbl = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_time = New MaterialSkin.Controls.MaterialLabel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.label_date = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_day = New MaterialSkin.Controls.MaterialLabel()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btn_logout = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -194,6 +203,7 @@ Partial Class mainpage
         Me.TabPage6.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MaterialContextMenuStrip1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MaterialTabControl1
@@ -212,7 +222,7 @@ Partial Class mainpage
         '
         'TabPage1
         '
-        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage1.Controls.Add(Me.txt_add_email)
         Me.TabPage1.Controls.Add(Me.txt_add_cont)
@@ -464,9 +474,8 @@ Partial Class mainpage
         '
         'TabPage2
         '
-        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.BackColor = System.Drawing.Color.White
         Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.TabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage2.Controls.Add(Me.combobox_reup_status)
         Me.TabPage2.Controls.Add(Me.MaterialLabel53)
         Me.TabPage2.Controls.Add(Me.combobox_modeselect)
@@ -503,7 +512,7 @@ Partial Class mainpage
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(829, 454)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Remove Members"
+        Me.TabPage2.Text = "Remove/Update Members"
         '
         'combobox_reup_status
         '
@@ -930,7 +939,7 @@ Partial Class mainpage
         '
         'tabpgae
         '
-        Me.tabpgae.BackColor = System.Drawing.SystemColors.Control
+        Me.tabpgae.BackColor = System.Drawing.Color.White
         Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.tabpgae.Controls.Add(Me.btn_last2)
         Me.tabpgae.Controls.Add(Me.btn_next2)
@@ -962,7 +971,7 @@ Partial Class mainpage
         Me.tabpgae.Name = "tabpgae"
         Me.tabpgae.Size = New System.Drawing.Size(829, 454)
         Me.tabpgae.TabIndex = 2
-        Me.tabpgae.Text = "Update Members"
+        Me.tabpgae.Text = "PLS DELETE"
         '
         'btn_last2
         '
@@ -1351,7 +1360,7 @@ Partial Class mainpage
         '
         'TabPage3
         '
-        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage3.BackColor = System.Drawing.Color.White
         Me.TabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.TabPage3.Controls.Add(Me.txt_payment_submit_date)
         Me.TabPage3.Controls.Add(Me.txt_payment_submit_entrydate)
@@ -2463,13 +2472,111 @@ Partial Class mainpage
         Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.PermissionToolStripMenuItem.Text = "Admin Settings"
         '
+        'label_uname
+        '
+        Me.label_uname.Depth = 0
+        Me.label_uname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.label_uname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_uname.Location = New System.Drawing.Point(589, 12)
+        Me.label_uname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_uname.Name = "label_uname"
+        Me.label_uname.Size = New System.Drawing.Size(126, 17)
+        Me.label_uname.TabIndex = 20
+        Me.label_uname.Text = "uname"
+        Me.label_uname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'label_unamelbl
+        '
+        Me.label_unamelbl.AutoSize = True
+        Me.label_unamelbl.Depth = 0
+        Me.label_unamelbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.label_unamelbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_unamelbl.Location = New System.Drawing.Point(500, 12)
+        Me.label_unamelbl.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_unamelbl.Name = "label_unamelbl"
+        Me.label_unamelbl.Size = New System.Drawing.Size(83, 17)
+        Me.label_unamelbl.TabIndex = 19
+        Me.label_unamelbl.Text = "Logged as: "
+        Me.label_unamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'label_time
+        '
+        Me.label_time.AutoSize = True
+        Me.label_time.Depth = 0
+        Me.label_time.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.label_time.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_time.Location = New System.Drawing.Point(6, 12)
+        Me.label_time.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_time.Name = "label_time"
+        Me.label_time.Size = New System.Drawing.Size(72, 17)
+        Me.label_time.TabIndex = 21
+        Me.label_time.Text = "label_time"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'label_date
+        '
+        Me.label_date.AutoSize = True
+        Me.label_date.Depth = 0
+        Me.label_date.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.label_date.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_date.Location = New System.Drawing.Point(96, 12)
+        Me.label_date.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_date.Name = "label_date"
+        Me.label_date.Size = New System.Drawing.Size(74, 17)
+        Me.label_date.TabIndex = 22
+        Me.label_date.Text = "label_date"
+        '
+        'label_day
+        '
+        Me.label_day.AutoSize = True
+        Me.label_day.Depth = 0
+        Me.label_day.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.label_day.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_day.Location = New System.Drawing.Point(185, 12)
+        Me.label_day.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_day.Name = "label_day"
+        Me.label_day.Size = New System.Drawing.Size(69, 17)
+        Me.label_day.TabIndex = 23
+        Me.label_day.Text = "label_day"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.btn_logout)
+        Me.GroupBox3.Controls.Add(Me.label_uname)
+        Me.GroupBox3.Controls.Add(Me.label_day)
+        Me.GroupBox3.Controls.Add(Me.label_time)
+        Me.GroupBox3.Controls.Add(Me.label_date)
+        Me.GroupBox3.Controls.Add(Me.label_unamelbl)
+        Me.GroupBox3.Location = New System.Drawing.Point(4, 585)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(827, 36)
+        Me.GroupBox3.TabIndex = 24
+        Me.GroupBox3.TabStop = False
+        '
+        'btn_logout
+        '
+        Me.btn_logout.Depth = 0
+        Me.btn_logout.Location = New System.Drawing.Point(746, 9)
+        Me.btn_logout.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_logout.Name = "btn_logout"
+        Me.btn_logout.Primary = True
+        Me.btn_logout.Size = New System.Drawing.Size(75, 23)
+        Me.btn_logout.TabIndex = 24
+        Me.btn_logout.Text = "Logout"
+        Me.btn_logout.UseVisualStyleBackColor = True
+        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(835, 583)
+        Me.ClientSize = New System.Drawing.Size(835, 624)
         Me.ContextMenuStrip = Me.MaterialContextMenuStrip1
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MaterialTabSelector1)
         Me.Controls.Add(Me.MaterialTabControl1)
         Me.Name = "mainpage"
@@ -2494,6 +2601,8 @@ Partial Class mainpage
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.MaterialContextMenuStrip1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2657,4 +2766,12 @@ Partial Class mainpage
     Friend WithEvents combobox_modeselect As System.Windows.Forms.ComboBox
     Friend WithEvents combobox_reup_status As System.Windows.Forms.ComboBox
     Friend WithEvents MaterialLabel53 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_uname As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_unamelbl As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents label_day As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_time As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_date As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents btn_logout As MaterialSkin.Controls.MaterialRaisedButton
 End Class

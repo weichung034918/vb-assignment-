@@ -35,20 +35,28 @@ Partial Class Permission
         Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.btn_edit = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.ComboBox_edel_per = New System.Windows.Forms.ComboBox()
-        Me.txt_edel_uname = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.label_edel_per = New MaterialSkin.Controls.MaterialLabel()
-        Me.label_edel_uname = New MaterialSkin.Controls.MaterialLabel()
+        Me.ComboBox_modeselect = New System.Windows.Forms.ComboBox()
+        Me.btn_prev = New MaterialSkin.Controls.MaterialFlatButton()
+        Me.btn_next = New MaterialSkin.Controls.MaterialFlatButton()
         Me.btn_del = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_edit = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btn_myset_update = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.txt_myset_conpwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_myset_pwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.txt_myset_uname = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialRaisedButton1 = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.ComboBox_edel_per = New System.Windows.Forms.ComboBox()
+        Me.txt_edel_conpwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_edel_pwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_edel_uname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.label_edel_per = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_edel_conpwd = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_edel_pwd = New MaterialSkin.Controls.MaterialLabel()
+        Me.label_edel_uname = New MaterialSkin.Controls.MaterialLabel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -109,6 +117,7 @@ Partial Class Permission
         Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "ADD"
         Me.btn_add.UseVisualStyleBackColor = True
+        Me.btn_add.Visible = False
         '
         'ComboBox_per
         '
@@ -220,12 +229,20 @@ Partial Class Permission
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.Color.White
-        Me.TabPage2.Controls.Add(Me.btn_del)
-        Me.TabPage2.Controls.Add(Me.btn_edit)
+        Me.TabPage2.Controls.Add(Me.Label1)
         Me.TabPage2.Controls.Add(Me.ComboBox_edel_per)
+        Me.TabPage2.Controls.Add(Me.txt_edel_conpwd)
+        Me.TabPage2.Controls.Add(Me.txt_edel_pwd)
         Me.TabPage2.Controls.Add(Me.txt_edel_uname)
         Me.TabPage2.Controls.Add(Me.label_edel_per)
+        Me.TabPage2.Controls.Add(Me.label_edel_conpwd)
+        Me.TabPage2.Controls.Add(Me.label_edel_pwd)
         Me.TabPage2.Controls.Add(Me.label_edel_uname)
+        Me.TabPage2.Controls.Add(Me.ComboBox_modeselect)
+        Me.TabPage2.Controls.Add(Me.btn_prev)
+        Me.TabPage2.Controls.Add(Me.btn_next)
+        Me.TabPage2.Controls.Add(Me.btn_del)
+        Me.TabPage2.Controls.Add(Me.btn_edit)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -233,10 +250,78 @@ Partial Class Permission
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "edit/delete user"
         '
+        'ComboBox_modeselect
+        '
+        Me.ComboBox_modeselect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox_modeselect.FormattingEnabled = True
+        Me.ComboBox_modeselect.Items.AddRange(New Object() {"Edit", "Delete"})
+        Me.ComboBox_modeselect.Location = New System.Drawing.Point(4, 4)
+        Me.ComboBox_modeselect.Name = "ComboBox_modeselect"
+        Me.ComboBox_modeselect.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_modeselect.TabIndex = 21
+        '
+        'btn_prev
+        '
+        Me.btn_prev.AutoSize = True
+        Me.btn_prev.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_prev.Depth = 0
+        Me.btn_prev.Location = New System.Drawing.Point(195, 17)
+        Me.btn_prev.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.btn_prev.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_prev.Name = "btn_prev"
+        Me.btn_prev.Primary = False
+        Me.btn_prev.Size = New System.Drawing.Size(46, 36)
+        Me.btn_prev.TabIndex = 20
+        Me.btn_prev.Text = "Prev"
+        Me.btn_prev.UseVisualStyleBackColor = True
+        Me.btn_prev.Visible = False
+        '
+        'btn_next
+        '
+        Me.btn_next.AutoSize = True
+        Me.btn_next.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_next.Depth = 0
+        Me.btn_next.Location = New System.Drawing.Point(281, 17)
+        Me.btn_next.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.btn_next.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_next.Name = "btn_next"
+        Me.btn_next.Primary = False
+        Me.btn_next.Size = New System.Drawing.Size(46, 36)
+        Me.btn_next.TabIndex = 19
+        Me.btn_next.Text = "Next"
+        Me.btn_next.UseVisualStyleBackColor = True
+        Me.btn_next.Visible = False
+        '
+        'btn_del
+        '
+        Me.btn_del.Depth = 0
+        Me.btn_del.Location = New System.Drawing.Point(265, 222)
+        Me.btn_del.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_del.Name = "btn_del"
+        Me.btn_del.Primary = True
+        Me.btn_del.Size = New System.Drawing.Size(75, 23)
+        Me.btn_del.TabIndex = 18
+        Me.btn_del.Text = "delete"
+        Me.btn_del.UseVisualStyleBackColor = True
+        Me.btn_del.Visible = False
+        '
+        'btn_edit
+        '
+        Me.btn_edit.Depth = 0
+        Me.btn_edit.Location = New System.Drawing.Point(166, 222)
+        Me.btn_edit.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_edit.Name = "btn_edit"
+        Me.btn_edit.Primary = True
+        Me.btn_edit.Size = New System.Drawing.Size(75, 22)
+        Me.btn_edit.TabIndex = 17
+        Me.btn_edit.Text = "EDIT"
+        Me.btn_edit.UseVisualStyleBackColor = True
+        Me.btn_edit.Visible = False
+        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.White
-        Me.TabPage3.Controls.Add(Me.MaterialRaisedButton1)
+        Me.TabPage3.Controls.Add(Me.btn_myset_update)
         Me.TabPage3.Controls.Add(Me.txt_myset_conpwd)
         Me.TabPage3.Controls.Add(Me.txt_myset_pwd)
         Me.TabPage3.Controls.Add(Me.txt_myset_uname)
@@ -250,80 +335,18 @@ Partial Class Permission
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "My settings"
         '
-        'btn_edit
+        'btn_myset_update
         '
-        Me.btn_edit.Depth = 0
-        Me.btn_edit.Location = New System.Drawing.Point(113, 139)
-        Me.btn_edit.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_edit.Name = "btn_edit"
-        Me.btn_edit.Primary = True
-        Me.btn_edit.Size = New System.Drawing.Size(75, 22)
-        Me.btn_edit.TabIndex = 17
-        Me.btn_edit.Text = "EDIT"
-        Me.btn_edit.UseVisualStyleBackColor = True
-        '
-        'ComboBox_edel_per
-        '
-        Me.ComboBox_edel_per.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox_edel_per.FormattingEnabled = True
-        Me.ComboBox_edel_per.Items.AddRange(New Object() {"Admin", "Staff"})
-        Me.ComboBox_edel_per.Location = New System.Drawing.Point(281, 87)
-        Me.ComboBox_edel_per.Name = "ComboBox_edel_per"
-        Me.ComboBox_edel_per.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox_edel_per.TabIndex = 16
-        '
-        'txt_edel_uname
-        '
-        Me.txt_edel_uname.Depth = 0
-        Me.txt_edel_uname.Hint = ""
-        Me.txt_edel_uname.Location = New System.Drawing.Point(282, 34)
-        Me.txt_edel_uname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_edel_uname.Name = "txt_edel_uname"
-        Me.txt_edel_uname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_edel_uname.SelectedText = ""
-        Me.txt_edel_uname.SelectionLength = 0
-        Me.txt_edel_uname.SelectionStart = 0
-        Me.txt_edel_uname.Size = New System.Drawing.Size(75, 23)
-        Me.txt_edel_uname.TabIndex = 13
-        Me.txt_edel_uname.UseSystemPasswordChar = False
-        '
-        'label_edel_per
-        '
-        Me.label_edel_per.AutoSize = True
-        Me.label_edel_per.Depth = 0
-        Me.label_edel_per.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_edel_per.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_edel_per.Location = New System.Drawing.Point(107, 87)
-        Me.label_edel_per.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_edel_per.Name = "label_edel_per"
-        Me.label_edel_per.Size = New System.Drawing.Size(89, 19)
-        Me.label_edel_per.TabIndex = 12
-        Me.label_edel_per.Text = "Permission:"
-        '
-        'label_edel_uname
-        '
-        Me.label_edel_uname.AutoSize = True
-        Me.label_edel_uname.Depth = 0
-        Me.label_edel_uname.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_edel_uname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_edel_uname.Location = New System.Drawing.Point(107, 34)
-        Me.label_edel_uname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_edel_uname.Name = "label_edel_uname"
-        Me.label_edel_uname.Size = New System.Drawing.Size(81, 19)
-        Me.label_edel_uname.TabIndex = 9
-        Me.label_edel_uname.Text = "Username:"
-        '
-        'btn_del
-        '
-        Me.btn_del.Depth = 0
-        Me.btn_del.Location = New System.Drawing.Point(113, 176)
-        Me.btn_del.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_del.Name = "btn_del"
-        Me.btn_del.Primary = True
-        Me.btn_del.Size = New System.Drawing.Size(75, 23)
-        Me.btn_del.TabIndex = 18
-        Me.btn_del.Text = "delete"
-        Me.btn_del.UseVisualStyleBackColor = True
+        Me.btn_myset_update.Depth = 0
+        Me.btn_myset_update.Location = New System.Drawing.Point(219, 175)
+        Me.btn_myset_update.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_myset_update.Name = "btn_myset_update"
+        Me.btn_myset_update.Primary = True
+        Me.btn_myset_update.Size = New System.Drawing.Size(75, 22)
+        Me.btn_myset_update.TabIndex = 18
+        Me.btn_myset_update.Text = "update"
+        Me.btn_myset_update.UseVisualStyleBackColor = True
+        Me.btn_myset_update.Visible = False
         '
         'txt_myset_conpwd
         '
@@ -409,18 +432,131 @@ Partial Class Permission
         Me.MaterialLabel7.TabIndex = 7
         Me.MaterialLabel7.Text = "Edit Username:"
         '
-        'MaterialRaisedButton1
+        'ComboBox_edel_per
         '
-        Me.MaterialRaisedButton1.Depth = 0
-        Me.MaterialRaisedButton1.Location = New System.Drawing.Point(219, 175)
-        Me.MaterialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialRaisedButton1.Name = "MaterialRaisedButton1"
-        Me.MaterialRaisedButton1.Primary = True
-        Me.MaterialRaisedButton1.Size = New System.Drawing.Size(75, 22)
-        Me.MaterialRaisedButton1.TabIndex = 18
-        Me.MaterialRaisedButton1.Text = "update"
-        Me.MaterialRaisedButton1.UseVisualStyleBackColor = True
-        Me.MaterialRaisedButton1.Visible = False
+        Me.ComboBox_edel_per.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox_edel_per.FormattingEnabled = True
+        Me.ComboBox_edel_per.Items.AddRange(New Object() {"Admin", "Staff"})
+        Me.ComboBox_edel_per.Location = New System.Drawing.Point(302, 174)
+        Me.ComboBox_edel_per.Name = "ComboBox_edel_per"
+        Me.ComboBox_edel_per.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox_edel_per.TabIndex = 29
+        Me.ComboBox_edel_per.Visible = False
+        '
+        'txt_edel_conpwd
+        '
+        Me.txt_edel_conpwd.Depth = 0
+        Me.txt_edel_conpwd.Hint = ""
+        Me.txt_edel_conpwd.Location = New System.Drawing.Point(302, 134)
+        Me.txt_edel_conpwd.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_edel_conpwd.Name = "txt_edel_conpwd"
+        Me.txt_edel_conpwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_edel_conpwd.SelectedText = ""
+        Me.txt_edel_conpwd.SelectionLength = 0
+        Me.txt_edel_conpwd.SelectionStart = 0
+        Me.txt_edel_conpwd.Size = New System.Drawing.Size(121, 23)
+        Me.txt_edel_conpwd.TabIndex = 28
+        Me.txt_edel_conpwd.UseSystemPasswordChar = False
+        Me.txt_edel_conpwd.Visible = False
+        '
+        'txt_edel_pwd
+        '
+        Me.txt_edel_pwd.Depth = 0
+        Me.txt_edel_pwd.Hint = ""
+        Me.txt_edel_pwd.Location = New System.Drawing.Point(302, 94)
+        Me.txt_edel_pwd.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_edel_pwd.Name = "txt_edel_pwd"
+        Me.txt_edel_pwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_edel_pwd.SelectedText = ""
+        Me.txt_edel_pwd.SelectionLength = 0
+        Me.txt_edel_pwd.SelectionStart = 0
+        Me.txt_edel_pwd.Size = New System.Drawing.Size(121, 23)
+        Me.txt_edel_pwd.TabIndex = 27
+        Me.txt_edel_pwd.UseSystemPasswordChar = False
+        Me.txt_edel_pwd.Visible = False
+        '
+        'txt_edel_uname
+        '
+        Me.txt_edel_uname.Depth = 0
+        Me.txt_edel_uname.Enabled = False
+        Me.txt_edel_uname.Hint = ""
+        Me.txt_edel_uname.Location = New System.Drawing.Point(302, 54)
+        Me.txt_edel_uname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_edel_uname.Name = "txt_edel_uname"
+        Me.txt_edel_uname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_edel_uname.SelectedText = ""
+        Me.txt_edel_uname.SelectionLength = 0
+        Me.txt_edel_uname.SelectionStart = 0
+        Me.txt_edel_uname.Size = New System.Drawing.Size(121, 23)
+        Me.txt_edel_uname.TabIndex = 26
+        Me.txt_edel_uname.UseSystemPasswordChar = False
+        Me.txt_edel_uname.Visible = False
+        '
+        'label_edel_per
+        '
+        Me.label_edel_per.AutoSize = True
+        Me.label_edel_per.Depth = 0
+        Me.label_edel_per.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_edel_per.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_edel_per.Location = New System.Drawing.Point(119, 174)
+        Me.label_edel_per.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_edel_per.Name = "label_edel_per"
+        Me.label_edel_per.Size = New System.Drawing.Size(89, 19)
+        Me.label_edel_per.TabIndex = 25
+        Me.label_edel_per.Text = "Permission:"
+        Me.label_edel_per.Visible = False
+        '
+        'label_edel_conpwd
+        '
+        Me.label_edel_conpwd.AutoSize = True
+        Me.label_edel_conpwd.Depth = 0
+        Me.label_edel_conpwd.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_edel_conpwd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_edel_conpwd.Location = New System.Drawing.Point(119, 134)
+        Me.label_edel_conpwd.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_edel_conpwd.Name = "label_edel_conpwd"
+        Me.label_edel_conpwd.Size = New System.Drawing.Size(137, 19)
+        Me.label_edel_conpwd.TabIndex = 24
+        Me.label_edel_conpwd.Text = "Confirm Password:"
+        Me.label_edel_conpwd.Visible = False
+        '
+        'label_edel_pwd
+        '
+        Me.label_edel_pwd.AutoSize = True
+        Me.label_edel_pwd.Depth = 0
+        Me.label_edel_pwd.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_edel_pwd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_edel_pwd.Location = New System.Drawing.Point(119, 94)
+        Me.label_edel_pwd.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_edel_pwd.Name = "label_edel_pwd"
+        Me.label_edel_pwd.Size = New System.Drawing.Size(113, 19)
+        Me.label_edel_pwd.TabIndex = 23
+        Me.label_edel_pwd.Text = "New Password:"
+        Me.label_edel_pwd.Visible = False
+        '
+        'label_edel_uname
+        '
+        Me.label_edel_uname.AutoSize = True
+        Me.label_edel_uname.Depth = 0
+        Me.label_edel_uname.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_edel_uname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_edel_uname.Location = New System.Drawing.Point(119, 54)
+        Me.label_edel_uname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_edel_uname.Name = "label_edel_uname"
+        Me.label_edel_uname.Size = New System.Drawing.Size(81, 19)
+        Me.label_edel_uname.TabIndex = 22
+        Me.label_edel_uname.Text = "Username:"
+        Me.label_edel_uname.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(458, 2)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 22)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "Label1"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label1.Visible = False
         '
         'Permission
         '
@@ -459,10 +595,6 @@ Partial Class Permission
     Friend WithEvents txt_uname As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents btn_add As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_edit As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents ComboBox_edel_per As System.Windows.Forms.ComboBox
-    Friend WithEvents txt_edel_uname As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents label_edel_per As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents label_edel_uname As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents btn_del As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents txt_myset_conpwd As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents txt_myset_pwd As MaterialSkin.Controls.MaterialSingleLineTextField
@@ -470,5 +602,17 @@ Partial Class Permission
     Friend WithEvents MaterialLabel5 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel6 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents MaterialLabel7 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents MaterialRaisedButton1 As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_myset_update As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_prev As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents btn_next As MaterialSkin.Controls.MaterialFlatButton
+    Friend WithEvents ComboBox_modeselect As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox_edel_per As System.Windows.Forms.ComboBox
+    Friend WithEvents txt_edel_conpwd As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_edel_pwd As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents txt_edel_uname As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents label_edel_per As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_edel_conpwd As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_edel_pwd As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents label_edel_uname As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
