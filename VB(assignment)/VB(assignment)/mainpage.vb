@@ -50,7 +50,7 @@ Public Class mainpage
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
         combobox_reup_search.Width = combobox_reup_search_membershiptype.Width
-        combobox_update_search.Width = combobox_reup_search.Width
+        'combobox_update_search.Width = combobox_reup_search.Width
         txt_reup_search.Width = combobox_reup_search.Width
         btn_first.Left = 396
         btn_first.Top = MaterialLabel53.Top + 39
@@ -65,7 +65,7 @@ Public Class mainpage
         btn_remove.Top = btn_first.Top + 39
         btn_update.Left = btn_remove.Left
         btn_update.Top = btn_remove.Top
-
+        payment_delete.Size = payment_submit.Size
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -94,15 +94,15 @@ Public Class mainpage
         End If
     End Sub
 
-    Private Sub combobox_update_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_membertype.SelectedIndexChanged
-        If combobox_update_membertype.Text = "Deluxe" Then
-            label_update_shipid.Text = "DE"
-        ElseIf combobox_update_membertype.Text = "Non-Deluxe" Then
-            label_update_shipid.Text = "ND"
-        ElseIf combobox_update_membertype.Text = "Weekday" Then
-            label_update_shipid.Text = "WD"
-        End If
-    End Sub
+    'Private Sub combobox_update_membertype_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If combobox_update_membertype.Text = "Deluxe" Then
+    '        label_update_shipid.Text = "DE"
+    '    ElseIf combobox_update_membertype.Text = "Non-Deluxe" Then
+    '        label_update_shipid.Text = "ND"
+    '    ElseIf combobox_update_membertype.Text = "Weekday" Then
+    '        label_update_shipid.Text = "WD"
+    '    End If
+    'End Sub
 
     Private Sub combobox_payment_submit_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_submit_membertype.SelectedIndexChanged
         If combobox_payment_submit_membertype.Text = "Deluxe" Then
@@ -114,25 +114,25 @@ Public Class mainpage
         End If
     End Sub
 
-    Private Sub combobox_payment_edit_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_edit_membertype.SelectedIndexChanged
-        If combobox_payment_edit_membertype.Text = "Deluxe" Then
-            label_payment_edit_shipid.Text = "DE"
-        ElseIf combobox_payment_edit_membertype.Text = "Non-Deluxe" Then
-            label_payment_edit_shipid.Text = "ND"
-        ElseIf combobox_payment_edit_membertype.Text = "Weekday" Then
-            label_payment_edit_shipid.Text = "WD"
+    Private Sub combobox_payment_edit_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_membertype.SelectedIndexChanged
+        If combobox_payment_membertype.Text = "Deluxe" Then
+            label_payment_shipid.Text = "DE"
+        ElseIf combobox_payment_membertype.Text = "Non-Deluxe" Then
+            label_payment_shipid.Text = "ND"
+        ElseIf combobox_payment_membertype.Text = "Weekday" Then
+            label_payment_shipid.Text = "WD"
         End If
     End Sub
 
-    Private Sub combobox_payment_delete_membertype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_payment_delete_membertype.SelectedIndexChanged
-        If combobox_payment_delete_membertype.Text = "Deluxe" Then
-            label_payment_delete_shipid.Text = "DE"
-        ElseIf combobox_payment_delete_membertype.Text = "Non-Deluxe" Then
-            label_payment_delete_shipid.Text = "ND"
-        ElseIf combobox_payment_delete_membertype.Text = "Weekday" Then
-            label_payment_delete_shipid.Text = "WD"
-        End If
-    End Sub
+    'Private Sub combobox_payment_delete_membertype_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If combobox_payment_delete_membertype.Text = "Deluxe" Then
+    '        label_payment_delete_shipid.Text = "DE"
+    '    ElseIf combobox_payment_delete_membertype.Text = "Non-Deluxe" Then
+    '        label_payment_delete_shipid.Text = "ND"
+    '    ElseIf combobox_payment_delete_membertype.Text = "Weekday" Then
+    '        label_payment_delete_shipid.Text = "WD"
+    '    End If
+    'End Sub
 
     Private Sub txt_remove_search_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_search.TextChanged
 
@@ -155,25 +155,25 @@ Public Class mainpage
     End Sub
 
 
-    Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search_membershiptype.SelectedIndexChanged
-        If combobox_update_search_membershiptype.Text = "Deluxe" Then
-            'label_update_search.Left = txt_update_search.Left - 50
-            label_update_search.Text = "DE"
-        ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
-            'label_update_search.Left = txt_update_search.Left - 50
-            label_update_search.Text = "ND"
-        ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
-            'label_update_search.Left = txt_update_search.Left - 50
-            label_update_search.Text = "WD"
-        End If
-    End Sub
+    'Private Sub combobox_update_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If combobox_update_search_membershiptype.Text = "Deluxe" Then
+    '        'label_update_search.Left = txt_update_search.Left - 50
+    '        label_update_search.Text = "DE"
+    '    ElseIf combobox_update_search_membershiptype.Text = "Non-Deluxe" Then
+    '        'label_update_search.Left = txt_update_search.Left - 50
+    '        label_update_search.Text = "ND"
+    '    ElseIf combobox_update_search_membershiptype.Text = "Weekday" Then
+    '        'label_update_search.Left = txt_update_search.Left - 50
+    '        label_update_search.Text = "WD"
+    '    End If
+    ' End Sub
 
-    Private Sub combobox_update_search_LostFocus(sender As Object, e As EventArgs) Handles combobox_update_search.LostFocus
-        If combobox_update_search.Text.Equals("Membership ID") <> True Then
-            combobox_update_search_membershiptype.Visible = False
-            MaterialLabel51.Visible = False
-        End If
-    End Sub
+    'Private Sub combobox_update_search_LostFocus(sender As Object, e As EventArgs)
+    '    If combobox_update_search.Text.Equals("Membership ID") <> True Then
+    '        combobox_update_search_membershiptype.Visible = False
+    '        MaterialLabel51.Visible = False
+    '    End If
+    'End Sub
 
     '-------------------------------Add member function starts-------------------------------------
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
@@ -582,27 +582,27 @@ Public Class mainpage
 
     'I really feel that if we combine the delete and update to one tab i can save tonnes of works...i in fact don't know
     'why u separate delete and update to two tabs T_T
-
+    'wei chung: plea
     '===============================Update member function starts====================================
-    Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_update_search.SelectedIndexChanged
-        If combobox_update_search.Text <> String.Empty Then
+    'Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If combobox_update_search.Text <> String.Empty Then
 
-            If combobox_update_search.Text.Equals("Membership ID") = True Then
-                combobox_update_search_membershiptype.Visible = True
-                MaterialLabel51.Visible = True
+    '        If combobox_update_search.Text.Equals("Membership ID") = True Then
+    '            combobox_update_search_membershiptype.Visible = True
+    '            MaterialLabel51.Visible = True
 
-            Else
-                combobox_update_search_membershiptype.Visible = False
-                MaterialLabel51.Visible = False
-            End If
-            txt_update_search.Visible = True
-            label_update_search.Visible = True
-            label_update_search.Text = combobox_update_search.Text & ":"
-        Else
-            txt_update_search.Visible = False
-        End If
-    End Sub
-    Private Sub btn_update_search_Click(sender As Object, e As EventArgs) Handles btn_update_search.Click
+    '        Else
+    '            combobox_update_search_membershiptype.Visible = False
+    '            MaterialLabel51.Visible = False
+    '        End If
+    '        txt_update_search.Visible = True
+    '        label_update_search.Visible = True
+    '        label_update_search.Text = combobox_update_search.Text & ":"
+    '    Else
+    '        txt_update_search.Visible = False
+    '    End If
+    'End Sub
+    Private Sub btn_update_search_Click(sender As Object, e As EventArgs)
 
     End Sub
     ' i think i dowan to do update members liao, i will move update codes into remove tab and add an update btn, below onwards
@@ -687,5 +687,10 @@ Public Class mainpage
         label_time.Text = TimeOfDay.ToString("h:mm:ss tt")
         label_date.Text = System.DateTime.Now.ToString("dd/MM/yyyy")
         label_day.Text = System.DateTime.Now.ToString("dddd")
+    End Sub
+
+  
+    Private Sub paymentmode_choice_SelectedIndexChanged(sender As Object, e As EventArgs) Handles paymentmode_choice.SelectedIndexChanged
+
     End Sub
 End Class
