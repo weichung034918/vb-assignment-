@@ -72,6 +72,19 @@ Public Class mainpage
         btn_remove.Top = btn_first.Top + 39
         btn_update.Left = btn_remove.Left
         btn_update.Top = btn_remove.Top
+        pay_memshipid.Left = (payment_groupbox.Left + payment_groupbox.Width) - pay_memshipid.Width
+        paymemshiplabel.Left = pay_memshipid.Left - 180
+        pay_delete.Size = New Size(75, 33)
+        pay_edit.Size = pay_delete.Size
+        pay_edit.Top = pay_search_btn.Top + (pay_search_btn.Height / 2) - (pay_edit.Height / 2)
+        pay_edit.Left = pay_search_btn.Left + 300
+        pay_delete.Top = pay_edit.Top
+        pay_delete.Left = pay_search_btn.Left + 400
+        pay_add.Size = pay_edit.Size
+        pay_add.Left = pay_search_btn.Left + 200
+        pay_add.Top = pay_edit.Top
+        pay_refresh.Size = pay_delete.Size
+        pay_refresh.Location = New Point(744, 15)
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -100,6 +113,12 @@ Public Class mainpage
         End If
     End Sub
 
+    Private Sub txt_reup_search_LostFocus(sender As Object, e As EventArgs) Handles txt_reup_search.LostFocus
+        If Not txt_reup_search.Text = Nothing Then
+            btn_reup_search.Visible = True
+        End If
+    End Sub
+
     Private Sub txt_remove_search_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_search.TextChanged
 
         If Not txt_reup_search.Text = Nothing Then
@@ -108,6 +127,7 @@ Public Class mainpage
     End Sub
 
     Private Sub combobox_remove_search_membershiptype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_reup_search_membershiptype.SelectedIndexChanged
+
         If combobox_reup_search_membershiptype.Text = "Deluxe" Then
             'label_remove_search.Left = txt_remove_search.Left - 50
             label_reup_search.Text = "DE"
@@ -377,7 +397,7 @@ Public Class mainpage
     '===============================Delete member function starts====================================
     Private Sub combobox_remove_search_textChanged(sender As Object, e As EventArgs) Handles combobox_reup_search.SelectedIndexChanged
         'DESIGN START
-
+        txt_reup_search.Text = Nothing
         If Not combobox_reup_search.Text = Nothing Then
 
             txt_reup_search.Visible = True
@@ -552,7 +572,7 @@ Public Class mainpage
 
     'I really feel that if we combine the delete and update to one tab i can save tonnes of works...i in fact don't know
     'why u separate delete and update to two tabs T_T
-    'wei chung: plea
+    'wei chung: so that you can delete moar things and to prevent me from forgetting anything, boss.
     '===============================Update member function starts====================================
     'Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs)
     '    If combobox_update_search.Text <> String.Empty Then
@@ -578,8 +598,10 @@ Public Class mainpage
     ' i think i dowan to do update members liao, i will move update codes into remove tab and add an update btn, below onwards
 
     Private Sub combobox_modeselect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_modeselect.SelectedIndexChanged
+        refresh_reup()
         If combobox_modeselect.SelectedIndex = 0 Then
             btn_remove.Visible = True
+            btn_update.Visible = False
             combobox_reup_search.Visible = True
             txt_reup_cont.Enabled = False
             txt_reup_email.Enabled = False
@@ -591,6 +613,7 @@ Public Class mainpage
             label_reup_shipid.Enabled = True
 
         ElseIf combobox_modeselect.SelectedIndex = 1 Then
+            btn_remove.Visible = False
             btn_update.Visible = True
             combobox_reup_search.Visible = True
             txt_reup_cont.Enabled = True
@@ -601,7 +624,9 @@ Public Class mainpage
             txt_reup_shipid.Enabled = True
             combobox_reup_status.Enabled = True
             combobox_reup_membertype.Enabled = True
-            label_reup_shipid.Enabled = True 'no point disabling the goddamn label wei chung...
+            label_reup_shipid.Enabled = True
+            'no point disabling the goddamn label wei chung... 
+            'wei chung : accident happens ck... accidents
         Else
             Return
         End If
@@ -678,4 +703,83 @@ Public Class mainpage
         Next
     End Sub
 
+  
+    Private Sub pay_memshipid_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pay_memshipid.SelectedIndexChanged
+        If pay_memshipid.SelectedIndex = 0 Then
+            pay_search_lbl.Text = "DE"
+            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
+        ElseIf pay_memshipid.SelectedIndex = 1 Then
+            pay_search_lbl.Text = "ND"
+            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
+        ElseIf pay_memshipid.SelectedIndex = 2 Then
+            pay_search_lbl.Text = "WD"
+            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
+        End If
+    End Sub
+
+    Private Sub memshipid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles memshipid_radio.CheckedChanged
+        pay_memshipid.SelectedIndex = -1
+        If memshipid_radio.Checked = False Then
+            paymemshiplabel.Visible = False
+            pay_memshipid.Visible = False
+            pay_search_lbl.Text = "Search:"
+            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
+        ElseIf memshipid_radio.Checked = True Then
+            paymemshiplabel.Visible = True
+            pay_memshipid.Visible = True
+        End If
+
+    End Sub
+
+    Private Sub payid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles payid_radio.CheckedChanged
+        pay_search_txt.Clear()
+    End Sub
+
+    Private Sub memid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles memid_radio.CheckedChanged
+        pay_search_txt.Clear()
+    End Sub
+
+    Private Sub pay_search_btn_Click(sender As Object, e As EventArgs) Handles pay_search_btn.Click
+        pay_delete.Visible = True
+        pay_edit.Visible = True
+    End Sub
+
+    Private Sub pay_search_txt_Click(sender As Object, e As EventArgs) Handles pay_search_txt.Click
+        pay_delete.Visible = False
+        pay_edit.Visible = False
+    End Sub
+
+    Private Sub label_reup_shipid_TextChanged(sender As Object, e As EventArgs) Handles label_reup_shipid.TextChanged
+        label_reup_shipid.Left = txt_reup_shipid.Left - label_reup_shipid.Width
+    End Sub
+    Private Sub refresh_reup()
+        combobox_reup_search.SelectedIndex = -1
+        combobox_reup_search_membershiptype.SelectedIndex = -1
+        combobox_reup_membertype.SelectedIndex = -1
+        combobox_reup_status.SelectedIndex = -1
+        txt_reup_search.Clear()
+        txt_reup_id.Clear()
+        txt_reup_lastname.Clear()
+        txt_reup_cont.Clear()
+        txt_reup_shipid.Clear()
+        txt_reup_email.Clear()
+        txt_reup_firstname.Clear()
+
+
+    End Sub
+
+    Private Sub MaterialTabSelector1_Click(sender As Object, e As EventArgs) Handles MaterialTabSelector1.Click
+        combobox_modeselect.SelectedIndex = -1
+    End Sub
+
+    
+    
+  
+    Private Sub pay_search_txt_TextChanged(sender As Object, e As EventArgs) Handles pay_search_txt.TextChanged
+        If Not pay_search_txt.Text = Nothing Then
+            pay_search_btn.Visible = True
+        Else
+            pay_search_btn.Visible = False
+        End If
+    End Sub
 End Class
