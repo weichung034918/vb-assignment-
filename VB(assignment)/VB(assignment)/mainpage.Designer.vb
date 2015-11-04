@@ -75,6 +75,7 @@ Partial Class mainpage
         Me.combobox_reup_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
         Me.tabpgae = New System.Windows.Forms.TabPage()
+        Me.btn_refresh = New System.Windows.Forms.Button()
         Me.btn_payadd = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_payedit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_paydel = New MaterialSkin.Controls.MaterialRaisedButton()
@@ -94,6 +95,7 @@ Partial Class mainpage
         Me.list_doe = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_log = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_desc = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list_paytype = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_paid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_due = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_pdate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -109,7 +111,6 @@ Partial Class mainpage
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_logout = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -855,7 +856,7 @@ Partial Class mainpage
         '
         Me.tabpgae.BackColor = System.Drawing.Color.White
         Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.tabpgae.Controls.Add(Me.Button1)
+        Me.tabpgae.Controls.Add(Me.btn_refresh)
         Me.tabpgae.Controls.Add(Me.btn_payadd)
         Me.tabpgae.Controls.Add(Me.btn_payedit)
         Me.tabpgae.Controls.Add(Me.btn_paydel)
@@ -873,6 +874,18 @@ Partial Class mainpage
         Me.tabpgae.Size = New System.Drawing.Size(829, 474)
         Me.tabpgae.TabIndex = 2
         Me.tabpgae.Text = "Payment"
+        '
+        'btn_refresh
+        '
+        Me.btn_refresh.BackgroundImage = CType(resources.GetObject("btn_refresh.BackgroundImage"), System.Drawing.Image)
+        Me.btn_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_refresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_refresh.Location = New System.Drawing.Point(790, 144)
+        Me.btn_refresh.Name = "btn_refresh"
+        Me.btn_refresh.Size = New System.Drawing.Size(30, 30)
+        Me.btn_refresh.TabIndex = 12
+        Me.btn_refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btn_refresh.UseVisualStyleBackColor = True
         '
         'btn_payadd
         '
@@ -1029,7 +1042,7 @@ Partial Class mainpage
         '
         'payment_listview
         '
-        Me.payment_listview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list_pid, Me.list_mid, Me.list_mship_id, Me.list_doe, Me.list_log, Me.list_desc, Me.list_paid, Me.list_due, Me.list_pdate})
+        Me.payment_listview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list_pid, Me.list_mid, Me.list_mship_id, Me.list_doe, Me.list_log, Me.list_desc, Me.list_paytype, Me.list_paid, Me.list_due, Me.list_pdate})
         Me.payment_listview.Location = New System.Drawing.Point(8, 172)
         Me.payment_listview.Name = "payment_listview"
         Me.payment_listview.Size = New System.Drawing.Size(811, 294)
@@ -1066,6 +1079,11 @@ Partial Class mainpage
         '
         Me.list_desc.Text = "Description"
         Me.list_desc.Width = 100
+        '
+        'list_paytype
+        '
+        Me.list_paytype.Text = "Payment Type"
+        Me.list_paytype.Width = 100
         '
         'list_paid
         '
@@ -1214,18 +1232,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 25
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
-        'Button1
-        '
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Location = New System.Drawing.Point(789, 144)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(30, 30)
-        Me.Button1.TabIndex = 12
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1342,5 +1348,6 @@ Partial Class mainpage
     Friend WithEvents btn_payedit As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_paydel As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_payadd As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btn_refresh As System.Windows.Forms.Button
+    Friend WithEvents list_paytype As System.Windows.Forms.ColumnHeader
 End Class

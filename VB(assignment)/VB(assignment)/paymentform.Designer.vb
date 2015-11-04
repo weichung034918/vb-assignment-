@@ -32,6 +32,7 @@ Partial Class paymentform
         Me.MaterialLabel8 = New MaterialSkin.Controls.MaterialLabel()
         Me.label_log = New MaterialSkin.Controls.MaterialLabel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.label_pid1 = New MaterialSkin.Controls.MaterialLabel()
         Me.label_pid2 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel10 = New MaterialSkin.Controls.MaterialLabel()
         Me.txt_desc = New System.Windows.Forms.TextBox()
@@ -50,7 +51,7 @@ Partial Class paymentform
         Me.btn_add = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.radio_mfee = New MaterialSkin.Controls.MaterialRadioButton()
         Me.radio_rfee = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.label_pid1 = New MaterialSkin.Controls.MaterialLabel()
+        Me.btn_edit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -120,7 +121,7 @@ Partial Class paymentform
         Me.txt_mid.SelectionLength = 0
         Me.txt_mid.SelectionStart = 0
         Me.txt_mid.Size = New System.Drawing.Size(135, 23)
-        Me.txt_mid.TabIndex = 5
+        Me.txt_mid.TabIndex = 0
         Me.txt_mid.UseSystemPasswordChar = False
         '
         'label_mshipid
@@ -192,6 +193,19 @@ Partial Class paymentform
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
+        'label_pid1
+        '
+        Me.label_pid1.Depth = 0
+        Me.label_pid1.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_pid1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_pid1.Location = New System.Drawing.Point(142, 16)
+        Me.label_pid1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_pid1.Name = "label_pid1"
+        Me.label_pid1.Size = New System.Drawing.Size(36, 21)
+        Me.label_pid1.TabIndex = 12
+        Me.label_pid1.Text = "PM"
+        Me.label_pid1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'label_pid2
         '
         Me.label_pid2.Depth = 0
@@ -224,7 +238,7 @@ Partial Class paymentform
         Me.txt_desc.Multiline = True
         Me.txt_desc.Name = "txt_desc"
         Me.txt_desc.Size = New System.Drawing.Size(138, 51)
-        Me.txt_desc.TabIndex = 15
+        Me.txt_desc.TabIndex = 0
         '
         'GroupBox2
         '
@@ -291,7 +305,7 @@ Partial Class paymentform
         Me.txt_amount.SelectionLength = 0
         Me.txt_amount.SelectionStart = 0
         Me.txt_amount.Size = New System.Drawing.Size(144, 23)
-        Me.txt_amount.TabIndex = 11
+        Me.txt_amount.TabIndex = 0
         Me.txt_amount.UseSystemPasswordChar = False
         '
         'GroupBox3
@@ -387,6 +401,7 @@ Partial Class paymentform
         Me.btn_add.TabIndex = 18
         Me.btn_add.Text = "Add"
         Me.btn_add.UseVisualStyleBackColor = True
+        Me.btn_add.Visible = False
         '
         'radio_mfee
         '
@@ -400,7 +415,7 @@ Partial Class paymentform
         Me.radio_mfee.Name = "radio_mfee"
         Me.radio_mfee.Ripple = True
         Me.radio_mfee.Size = New System.Drawing.Size(105, 30)
-        Me.radio_mfee.TabIndex = 20
+        Me.radio_mfee.TabIndex = 1
         Me.radio_mfee.TabStop = True
         Me.radio_mfee.Text = "Monthly Fee"
         Me.radio_mfee.UseVisualStyleBackColor = True
@@ -417,29 +432,30 @@ Partial Class paymentform
         Me.radio_rfee.Name = "radio_rfee"
         Me.radio_rfee.Ripple = True
         Me.radio_rfee.Size = New System.Drawing.Size(129, 30)
-        Me.radio_rfee.TabIndex = 21
+        Me.radio_rfee.TabIndex = 2
         Me.radio_rfee.TabStop = True
         Me.radio_rfee.Text = "Registration Fee"
         Me.radio_rfee.UseVisualStyleBackColor = True
         '
-        'label_pid1
+        'btn_edit
         '
-        Me.label_pid1.Depth = 0
-        Me.label_pid1.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_pid1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_pid1.Location = New System.Drawing.Point(142, 16)
-        Me.label_pid1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_pid1.Name = "label_pid1"
-        Me.label_pid1.Size = New System.Drawing.Size(36, 21)
-        Me.label_pid1.TabIndex = 12
-        Me.label_pid1.Text = "PM"
-        Me.label_pid1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btn_edit.Depth = 0
+        Me.btn_edit.Location = New System.Drawing.Point(254, 328)
+        Me.btn_edit.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_edit.Name = "btn_edit"
+        Me.btn_edit.Primary = True
+        Me.btn_edit.Size = New System.Drawing.Size(135, 34)
+        Me.btn_edit.TabIndex = 22
+        Me.btn_edit.Text = "edit"
+        Me.btn_edit.UseVisualStyleBackColor = True
+        Me.btn_edit.Visible = False
         '
         'paymentform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(607, 374)
+        Me.Controls.Add(Me.btn_edit)
         Me.Controls.Add(Me.radio_rfee)
         Me.Controls.Add(Me.radio_mfee)
         Me.Controls.Add(Me.btn_add)
@@ -488,4 +504,5 @@ Partial Class paymentform
     Friend WithEvents radio_mfee As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents radio_rfee As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents label_pid1 As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents btn_edit As MaterialSkin.Controls.MaterialRaisedButton
 End Class

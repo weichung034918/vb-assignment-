@@ -8,6 +8,7 @@ Public Class mainpage
     Dim dt As New DataTable("TempSet")
     Dim dt2 As New DataTable("TempStore")
     Dim dt3 As New DataTable("forlistview")
+    Dim dt4 As New DataTable("editpayment")
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -54,6 +55,8 @@ Public Class mainpage
 
         ds.Tables.Add(dt)
         ds.Tables.Add(dt2)
+        ds.Tables.Add(dt3)
+        ds.Tables.Add(dt4)
         listviewrec()
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
@@ -698,8 +701,8 @@ Public Class mainpage
     End Sub
     '========================================payment starts================================================
     Public Sub listviewrec()
-        ds.Tables.Add(dt3)
-        ds.Tables("forlistview").Clear()
+        dt3.Clear()
+        payment_listview.Items.Clear()
         sql = "select * from Payment"
         da = New OleDbDataAdapter(sql, con)
         da.Fill(dt3)
@@ -714,10 +717,24 @@ Public Class mainpage
             payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(6))
             payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(7))
             payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(8))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(9))
         Next
     End Sub
 
     Private Sub btn_payadd_Click(sender As Object, e As EventArgs) Handles btn_payadd.Click
+        paymentform.btn_add.Visible = True
+        paymentform.btn_edit.Visible = False
+
+        paymentform.label_doe.Text = Nothing
+        paymentform.label_log.Text = Nothing
+        paymentform.label_mshipid.Text = Nothing
+        paymentform.label_paydate.Text = Nothing
+        paymentform.label_pid2.Text = Nothing
+        paymentform.label_totalwgst.Text = "0.00"
+        paymentform.label_due.Text = Nothing
+        paymentform.txt_amount.Text = Nothing
+        paymentform.txt_mid.Text = Nothing
+        paymentform.txt_desc.Text = Nothing
         paymentform.Show()
     End Sub
 
@@ -756,10 +773,6 @@ Public Class mainpage
         pay_search_txt.Clear()
     End Sub
 
-    Private Sub pay_search_btn_Click(sender As Object, e As EventArgs) Handles btn_paysearch.Click
-        btn_paydel.Visible = True
-        btn_payedit.Visible = True
-    End Sub
 
     Private Sub pay_search_txt_Click(sender As Object, e As EventArgs) Handles pay_search_txt.Click
         btn_paydel.Visible = False
@@ -783,4 +796,40 @@ Public Class mainpage
         End If
     End Sub
 
+    Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        listviewrec()
+    End Sub
+
+    Private Sub payment_listview_SelectedIndexChanged(sender As Object, e As EventArgs) Handles payment_listview.SelectedIndexChanged
+        btn_payedit.Visible = True
+        btn_paydel.Visible = True
+    End Sub
+
+    Private Sub btn_payedit_Click(sender As Object, e As EventArgs) Handles btn_payedit.Click
+        paymentform.btn_add.Visible = False
+        paymentform.btn_edit.Visible = True
+        paymentform.txt_mid.Enabled = False
+        paymentform.radio_rfee.Enabled = False
+        paymentform.radio_mfee.Enabled = False
+        If payment_listview.SelectedItems.Count > 0 Then
+            paymentform.label_pid2.Text = payment_listview.SelectedItems(0).SubItems(0).Text.TrimStart("P", "M")
+            paymentform.txt_mid.Text = payment_listview.SelectedItems(0).SubItems(1).Text
+            paymentform.label_mshipid.Text = payment_listview.SelectedItems(0).SubItems(2).Text
+            paymentform.label_doe.Text = payment_listview.SelectedItems(0).SubItems(3).Text
+            paymentform.label_log.Text = payment_listview.SelectedItems(0).SubItems(4).Text
+            paymentform.txt_desc.Text = payment_listview.SelectedItems(0).SubItems(5).Text
+            If payment_listview.SelectedItems(0).SubItems(6).Text = "RF" Then
+                paymentform.radio_rfee.Checked = True
+                paymentform.radio_mfee.Checked = False
+            ElseIf payment_listview.SelectedItems(0).SubItems(6).Text = "MF" Then
+                paymentform.radio_rfee.Checked = False
+                paymentform.radio_mfee.Checked = True
+            End If
+            paymentform.txt_amount.Text = Format((payment_listview.SelectedItems(0).SubItems(7).Text * 94 / 100), "0.00")
+            paymentform.label_totalwgst.Text = payment_listview.SelectedItems(0).SubItems(7).Text
+            paymentform.label_due.Text = payment_listview.SelectedItems(0).SubItems(8).Text
+            paymentform.label_paydate.Text = payment_listview.SelectedItems(0).SubItems(9).Text
+        End If
+        paymentform.Show()
+    End Sub
 End Class
