@@ -76,17 +76,8 @@ Public Class mainpage
         btn_remove.Top = btn_first.Top + 39
         btn_update.Left = btn_remove.Left
         btn_update.Top = btn_remove.Top
-        pay_memshipid.Left = (payment_groupbox.Left + payment_groupbox.Width) - pay_memshipid.Width
-        paymemshiplabel.Left = pay_memshipid.Left - 180
-        btn_paydel.Size = New Size(75, 33)
-        btn_payedit.Size = btn_paydel.Size
-        btn_payedit.Top = btn_paysearch.Top + (btn_paysearch.Height / 2) - (btn_payedit.Height / 2)
-        btn_payedit.Left = btn_paysearch.Left + 300
-        btn_paydel.Top = btn_payedit.Top
-        btn_paydel.Left = btn_paysearch.Left + 400
-        btn_payadd.Size = btn_payedit.Size
-        btn_payadd.Left = btn_paysearch.Left + 200
-        btn_payadd.Top = btn_payedit.Top
+        
+        
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -233,7 +224,7 @@ Public Class mainpage
     Private Sub txt_add_id_Leave(sender As Object, e As EventArgs) Handles txt_add_id.Leave
         For i = 0 To 9
             If txt_add_id.TextLength < 10 Then
-                txt_add_id.Text = "0" + txt_add_id.Text
+                txt_add_id.Text = "0" & txt_add_id.Text
             End If
         Next i
     End Sub
@@ -327,7 +318,7 @@ Public Class mainpage
     Private Sub txt_add_shipid_Leave(sender As Object, e As EventArgs) Handles txt_add_shipid.Leave
         For i = 0 To 7
             If txt_add_shipid.TextLength < 8 Then
-                txt_add_shipid.Text = "0" + txt_add_shipid.Text
+                txt_add_shipid.Text = "0" & txt_add_shipid.Text
             End If
         Next i
     End Sub
@@ -724,7 +715,7 @@ Public Class mainpage
     Private Sub btn_payadd_Click(sender As Object, e As EventArgs) Handles btn_payadd.Click
         paymentform.btn_add.Visible = True
         paymentform.btn_edit.Visible = False
-
+        paymentform.btn_payedit.Visible = False
         paymentform.label_doe.Text = Nothing
         paymentform.label_log.Text = Nothing
         paymentform.label_mshipid.Text = Nothing
@@ -738,44 +729,36 @@ Public Class mainpage
         paymentform.Show()
     End Sub
 
-    Private Sub pay_memshipid_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pay_memshipid.SelectedIndexChanged
-        If pay_memshipid.SelectedIndex = 0 Then
-            pay_search_lbl.Text = "DE"
-            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
-        ElseIf pay_memshipid.SelectedIndex = 1 Then
-            pay_search_lbl.Text = "ND"
-            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
-        ElseIf pay_memshipid.SelectedIndex = 2 Then
-            pay_search_lbl.Text = "WD"
-            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
-        End If
+    Private Sub pay_memshipid_SelectedIndexChanged(sender As Object, e As EventArgs)
+        
     End Sub
 
-    Private Sub memshipid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles memshipid_radio.CheckedChanged
-        pay_memshipid.SelectedIndex = -1
-        If memshipid_radio.Checked = False Then
-            paymemshiplabel.Visible = False
-            pay_memshipid.Visible = False
-            pay_search_lbl.Text = "Search:"
-            pay_search_lbl.Left = pay_search_txt.Left - pay_search_lbl.Width
-        ElseIf memshipid_radio.Checked = True Then
-            paymemshiplabel.Visible = True
-            pay_memshipid.Visible = True
+    Private Sub memshipid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles radio_mshipid.CheckedChanged
+        
+        If radio_mshipid.Checked Then
+            label_pay_search.Visible = True
+            txt_pay_search.Visible = True
         End If
 
     End Sub
 
-    Private Sub payid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles payid_radio.CheckedChanged
-        pay_search_txt.Clear()
+    Private Sub payid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles radio_pid.CheckedChanged
+        txt_pay_search.Clear()
+        If radio_pid.Checked Then
+            label_pay_search.Visible = True
+            txt_pay_search.Visible = True
+        End If
     End Sub
 
-    Private Sub memid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles memid_radio.CheckedChanged
-        pay_search_txt.Clear()
+    Private Sub memid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles radio_mid.CheckedChanged
+        txt_pay_search.Clear()
+        If radio_pid.Checked Then
+            label_pay_search.Visible = True
+            txt_pay_search.Visible = True
+        End If
     End Sub
 
-
-    Private Sub pay_search_txt_Click(sender As Object, e As EventArgs) Handles pay_search_txt.Click
-        btn_paydel.Visible = False
+    Private Sub pay_search_txt_Click(sender As Object, e As EventArgs) Handles txt_pay_search.Click
         btn_payedit.Visible = False
     End Sub
 
@@ -788,11 +771,38 @@ Public Class mainpage
         combobox_modeselect.SelectedIndex = -1
     End Sub
 
-    Private Sub pay_search_txt_TextChanged(sender As Object, e As EventArgs) Handles pay_search_txt.TextChanged
-        If Not pay_search_txt.Text = Nothing Then
-            btn_paysearch.Visible = True
-        Else
-            btn_paysearch.Visible = False
+    Public Sub listviewmin() 'for each pay_search text depending on 3 radio buttons
+        dt3.Clear()
+        payment_listview.Items.Clear()
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(dt3)
+        Dim listrow As DataRow
+        For Each listrow In dt3.Rows
+            payment_listview.Items.Add(listrow.Item(0))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(1))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(2))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(3))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(4))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(5))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(6))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(7))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(8))
+            payment_listview.Items(payment_listview.Items.Count - 1).SubItems.Add(listrow.Item(9))
+        Next
+    End Sub
+    Private Sub pay_search_txt_TextChanged(sender As Object, e As EventArgs) Handles txt_pay_search.TextChanged
+
+        If radio_mid.Checked Then
+            sql = "select * from Payment where MID LIKE '%" & txt_pay_search.Text & "%'"
+            listviewmin()
+        End If
+        If radio_mshipid.Checked Then
+            sql = "select * from Payment where MSHIP_ID LIKE '%" & txt_pay_search.Text & "%'"
+            listviewmin()
+        End If
+        If radio_pid.Checked Then
+            sql = "select * from Payment where PID LIKE '%" & txt_pay_search.Text & "%'"
+            listviewmin()
         End If
     End Sub
 
@@ -802,13 +812,14 @@ Public Class mainpage
 
     Private Sub payment_listview_SelectedIndexChanged(sender As Object, e As EventArgs) Handles payment_listview.SelectedIndexChanged
         btn_payedit.Visible = True
-        btn_paydel.Visible = True
     End Sub
 
     Private Sub btn_payedit_Click(sender As Object, e As EventArgs) Handles btn_payedit.Click
         paymentform.btn_add.Visible = False
         paymentform.btn_edit.Visible = True
+        paymentform.btn_payedit.Visible = True
         paymentform.txt_mid.Enabled = False
+        paymentform.txt_amount.Enabled = False
         paymentform.radio_rfee.Enabled = False
         paymentform.radio_mfee.Enabled = False
         If payment_listview.SelectedItems.Count > 0 Then
@@ -831,5 +842,16 @@ Public Class mainpage
             paymentform.label_paydate.Text = payment_listview.SelectedItems(0).SubItems(9).Text
         End If
         paymentform.Show()
+    End Sub
+
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        MsgBox("Are you sure you want to logout?", vbYesNo, "Logout")
+        If vbYes Then
+            con.Close()
+            login.Show()
+            Me.Close()
+        ElseIf vbNo Then
+            Return
+        End If
     End Sub
 End Class

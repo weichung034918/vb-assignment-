@@ -49,6 +49,7 @@ Public Class paymentform
             End Try
         End Try
 
+        btn_edit.Location = btn_add.Location
         ds.Tables.Add(dt)
         ds.Tables.Add(dt2)
         ds.Tables.Add(dt3)
@@ -59,7 +60,7 @@ Public Class paymentform
 
         If btn_edit.Visible = True Then
             dt3.Clear()
-            sql = "select * from Payment where PID='" & label_pid1.Text & label_pid2.Text & "'"
+            sql = "select PID, Amount_Paid, Amount_Due from Payment where PID='" & label_pid1.Text & label_pid2.Text & "'"
             da = New OleDbDataAdapter(sql, con)
             da.Fill(dt3)
             Return
@@ -91,7 +92,7 @@ Public Class paymentform
 
         For i = 0 To 7
             If label_pid2.Text.Length < 8 Then
-                label_pid2.Text = "0" + label_pid2.Text
+                label_pid2.Text = "0" & label_pid2.Text
             End If
         Next
         label_paydate.Text = mainpage.label_date.Text
@@ -263,6 +264,10 @@ Public Class paymentform
             End If
         End If 'end of btn_add.visible true
 
+        If btn_edit.Visible = True Then
+            label_due.Text = Format(((dt3.Rows(0).Item(2) + dt3.Rows(0).Item(1)) - label_totalwgst.Text), "0.00")
+        End If
+
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
@@ -293,6 +298,29 @@ Public Class paymentform
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
+        'fucking desc made me spent 1 hour trying to figure why keep on syntax error, most probably because it's a reserve keyword
+        'or shit
+        sql = "UPDATE [Payment] SET [desc]='" & txt_desc.Text & "', Amount_Paid=" & label_totalwgst.Text &
+            ", Amount_Due=" & label_due.Text & " where PID='" & label_pid1.Text & label_pid2.Text & "'"
+        cmd = New OleDbCommand(sql, con)
+
+        Try
+            MsgBox(sql)
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Successfully Updated!", "Successful")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        End Try
+
+    End Sub
+
+    Private Sub btn_payedit_Click(sender As Object, e As EventArgs) Handles btn_payedit.Click
+        If btn_edit.Visible = True Then
+            label_due.Text = Format((dt3.Rows(0).Item(2) + dt3.Rows(0).Item(1)), "0.00")
+            label_totalwgst.Text = "0.00"
+            txt_amount.Enabled = True
+            btn_payedit.Visible = False
+        End If
 
     End Sub
 End Class

@@ -52,6 +52,7 @@ Partial Class paymentform
         Me.radio_mfee = New MaterialSkin.Controls.MaterialRadioButton()
         Me.radio_rfee = New MaterialSkin.Controls.MaterialRadioButton()
         Me.btn_edit = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_payedit = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -446,15 +447,29 @@ Partial Class paymentform
         Me.btn_edit.Primary = True
         Me.btn_edit.Size = New System.Drawing.Size(135, 34)
         Me.btn_edit.TabIndex = 22
-        Me.btn_edit.Text = "edit"
+        Me.btn_edit.Text = "update"
         Me.btn_edit.UseVisualStyleBackColor = True
         Me.btn_edit.Visible = False
+        '
+        'btn_payedit
+        '
+        Me.btn_payedit.Depth = 0
+        Me.btn_payedit.Location = New System.Drawing.Point(236, 255)
+        Me.btn_payedit.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_payedit.Name = "btn_payedit"
+        Me.btn_payedit.Primary = True
+        Me.btn_payedit.Size = New System.Drawing.Size(52, 23)
+        Me.btn_payedit.TabIndex = 23
+        Me.btn_payedit.Text = "edit"
+        Me.btn_payedit.UseVisualStyleBackColor = True
+        Me.btn_payedit.Visible = False
         '
         'paymentform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(607, 374)
+        Me.Controls.Add(Me.btn_payedit)
         Me.Controls.Add(Me.btn_edit)
         Me.Controls.Add(Me.radio_rfee)
         Me.Controls.Add(Me.radio_mfee)
@@ -505,4 +520,5 @@ Partial Class paymentform
     Friend WithEvents radio_rfee As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents label_pid1 As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents btn_edit As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_payedit As MaterialSkin.Controls.MaterialRaisedButton
 End Class

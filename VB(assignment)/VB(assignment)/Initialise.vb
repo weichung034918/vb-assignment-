@@ -144,7 +144,7 @@ Public Class Initialise
                                "[MID] TEXT(10), CONSTRAINT FKPaymentMID FOREIGN KEY (MID) REFERENCES Members(MID) ON UPDATE CASCADE ON DELETE CASCADE, " +
                                "[MSHIP_ID] TEXT(10), " +
                                "CONSTRAINT FKPaymentMSHIP_ID FOREIGN KEY (MSHIP_ID) REFERENCES Membership(MSHIP_ID) ON UPDATE CASCADE ON DELETE CASCADE, " +
-                               "[Date_of_Entry] TEXT, [Logged_by] TEXT, [DESC] MEMO, [Payment_Type] TEXT, [Amount_Paid] DECIMAL(10,2), " +
+                               "[Date_of_Entry] TEXT, [Logged_by] TEXT, [desc] MEMO, [Payment_Type] TEXT, [Amount_Paid] DECIMAL(10,2), " +
                                "[Amount_Due] DECIMAL(10,2), [Payment_Date] TEXT)", con)
         Try
             cmd.ExecuteNonQuery()

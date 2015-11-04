@@ -78,16 +78,12 @@ Partial Class mainpage
         Me.btn_refresh = New System.Windows.Forms.Button()
         Me.btn_payadd = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.btn_payedit = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_paydel = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.btn_paysearch = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pay_search_txt = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.pay_search_lbl = New MaterialSkin.Controls.MaterialLabel()
-        Me.paymemshiplabel = New MaterialSkin.Controls.MaterialLabel()
-        Me.pay_memshipid = New System.Windows.Forms.ComboBox()
+        Me.txt_pay_search = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.label_pay_search = New MaterialSkin.Controls.MaterialLabel()
         Me.payment_groupbox = New System.Windows.Forms.GroupBox()
-        Me.payid_radio = New System.Windows.Forms.RadioButton()
-        Me.memid_radio = New System.Windows.Forms.RadioButton()
-        Me.memshipid_radio = New System.Windows.Forms.RadioButton()
+        Me.radio_pid = New System.Windows.Forms.RadioButton()
+        Me.radio_mid = New System.Windows.Forms.RadioButton()
+        Me.radio_mshipid = New System.Windows.Forms.RadioButton()
         Me.payment_listview = New System.Windows.Forms.ListView()
         Me.list_pid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_mid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -859,12 +855,8 @@ Partial Class mainpage
         Me.tabpgae.Controls.Add(Me.btn_refresh)
         Me.tabpgae.Controls.Add(Me.btn_payadd)
         Me.tabpgae.Controls.Add(Me.btn_payedit)
-        Me.tabpgae.Controls.Add(Me.btn_paydel)
-        Me.tabpgae.Controls.Add(Me.btn_paysearch)
-        Me.tabpgae.Controls.Add(Me.pay_search_txt)
-        Me.tabpgae.Controls.Add(Me.pay_search_lbl)
-        Me.tabpgae.Controls.Add(Me.paymemshiplabel)
-        Me.tabpgae.Controls.Add(Me.pay_memshipid)
+        Me.tabpgae.Controls.Add(Me.txt_pay_search)
+        Me.tabpgae.Controls.Add(Me.label_pay_search)
         Me.tabpgae.Controls.Add(Me.payment_groupbox)
         Me.tabpgae.Controls.Add(Me.payment_listview)
         Me.tabpgae.Enabled = Global.VB_assignment_.My.MySettings.Default.Enabled
@@ -890,11 +882,11 @@ Partial Class mainpage
         'btn_payadd
         '
         Me.btn_payadd.Depth = 0
-        Me.btn_payadd.Location = New System.Drawing.Point(490, 80)
+        Me.btn_payadd.Location = New System.Drawing.Point(504, 76)
         Me.btn_payadd.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_payadd.Name = "btn_payadd"
         Me.btn_payadd.Primary = True
-        Me.btn_payadd.Size = New System.Drawing.Size(75, 23)
+        Me.btn_payadd.Size = New System.Drawing.Size(96, 37)
         Me.btn_payadd.TabIndex = 11
         Me.btn_payadd.Text = "Add"
         Me.btn_payadd.UseVisualStyleBackColor = True
@@ -902,101 +894,52 @@ Partial Class mainpage
         'btn_payedit
         '
         Me.btn_payedit.Depth = 0
-        Me.btn_payedit.Location = New System.Drawing.Point(593, 89)
+        Me.btn_payedit.Location = New System.Drawing.Point(619, 76)
         Me.btn_payedit.MouseState = MaterialSkin.MouseState.HOVER
         Me.btn_payedit.Name = "btn_payedit"
         Me.btn_payedit.Primary = True
-        Me.btn_payedit.Size = New System.Drawing.Size(75, 23)
+        Me.btn_payedit.Size = New System.Drawing.Size(96, 37)
         Me.btn_payedit.TabIndex = 10
         Me.btn_payedit.Text = "Edit"
         Me.btn_payedit.UseVisualStyleBackColor = True
         Me.btn_payedit.Visible = False
         '
-        'btn_paydel
+        'txt_pay_search
         '
-        Me.btn_paydel.Depth = 0
-        Me.btn_paydel.Location = New System.Drawing.Point(593, 50)
-        Me.btn_paydel.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_paydel.Name = "btn_paydel"
-        Me.btn_paydel.Primary = True
-        Me.btn_paydel.Size = New System.Drawing.Size(75, 33)
-        Me.btn_paydel.TabIndex = 9
-        Me.btn_paydel.Text = "Delete"
-        Me.btn_paydel.UseVisualStyleBackColor = True
-        Me.btn_paydel.Visible = False
+        Me.txt_pay_search.Depth = 0
+        Me.txt_pay_search.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txt_pay_search.Hint = ""
+        Me.txt_pay_search.Location = New System.Drawing.Point(189, 90)
+        Me.txt_pay_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_pay_search.Name = "txt_pay_search"
+        Me.txt_pay_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_pay_search.SelectedText = ""
+        Me.txt_pay_search.SelectionLength = 0
+        Me.txt_pay_search.SelectionStart = 0
+        Me.txt_pay_search.Size = New System.Drawing.Size(113, 23)
+        Me.txt_pay_search.TabIndex = 6
+        Me.txt_pay_search.UseSystemPasswordChar = False
+        Me.txt_pay_search.Visible = False
         '
-        'btn_paysearch
+        'label_pay_search
         '
-        Me.btn_paysearch.Depth = 0
-        Me.btn_paysearch.Location = New System.Drawing.Point(227, 119)
-        Me.btn_paysearch.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btn_paysearch.Name = "btn_paysearch"
-        Me.btn_paysearch.Primary = True
-        Me.btn_paysearch.Size = New System.Drawing.Size(75, 23)
-        Me.btn_paysearch.TabIndex = 7
-        Me.btn_paysearch.Text = "Search"
-        Me.btn_paysearch.UseVisualStyleBackColor = True
-        Me.btn_paysearch.Visible = False
-        '
-        'pay_search_txt
-        '
-        Me.pay_search_txt.Depth = 0
-        Me.pay_search_txt.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.pay_search_txt.Hint = ""
-        Me.pay_search_txt.Location = New System.Drawing.Point(189, 90)
-        Me.pay_search_txt.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_search_txt.Name = "pay_search_txt"
-        Me.pay_search_txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.pay_search_txt.SelectedText = ""
-        Me.pay_search_txt.SelectionLength = 0
-        Me.pay_search_txt.SelectionStart = 0
-        Me.pay_search_txt.Size = New System.Drawing.Size(113, 23)
-        Me.pay_search_txt.TabIndex = 6
-        Me.pay_search_txt.UseSystemPasswordChar = False
-        '
-        'pay_search_lbl
-        '
-        Me.pay_search_lbl.AutoSize = True
-        Me.pay_search_lbl.Depth = 0
-        Me.pay_search_lbl.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.pay_search_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pay_search_lbl.Location = New System.Drawing.Point(124, 90)
-        Me.pay_search_lbl.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_search_lbl.Name = "pay_search_lbl"
-        Me.pay_search_lbl.Size = New System.Drawing.Size(59, 19)
-        Me.pay_search_lbl.TabIndex = 5
-        Me.pay_search_lbl.Text = "Search:"
-        '
-        'paymemshiplabel
-        '
-        Me.paymemshiplabel.AutoSize = True
-        Me.paymemshiplabel.Depth = 0
-        Me.paymemshiplabel.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.paymemshiplabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.paymemshiplabel.Location = New System.Drawing.Point(4, 50)
-        Me.paymemshiplabel.MouseState = MaterialSkin.MouseState.HOVER
-        Me.paymemshiplabel.Name = "paymemshiplabel"
-        Me.paymemshiplabel.Size = New System.Drawing.Size(174, 19)
-        Me.paymemshiplabel.TabIndex = 4
-        Me.paymemshiplabel.Text = "Select membership type:"
-        Me.paymemshiplabel.Visible = False
-        '
-        'pay_memshipid
-        '
-        Me.pay_memshipid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.pay_memshipid.FormattingEnabled = True
-        Me.pay_memshipid.Items.AddRange(New Object() {"Deluxe", "Non-deluxe", "Weekday"})
-        Me.pay_memshipid.Location = New System.Drawing.Point(189, 50)
-        Me.pay_memshipid.Name = "pay_memshipid"
-        Me.pay_memshipid.Size = New System.Drawing.Size(113, 21)
-        Me.pay_memshipid.TabIndex = 2
-        Me.pay_memshipid.Visible = False
+        Me.label_pay_search.AutoSize = True
+        Me.label_pay_search.Depth = 0
+        Me.label_pay_search.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_pay_search.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_pay_search.Location = New System.Drawing.Point(124, 90)
+        Me.label_pay_search.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_pay_search.Name = "label_pay_search"
+        Me.label_pay_search.Size = New System.Drawing.Size(59, 19)
+        Me.label_pay_search.TabIndex = 5
+        Me.label_pay_search.Text = "Search:"
+        Me.label_pay_search.Visible = False
         '
         'payment_groupbox
         '
-        Me.payment_groupbox.Controls.Add(Me.payid_radio)
-        Me.payment_groupbox.Controls.Add(Me.memid_radio)
-        Me.payment_groupbox.Controls.Add(Me.memshipid_radio)
+        Me.payment_groupbox.Controls.Add(Me.radio_pid)
+        Me.payment_groupbox.Controls.Add(Me.radio_mid)
+        Me.payment_groupbox.Controls.Add(Me.radio_mshipid)
         Me.payment_groupbox.Location = New System.Drawing.Point(8, 3)
         Me.payment_groupbox.Name = "payment_groupbox"
         Me.payment_groupbox.Size = New System.Drawing.Size(294, 41)
@@ -1004,41 +947,41 @@ Partial Class mainpage
         Me.payment_groupbox.TabStop = False
         Me.payment_groupbox.Text = "Search By:"
         '
-        'payid_radio
+        'radio_pid
         '
-        Me.payid_radio.AutoSize = True
-        Me.payid_radio.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.payid_radio.Location = New System.Drawing.Point(204, 18)
-        Me.payid_radio.Name = "payid_radio"
-        Me.payid_radio.Size = New System.Drawing.Size(80, 17)
-        Me.payid_radio.TabIndex = 3
-        Me.payid_radio.TabStop = True
-        Me.payid_radio.Text = "Payment ID"
-        Me.payid_radio.UseVisualStyleBackColor = True
+        Me.radio_pid.AutoSize = True
+        Me.radio_pid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_pid.Location = New System.Drawing.Point(204, 18)
+        Me.radio_pid.Name = "radio_pid"
+        Me.radio_pid.Size = New System.Drawing.Size(80, 17)
+        Me.radio_pid.TabIndex = 3
+        Me.radio_pid.TabStop = True
+        Me.radio_pid.Text = "Payment ID"
+        Me.radio_pid.UseVisualStyleBackColor = True
         '
-        'memid_radio
+        'radio_mid
         '
-        Me.memid_radio.AutoSize = True
-        Me.memid_radio.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.memid_radio.Location = New System.Drawing.Point(6, 18)
-        Me.memid_radio.Name = "memid_radio"
-        Me.memid_radio.Size = New System.Drawing.Size(77, 17)
-        Me.memid_radio.TabIndex = 2
-        Me.memid_radio.TabStop = True
-        Me.memid_radio.Text = "Member ID"
-        Me.memid_radio.UseVisualStyleBackColor = True
+        Me.radio_mid.AutoSize = True
+        Me.radio_mid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_mid.Location = New System.Drawing.Point(6, 18)
+        Me.radio_mid.Name = "radio_mid"
+        Me.radio_mid.Size = New System.Drawing.Size(77, 17)
+        Me.radio_mid.TabIndex = 2
+        Me.radio_mid.TabStop = True
+        Me.radio_mid.Text = "Member ID"
+        Me.radio_mid.UseVisualStyleBackColor = True
         '
-        'memshipid_radio
+        'radio_mshipid
         '
-        Me.memshipid_radio.AutoSize = True
-        Me.memshipid_radio.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.memshipid_radio.Location = New System.Drawing.Point(89, 18)
-        Me.memshipid_radio.Name = "memshipid_radio"
-        Me.memshipid_radio.Size = New System.Drawing.Size(96, 17)
-        Me.memshipid_radio.TabIndex = 2
-        Me.memshipid_radio.TabStop = True
-        Me.memshipid_radio.Text = "Membership ID"
-        Me.memshipid_radio.UseVisualStyleBackColor = True
+        Me.radio_mshipid.AutoSize = True
+        Me.radio_mshipid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_mshipid.Location = New System.Drawing.Point(89, 18)
+        Me.radio_mshipid.Name = "radio_mshipid"
+        Me.radio_mshipid.Size = New System.Drawing.Size(96, 17)
+        Me.radio_mshipid.TabIndex = 2
+        Me.radio_mshipid.TabStop = True
+        Me.radio_mshipid.Text = "Membership ID"
+        Me.radio_mshipid.UseVisualStyleBackColor = True
         '
         'payment_listview
         '
@@ -1336,17 +1279,13 @@ Partial Class mainpage
     Friend WithEvents list_paid As System.Windows.Forms.ColumnHeader
     Friend WithEvents list_due As System.Windows.Forms.ColumnHeader
     Friend WithEvents list_pdate As System.Windows.Forms.ColumnHeader
-    Friend WithEvents pay_memshipid As System.Windows.Forms.ComboBox
     Friend WithEvents payment_groupbox As System.Windows.Forms.GroupBox
-    Friend WithEvents payid_radio As System.Windows.Forms.RadioButton
-    Friend WithEvents memid_radio As System.Windows.Forms.RadioButton
-    Friend WithEvents memshipid_radio As System.Windows.Forms.RadioButton
-    Friend WithEvents pay_search_lbl As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents paymemshiplabel As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents pay_search_txt As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents btn_paysearch As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents radio_pid As System.Windows.Forms.RadioButton
+    Friend WithEvents radio_mid As System.Windows.Forms.RadioButton
+    Friend WithEvents radio_mshipid As System.Windows.Forms.RadioButton
+    Friend WithEvents label_pay_search As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents txt_pay_search As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents btn_payedit As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents btn_paydel As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_payadd As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_refresh As System.Windows.Forms.Button
     Friend WithEvents list_paytype As System.Windows.Forms.ColumnHeader
