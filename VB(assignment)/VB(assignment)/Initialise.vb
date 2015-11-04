@@ -123,7 +123,7 @@ Public Class Initialise
         End Try
 
         cmd = New OleDbCommand("CREATE TABLE [Members] ([MID] TEXT(10) PRIMARY KEY, [First_Name] MEMO, [Last_Name] MEMO, " +
-                                "[Contact_Number] INT, [Email] TEXT(30), [Status] TEXT(30))", con)
+                                "[Contact_Number] INT, [Email] TEXT(30), [Status] TEXT(30), [Date_Of_Entry] TEXT(30))", con)
 
         Try
             cmd.ExecuteNonQuery()
@@ -140,7 +140,7 @@ Public Class Initialise
             MsgBox(ex.Message)
         End Try
         
-        cmd = New OleDbCommand("CREATE TABLE [Payment] ([PID] INT PRIMARY KEY, " +
+        cmd = New OleDbCommand("CREATE TABLE [Payment] ([PID] TEXT(10) PRIMARY KEY, " +
                                "[MID] TEXT(10), CONSTRAINT FKPaymentMID FOREIGN KEY (MID) REFERENCES Members(MID) ON UPDATE CASCADE ON DELETE CASCADE, " +
                                "[MSHIP_ID] TEXT(10), " +
                                "CONSTRAINT FKPaymentMSHIP_ID FOREIGN KEY (MSHIP_ID) REFERENCES Membership(MSHIP_ID) ON UPDATE CASCADE ON DELETE CASCADE, " +

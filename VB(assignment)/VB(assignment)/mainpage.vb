@@ -27,6 +27,7 @@ Public Class mainpage
         skinmanager.AddFormToManage(Me)
         skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
         skinmanager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepPurple100, TextShade.WHITE)
+
         Try
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
                     "Data Source=" & dirdb)
@@ -74,17 +75,15 @@ Public Class mainpage
         btn_update.Top = btn_remove.Top
         pay_memshipid.Left = (payment_groupbox.Left + payment_groupbox.Width) - pay_memshipid.Width
         paymemshiplabel.Left = pay_memshipid.Left - 180
-        pay_delete.Size = New Size(75, 33)
-        pay_edit.Size = pay_delete.Size
-        pay_edit.Top = pay_search_btn.Top + (pay_search_btn.Height / 2) - (pay_edit.Height / 2)
-        pay_edit.Left = pay_search_btn.Left + 300
-        pay_delete.Top = pay_edit.Top
-        pay_delete.Left = pay_search_btn.Left + 400
-        pay_add.Size = pay_edit.Size
-        pay_add.Left = pay_search_btn.Left + 200
-        pay_add.Top = pay_edit.Top
-        pay_refresh.Size = pay_delete.Size
-        pay_refresh.Location = New Point(744, 15)
+        btn_paydel.Size = New Size(75, 33)
+        btn_payedit.Size = btn_paydel.Size
+        btn_payedit.Top = btn_paysearch.Top + (btn_paysearch.Height / 2) - (btn_payedit.Height / 2)
+        btn_payedit.Left = btn_paysearch.Left + 300
+        btn_paydel.Top = btn_payedit.Top
+        btn_paydel.Left = btn_paysearch.Left + 400
+        btn_payadd.Size = btn_payedit.Size
+        btn_payadd.Left = btn_paysearch.Left + 200
+        btn_payadd.Top = btn_payedit.Top
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -178,9 +177,9 @@ Public Class mainpage
                 Return
             End If
         Next
-        
+
         sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
-            txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active' )"
+            txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active', '" & label_date.Text & "')"
         cmd = New OleDbCommand(sql, con)
         Try
             MessageBox.Show(sql, "Debug purpose")
@@ -193,11 +192,11 @@ Public Class mainpage
         sql = "insert into Membership values ('" & txt_add_id.Text & "', '" & label_add_shipid.Text & txt_add_shipid.Text &
             "', '"
         If combobox_add_membertype.SelectedIndex = 0 Then
-            sql = sql & combobox_add_membertype.Items(0).ToString & "', 500.00, 120.00)"
+            sql = sql & combobox_add_membertype.Items(0).ToString & "', 500.00 * (106 / 100), 120.00 * (106 / 100))"
         ElseIf combobox_add_membertype.SelectedIndex = 1 Then
-            sql = sql & combobox_add_membertype.Items(1).ToString & "', 300.00, 100.00)"
+            sql = sql & combobox_add_membertype.Items(1).ToString & "', 300.00 * (106 / 100), 100.00 * (106 / 100))"
         ElseIf combobox_add_membertype.SelectedIndex = 2 Then
-            sql = sql & combobox_add_membertype.Items(2).ToString & "', 180.00, 75.00)"
+            sql = sql & combobox_add_membertype.Items(2).ToString & "', 180.00 * (106 / 100), 75.00 * (106 / 100))"
         Else
             MessageBox.Show("Please select only one of the 3 membership types.", "Membership Type")
             Return
@@ -485,11 +484,11 @@ Public Class mainpage
         End If
         MsgBox(ds.Tables("TempSet").Rows.Count) ' debug
         txt_reup_id.Text = ds.Tables("TempSet").Rows(0).Item(0)
-        Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(6)
+        Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(7)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
         txt_reup_firstname.Text = ds.Tables("TempSet").Rows(0).Item(1)
         txt_reup_lastname.Text = ds.Tables("TempSet").Rows(0).Item(2)
-        Dim mtype As String = ds.Tables("TempSet").Rows(0).Item(7)
+        Dim mtype As String = ds.Tables("TempSet").Rows(0).Item(8)
         If mtype = "Deluxe" Then
             combobox_reup_membertype.SelectedIndex = 0
         ElseIf mtype = "Non-Deluxe" Then
@@ -534,11 +533,11 @@ Public Class mainpage
 
     Public Sub addset2() 'for prev, next, last
         txt_reup_id.Text = ds.Tables("TempSet").Rows(currec).Item(0)
-        Dim mshipid As String = ds.Tables("TempSet").Rows(currec).Item(6)
+        Dim mshipid As String = ds.Tables("TempSet").Rows(currec).Item(7)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
         txt_reup_firstname.Text = ds.Tables("TempSet").Rows(currec).Item(1)
         txt_reup_lastname.Text = ds.Tables("TempSet").Rows(currec).Item(2)
-        Dim mtype As String = ds.Tables("TempSet").Rows(currec).Item(7)
+        Dim mtype As String = ds.Tables("TempSet").Rows(currec).Item(8)
         If mtype = "Deluxe" Then
             combobox_reup_membertype.SelectedIndex = 0
         ElseIf mtype = "Non-Deluxe" Then
@@ -631,6 +630,20 @@ Public Class mainpage
             Return
         End If
     End Sub
+    Private Sub refresh_reup()
+        combobox_reup_search.SelectedIndex = -1
+        combobox_reup_search_membershiptype.SelectedIndex = -1
+        combobox_reup_membertype.SelectedIndex = -1
+        combobox_reup_status.SelectedIndex = -1
+        txt_reup_search.Clear()
+        txt_reup_id.Clear()
+        txt_reup_lastname.Clear()
+        txt_reup_cont.Clear()
+        txt_reup_shipid.Clear()
+        txt_reup_email.Clear()
+        txt_reup_firstname.Clear()
+
+    End Sub
 
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         sql = "UPDATE Members SET First_Name='" & txt_reup_firstname.Text & "', Last_Name='" &
@@ -683,6 +696,7 @@ Public Class mainpage
         label_date.Text = System.DateTime.Now.ToString("dd/MM/yyyy")
         label_day.Text = System.DateTime.Now.ToString("dddd")
     End Sub
+    '========================================payment starts================================================
     Public Sub listviewrec()
         ds.Tables.Add(dt3)
         ds.Tables("forlistview").Clear()
@@ -703,7 +717,10 @@ Public Class mainpage
         Next
     End Sub
 
-  
+    Private Sub btn_payadd_Click(sender As Object, e As EventArgs) Handles btn_payadd.Click
+        paymentform.Show()
+    End Sub
+
     Private Sub pay_memshipid_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pay_memshipid.SelectedIndexChanged
         If pay_memshipid.SelectedIndex = 0 Then
             pay_search_lbl.Text = "DE"
@@ -739,47 +756,31 @@ Public Class mainpage
         pay_search_txt.Clear()
     End Sub
 
-    Private Sub pay_search_btn_Click(sender As Object, e As EventArgs) Handles pay_search_btn.Click
-        pay_delete.Visible = True
-        pay_edit.Visible = True
+    Private Sub pay_search_btn_Click(sender As Object, e As EventArgs) Handles btn_paysearch.Click
+        btn_paydel.Visible = True
+        btn_payedit.Visible = True
     End Sub
 
     Private Sub pay_search_txt_Click(sender As Object, e As EventArgs) Handles pay_search_txt.Click
-        pay_delete.Visible = False
-        pay_edit.Visible = False
+        btn_paydel.Visible = False
+        btn_payedit.Visible = False
     End Sub
 
     Private Sub label_reup_shipid_TextChanged(sender As Object, e As EventArgs) Handles label_reup_shipid.TextChanged
         label_reup_shipid.Left = txt_reup_shipid.Left - label_reup_shipid.Width
     End Sub
-    Private Sub refresh_reup()
-        combobox_reup_search.SelectedIndex = -1
-        combobox_reup_search_membershiptype.SelectedIndex = -1
-        combobox_reup_membertype.SelectedIndex = -1
-        combobox_reup_status.SelectedIndex = -1
-        txt_reup_search.Clear()
-        txt_reup_id.Clear()
-        txt_reup_lastname.Clear()
-        txt_reup_cont.Clear()
-        txt_reup_shipid.Clear()
-        txt_reup_email.Clear()
-        txt_reup_firstname.Clear()
 
-
-    End Sub
 
     Private Sub MaterialTabSelector1_Click(sender As Object, e As EventArgs) Handles MaterialTabSelector1.Click
         combobox_modeselect.SelectedIndex = -1
     End Sub
 
-    
-    
-  
     Private Sub pay_search_txt_TextChanged(sender As Object, e As EventArgs) Handles pay_search_txt.TextChanged
         If Not pay_search_txt.Text = Nothing Then
-            pay_search_btn.Visible = True
+            btn_paysearch.Visible = True
         Else
-            pay_search_btn.Visible = False
+            btn_paysearch.Visible = False
         End If
     End Sub
+
 End Class

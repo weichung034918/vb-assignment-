@@ -22,6 +22,7 @@ Public Class Permission
         skinmanager.AddFormToManage(Me)
         skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
         skinmanager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepPurple100, TextShade.WHITE)
+
         txt_uname.Width = 150
         txt_pwd.Width = 150
         txt_conpwd.Width = 150

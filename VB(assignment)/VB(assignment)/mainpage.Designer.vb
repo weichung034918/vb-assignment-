@@ -23,6 +23,7 @@ Partial Class mainpage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainpage))
         Me.MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.txt_add_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -74,11 +75,10 @@ Partial Class mainpage
         Me.combobox_reup_search = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel7 = New MaterialSkin.Controls.MaterialLabel()
         Me.tabpgae = New System.Windows.Forms.TabPage()
-        Me.pay_add = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pay_edit = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pay_delete = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pay_refresh = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.pay_search_btn = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_payadd = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_payedit = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_paydel = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_paysearch = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.pay_search_txt = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.pay_search_lbl = New MaterialSkin.Controls.MaterialLabel()
         Me.paymemshiplabel = New MaterialSkin.Controls.MaterialLabel()
@@ -109,6 +109,7 @@ Partial Class mainpage
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_logout = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -854,11 +855,11 @@ Partial Class mainpage
         '
         Me.tabpgae.BackColor = System.Drawing.Color.White
         Me.tabpgae.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.tabpgae.Controls.Add(Me.pay_add)
-        Me.tabpgae.Controls.Add(Me.pay_edit)
-        Me.tabpgae.Controls.Add(Me.pay_delete)
-        Me.tabpgae.Controls.Add(Me.pay_refresh)
-        Me.tabpgae.Controls.Add(Me.pay_search_btn)
+        Me.tabpgae.Controls.Add(Me.Button1)
+        Me.tabpgae.Controls.Add(Me.btn_payadd)
+        Me.tabpgae.Controls.Add(Me.btn_payedit)
+        Me.tabpgae.Controls.Add(Me.btn_paydel)
+        Me.tabpgae.Controls.Add(Me.btn_paysearch)
         Me.tabpgae.Controls.Add(Me.pay_search_txt)
         Me.tabpgae.Controls.Add(Me.pay_search_lbl)
         Me.tabpgae.Controls.Add(Me.paymemshiplabel)
@@ -873,68 +874,56 @@ Partial Class mainpage
         Me.tabpgae.TabIndex = 2
         Me.tabpgae.Text = "Payment"
         '
-        'pay_add
+        'btn_payadd
         '
-        Me.pay_add.Depth = 0
-        Me.pay_add.Location = New System.Drawing.Point(490, 80)
-        Me.pay_add.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_add.Name = "pay_add"
-        Me.pay_add.Primary = True
-        Me.pay_add.Size = New System.Drawing.Size(75, 23)
-        Me.pay_add.TabIndex = 11
-        Me.pay_add.Text = "Add"
-        Me.pay_add.UseVisualStyleBackColor = True
+        Me.btn_payadd.Depth = 0
+        Me.btn_payadd.Location = New System.Drawing.Point(490, 80)
+        Me.btn_payadd.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_payadd.Name = "btn_payadd"
+        Me.btn_payadd.Primary = True
+        Me.btn_payadd.Size = New System.Drawing.Size(75, 23)
+        Me.btn_payadd.TabIndex = 11
+        Me.btn_payadd.Text = "Add"
+        Me.btn_payadd.UseVisualStyleBackColor = True
         '
-        'pay_edit
+        'btn_payedit
         '
-        Me.pay_edit.Depth = 0
-        Me.pay_edit.Location = New System.Drawing.Point(593, 89)
-        Me.pay_edit.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_edit.Name = "pay_edit"
-        Me.pay_edit.Primary = True
-        Me.pay_edit.Size = New System.Drawing.Size(75, 23)
-        Me.pay_edit.TabIndex = 10
-        Me.pay_edit.Text = "Edit"
-        Me.pay_edit.UseVisualStyleBackColor = True
-        Me.pay_edit.Visible = False
+        Me.btn_payedit.Depth = 0
+        Me.btn_payedit.Location = New System.Drawing.Point(593, 89)
+        Me.btn_payedit.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_payedit.Name = "btn_payedit"
+        Me.btn_payedit.Primary = True
+        Me.btn_payedit.Size = New System.Drawing.Size(75, 23)
+        Me.btn_payedit.TabIndex = 10
+        Me.btn_payedit.Text = "Edit"
+        Me.btn_payedit.UseVisualStyleBackColor = True
+        Me.btn_payedit.Visible = False
         '
-        'pay_delete
+        'btn_paydel
         '
-        Me.pay_delete.Depth = 0
-        Me.pay_delete.Location = New System.Drawing.Point(593, 50)
-        Me.pay_delete.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_delete.Name = "pay_delete"
-        Me.pay_delete.Primary = True
-        Me.pay_delete.Size = New System.Drawing.Size(75, 33)
-        Me.pay_delete.TabIndex = 9
-        Me.pay_delete.Text = "Delete"
-        Me.pay_delete.UseVisualStyleBackColor = True
-        Me.pay_delete.Visible = False
+        Me.btn_paydel.Depth = 0
+        Me.btn_paydel.Location = New System.Drawing.Point(593, 50)
+        Me.btn_paydel.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_paydel.Name = "btn_paydel"
+        Me.btn_paydel.Primary = True
+        Me.btn_paydel.Size = New System.Drawing.Size(75, 33)
+        Me.btn_paydel.TabIndex = 9
+        Me.btn_paydel.Text = "Delete"
+        Me.btn_paydel.UseVisualStyleBackColor = True
+        Me.btn_paydel.Visible = False
         '
-        'pay_refresh
+        'btn_paysearch
         '
-        Me.pay_refresh.Depth = 0
-        Me.pay_refresh.Location = New System.Drawing.Point(744, 15)
-        Me.pay_refresh.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_refresh.Name = "pay_refresh"
-        Me.pay_refresh.Primary = True
-        Me.pay_refresh.Size = New System.Drawing.Size(75, 23)
-        Me.pay_refresh.TabIndex = 8
-        Me.pay_refresh.Text = "Refresh"
-        Me.pay_refresh.UseVisualStyleBackColor = True
-        '
-        'pay_search_btn
-        '
-        Me.pay_search_btn.Depth = 0
-        Me.pay_search_btn.Location = New System.Drawing.Point(227, 119)
-        Me.pay_search_btn.MouseState = MaterialSkin.MouseState.HOVER
-        Me.pay_search_btn.Name = "pay_search_btn"
-        Me.pay_search_btn.Primary = True
-        Me.pay_search_btn.Size = New System.Drawing.Size(75, 23)
-        Me.pay_search_btn.TabIndex = 7
-        Me.pay_search_btn.Text = "Search"
-        Me.pay_search_btn.UseVisualStyleBackColor = True
-        Me.pay_search_btn.Visible = False
+        Me.btn_paysearch.Depth = 0
+        Me.btn_paysearch.Location = New System.Drawing.Point(227, 119)
+        Me.btn_paysearch.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_paysearch.Name = "btn_paysearch"
+        Me.btn_paysearch.Primary = True
+        Me.btn_paysearch.Size = New System.Drawing.Size(75, 23)
+        Me.btn_paysearch.TabIndex = 7
+        Me.btn_paysearch.Text = "Search"
+        Me.btn_paysearch.UseVisualStyleBackColor = True
+        Me.btn_paysearch.Visible = False
         '
         'pay_search_txt
         '
@@ -1225,6 +1214,18 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 25
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.Location = New System.Drawing.Point(789, 144)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(30, 30)
+        Me.Button1.TabIndex = 12
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1337,9 +1338,9 @@ Partial Class mainpage
     Friend WithEvents pay_search_lbl As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents paymemshiplabel As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents pay_search_txt As MaterialSkin.Controls.MaterialSingleLineTextField
-    Friend WithEvents pay_search_btn As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents pay_edit As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents pay_delete As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents pay_refresh As MaterialSkin.Controls.MaterialRaisedButton
-    Friend WithEvents pay_add As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_paysearch As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_payedit As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_paydel As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_payadd As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
