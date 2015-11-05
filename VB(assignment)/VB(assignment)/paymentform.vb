@@ -275,7 +275,7 @@ Public Class paymentform
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        If txt_mid.Text = Nothing AndAlso txt_amount.Text = Nothing Then
+        If txt_mid.Text = Nothing Or txt_amount.Text = Nothing Or label_mshipid.Text = Nothing Then
             MessageBox.Show("You cannot add an incomplete payment!", "Error")
             Return
         End If
