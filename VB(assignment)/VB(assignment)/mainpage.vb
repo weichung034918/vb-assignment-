@@ -506,9 +506,6 @@ Public Class mainpage
             Call addset()
         End If
 
-        'ND00000002
-
-        btn_remove.Visible = True
 
         If ds.Tables(0).Rows.Count > 1 Then
             btn_first.Visible = True
@@ -667,6 +664,19 @@ Public Class mainpage
             label_reup_shipid.Enabled = True
             'no point disabling the goddamn label wei chung... 
             'wei chung : accident happens ck... accidents
+        ElseIf combobox_modeselect.SelectedIndex = 2 Then
+            btn_remove.Visible = False
+            btn_update.Visible = False
+            combobox_reup_search.Visible = True
+            txt_reup_cont.Enabled = False
+            txt_reup_email.Enabled = False
+            txt_reup_firstname.Enabled = False
+            txt_reup_id.Enabled = False
+            txt_reup_lastname.Enabled = False
+            txt_reup_shipid.Enabled = False
+            combobox_reup_status.Enabled = False
+            combobox_reup_membertype.Enabled = False
+            label_reup_shipid.Enabled = False
         Else
             Return
         End If

@@ -489,7 +489,7 @@ Partial Class mainpage
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(829, 474)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Remove/Update Members"
+        Me.TabPage2.Text = "Manage Members"
         '
         'combobox_reup_status
         '
@@ -521,7 +521,7 @@ Partial Class mainpage
         Me.combobox_modeselect.AutoCompleteCustomSource.AddRange(New String() {"Deluxe", "Non-Deluxe", "Weekday"})
         Me.combobox_modeselect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_modeselect.FormattingEnabled = True
-        Me.combobox_modeselect.Items.AddRange(New Object() {"Delete Members", "Update Members"})
+        Me.combobox_modeselect.Items.AddRange(New Object() {"Delete Members", "Update Members", "Search Members"})
         Me.combobox_modeselect.Location = New System.Drawing.Point(0, 2)
         Me.combobox_modeselect.Name = "combobox_modeselect"
         Me.combobox_modeselect.Size = New System.Drawing.Size(141, 21)
