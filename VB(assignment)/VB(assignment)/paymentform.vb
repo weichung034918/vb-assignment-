@@ -24,11 +24,10 @@ Public Class paymentform
     End Sub
 
     Private Sub paymentform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mainpage.Enabled = False
-        Dim skinmanager As MaterialSkin.MaterialSkinManager = MaterialSkinManager.Instance
-        skinmanager.AddFormToManage(Me)
-        skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
-        skinmanager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepPurple100, TextShade.WHITE)
+        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+        SkinManager.AddFormToManage(Me)
+        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+        SkinManager.ColorScheme = New ColorScheme(Primary.Blue700, Primary.Blue900, Primary.DeepPurple700, Accent.Cyan400, TextShade.WHITE)
         Try
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
                     "Data Source=" & dirdb)
@@ -337,6 +336,7 @@ Public Class paymentform
             label_totalwgst.Text = "0.00"
             txt_amount.Enabled = True
             btn_payedit.Visible = False
+            btn_edit.Visible = True
         End If
 
     End Sub

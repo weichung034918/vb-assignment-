@@ -878,7 +878,7 @@ Public Class mainpage
         End If
 
         paymentform.btn_add.Visible = False
-        paymentform.btn_edit.Visible = True
+        paymentform.btn_edit.Visible = False
         paymentform.btn_payedit.Visible = True
         paymentform.txt_mid.Enabled = False
         paymentform.txt_amount.Enabled = False

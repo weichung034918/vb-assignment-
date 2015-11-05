@@ -66,7 +66,7 @@ Partial Class report
         Me.MaximumSize = New System.Drawing.Size(703, 360)
         Me.MinimumSize = New System.Drawing.Size(703, 360)
         Me.Name = "report"
-        Me.Text = "report"
+        Me.Text = "Member Report"
         CType(Me.MembersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.databaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

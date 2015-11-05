@@ -67,7 +67,7 @@ Partial Class reportpayment
         Me.MaximumSize = New System.Drawing.Size(703, 360)
         Me.MinimumSize = New System.Drawing.Size(703, 360)
         Me.Name = "reportpayment"
-        Me.Text = "reportpayment"
+        Me.Text = "Payment Report"
         CType(Me.PaymentBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.databaseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
