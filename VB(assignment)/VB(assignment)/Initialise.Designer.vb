@@ -162,7 +162,8 @@ Partial Class Initialise
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(251, 264)
+        Me.ClientSize = New System.Drawing.Size(251, 251)
+        Me.ControlBox = False
         Me.Controls.Add(Me.MaterialLabel1)
         Me.Controls.Add(Me.next_btn)
         Me.Controls.Add(Me.field_conpwd)
@@ -173,7 +174,7 @@ Partial Class Initialise
         Me.Controls.Add(Me.label_uname)
         Me.Controls.Add(Me.accdb_btn)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(370, 264)
+        Me.MaximumSize = New System.Drawing.Size(251, 370)
         Me.MinimumSize = New System.Drawing.Size(251, 251)
         Me.Name = "Initialise"
         Me.Text = "Initial Setup"
