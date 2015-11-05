@@ -770,6 +770,16 @@ Public Class mainpage
     End Sub
 
     Private Sub btn_payadd_Click(sender As Object, e As EventArgs) Handles btn_payadd.Click
+        Dim memcount As New DataTable
+        memcount.Clear()
+        sql = "select * from Members"
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(memcount)
+        If memcount.Rows.Count = 0 Then
+            MessageBox.Show("No member to add a payment!", "Empty Member List")
+            Return
+        End If
+
         paymentform.btn_add.Visible = True
         paymentform.btn_edit.Visible = False
         paymentform.btn_payedit.Visible = False
