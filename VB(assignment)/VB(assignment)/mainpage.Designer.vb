@@ -107,6 +107,8 @@ Partial Class mainpage
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_logout = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -114,6 +116,8 @@ Partial Class mainpage
         Me.payment_groupbox.SuspendLayout()
         Me.MaterialContextMenuStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MaterialTabControl1
@@ -135,22 +139,9 @@ Partial Class mainpage
         '
         Me.TabPage1.BackColor = System.Drawing.Color.White
         Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.TabPage1.Controls.Add(Me.txt_add_email)
-        Me.TabPage1.Controls.Add(Me.txt_add_cont)
-        Me.TabPage1.Controls.Add(Me.txt_add_shipid)
-        Me.TabPage1.Controls.Add(Me.txt_add_lastname)
-        Me.TabPage1.Controls.Add(Me.txt_add_firstname)
-        Me.TabPage1.Controls.Add(Me.txt_add_id)
-        Me.TabPage1.Controls.Add(Me.label_add_shipid)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel29)
-        Me.TabPage1.Controls.Add(Me.combobox_add_membertype)
         Me.TabPage1.Controls.Add(Me.Add)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel6)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel5)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel4)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel3)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel2)
-        Me.TabPage1.Controls.Add(Me.MaterialLabel1)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -162,7 +153,7 @@ Partial Class mainpage
         '
         Me.txt_add_email.Depth = 0
         Me.txt_add_email.Hint = ""
-        Me.txt_add_email.Location = New System.Drawing.Point(625, 220)
+        Me.txt_add_email.Location = New System.Drawing.Point(222, 157)
         Me.txt_add_email.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_add_email.Name = "txt_add_email"
         Me.txt_add_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -178,7 +169,7 @@ Partial Class mainpage
         '
         Me.txt_add_cont.Depth = 0
         Me.txt_add_cont.Hint = ""
-        Me.txt_add_cont.Location = New System.Drawing.Point(625, 181)
+        Me.txt_add_cont.Location = New System.Drawing.Point(222, 117)
         Me.txt_add_cont.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_add_cont.Name = "txt_add_cont"
         Me.txt_add_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -194,7 +185,7 @@ Partial Class mainpage
         '
         Me.txt_add_shipid.Depth = 0
         Me.txt_add_shipid.Hint = ""
-        Me.txt_add_shipid.Location = New System.Drawing.Point(246, 155)
+        Me.txt_add_shipid.Location = New System.Drawing.Point(229, 121)
         Me.txt_add_shipid.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_add_shipid.Name = "txt_add_shipid"
         Me.txt_add_shipid.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -210,7 +201,7 @@ Partial Class mainpage
         '
         Me.txt_add_lastname.Depth = 0
         Me.txt_add_lastname.Hint = ""
-        Me.txt_add_lastname.Location = New System.Drawing.Point(625, 124)
+        Me.txt_add_lastname.Location = New System.Drawing.Point(222, 77)
         Me.txt_add_lastname.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_add_lastname.Name = "txt_add_lastname"
         Me.txt_add_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -226,7 +217,7 @@ Partial Class mainpage
         '
         Me.txt_add_firstname.Depth = 0
         Me.txt_add_firstname.Hint = ""
-        Me.txt_add_firstname.Location = New System.Drawing.Point(625, 81)
+        Me.txt_add_firstname.Location = New System.Drawing.Point(222, 33)
         Me.txt_add_firstname.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_add_firstname.Name = "txt_add_firstname"
         Me.txt_add_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -242,7 +233,7 @@ Partial Class mainpage
         '
         Me.txt_add_id.Depth = 0
         Me.txt_add_id.Hint = ""
-        Me.txt_add_id.Location = New System.Drawing.Point(158, 68)
+        Me.txt_add_id.Location = New System.Drawing.Point(174, 37)
         Me.txt_add_id.MouseState = MaterialSkin.MouseState.HOVER
         Me.txt_add_id.Name = "txt_add_id"
         Me.txt_add_id.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -260,7 +251,7 @@ Partial Class mainpage
         Me.label_add_shipid.Depth = 0
         Me.label_add_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.label_add_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_add_shipid.Location = New System.Drawing.Point(187, 160)
+        Me.label_add_shipid.Location = New System.Drawing.Point(170, 126)
         Me.label_add_shipid.MouseState = MaterialSkin.MouseState.HOVER
         Me.label_add_shipid.Name = "label_add_shipid"
         Me.label_add_shipid.Size = New System.Drawing.Size(23, 19)
@@ -273,7 +264,7 @@ Partial Class mainpage
         Me.MaterialLabel29.Depth = 0
         Me.MaterialLabel29.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel29.Location = New System.Drawing.Point(32, 155)
+        Me.MaterialLabel29.Location = New System.Drawing.Point(15, 121)
         Me.MaterialLabel29.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel29.Name = "MaterialLabel29"
         Me.MaterialLabel29.Size = New System.Drawing.Size(114, 19)
@@ -287,7 +278,7 @@ Partial Class mainpage
         Me.combobox_add_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.combobox_add_membertype.FormattingEnabled = True
         Me.combobox_add_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_add_membertype.Location = New System.Drawing.Point(191, 113)
+        Me.combobox_add_membertype.Location = New System.Drawing.Point(174, 79)
         Me.combobox_add_membertype.Name = "combobox_add_membertype"
         Me.combobox_add_membertype.Size = New System.Drawing.Size(141, 21)
         Me.combobox_add_membertype.TabIndex = 3
@@ -296,7 +287,7 @@ Partial Class mainpage
         'Add
         '
         Me.Add.Depth = 0
-        Me.Add.Location = New System.Drawing.Point(340, 316)
+        Me.Add.Location = New System.Drawing.Point(363, 301)
         Me.Add.MouseState = MaterialSkin.MouseState.HOVER
         Me.Add.Name = "Add"
         Me.Add.Primary = True
@@ -311,7 +302,7 @@ Partial Class mainpage
         Me.MaterialLabel6.Depth = 0
         Me.MaterialLabel6.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel6.Location = New System.Drawing.Point(399, 220)
+        Me.MaterialLabel6.Location = New System.Drawing.Point(6, 157)
         Me.MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel6.Name = "MaterialLabel6"
         Me.MaterialLabel6.Size = New System.Drawing.Size(114, 19)
@@ -324,7 +315,7 @@ Partial Class mainpage
         Me.MaterialLabel5.Depth = 0
         Me.MaterialLabel5.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel5.Location = New System.Drawing.Point(399, 177)
+        Me.MaterialLabel5.Location = New System.Drawing.Point(6, 117)
         Me.MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel5.Name = "MaterialLabel5"
         Me.MaterialLabel5.Size = New System.Drawing.Size(123, 19)
@@ -337,7 +328,7 @@ Partial Class mainpage
         Me.MaterialLabel4.Depth = 0
         Me.MaterialLabel4.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel4.Location = New System.Drawing.Point(32, 112)
+        Me.MaterialLabel4.Location = New System.Drawing.Point(15, 78)
         Me.MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel4.Name = "MaterialLabel4"
         Me.MaterialLabel4.Size = New System.Drawing.Size(132, 19)
@@ -350,7 +341,7 @@ Partial Class mainpage
         Me.MaterialLabel3.Depth = 0
         Me.MaterialLabel3.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel3.Location = New System.Drawing.Point(399, 124)
+        Me.MaterialLabel3.Location = New System.Drawing.Point(6, 77)
         Me.MaterialLabel3.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel3.Name = "MaterialLabel3"
         Me.MaterialLabel3.Size = New System.Drawing.Size(145, 19)
@@ -363,7 +354,7 @@ Partial Class mainpage
         Me.MaterialLabel2.Depth = 0
         Me.MaterialLabel2.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel2.Location = New System.Drawing.Point(399, 81)
+        Me.MaterialLabel2.Location = New System.Drawing.Point(6, 37)
         Me.MaterialLabel2.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel2.Name = "MaterialLabel2"
         Me.MaterialLabel2.Size = New System.Drawing.Size(146, 19)
@@ -376,7 +367,7 @@ Partial Class mainpage
         Me.MaterialLabel1.Depth = 0
         Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
         Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(56, 68)
+        Me.MaterialLabel1.Location = New System.Drawing.Point(15, 34)
         Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialLabel1.Name = "MaterialLabel1"
         Me.MaterialLabel1.Size = New System.Drawing.Size(86, 19)
@@ -1175,6 +1166,39 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 25
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.MaterialLabel29)
+        Me.GroupBox1.Controls.Add(Me.MaterialLabel1)
+        Me.GroupBox1.Controls.Add(Me.txt_add_shipid)
+        Me.GroupBox1.Controls.Add(Me.MaterialLabel4)
+        Me.GroupBox1.Controls.Add(Me.combobox_add_membertype)
+        Me.GroupBox1.Controls.Add(Me.label_add_shipid)
+        Me.GroupBox1.Controls.Add(Me.txt_add_id)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 44)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(350, 195)
+        Me.GroupBox1.TabIndex = 17
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Account information"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txt_add_email)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel3)
+        Me.GroupBox2.Controls.Add(Me.txt_add_cont)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel2)
+        Me.GroupBox2.Controls.Add(Me.txt_add_firstname)
+        Me.GroupBox2.Controls.Add(Me.txt_add_lastname)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel5)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel6)
+        Me.GroupBox2.Location = New System.Drawing.Point(410, 44)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(388, 195)
+        Me.GroupBox2.TabIndex = 18
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Account information"
+        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1193,7 +1217,6 @@ Partial Class mainpage
         Me.Text = "Main Page"
         Me.MaterialTabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.tabpgae.ResumeLayout(False)
@@ -1203,6 +1226,10 @@ Partial Class mainpage
         Me.MaterialContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1289,4 +1316,6 @@ Partial Class mainpage
     Friend WithEvents btn_payadd As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents btn_refresh As System.Windows.Forms.Button
     Friend WithEvents list_paytype As System.Windows.Forms.ColumnHeader
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class
