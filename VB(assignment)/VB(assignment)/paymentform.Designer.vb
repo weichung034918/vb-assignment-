@@ -479,6 +479,9 @@ Partial Class paymentform
         Me.Controls.Add(Me.MaterialLabel11)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(607, 374)
+        Me.MinimumSize = New System.Drawing.Size(607, 374)
         Me.Name = "paymentform"
         Me.Text = "Payment"
         Me.GroupBox1.ResumeLayout(False)

@@ -24,13 +24,23 @@ Partial Class report
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.databaseDataSet = New VB_assignment_.databaseDataSet()
         Me.MembersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.databaseDataSet = New VB_assignment_.databaseDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.MembersTableAdapter = New VB_assignment_.databaseDataSetTableAdapters.MembersTableAdapter()
-        CType(Me.databaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MembersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.databaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'MembersBindingSource
+        '
+        Me.MembersBindingSource.DataMember = "Members"
+        Me.MembersBindingSource.DataSource = Me.databaseDataSet
+        '
+        'databaseDataSet
+        '
+        Me.databaseDataSet.DataSetName = "databaseDataSet"
+        Me.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -43,16 +53,6 @@ Partial Class report
         Me.ReportViewer1.Size = New System.Drawing.Size(657, 246)
         Me.ReportViewer1.TabIndex = 0
         '
-        'databaseDataSet
-        '
-        Me.databaseDataSet.DataSetName = "databaseDataSet"
-        Me.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'MembersBindingSource
-        '
-        Me.MembersBindingSource.DataMember = "Members"
-        Me.MembersBindingSource.DataSource = Me.databaseDataSet
-        '
         'MembersTableAdapter
         '
         Me.MembersTableAdapter.ClearBeforeFill = True
@@ -63,10 +63,12 @@ Partial Class report
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(703, 360)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.MaximumSize = New System.Drawing.Size(703, 360)
+        Me.MinimumSize = New System.Drawing.Size(703, 360)
         Me.Name = "report"
         Me.Text = "report"
-        CType(Me.databaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MembersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.databaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

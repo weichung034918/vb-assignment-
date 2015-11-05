@@ -18,7 +18,12 @@ Public Class Permission
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
 
+    Private Sub Permission_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        mainpage.Enabled = True
+    End Sub
+
     Private Sub Permission_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mainpage.Enabled = False
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
@@ -29,7 +34,7 @@ Public Class Permission
         ComboBox_per.Width = 150
         btn_add.Left = (Me.Width / 2) - (btn_add.Width / 2)
         btn_add.Top = ComboBox_per.Top + 60
-        
+
         btn_edit.Size = New Size(85, 50)
         btn_del.Size = btn_edit.Size
         btn_edit.Top = label_edel_per.Top + 30

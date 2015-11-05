@@ -573,7 +573,8 @@ Partial Class Permission
         Me.Controls.Add(Me.MaterialTabSelector1)
         Me.Controls.Add(Me.MaterialTabControl1)
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(553, 371)
+        Me.MinimumSize = New System.Drawing.Size(553, 371)
         Me.Name = "Permission"
         Me.Text = "Admin Settings"
         Me.TopMost = True

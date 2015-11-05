@@ -5,8 +5,13 @@ Public Class report
     Partial Class report
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
+
+    Private Sub report_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        mainpage.Enabled = True
+    End Sub
     Private Sub report_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'databaseDataSet.Members' table. You can move, or remove it, as needed.
+        mainpage.Enabled = True
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT

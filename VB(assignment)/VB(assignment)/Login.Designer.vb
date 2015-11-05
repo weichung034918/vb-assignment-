@@ -122,7 +122,8 @@ Partial Class login
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(281, 263)
+        Me.MinimumSize = New System.Drawing.Size(281, 263)
         Me.Name = "login"
         Me.ShowInTaskbar = False
         Me.Text = "Login"

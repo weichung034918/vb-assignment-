@@ -169,6 +169,8 @@ Partial Class mainpage
         Me.MaterialTabControl1.Depth = 0
         Me.MaterialTabControl1.HotTrack = True
         Me.MaterialTabControl1.Location = New System.Drawing.Point(0, 104)
+        Me.MaterialTabControl1.MaximumSize = New System.Drawing.Size(837, 500)
+        Me.MaterialTabControl1.MinimumSize = New System.Drawing.Size(837, 500)
         Me.MaterialTabControl1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialTabControl1.Name = "MaterialTabControl1"
         Me.MaterialTabControl1.SelectedIndex = 0
@@ -1616,7 +1618,6 @@ Partial Class mainpage
         Me.Controls.Add(Me.MaterialTabControl1)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(835, 624)
-        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(835, 624)
         Me.Name = "mainpage"
         Me.Text = "Main Page"

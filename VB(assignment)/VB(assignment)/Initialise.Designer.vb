@@ -172,6 +172,9 @@ Partial Class Initialise
         Me.Controls.Add(Me.label_pwd)
         Me.Controls.Add(Me.label_uname)
         Me.Controls.Add(Me.accdb_btn)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(579, 322)
+        Me.MinimumSize = New System.Drawing.Size(579, 322)
         Me.Name = "Initialise"
         Me.Text = "Initial Setup"
         Me.ResumeLayout(False)
