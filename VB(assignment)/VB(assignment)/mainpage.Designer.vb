@@ -728,7 +728,6 @@ Partial Class mainpage
         Me.txt_reup_search.Size = New System.Drawing.Size(121, 23)
         Me.txt_reup_search.TabIndex = 34
         Me.txt_reup_search.UseSystemPasswordChar = False
-        Me.txt_reup_search.Visible = False
         '
         'label_reup_shipid
         '
@@ -756,7 +755,6 @@ Partial Class mainpage
         Me.label_reup_search.TabIndex = 30
         Me.label_reup_search.Text = "Search:"
         Me.label_reup_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.label_reup_search.Visible = False
         '
         'MaterialLabel47
         '
@@ -820,7 +818,6 @@ Partial Class mainpage
         Me.btn_reup_search.TabIndex = 24
         Me.btn_reup_search.Text = "Search"
         Me.btn_reup_search.UseVisualStyleBackColor = True
-        Me.btn_reup_search.Visible = False
         '
         'MaterialLabel8
         '
@@ -899,7 +896,6 @@ Partial Class mainpage
         Me.combobox_reup_search.Name = "combobox_reup_search"
         Me.combobox_reup_search.Size = New System.Drawing.Size(121, 21)
         Me.combobox_reup_search.TabIndex = 3
-        Me.combobox_reup_search.Visible = False
         '
         'MaterialLabel7
         '

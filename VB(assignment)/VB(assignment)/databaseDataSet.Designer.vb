@@ -1027,7 +1027,7 @@ Namespace databaseDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `members` WHERE ((`MID` = ?) AND ((? = 1 AND `Contact_Number` IS NULL" & _
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Members` WHERE ((`MID` = ?) AND ((? = 1 AND `Contact_Number` IS NULL" & _
                 ") OR (`Contact_Number` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) " & _
                 "AND ((? = 1 AND `Status` IS NULL) OR (`Status` = ?)) AND ((? = 1 AND `Date_Of_En" & _
                 "try` IS NULL) OR (`Date_Of_Entry` = ?)) AND ((? = 1 AND `MSHIP_ID` IS NULL) OR (" & _
@@ -1046,7 +1046,7 @@ Namespace databaseDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MSHIP_ID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MSHIP_ID", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `members` (`MID`, `First_Name`, `Last_Name`, `Contact_Number`, `Email" & _
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Members` (`MID`, `First_Name`, `Last_Name`, `Contact_Number`, `Email" & _
                 "`, `Status`, `Date_Of_Entry`, `MSHIP_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MID", Global.System.Data.DataRowVersion.Current, False, Nothing))
@@ -1059,7 +1059,7 @@ Namespace databaseDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MSHIP_ID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MSHIP_ID", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `members` SET `MID` = ?, `First_Name` = ?, `Last_Name` = ?, `Contact_Numbe" & _
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Members` SET `MID` = ?, `First_Name` = ?, `Last_Name` = ?, `Contact_Numbe" & _
                 "r` = ?, `Email` = ?, `Status` = ?, `Date_Of_Entry` = ?, `MSHIP_ID` = ? WHERE ((`" & _
                 "MID` = ?) AND ((? = 1 AND `Contact_Number` IS NULL) OR (`Contact_Number` = ?)) A" & _
                 "ND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 AND `Status` IS NU" & _
@@ -1100,26 +1100,30 @@ Namespace databaseDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "select * from members"
+            Me._commandCollection(0).CommandText = "select * from Members"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "select * from members where mid=?"
+            Me._commandCollection(1).CommandText = "SELECT Contact_Number, Date_Of_Entry, Email, First_Name, Last_Name, MID, MSHIP_ID" & _
+                ", Status FROM Members WHERE (MID = ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MID", Global.System.Data.OleDb.OleDbType.WChar, 10, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MID", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "select * from members where MSHIP_ID=?"
+            Me._commandCollection(2).CommandText = "SELECT Contact_Number, Date_Of_Entry, Email, First_Name, Last_Name, MID, MSHIP_ID" & _
+                ", Status FROM Members WHERE (MSHIP_ID = ?)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MSHIP_ID", Global.System.Data.OleDb.OleDbType.WChar, 10, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "MSHIP_ID", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "select * from members where First_Name=?"
+            Me._commandCollection(3).CommandText = "SELECT Contact_Number, Date_Of_Entry, Email, First_Name, Last_Name, MID, MSHIP_ID" & _
+                ", Status FROM Members WHERE (First_Name = ?)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("First_Name", Global.System.Data.OleDb.OleDbType.WChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "First_Name", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "select * from members where Last_Name=?"
+            Me._commandCollection(4).CommandText = "SELECT Contact_Number, Date_Of_Entry, Email, First_Name, Last_Name, MID, MSHIP_ID" & _
+                ", Status FROM Members WHERE (Last_Name = ?)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Last_Name", Global.System.Data.OleDb.OleDbType.WChar, 1024, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Last_Name", Global.System.Data.DataRowVersion.Current, False, Nothing))
         End Sub
@@ -1155,7 +1159,7 @@ Namespace databaseDataSetTableAdapters
         Public Overridable Overloads Function FillBy(ByVal dataTable As databaseDataSet.MembersDataTable, ByVal MID As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             If (MID Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("MID")
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(MID, String)
             End If
@@ -1173,7 +1177,7 @@ Namespace databaseDataSetTableAdapters
         Public Overridable Overloads Function GetDataBy(ByVal MID As String) As databaseDataSet.MembersDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
             If (MID Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Throw New Global.System.ArgumentNullException("MID")
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(MID, String)
             End If

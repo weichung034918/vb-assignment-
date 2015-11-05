@@ -945,7 +945,7 @@ Public Class mainpage
             Return
         End If
 
-        report.MembersTableAdapter.GetData()
+        report.MembersTableAdapter.Fill(report.databaseDataSet.Members)
         report.Show()
 
     End Sub
