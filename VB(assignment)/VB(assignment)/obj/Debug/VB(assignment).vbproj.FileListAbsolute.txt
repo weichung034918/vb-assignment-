@@ -50,3 +50,7 @@ C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assign
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\RdlCompile.cache
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\RdlCompile.compiled
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.reportpayment.resources
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.report.resources
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.reportpayment.resources
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\RdlCompile.cache
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\RdlCompile.compiled

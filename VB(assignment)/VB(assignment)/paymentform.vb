@@ -18,8 +18,13 @@ Public Class paymentform
     Partial Class paymentform
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
-    
+
+    Private Sub paymentform_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        mainpage.Enabled = True
+    End Sub
+
     Private Sub paymentform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mainpage.Enabled = False
         Dim skinmanager As MaterialSkin.MaterialSkinManager = MaterialSkinManager.Instance
         skinmanager.AddFormToManage(Me)
         skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
