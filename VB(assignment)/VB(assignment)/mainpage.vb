@@ -302,6 +302,7 @@ Public Class mainpage
 
         Dim str As String = txt_add_firstname.Text
         txt_add_firstname.Text = Regex.Replace(str, " {2,}", " ")
+        txt_add_firstname.Text = str.TrimStart(" ")
         'regex (regular expression) needs import system.text.regularexpressions
         'space followed by the quantifier {2,}, matches a space, repeated two or more times
         'then replace with single space only
@@ -314,7 +315,7 @@ Public Class mainpage
         For i = 0 To txt_add_firstname.TextLength - 1 'loop for checking each position (array position) of your string
             If Char.IsLetter(str.Chars(i)) = False Then 'check if that thing you pasted contains letters or not
                 txt_add_firstname.Text = Nothing
-                MessageBox.Show("Member's First Name must only consist of numerical values.", "Member's First Name")
+                MessageBox.Show("Member's First Name must only consist of alphabetical values.", "Member's First Name")
                 Return
             End If
         Next
@@ -1073,5 +1074,95 @@ Public Class mainpage
 
     Private Sub txt_reup_shipid_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_shipid.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub txt_reup_firstname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_firstname.KeyPress
+        If Char.IsLetter(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+            If txt_reup_firstname.TextLength > 0 And e.KeyChar = ChrW(Keys.Space) Then
+                e.Handled = False
+            End If
+        End If
+    End Sub
+
+    Private Sub txt_reup_firstname_Leave(sender As Object, e As EventArgs) Handles txt_reup_firstname.Leave
+        Dim str As String = txt_reup_firstname.Text
+        txt_reup_firstname.Text = Regex.Replace(str, " {2,}", " ")
+        txt_reup_firstname.Text = str.TrimStart(" ")
+    End Sub
+
+    Private Sub txt_reup_firstname_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_firstname.TextChanged
+        Dim str As String = txt_reup_firstname.Text
+        For i = 0 To txt_reup_firstname.TextLength - 1 'loop for checking each position (array position) of your string
+            If Char.IsLetter(str.Chars(i)) = False Then 'check if that thing you pasted contains letters or not
+                txt_reup_firstname.Text = Nothing
+                MessageBox.Show("Member's First Name must only consist of alphabetic values.", "Member's First Name")
+                Return
+            End If
+        Next
+    End Sub
+
+    Private Sub txt_reup_lastname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_lastname.KeyPress
+        If Char.IsLetter(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+            If txt_reup_lastname.TextLength > 0 And e.KeyChar = ChrW(Keys.Space) Then
+                e.Handled = False
+            End If
+        End If
+    End Sub
+
+    Private Sub txt_reup_lastname_Leave(sender As Object, e As EventArgs) Handles txt_reup_lastname.Leave
+        Dim str As String = txt_reup_lastname.Text
+        txt_reup_lastname.Text = Regex.Replace(str, " {2,}", " ")
+        txt_reup_lastname.Text = str.TrimStart(" ")
+    End Sub
+
+    Private Sub txt_reup_lastname_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_lastname.TextChanged
+        Dim str As String = txt_reup_lastname.Text
+        For i = 0 To txt_reup_lastname.TextLength - 1 'loop for checking each position (array position) of your string
+            If Char.IsLetter(str.Chars(i)) = False Then 'check if that thing you pasted contains letters or not
+                txt_reup_lastname.Text = Nothing
+                MessageBox.Show("Member's Last Name must only consist of alphabetic values.", "Member's First Name")
+                Return
+            End If
+        Next
+    End Sub
+
+    Private Sub txt_reup_cont_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_cont.KeyPress
+        If Char.IsDigit(e.KeyChar) = False And Char.IsControl(e.KeyChar) = False Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txt_reup_cont_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_cont.TextChanged
+        Dim str As String = txt_reup_cont.Text
+        For i = 0 To txt_reup_cont.TextLength - 1
+            If Char.IsLetter(str.Chars(i)) Then
+                txt_reup_cont.Text = Nothing
+                MessageBox.Show("Contact number must only consist of numerical values.", "Contact Number")
+                Return
+            End If
+        Next
+    End Sub
+
+    Private Sub txt_reup_email_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_email.KeyPress
+        If e.KeyChar = ChrW(Keys.Space) Then 'not allowing space into the text field
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txt_reup_email_Leave(sender As Object, e As EventArgs) Handles txt_reup_email.Leave
+        If Not txt_reup_email.Text.Contains("@") Then
+            MessageBox.Show("This doesn't look like an E-mail address, please re-enter a valid E-mail address.", "E-mail Address")
+            Return
+        End If
+    End Sub
+
+    Private Sub txt_reup_email_TextChanged(sender As Object, e As EventArgs) Handles txt_reup_email.TextChanged
+        If txt_reup_email.TextLength > 30 Then
+            MessageBox.Show("The E-mail address length is too long!", "E-mail Address")
+            txt_reup_email.Text = Nothing
+            Return
+        End If
     End Sub
 End Class
