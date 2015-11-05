@@ -37,7 +37,7 @@ Partial Class Initialise
         '
         Me.accdb_btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.accdb_btn.Depth = 0
-        Me.accdb_btn.Location = New System.Drawing.Point(12, 168)
+        Me.accdb_btn.Location = New System.Drawing.Point(12, 137)
         Me.accdb_btn.MouseState = MaterialSkin.MouseState.HOVER
         Me.accdb_btn.Name = "accdb_btn"
         Me.accdb_btn.Primary = True
