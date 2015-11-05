@@ -280,6 +280,10 @@ Public Class paymentform
             MessageBox.Show("You cannot add an incomplete payment!", "Error")
             Return
         End If
+        If label_due.Text < 0 Then
+            MessageBox.Show("You cannot have a negative due!", "Error")
+            Return
+        End If
 
         sql = "insert into Payment values ('" & label_pid1.Text & label_pid2.Text & "', '" & txt_mid.Text & "', '" & label_mshipid.Text &
             "', '" & label_doe.Text & "', '" & label_log.Text & "', '" & txt_desc.Text & "', '" & typestr & "', " & label_totalwgst.Text &
@@ -305,6 +309,14 @@ Public Class paymentform
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
         'fucking desc made me spent 1 hour trying to figure why keep on syntax error, most probably because it's a reserve keyword
         'or shit
+        If txt_amount.Text = Nothing Then
+            MessageBox.Show("You cannot update with an incomplete payment!", "Error")
+            Return
+        End If
+        If label_due.Text < 0 Then
+            MessageBox.Show("You cannot have a negative due!", "Error")
+            Return
+        End If
         sql = "UPDATE [Payment] SET [desc]='" & txt_desc.Text & "', Amount_Paid=" & label_totalwgst.Text &
             ", Amount_Due=" & label_due.Text & " where PID='" & label_pid1.Text & label_pid2.Text & "'"
         cmd = New OleDbCommand(sql, con)
