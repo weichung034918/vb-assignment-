@@ -22,8 +22,6 @@ Partial Class Initialise
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
-        Me.mdb_btn = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.accdb_btn = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.label_uname = New MaterialSkin.Controls.MaterialLabel()
         Me.label_pwd = New MaterialSkin.Controls.MaterialLabel()
@@ -32,39 +30,14 @@ Partial Class Initialise
         Me.field_pwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.field_conpwd = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.next_btn = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
         Me.SuspendLayout()
-        '
-        'MaterialLabel1
-        '
-        Me.MaterialLabel1.AutoSize = True
-        Me.MaterialLabel1.Depth = 0
-        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(12, 71)
-        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel1.Name = "MaterialLabel1"
-        Me.MaterialLabel1.Size = New System.Drawing.Size(108, 19)
-        Me.MaterialLabel1.TabIndex = 0
-        Me.MaterialLabel1.Text = "MaterialLabel1"
-        '
-        'mdb_btn
-        '
-        Me.mdb_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.mdb_btn.Depth = 0
-        Me.mdb_btn.Location = New System.Drawing.Point(12, 148)
-        Me.mdb_btn.MouseState = MaterialSkin.MouseState.HOVER
-        Me.mdb_btn.Name = "mdb_btn"
-        Me.mdb_btn.Primary = True
-        Me.mdb_btn.Size = New System.Drawing.Size(193, 35)
-        Me.mdb_btn.TabIndex = 0
-        Me.mdb_btn.Text = "Create MDB Database"
-        Me.mdb_btn.UseVisualStyleBackColor = True
         '
         'accdb_btn
         '
         Me.accdb_btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.accdb_btn.Depth = 0
-        Me.accdb_btn.Location = New System.Drawing.Point(12, 201)
+        Me.accdb_btn.Location = New System.Drawing.Point(12, 168)
         Me.accdb_btn.MouseState = MaterialSkin.MouseState.HOVER
         Me.accdb_btn.Name = "accdb_btn"
         Me.accdb_btn.Primary = True
@@ -172,11 +145,25 @@ Partial Class Initialise
         Me.next_btn.Text = "Next"
         Me.next_btn.UseVisualStyleBackColor = True
         '
+        'MaterialLabel1
+        '
+        Me.MaterialLabel1.AutoSize = True
+        Me.MaterialLabel1.Depth = 0
+        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel1.Location = New System.Drawing.Point(13, 76)
+        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel1.Name = "MaterialLabel1"
+        Me.MaterialLabel1.Size = New System.Drawing.Size(108, 19)
+        Me.MaterialLabel1.TabIndex = 4
+        Me.MaterialLabel1.Text = "MaterialLabel1"
+        '
         'Initialise
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(579, 322)
+        Me.Controls.Add(Me.MaterialLabel1)
         Me.Controls.Add(Me.next_btn)
         Me.Controls.Add(Me.field_conpwd)
         Me.Controls.Add(Me.field_pwd)
@@ -185,16 +172,12 @@ Partial Class Initialise
         Me.Controls.Add(Me.label_pwd)
         Me.Controls.Add(Me.label_uname)
         Me.Controls.Add(Me.accdb_btn)
-        Me.Controls.Add(Me.mdb_btn)
-        Me.Controls.Add(Me.MaterialLabel1)
         Me.Name = "Initialise"
         Me.Text = "Initial Setup"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
-    Friend WithEvents mdb_btn As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents accdb_btn As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents label_uname As MaterialSkin.Controls.MaterialLabel
     Friend WithEvents label_pwd As MaterialSkin.Controls.MaterialLabel
@@ -203,4 +186,5 @@ Partial Class Initialise
     Friend WithEvents field_pwd As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents field_conpwd As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents next_btn As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents MaterialLabel1 As MaterialSkin.Controls.MaterialLabel
 End Class

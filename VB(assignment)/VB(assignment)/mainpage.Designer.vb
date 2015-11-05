@@ -26,22 +26,24 @@ Partial Class mainpage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainpage))
         Me.MaterialTabControl1 = New MaterialSkin.Controls.MaterialTabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.txt_add_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_add_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_add_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_add_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_add_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.txt_add_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.label_add_shipid = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
-        Me.combobox_add_membertype = New System.Windows.Forms.ComboBox()
         Me.Add = New MaterialSkin.Controls.MaterialRaisedButton()
-        Me.MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
-        Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.MaterialLabel29 = New MaterialSkin.Controls.MaterialLabel()
         Me.MaterialLabel1 = New MaterialSkin.Controls.MaterialLabel()
+        Me.txt_add_shipid = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MaterialLabel4 = New MaterialSkin.Controls.MaterialLabel()
+        Me.combobox_add_membertype = New System.Windows.Forms.ComboBox()
+        Me.label_add_shipid = New MaterialSkin.Controls.MaterialLabel()
+        Me.txt_add_id = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_add_email = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MaterialLabel3 = New MaterialSkin.Controls.MaterialLabel()
+        Me.txt_add_cont = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MaterialLabel2 = New MaterialSkin.Controls.MaterialLabel()
+        Me.txt_add_firstname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.txt_add_lastname = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MaterialLabel5 = New MaterialSkin.Controls.MaterialLabel()
+        Me.MaterialLabel6 = New MaterialSkin.Controls.MaterialLabel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.combobox_reup_status = New System.Windows.Forms.ComboBox()
         Me.MaterialLabel53 = New MaterialSkin.Controls.MaterialLabel()
@@ -96,6 +98,41 @@ Partial Class mainpage
         Me.list_due = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.list_pdate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.group_reportpay = New System.Windows.Forms.GroupBox()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.list3_pid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list3_mid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list3_mshipid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list3_paytype = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list3_paid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list3_due = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_reppay = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.label_paysearch = New MaterialSkin.Controls.MaterialLabel()
+        Me.group_payrepsearch = New System.Windows.Forms.GroupBox()
+        Me.radio_reppaypid = New System.Windows.Forms.RadioButton()
+        Me.radio_reppaymid = New System.Windows.Forms.RadioButton()
+        Me.radio_reppaymshipid = New System.Windows.Forms.RadioButton()
+        Me.btn_reportpayall = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.group_reportmem = New System.Windows.Forms.GroupBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.list2_mid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list2_mshipid = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list2_fname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.list2_lname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_repmem = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.btn_reportmemall = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.group_memrepsearch = New System.Windows.Forms.GroupBox()
+        Me.radio_repmemlname = New System.Windows.Forms.RadioButton()
+        Me.radio_repmemfname = New System.Windows.Forms.RadioButton()
+        Me.radio_repmemmid = New System.Windows.Forms.RadioButton()
+        Me.radio_repmemmshipid = New System.Windows.Forms.RadioButton()
+        Me.label_memsearch = New MaterialSkin.Controls.MaterialLabel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btn_reportpayspec = New MaterialSkin.Controls.MaterialRaisedButton()
+        Me.btn_reportmemspec = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.label_uname = New MaterialSkin.Controls.MaterialLabel()
@@ -107,17 +144,20 @@ Partial Class mainpage
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_logout = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialTabSelector1 = New MaterialSkin.Controls.MaterialTabSelector()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.MaterialTabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.tabpgae.SuspendLayout()
         Me.payment_groupbox.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.group_reportpay.SuspendLayout()
+        Me.group_payrepsearch.SuspendLayout()
+        Me.group_reportmem.SuspendLayout()
+        Me.group_memrepsearch.SuspendLayout()
         Me.MaterialContextMenuStrip1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MaterialTabControl1
@@ -149,37 +189,59 @@ Partial Class mainpage
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Add Members"
         '
-        'txt_add_email
+        'Add
         '
-        Me.txt_add_email.Depth = 0
-        Me.txt_add_email.Hint = ""
-        Me.txt_add_email.Location = New System.Drawing.Point(222, 157)
-        Me.txt_add_email.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_add_email.Name = "txt_add_email"
-        Me.txt_add_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_add_email.SelectedText = ""
-        Me.txt_add_email.SelectionLength = 0
-        Me.txt_add_email.SelectionStart = 0
-        Me.txt_add_email.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_email.TabIndex = 6
-        Me.txt_add_email.TabStop = False
-        Me.txt_add_email.UseSystemPasswordChar = False
+        Me.Add.Depth = 0
+        Me.Add.Location = New System.Drawing.Point(363, 301)
+        Me.Add.MouseState = MaterialSkin.MouseState.HOVER
+        Me.Add.Name = "Add"
+        Me.Add.Primary = True
+        Me.Add.Size = New System.Drawing.Size(97, 36)
+        Me.Add.TabIndex = 7
+        Me.Add.Text = "Add"
+        Me.Add.UseVisualStyleBackColor = True
         '
-        'txt_add_cont
+        'GroupBox1
         '
-        Me.txt_add_cont.Depth = 0
-        Me.txt_add_cont.Hint = ""
-        Me.txt_add_cont.Location = New System.Drawing.Point(222, 117)
-        Me.txt_add_cont.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_add_cont.Name = "txt_add_cont"
-        Me.txt_add_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_add_cont.SelectedText = ""
-        Me.txt_add_cont.SelectionLength = 0
-        Me.txt_add_cont.SelectionStart = 0
-        Me.txt_add_cont.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_cont.TabIndex = 5
-        Me.txt_add_cont.TabStop = False
-        Me.txt_add_cont.UseSystemPasswordChar = False
+        Me.GroupBox1.Controls.Add(Me.MaterialLabel29)
+        Me.GroupBox1.Controls.Add(Me.MaterialLabel1)
+        Me.GroupBox1.Controls.Add(Me.txt_add_shipid)
+        Me.GroupBox1.Controls.Add(Me.MaterialLabel4)
+        Me.GroupBox1.Controls.Add(Me.combobox_add_membertype)
+        Me.GroupBox1.Controls.Add(Me.label_add_shipid)
+        Me.GroupBox1.Controls.Add(Me.txt_add_id)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 44)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(350, 195)
+        Me.GroupBox1.TabIndex = 17
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Account information"
+        '
+        'MaterialLabel29
+        '
+        Me.MaterialLabel29.AutoSize = True
+        Me.MaterialLabel29.Depth = 0
+        Me.MaterialLabel29.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel29.Location = New System.Drawing.Point(15, 121)
+        Me.MaterialLabel29.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel29.Name = "MaterialLabel29"
+        Me.MaterialLabel29.Size = New System.Drawing.Size(114, 19)
+        Me.MaterialLabel29.TabIndex = 14
+        Me.MaterialLabel29.Text = "Membership ID:"
+        '
+        'MaterialLabel1
+        '
+        Me.MaterialLabel1.AutoSize = True
+        Me.MaterialLabel1.Depth = 0
+        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel1.Location = New System.Drawing.Point(15, 34)
+        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel1.Name = "MaterialLabel1"
+        Me.MaterialLabel1.Size = New System.Drawing.Size(86, 19)
+        Me.MaterialLabel1.TabIndex = 0
+        Me.MaterialLabel1.Text = "Member ID:"
         '
         'txt_add_shipid
         '
@@ -197,37 +259,44 @@ Partial Class mainpage
         Me.txt_add_shipid.TabStop = False
         Me.txt_add_shipid.UseSystemPasswordChar = False
         '
-        'txt_add_lastname
+        'MaterialLabel4
         '
-        Me.txt_add_lastname.Depth = 0
-        Me.txt_add_lastname.Hint = ""
-        Me.txt_add_lastname.Location = New System.Drawing.Point(222, 77)
-        Me.txt_add_lastname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_add_lastname.Name = "txt_add_lastname"
-        Me.txt_add_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_add_lastname.SelectedText = ""
-        Me.txt_add_lastname.SelectionLength = 0
-        Me.txt_add_lastname.SelectionStart = 0
-        Me.txt_add_lastname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_lastname.TabIndex = 2
-        Me.txt_add_lastname.TabStop = False
-        Me.txt_add_lastname.UseSystemPasswordChar = False
+        Me.MaterialLabel4.AutoSize = True
+        Me.MaterialLabel4.Depth = 0
+        Me.MaterialLabel4.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel4.Location = New System.Drawing.Point(15, 78)
+        Me.MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel4.Name = "MaterialLabel4"
+        Me.MaterialLabel4.Size = New System.Drawing.Size(132, 19)
+        Me.MaterialLabel4.TabIndex = 3
+        Me.MaterialLabel4.Text = "Membership Type:"
         '
-        'txt_add_firstname
+        'combobox_add_membertype
         '
-        Me.txt_add_firstname.Depth = 0
-        Me.txt_add_firstname.Hint = ""
-        Me.txt_add_firstname.Location = New System.Drawing.Point(222, 33)
-        Me.txt_add_firstname.MouseState = MaterialSkin.MouseState.HOVER
-        Me.txt_add_firstname.Name = "txt_add_firstname"
-        Me.txt_add_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_add_firstname.SelectedText = ""
-        Me.txt_add_firstname.SelectionLength = 0
-        Me.txt_add_firstname.SelectionStart = 0
-        Me.txt_add_firstname.Size = New System.Drawing.Size(141, 23)
-        Me.txt_add_firstname.TabIndex = 1
-        Me.txt_add_firstname.TabStop = False
-        Me.txt_add_firstname.UseSystemPasswordChar = False
+        Me.combobox_add_membertype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.combobox_add_membertype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.combobox_add_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.combobox_add_membertype.FormattingEnabled = True
+        Me.combobox_add_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
+        Me.combobox_add_membertype.Location = New System.Drawing.Point(174, 79)
+        Me.combobox_add_membertype.Name = "combobox_add_membertype"
+        Me.combobox_add_membertype.Size = New System.Drawing.Size(141, 21)
+        Me.combobox_add_membertype.TabIndex = 3
+        Me.combobox_add_membertype.TabStop = False
+        '
+        'label_add_shipid
+        '
+        Me.label_add_shipid.AutoSize = True
+        Me.label_add_shipid.Depth = 0
+        Me.label_add_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_add_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_add_shipid.Location = New System.Drawing.Point(170, 126)
+        Me.label_add_shipid.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_add_shipid.Name = "label_add_shipid"
+        Me.label_add_shipid.Size = New System.Drawing.Size(23, 19)
+        Me.label_add_shipid.TabIndex = 16
+        Me.label_add_shipid.Text = "ID"
         '
         'txt_add_id
         '
@@ -245,95 +314,38 @@ Partial Class mainpage
         Me.txt_add_id.TabStop = False
         Me.txt_add_id.UseSystemPasswordChar = False
         '
-        'label_add_shipid
+        'GroupBox2
         '
-        Me.label_add_shipid.AutoSize = True
-        Me.label_add_shipid.Depth = 0
-        Me.label_add_shipid.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.label_add_shipid.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.label_add_shipid.Location = New System.Drawing.Point(170, 126)
-        Me.label_add_shipid.MouseState = MaterialSkin.MouseState.HOVER
-        Me.label_add_shipid.Name = "label_add_shipid"
-        Me.label_add_shipid.Size = New System.Drawing.Size(23, 19)
-        Me.label_add_shipid.TabIndex = 16
-        Me.label_add_shipid.Text = "ID"
+        Me.GroupBox2.Controls.Add(Me.txt_add_email)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel3)
+        Me.GroupBox2.Controls.Add(Me.txt_add_cont)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel2)
+        Me.GroupBox2.Controls.Add(Me.txt_add_firstname)
+        Me.GroupBox2.Controls.Add(Me.txt_add_lastname)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel5)
+        Me.GroupBox2.Controls.Add(Me.MaterialLabel6)
+        Me.GroupBox2.Location = New System.Drawing.Point(410, 44)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(388, 195)
+        Me.GroupBox2.TabIndex = 18
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Member information"
         '
-        'MaterialLabel29
+        'txt_add_email
         '
-        Me.MaterialLabel29.AutoSize = True
-        Me.MaterialLabel29.Depth = 0
-        Me.MaterialLabel29.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel29.Location = New System.Drawing.Point(15, 121)
-        Me.MaterialLabel29.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel29.Name = "MaterialLabel29"
-        Me.MaterialLabel29.Size = New System.Drawing.Size(114, 19)
-        Me.MaterialLabel29.TabIndex = 14
-        Me.MaterialLabel29.Text = "Membership ID:"
-        '
-        'combobox_add_membertype
-        '
-        Me.combobox_add_membertype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.combobox_add_membertype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.combobox_add_membertype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.combobox_add_membertype.FormattingEnabled = True
-        Me.combobox_add_membertype.Items.AddRange(New Object() {"Deluxe", "Non-Deluxe", "Weekday"})
-        Me.combobox_add_membertype.Location = New System.Drawing.Point(174, 79)
-        Me.combobox_add_membertype.Name = "combobox_add_membertype"
-        Me.combobox_add_membertype.Size = New System.Drawing.Size(141, 21)
-        Me.combobox_add_membertype.TabIndex = 3
-        Me.combobox_add_membertype.TabStop = False
-        '
-        'Add
-        '
-        Me.Add.Depth = 0
-        Me.Add.Location = New System.Drawing.Point(363, 301)
-        Me.Add.MouseState = MaterialSkin.MouseState.HOVER
-        Me.Add.Name = "Add"
-        Me.Add.Primary = True
-        Me.Add.Size = New System.Drawing.Size(97, 36)
-        Me.Add.TabIndex = 7
-        Me.Add.Text = "Add"
-        Me.Add.UseVisualStyleBackColor = True
-        '
-        'MaterialLabel6
-        '
-        Me.MaterialLabel6.AutoSize = True
-        Me.MaterialLabel6.Depth = 0
-        Me.MaterialLabel6.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel6.Location = New System.Drawing.Point(6, 157)
-        Me.MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel6.Name = "MaterialLabel6"
-        Me.MaterialLabel6.Size = New System.Drawing.Size(114, 19)
-        Me.MaterialLabel6.TabIndex = 5
-        Me.MaterialLabel6.Text = "E-mail Address:"
-        '
-        'MaterialLabel5
-        '
-        Me.MaterialLabel5.AutoSize = True
-        Me.MaterialLabel5.Depth = 0
-        Me.MaterialLabel5.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel5.Location = New System.Drawing.Point(6, 117)
-        Me.MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel5.Name = "MaterialLabel5"
-        Me.MaterialLabel5.Size = New System.Drawing.Size(123, 19)
-        Me.MaterialLabel5.TabIndex = 4
-        Me.MaterialLabel5.Text = "Contact Number:"
-        '
-        'MaterialLabel4
-        '
-        Me.MaterialLabel4.AutoSize = True
-        Me.MaterialLabel4.Depth = 0
-        Me.MaterialLabel4.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel4.Location = New System.Drawing.Point(15, 78)
-        Me.MaterialLabel4.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel4.Name = "MaterialLabel4"
-        Me.MaterialLabel4.Size = New System.Drawing.Size(132, 19)
-        Me.MaterialLabel4.TabIndex = 3
-        Me.MaterialLabel4.Text = "Membership Type:"
+        Me.txt_add_email.Depth = 0
+        Me.txt_add_email.Hint = ""
+        Me.txt_add_email.Location = New System.Drawing.Point(222, 157)
+        Me.txt_add_email.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_email.Name = "txt_add_email"
+        Me.txt_add_email.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_email.SelectedText = ""
+        Me.txt_add_email.SelectionLength = 0
+        Me.txt_add_email.SelectionStart = 0
+        Me.txt_add_email.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_email.TabIndex = 6
+        Me.txt_add_email.TabStop = False
+        Me.txt_add_email.UseSystemPasswordChar = False
         '
         'MaterialLabel3
         '
@@ -348,6 +360,22 @@ Partial Class mainpage
         Me.MaterialLabel3.TabIndex = 2
         Me.MaterialLabel3.Text = "Member Last Name:"
         '
+        'txt_add_cont
+        '
+        Me.txt_add_cont.Depth = 0
+        Me.txt_add_cont.Hint = ""
+        Me.txt_add_cont.Location = New System.Drawing.Point(222, 117)
+        Me.txt_add_cont.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_cont.Name = "txt_add_cont"
+        Me.txt_add_cont.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_cont.SelectedText = ""
+        Me.txt_add_cont.SelectionLength = 0
+        Me.txt_add_cont.SelectionStart = 0
+        Me.txt_add_cont.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_cont.TabIndex = 5
+        Me.txt_add_cont.TabStop = False
+        Me.txt_add_cont.UseSystemPasswordChar = False
+        '
         'MaterialLabel2
         '
         Me.MaterialLabel2.AutoSize = True
@@ -361,18 +389,63 @@ Partial Class mainpage
         Me.MaterialLabel2.TabIndex = 1
         Me.MaterialLabel2.Text = "Member First Name:"
         '
-        'MaterialLabel1
+        'txt_add_firstname
         '
-        Me.MaterialLabel1.AutoSize = True
-        Me.MaterialLabel1.Depth = 0
-        Me.MaterialLabel1.Font = New System.Drawing.Font("Roboto", 11.0!)
-        Me.MaterialLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialLabel1.Location = New System.Drawing.Point(15, 34)
-        Me.MaterialLabel1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialLabel1.Name = "MaterialLabel1"
-        Me.MaterialLabel1.Size = New System.Drawing.Size(86, 19)
-        Me.MaterialLabel1.TabIndex = 0
-        Me.MaterialLabel1.Text = "Member ID:"
+        Me.txt_add_firstname.Depth = 0
+        Me.txt_add_firstname.Hint = ""
+        Me.txt_add_firstname.Location = New System.Drawing.Point(222, 33)
+        Me.txt_add_firstname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_firstname.Name = "txt_add_firstname"
+        Me.txt_add_firstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_firstname.SelectedText = ""
+        Me.txt_add_firstname.SelectionLength = 0
+        Me.txt_add_firstname.SelectionStart = 0
+        Me.txt_add_firstname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_firstname.TabIndex = 1
+        Me.txt_add_firstname.TabStop = False
+        Me.txt_add_firstname.UseSystemPasswordChar = False
+        '
+        'txt_add_lastname
+        '
+        Me.txt_add_lastname.Depth = 0
+        Me.txt_add_lastname.Hint = ""
+        Me.txt_add_lastname.Location = New System.Drawing.Point(222, 77)
+        Me.txt_add_lastname.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_add_lastname.Name = "txt_add_lastname"
+        Me.txt_add_lastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_add_lastname.SelectedText = ""
+        Me.txt_add_lastname.SelectionLength = 0
+        Me.txt_add_lastname.SelectionStart = 0
+        Me.txt_add_lastname.Size = New System.Drawing.Size(141, 23)
+        Me.txt_add_lastname.TabIndex = 2
+        Me.txt_add_lastname.TabStop = False
+        Me.txt_add_lastname.UseSystemPasswordChar = False
+        '
+        'MaterialLabel5
+        '
+        Me.MaterialLabel5.AutoSize = True
+        Me.MaterialLabel5.Depth = 0
+        Me.MaterialLabel5.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel5.Location = New System.Drawing.Point(6, 117)
+        Me.MaterialLabel5.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel5.Name = "MaterialLabel5"
+        Me.MaterialLabel5.Size = New System.Drawing.Size(123, 19)
+        Me.MaterialLabel5.TabIndex = 4
+        Me.MaterialLabel5.Text = "Contact Number:"
+        '
+        'MaterialLabel6
+        '
+        Me.MaterialLabel6.AutoSize = True
+        Me.MaterialLabel6.Depth = 0
+        Me.MaterialLabel6.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.MaterialLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialLabel6.Location = New System.Drawing.Point(6, 157)
+        Me.MaterialLabel6.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialLabel6.Name = "MaterialLabel6"
+        Me.MaterialLabel6.Size = New System.Drawing.Size(114, 19)
+        Me.MaterialLabel6.TabIndex = 5
+        Me.MaterialLabel6.Text = "E-mail Address:"
         '
         'TabPage2
         '
@@ -978,6 +1051,7 @@ Partial Class mainpage
         '
         Me.payment_listview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list_pid, Me.list_mid, Me.list_mship_id, Me.list_doe, Me.list_log, Me.list_desc, Me.list_paytype, Me.list_paid, Me.list_due, Me.list_pdate})
         Me.payment_listview.Location = New System.Drawing.Point(8, 172)
+        Me.payment_listview.MultiSelect = False
         Me.payment_listview.Name = "payment_listview"
         Me.payment_listview.Size = New System.Drawing.Size(811, 294)
         Me.payment_listview.TabIndex = 0
@@ -1036,12 +1110,376 @@ Partial Class mainpage
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.group_reportpay)
+        Me.TabPage4.Controls.Add(Me.group_reportmem)
+        Me.TabPage4.Controls.Add(Me.btn_reportpayspec)
+        Me.TabPage4.Controls.Add(Me.btn_reportmemspec)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Size = New System.Drawing.Size(829, 474)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Report"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'group_reportpay
+        '
+        Me.group_reportpay.BackColor = System.Drawing.Color.White
+        Me.group_reportpay.Controls.Add(Me.ListView2)
+        Me.group_reportpay.Controls.Add(Me.Label4)
+        Me.group_reportpay.Controls.Add(Me.txt_reppay)
+        Me.group_reportpay.Controls.Add(Me.label_paysearch)
+        Me.group_reportpay.Controls.Add(Me.group_payrepsearch)
+        Me.group_reportpay.Controls.Add(Me.btn_reportpayall)
+        Me.group_reportpay.Controls.Add(Me.Label2)
+        Me.group_reportpay.Location = New System.Drawing.Point(435, 27)
+        Me.group_reportpay.Name = "group_reportpay"
+        Me.group_reportpay.Size = New System.Drawing.Size(362, 403)
+        Me.group_reportpay.TabIndex = 1
+        Me.group_reportpay.TabStop = False
+        '
+        'ListView2
+        '
+        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list3_pid, Me.list3_mid, Me.list3_mshipid, Me.list3_paytype, Me.list3_paid, Me.list3_due})
+        Me.ListView2.Location = New System.Drawing.Point(6, 255)
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(350, 142)
+        Me.ListView2.TabIndex = 9
+        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.ListView2.View = System.Windows.Forms.View.Details
+        '
+        'list3_pid
+        '
+        Me.list3_pid.Text = "Payment ID"
+        Me.list3_pid.Width = 100
+        '
+        'list3_mid
+        '
+        Me.list3_mid.Text = "Member ID"
+        Me.list3_mid.Width = 100
+        '
+        'list3_mshipid
+        '
+        Me.list3_mshipid.Text = "Membership ID"
+        Me.list3_mshipid.Width = 100
+        '
+        'list3_paytype
+        '
+        Me.list3_paytype.Text = "Payment Type"
+        Me.list3_paytype.Width = 100
+        '
+        'list3_paid
+        '
+        Me.list3_paid.Text = "Total Paid"
+        Me.list3_paid.Width = 100
+        '
+        'list3_due
+        '
+        Me.list3_due.Text = "Amount Due"
+        Me.list3_due.Width = 100
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(3, 239)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(75, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Example view:"
+        '
+        'txt_reppay
+        '
+        Me.txt_reppay.Depth = 0
+        Me.txt_reppay.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.txt_reppay.Hint = ""
+        Me.txt_reppay.Location = New System.Drawing.Point(69, 213)
+        Me.txt_reppay.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_reppay.Name = "txt_reppay"
+        Me.txt_reppay.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_reppay.SelectedText = ""
+        Me.txt_reppay.SelectionLength = 0
+        Me.txt_reppay.SelectionStart = 0
+        Me.txt_reppay.Size = New System.Drawing.Size(233, 23)
+        Me.txt_reppay.TabIndex = 7
+        Me.txt_reppay.UseSystemPasswordChar = False
+        Me.txt_reppay.Visible = False
+        '
+        'label_paysearch
+        '
+        Me.label_paysearch.AutoSize = True
+        Me.label_paysearch.Depth = 0
+        Me.label_paysearch.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_paysearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_paysearch.Location = New System.Drawing.Point(55, 191)
+        Me.label_paysearch.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_paysearch.Name = "label_paysearch"
+        Me.label_paysearch.Size = New System.Drawing.Size(59, 19)
+        Me.label_paysearch.TabIndex = 6
+        Me.label_paysearch.Text = "Search:"
+        Me.label_paysearch.Visible = False
+        '
+        'group_payrepsearch
+        '
+        Me.group_payrepsearch.Controls.Add(Me.radio_reppaypid)
+        Me.group_payrepsearch.Controls.Add(Me.radio_reppaymid)
+        Me.group_payrepsearch.Controls.Add(Me.radio_reppaymshipid)
+        Me.group_payrepsearch.Location = New System.Drawing.Point(47, 118)
+        Me.group_payrepsearch.Name = "group_payrepsearch"
+        Me.group_payrepsearch.Size = New System.Drawing.Size(273, 41)
+        Me.group_payrepsearch.TabIndex = 4
+        Me.group_payrepsearch.TabStop = False
+        Me.group_payrepsearch.Text = "Search By:"
+        '
+        'radio_reppaypid
+        '
+        Me.radio_reppaypid.AutoSize = True
+        Me.radio_reppaypid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_reppaypid.Location = New System.Drawing.Point(191, 18)
+        Me.radio_reppaypid.Name = "radio_reppaypid"
+        Me.radio_reppaypid.Size = New System.Drawing.Size(80, 17)
+        Me.radio_reppaypid.TabIndex = 3
+        Me.radio_reppaypid.TabStop = True
+        Me.radio_reppaypid.Text = "Payment ID"
+        Me.radio_reppaypid.UseVisualStyleBackColor = True
+        '
+        'radio_reppaymid
+        '
+        Me.radio_reppaymid.AutoSize = True
+        Me.radio_reppaymid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_reppaymid.Location = New System.Drawing.Point(6, 18)
+        Me.radio_reppaymid.Name = "radio_reppaymid"
+        Me.radio_reppaymid.Size = New System.Drawing.Size(77, 17)
+        Me.radio_reppaymid.TabIndex = 2
+        Me.radio_reppaymid.TabStop = True
+        Me.radio_reppaymid.Text = "Member ID"
+        Me.radio_reppaymid.UseVisualStyleBackColor = True
+        '
+        'radio_reppaymshipid
+        '
+        Me.radio_reppaymshipid.AutoSize = True
+        Me.radio_reppaymshipid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_reppaymshipid.Location = New System.Drawing.Point(89, 18)
+        Me.radio_reppaymshipid.Name = "radio_reppaymshipid"
+        Me.radio_reppaymshipid.Size = New System.Drawing.Size(96, 17)
+        Me.radio_reppaymshipid.TabIndex = 2
+        Me.radio_reppaymshipid.TabStop = True
+        Me.radio_reppaymshipid.Text = "Membership ID"
+        Me.radio_reppaymshipid.UseVisualStyleBackColor = True
+        '
+        'btn_reportpayall
+        '
+        Me.btn_reportpayall.Depth = 0
+        Me.btn_reportpayall.Location = New System.Drawing.Point(136, 47)
+        Me.btn_reportpayall.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_reportpayall.Name = "btn_reportpayall"
+        Me.btn_reportpayall.Primary = True
+        Me.btn_reportpayall.Size = New System.Drawing.Size(106, 40)
+        Me.btn_reportpayall.TabIndex = 6
+        Me.btn_reportpayall.Text = "Generate All"
+        Me.btn_reportpayall.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label2.Location = New System.Drawing.Point(6, 16)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(158, 28)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Payment Report"
+        '
+        'group_reportmem
+        '
+        Me.group_reportmem.BackColor = System.Drawing.Color.White
+        Me.group_reportmem.Controls.Add(Me.ListView1)
+        Me.group_reportmem.Controls.Add(Me.Label3)
+        Me.group_reportmem.Controls.Add(Me.txt_repmem)
+        Me.group_reportmem.Controls.Add(Me.btn_reportmemall)
+        Me.group_reportmem.Controls.Add(Me.group_memrepsearch)
+        Me.group_reportmem.Controls.Add(Me.label_memsearch)
+        Me.group_reportmem.Controls.Add(Me.Label1)
+        Me.group_reportmem.Location = New System.Drawing.Point(33, 27)
+        Me.group_reportmem.Name = "group_reportmem"
+        Me.group_reportmem.Size = New System.Drawing.Size(362, 403)
+        Me.group_reportmem.TabIndex = 0
+        Me.group_reportmem.TabStop = False
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.list2_mid, Me.list2_mshipid, Me.list2_fname, Me.list2_lname})
+        Me.ListView1.Location = New System.Drawing.Point(6, 255)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(350, 142)
+        Me.ListView1.TabIndex = 8
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'list2_mid
+        '
+        Me.list2_mid.Text = "Member ID"
+        Me.list2_mid.Width = 85
+        '
+        'list2_mshipid
+        '
+        Me.list2_mshipid.Text = "Membership ID"
+        Me.list2_mshipid.Width = 85
+        '
+        'list2_fname
+        '
+        Me.list2_fname.Text = "First Name"
+        Me.list2_fname.Width = 85
+        '
+        'list2_lname
+        '
+        Me.list2_lname.Text = "Last Name"
+        Me.list2_lname.Width = 85
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(3, 239)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(75, 13)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Example view:"
+        '
+        'txt_repmem
+        '
+        Me.txt_repmem.Depth = 0
+        Me.txt_repmem.Hint = ""
+        Me.txt_repmem.Location = New System.Drawing.Point(67, 213)
+        Me.txt_repmem.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txt_repmem.Name = "txt_repmem"
+        Me.txt_repmem.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_repmem.SelectedText = ""
+        Me.txt_repmem.SelectionLength = 0
+        Me.txt_repmem.SelectionStart = 0
+        Me.txt_repmem.Size = New System.Drawing.Size(233, 23)
+        Me.txt_repmem.TabIndex = 6
+        Me.txt_repmem.UseSystemPasswordChar = False
+        Me.txt_repmem.Visible = False
+        '
+        'btn_reportmemall
+        '
+        Me.btn_reportmemall.Depth = 0
+        Me.btn_reportmemall.Location = New System.Drawing.Point(128, 47)
+        Me.btn_reportmemall.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_reportmemall.Name = "btn_reportmemall"
+        Me.btn_reportmemall.Primary = True
+        Me.btn_reportmemall.Size = New System.Drawing.Size(106, 40)
+        Me.btn_reportmemall.TabIndex = 3
+        Me.btn_reportmemall.Text = "Generate All"
+        Me.btn_reportmemall.UseVisualStyleBackColor = True
+        '
+        'group_memrepsearch
+        '
+        Me.group_memrepsearch.Controls.Add(Me.radio_repmemlname)
+        Me.group_memrepsearch.Controls.Add(Me.radio_repmemfname)
+        Me.group_memrepsearch.Controls.Add(Me.radio_repmemmid)
+        Me.group_memrepsearch.Controls.Add(Me.radio_repmemmshipid)
+        Me.group_memrepsearch.Location = New System.Drawing.Point(49, 118)
+        Me.group_memrepsearch.Name = "group_memrepsearch"
+        Me.group_memrepsearch.Size = New System.Drawing.Size(269, 70)
+        Me.group_memrepsearch.TabIndex = 2
+        Me.group_memrepsearch.TabStop = False
+        Me.group_memrepsearch.Text = "Search By:"
+        '
+        'radio_repmemlname
+        '
+        Me.radio_repmemlname.AutoSize = True
+        Me.radio_repmemlname.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_repmemlname.Location = New System.Drawing.Point(6, 41)
+        Me.radio_repmemlname.Name = "radio_repmemlname"
+        Me.radio_repmemlname.Size = New System.Drawing.Size(76, 17)
+        Me.radio_repmemlname.TabIndex = 4
+        Me.radio_repmemlname.TabStop = True
+        Me.radio_repmemlname.Text = "Last Name"
+        Me.radio_repmemlname.UseVisualStyleBackColor = True
+        '
+        'radio_repmemfname
+        '
+        Me.radio_repmemfname.AutoSize = True
+        Me.radio_repmemfname.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_repmemfname.Location = New System.Drawing.Point(191, 18)
+        Me.radio_repmemfname.Name = "radio_repmemfname"
+        Me.radio_repmemfname.Size = New System.Drawing.Size(75, 17)
+        Me.radio_repmemfname.TabIndex = 3
+        Me.radio_repmemfname.TabStop = True
+        Me.radio_repmemfname.Text = "First Name"
+        Me.radio_repmemfname.UseVisualStyleBackColor = True
+        '
+        'radio_repmemmid
+        '
+        Me.radio_repmemmid.AutoSize = True
+        Me.radio_repmemmid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_repmemmid.Location = New System.Drawing.Point(6, 18)
+        Me.radio_repmemmid.Name = "radio_repmemmid"
+        Me.radio_repmemmid.Size = New System.Drawing.Size(77, 17)
+        Me.radio_repmemmid.TabIndex = 2
+        Me.radio_repmemmid.TabStop = True
+        Me.radio_repmemmid.Text = "Member ID"
+        Me.radio_repmemmid.UseVisualStyleBackColor = True
+        '
+        'radio_repmemmshipid
+        '
+        Me.radio_repmemmshipid.AutoSize = True
+        Me.radio_repmemmshipid.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.radio_repmemmshipid.Location = New System.Drawing.Point(89, 18)
+        Me.radio_repmemmshipid.Name = "radio_repmemmshipid"
+        Me.radio_repmemmshipid.Size = New System.Drawing.Size(96, 17)
+        Me.radio_repmemmshipid.TabIndex = 2
+        Me.radio_repmemmshipid.TabStop = True
+        Me.radio_repmemmshipid.Text = "Membership ID"
+        Me.radio_repmemmshipid.UseVisualStyleBackColor = True
+        '
+        'label_memsearch
+        '
+        Me.label_memsearch.AutoSize = True
+        Me.label_memsearch.Depth = 0
+        Me.label_memsearch.Font = New System.Drawing.Font("Roboto", 11.0!)
+        Me.label_memsearch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.label_memsearch.Location = New System.Drawing.Point(54, 191)
+        Me.label_memsearch.MouseState = MaterialSkin.MouseState.HOVER
+        Me.label_memsearch.Name = "label_memsearch"
+        Me.label_memsearch.Size = New System.Drawing.Size(59, 19)
+        Me.label_memsearch.TabIndex = 1
+        Me.label_memsearch.Text = "Search:"
+        Me.label_memsearch.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(158, 28)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Members Report"
+        '
+        'btn_reportpayspec
+        '
+        Me.btn_reportpayspec.Depth = 0
+        Me.btn_reportpayspec.Location = New System.Drawing.Point(571, 427)
+        Me.btn_reportpayspec.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_reportpayspec.Name = "btn_reportpayspec"
+        Me.btn_reportpayspec.Primary = True
+        Me.btn_reportpayspec.Size = New System.Drawing.Size(106, 26)
+        Me.btn_reportpayspec.TabIndex = 7
+        Me.btn_reportpayspec.Text = "Find Specific"
+        Me.btn_reportpayspec.UseVisualStyleBackColor = True
+        Me.btn_reportpayspec.Visible = False
+        '
+        'btn_reportmemspec
+        '
+        Me.btn_reportmemspec.Depth = 0
+        Me.btn_reportmemspec.Location = New System.Drawing.Point(161, 427)
+        Me.btn_reportmemspec.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btn_reportmemspec.Name = "btn_reportmemspec"
+        Me.btn_reportmemspec.Primary = True
+        Me.btn_reportmemspec.Size = New System.Drawing.Size(106, 26)
+        Me.btn_reportmemspec.TabIndex = 4
+        Me.btn_reportmemspec.Text = "Find Specific"
+        Me.btn_reportmemspec.UseVisualStyleBackColor = True
+        Me.btn_reportmemspec.Visible = False
         '
         'MaterialContextMenuStrip1
         '
@@ -1166,39 +1604,6 @@ Partial Class mainpage
         Me.MaterialTabSelector1.TabIndex = 25
         Me.MaterialTabSelector1.Text = "MaterialTabSelector1"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.MaterialLabel29)
-        Me.GroupBox1.Controls.Add(Me.MaterialLabel1)
-        Me.GroupBox1.Controls.Add(Me.txt_add_shipid)
-        Me.GroupBox1.Controls.Add(Me.MaterialLabel4)
-        Me.GroupBox1.Controls.Add(Me.combobox_add_membertype)
-        Me.GroupBox1.Controls.Add(Me.label_add_shipid)
-        Me.GroupBox1.Controls.Add(Me.txt_add_id)
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 44)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(350, 195)
-        Me.GroupBox1.TabIndex = 17
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Account information"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.txt_add_email)
-        Me.GroupBox2.Controls.Add(Me.MaterialLabel3)
-        Me.GroupBox2.Controls.Add(Me.txt_add_cont)
-        Me.GroupBox2.Controls.Add(Me.MaterialLabel2)
-        Me.GroupBox2.Controls.Add(Me.txt_add_firstname)
-        Me.GroupBox2.Controls.Add(Me.txt_add_lastname)
-        Me.GroupBox2.Controls.Add(Me.MaterialLabel5)
-        Me.GroupBox2.Controls.Add(Me.MaterialLabel6)
-        Me.GroupBox2.Location = New System.Drawing.Point(410, 44)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(388, 195)
-        Me.GroupBox2.TabIndex = 18
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Account information"
-        '
         'mainpage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
@@ -1217,19 +1622,28 @@ Partial Class mainpage
         Me.Text = "Main Page"
         Me.MaterialTabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.tabpgae.ResumeLayout(False)
         Me.tabpgae.PerformLayout()
         Me.payment_groupbox.ResumeLayout(False)
         Me.payment_groupbox.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
+        Me.group_reportpay.ResumeLayout(False)
+        Me.group_reportpay.PerformLayout()
+        Me.group_payrepsearch.ResumeLayout(False)
+        Me.group_payrepsearch.PerformLayout()
+        Me.group_reportmem.ResumeLayout(False)
+        Me.group_reportmem.PerformLayout()
+        Me.group_memrepsearch.ResumeLayout(False)
+        Me.group_memrepsearch.PerformLayout()
         Me.MaterialContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1318,4 +1732,39 @@ Partial Class mainpage
     Friend WithEvents list_paytype As System.Windows.Forms.ColumnHeader
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents group_reportmem As System.Windows.Forms.GroupBox
+    Friend WithEvents group_reportpay As System.Windows.Forms.GroupBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents label_memsearch As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents group_payrepsearch As System.Windows.Forms.GroupBox
+    Friend WithEvents radio_reppaypid As System.Windows.Forms.RadioButton
+    Friend WithEvents radio_reppaymid As System.Windows.Forms.RadioButton
+    Friend WithEvents radio_reppaymshipid As System.Windows.Forms.RadioButton
+    Friend WithEvents group_memrepsearch As System.Windows.Forms.GroupBox
+    Friend WithEvents radio_repmemmid As System.Windows.Forms.RadioButton
+    Friend WithEvents radio_repmemmshipid As System.Windows.Forms.RadioButton
+    Friend WithEvents txt_reppay As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents label_paysearch As MaterialSkin.Controls.MaterialLabel
+    Friend WithEvents btn_reportpayspec As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_reportpayall As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents txt_repmem As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents btn_reportmemspec As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents btn_reportmemall As MaterialSkin.Controls.MaterialRaisedButton
+    Friend WithEvents radio_repmemlname As System.Windows.Forms.RadioButton
+    Friend WithEvents radio_repmemfname As System.Windows.Forms.RadioButton
+    Friend WithEvents ListView2 As System.Windows.Forms.ListView
+    Friend WithEvents list3_pid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list3_mid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list3_mshipid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list3_paytype As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list3_paid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list3_due As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents list2_mid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list2_mshipid As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list2_fname As System.Windows.Forms.ColumnHeader
+    Friend WithEvents list2_lname As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

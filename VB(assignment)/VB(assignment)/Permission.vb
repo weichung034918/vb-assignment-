@@ -5,6 +5,7 @@ Imports System.Data.OleDb
 Public Class Permission
     Dim da As OleDbDataAdapter
     Dim ds As New DataSet
+    Dim useracc As New DataTable("useracc")
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -18,11 +19,10 @@ Public Class Permission
     End Class
 
     Private Sub Permission_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim skinmanager As MaterialSkin.MaterialSkinManager = MaterialSkinManager.Instance
-        skinmanager.AddFormToManage(Me)
-        skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
-        skinmanager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepPurple100, TextShade.WHITE)
-
+        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+        SkinManager.AddFormToManage(Me)
+        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+        SkinManager.ColorScheme = New ColorScheme(Primary.Blue700, Primary.Blue900, Primary.DeepPurple700, Accent.Cyan400, TextShade.WHITE)
         txt_uname.Width = 150
         txt_pwd.Width = 150
         txt_conpwd.Width = 150
@@ -71,10 +71,14 @@ Public Class Permission
         currec = 0
         usertext()
 
+        sql = "select * from Admin where Username='" & mainpage.label_uname.Text & "'"
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(useracc)
+
     End Sub
 
-    Private Sub txt_myset_TextChanged(sender As Object, e As EventArgs) Handles txt_myset_uname.TextChanged, txt_myset_pwd.TextChanged, txt_myset_conpwd.TextChanged
-        If txt_myset_uname.TextLength > 0 AndAlso txt_myset_pwd.TextLength > 0 AndAlso txt_myset_conpwd.TextLength > 0 Then
+    Private Sub txt_myset_TextChanged(sender As Object, e As EventArgs) Handles txt_myset_pwd.TextChanged, txt_myset_conpwd.TextChanged, txt_oldpwd.TextChanged
+        If txt_myset_pwd.TextLength > 0 AndAlso txt_myset_conpwd.TextLength > 0 AndAlso txt_oldpwd.TextLength > 0 Then
             btn_myset_update.Visible = True
         Else
             btn_myset_update.Visible = False
@@ -158,8 +162,8 @@ Public Class Permission
             txt_conpwd.Clear()
             ds.Tables("UserSet").Clear()
             da.Fill(ds, "UserSet")
-            txt_edel_uname.Text = ds.Tables("UserSet").Rows(0).Item(0) 'ignoring first row, as it must not be deleted (initial admin)
-            Dim pertype As String = ds.Tables("UserSet").Rows(0).Item(1) 'ignoring first row
+            txt_edel_uname.Text = ds.Tables("UserSet").Rows(0).Item(0)
+            Dim pertype As String = ds.Tables("UserSet").Rows(0).Item(1)
             If pertype = "Admin" Then
                 ComboBox_edel_per.SelectedIndex = 0
             ElseIf pertype = "Staff" Then
@@ -175,16 +179,24 @@ Public Class Permission
     '===================================edit/del user starts=======================================
 
     Private Sub btn_prev_Click(sender As Object, e As EventArgs) Handles btn_prev.Click
-        If currec <> 0 Then
-            currec -= 1
-            usertext()
+        
+        If ds.Tables("UserSet").Rows.Count > 0 Then
+            If currec <> 0 Then
+                currec -= 1
+                usertext()
+            End If
         End If
     End Sub
     Private Sub btn_next_Click(sender As Object, e As EventArgs) Handles btn_next.Click
-        If currec <> ds.Tables("UserSet").Rows.Count - 1 Then
-            currec += 1
-            usertext()
+
+        If ds.Tables("UserSet").Rows.Count > 0 Then
+            If currec <> ds.Tables("UserSet").Rows.Count - 1 Then
+                currec += 1
+                usertext()
+            End If
         End If
+
+
     End Sub
 
     Public Sub usertext()
@@ -234,22 +246,32 @@ Public Class Permission
     End Sub
 
     Private Sub btn_edit_Click(sender As Object, e As EventArgs) Handles btn_edit.Click
-        If txt_edel_conpwd.TextLength > 5 AndAlso txt_edel_pwd.TextLength > 5 AndAlso txt_edel_uname.TextLength > 5 Then
-
-            sql = "UPDATE Admin SET Password='" & txt_edel_pwd.Text & "', Permission='"
-            If ComboBox_edel_per.SelectedIndex = 0 Then
-                sql = sql & ComboBox_edel_per.Items(0).ToString & "' where Username='" & txt_edel_uname.Text & "'"
-            ElseIf ComboBox_edel_per.SelectedIndex = 1 Then
-                sql = sql & ComboBox_edel_per.Items(1).ToString & "' where  Username='" & txt_edel_uname.Text & "'"
-            End If
-        Else
-
+        If txt_edel_uname.Text = mainpage.label_uname.Text Then
+            MessageBox.Show("You cannot edit your own settings here. Please navigate to the next tab.", "Edit User")
+            Return
         End If
+        If txt_edel_conpwd.TextLength > 5 AndAlso txt_edel_pwd.TextLength > 5 AndAlso txt_edel_uname.TextLength > 5 Then
+            If txt_edel_pwd.Text = txt_edel_conpwd.Text Then
 
+
+                sql = "UPDATE Admin SET Password='" & txt_edel_pwd.Text & "', Permission='"
+                If ComboBox_edel_per.SelectedIndex = 0 Then
+                    sql = sql & ComboBox_edel_per.Items(0).ToString & "' where Username='" & txt_edel_uname.Text & "'"
+                ElseIf ComboBox_edel_per.SelectedIndex = 1 Then
+                    sql = sql & ComboBox_edel_per.Items(1).ToString & "' where  Username='" & txt_edel_uname.Text & "'"
+                End If
+            Else
+                MessageBox.Show("Password not match, please try again.", "Password")
+            End If
+        End If
     End Sub
 
     Private Sub btn_del_Click(sender As Object, e As EventArgs) Handles btn_del.Click
         sql = "delete * from Admin where Username='" & txt_edel_uname.Text & "'"
+        If txt_edel_uname.Text = ds.Tables(0).Rows(0).Item(0) Then
+            MessageBox.Show("You cannot delete the initial administrator account.", "Error")
+            Return
+        End If
         If txt_edel_uname.Text = mainpage.label_uname.Text Then
             MessageBox.Show("You cannot delete your own account!", "Error")
             Return
@@ -276,6 +298,22 @@ Public Class Permission
             ComboBox_edel_per.SelectedIndex = 0
         ElseIf pertype = "Staff" Then
             ComboBox_edel_per.SelectedIndex = 1
+        End If
+    End Sub
+
+    Private Sub txt_myset_uname_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btn_myset_update_Click(sender As Object, e As EventArgs) Handles btn_myset_update.Click
+        If useracc.Rows(0).Item(1) <> txt_oldpwd.Text Then
+            MessageBox.Show("The old password you've type does not match the account's password!", "Old Password")
+            Return
+        ElseIf txt_myset_pwd.Text <> txt_myset_conpwd.Text Then
+            MessageBox.Show("Password does not match!", "Password")
+            Return
+        Else
+            sql = "UPDATE Admin SET Password='" & txt_myset_pwd.Text & "' where username='" & useracc.Rows(0).Item(0).ToString & "'"
         End If
     End Sub
 End Class

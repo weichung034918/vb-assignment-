@@ -9,6 +9,10 @@ Public Class mainpage
     Dim dt2 As New DataTable("TempStore")
     Dim dt3 As New DataTable("forlistview")
     Dim dt4 As New DataTable("editpayment")
+    Dim dt5 As New DataTable("listview1")
+    Dim dt6 As New DataTable("listview2")
+    Dim useracc As New DataTable("useracc")
+    Dim cache As New DataTable("cache")
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -16,6 +20,7 @@ Public Class mainpage
     Dim sql As String
     Dim totrec As Integer
     Dim currec As Integer
+    Dim x As Integer
 
     Partial Class mainpage
         Inherits MaterialSkin.Controls.MaterialForm
@@ -24,10 +29,10 @@ Public Class mainpage
 
     Private Sub mainpage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         
-        Dim skinmanager As MaterialSkin.MaterialSkinManager = MaterialSkinManager.Instance
-        skinmanager.AddFormToManage(Me)
-        skinmanager.Theme = MaterialSkinManager.Themes.LIGHT
-        skinmanager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepPurple100, TextShade.WHITE)
+        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+        SkinManager.AddFormToManage(Me)
+        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+        SkinManager.ColorScheme = New ColorScheme(Primary.Blue700, Primary.Blue900, Primary.DeepPurple700, Accent.Cyan400, TextShade.WHITE)
 
         Try
             con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
@@ -52,11 +57,14 @@ Public Class mainpage
                 End Try
             End Try
         End Try
-
         ds.Tables.Add(dt)
         ds.Tables.Add(dt2)
         ds.Tables.Add(dt3)
         ds.Tables.Add(dt4)
+        ds.Tables.Add(dt5)
+        ds.Tables.Add(dt6)
+        ds.Tables.Add(useracc)
+        ds.Tables.Add(cache)
         listviewrec()
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
@@ -68,7 +76,7 @@ Public Class mainpage
         btn_last.Left = 595 + 141 - btn_last.Width
         btn_last.Top = btn_first.Top
         btn_prev.Left = btn_first.Left + btn_first.Width + 13
-        btn_prev.Top = MaterialLabel8.Top + 39
+        btn_prev.Top = btn_first.Top
         btn_next.Left = btn_prev.Left + btn_prev.Width + 13
         btn_next.Top = btn_first.Top
         btn_remove.Left = 396 + ((btn_last.Left + btn_last.Width - 396) / 2) - (btn_remove.Width / 2)
@@ -76,8 +84,25 @@ Public Class mainpage
         btn_remove.Top = btn_first.Top + 39
         btn_update.Left = btn_remove.Left
         btn_update.Top = btn_remove.Top
-        
-        
+
+
+        useracc.Clear()
+        sql = "select * from Admin where Username='" & label_uname.Text & "'"
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(useracc)
+        If useracc.Rows.Count = 0 Then
+            Return
+        End If
+
+        If useracc.Rows(0).Item(2) = "Admin" Then
+            MaterialContextMenuStrip1.Enabled = True
+        ElseIf useracc.Rows(0).Item(2) = "Staff" Then
+            MaterialContextMenuStrip1.Enabled = False
+        Else
+            Return
+        End If
+
+        MessageBox.Show("Welcome " & label_uname.Text & "!", "Welcome")
 
     End Sub
     Private Sub PermissionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PermissionToolStripMenuItem.Click
@@ -136,19 +161,25 @@ Public Class mainpage
     '-------------------------------Add member function starts-------------------------------------
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
         If String.IsNullOrEmpty(txt_add_id.Text) Then
-            MsgBox("Please enter member ID")
+            MsgBox("Please enter member ID.", MsgBoxStyle.OkOnly, "Empty Field")
             Return
         ElseIf String.IsNullOrEmpty(txt_add_firstname.Text) Then
-            MsgBox("Please enter first name")
+            MsgBox("Please enter first name.", MsgBoxStyle.OkOnly, "Empty Field")
             Return
         ElseIf String.IsNullOrEmpty(txt_add_lastname.Text) Then
-            MsgBox("Please enter last name")
+            MsgBox("Please enter last name.", MsgBoxStyle.OkOnly, "Empty Field")
             Return
         ElseIf String.IsNullOrEmpty(combobox_add_membertype.Text) Then
-            MsgBox("Please select member type")
+            MsgBox("Please select member type.", MsgBoxStyle.OkOnly, "Empty Field")
             Return
         ElseIf String.IsNullOrEmpty(txt_add_shipid.Text) Then
-            MsgBox("Please insert Membership ID ")
+            MsgBox("Please enter Membership ID.", MsgBoxStyle.OkOnly, "Empty Field")
+            Return
+        ElseIf String.IsNullOrEmpty(txt_add_cont.Text) Then
+            MsgBox("Please enter contact number.", MsgBoxStyle.OkOnly, "Empty Field")
+            Return
+        ElseIf String.IsNullOrEmpty(txt_add_email.Text) Then
+            MsgBox("Please enter E-mail address.", MsgBoxStyle.OkOnly, "Empty Field")
             Return
         End If
         sql = "select M.MID, M.Contact_number, M.Email, Ms.MSHIP_ID from Members M " &
@@ -172,7 +203,7 @@ Public Class mainpage
             End If
         Next
 
-        sql = "insert into Members values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
+        sql = "insert into Members(MID, First_Name, Last_Name, Contact_Number, Email, Status, Date_Of_Entry) values ('" & txt_add_id.Text & "', '" & txt_add_firstname.Text & "', '" &
             txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active', '" & label_date.Text & "')"
         cmd = New OleDbCommand(sql, con)
         Try
@@ -195,6 +226,16 @@ Public Class mainpage
             MessageBox.Show("Please select only one of the 3 membership types.", "Membership Type")
             Return
         End If
+        cmd = New OleDbCommand(sql, con)
+        Try
+            MessageBox.Show(sql, "Debug purpose")
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+            Return
+        End Try
+
+        sql = "UPDATE Members set MSHIP_ID='" & label_add_shipid.Text & txt_add_shipid.Text & "' where MID='" & txt_add_id.Text & "'"
         cmd = New OleDbCommand(sql, con)
         Try
             MessageBox.Show(sql, "Debug purpose")
@@ -443,6 +484,11 @@ Public Class mainpage
                 "INNER JOIN Membership Ms on M.MID=Ms.MID where M.Last_Name='" & txt_reup_search.Text & "'"
 
         ElseIf combobox_reup_search.SelectedIndex = 3 Then
+            For i = 0 To 7
+                If txt_reup_search.TextLength < 8 Then
+                    txt_reup_search.Text = "0" + txt_reup_search.Text
+                End If
+            Next
             sql = "select M.*, Ms.MSHIP_ID, Ms.Member_Type from Members as M " &
                 "INNER JOIN Membership as Ms on M.MID=Ms.MID where Ms.MSHIP_ID='" & txt_reup_search.Text & "'"
         Else
@@ -476,13 +522,13 @@ Public Class mainpage
             MessageBox.Show("Member list is empty.", "No members found.")
             Return
         End If
-        MsgBox(ds.Tables("TempSet").Rows.Count) ' debug
+        MsgBox(ds.Tables("TempSet").Rows.Count) ' debug purpose
         txt_reup_id.Text = ds.Tables("TempSet").Rows(0).Item(0)
-        Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(7)
+        Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(8)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
         txt_reup_firstname.Text = ds.Tables("TempSet").Rows(0).Item(1)
         txt_reup_lastname.Text = ds.Tables("TempSet").Rows(0).Item(2)
-        Dim mtype As String = ds.Tables("TempSet").Rows(0).Item(8)
+        Dim mtype As String = ds.Tables("TempSet").Rows(0).Item(9)
         If mtype = "Deluxe" Then
             combobox_reup_membertype.SelectedIndex = 0
         ElseIf mtype = "Non-Deluxe" Then
@@ -527,11 +573,11 @@ Public Class mainpage
 
     Public Sub addset2() 'for prev, next, last
         txt_reup_id.Text = ds.Tables("TempSet").Rows(currec).Item(0)
-        Dim mshipid As String = ds.Tables("TempSet").Rows(currec).Item(7)
+        Dim mshipid As String = ds.Tables("TempSet").Rows(currec).Item(8)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
         txt_reup_firstname.Text = ds.Tables("TempSet").Rows(currec).Item(1)
         txt_reup_lastname.Text = ds.Tables("TempSet").Rows(currec).Item(2)
-        Dim mtype As String = ds.Tables("TempSet").Rows(currec).Item(8)
+        Dim mtype As String = ds.Tables("TempSet").Rows(currec).Item(9)
         If mtype = "Deluxe" Then
             combobox_reup_membertype.SelectedIndex = 0
         ElseIf mtype = "Non-Deluxe" Then
@@ -664,15 +710,15 @@ Public Class mainpage
 
         If combobox_reup_membertype.SelectedIndex = 0 Then
             sql = sql & combobox_reup_membertype.Items(0).ToString & "', MSHIP_ID='" &
-            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee='500.00', Monthly_Fee='120.00' where MID='" & txt_reup_id.Text & "'"
+            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee=500.00*(106 / 100), Monthly_Fee=120.00*(106 / 100) where MID='" & txt_reup_id.Text & "'"
 
         ElseIf combobox_reup_membertype.SelectedIndex = 1 Then
             sql = sql & combobox_reup_membertype.Items(1).ToString & "', MSHIP_ID='" &
-            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee='300.00', Monthly_Fee='100.00' where MID='" & txt_reup_id.Text & "'"
+            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee=300.00*(106 / 100), Monthly_Fee=100.00*(106 / 100) where MID='" & txt_reup_id.Text & "'"
 
         ElseIf combobox_reup_membertype.SelectedIndex = 2 Then
             sql = sql & combobox_reup_membertype.Items(2).ToString & "', MSHIP_ID='" &
-            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee='180.00', Monthly_Fee='75.00' where MID='" & txt_reup_id.Text & "'"
+            label_reup_shipid.Text & txt_reup_shipid.Text & "', Reg_Fee=180.00*(106 / 100), Monthly_Fee=75.00*(106 / 100) where MID='" & txt_reup_id.Text & "'"
 
         End If
         Try
@@ -815,6 +861,11 @@ Public Class mainpage
     End Sub
 
     Private Sub btn_payedit_Click(sender As Object, e As EventArgs) Handles btn_payedit.Click
+        If label_uname.Text <> payment_listview.SelectedItems(0).SubItems(4).Text Then
+            MessageBox.Show("You cannot edit the payment details logged by other admin/staffs.", "Unauthorized")
+            Return
+        End If
+
         paymentform.btn_add.Visible = False
         paymentform.btn_edit.Visible = True
         paymentform.btn_payedit.Visible = True
@@ -847,11 +898,180 @@ Public Class mainpage
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
         MsgBox("Are you sure you want to logout?", vbYesNo, "Logout")
         If vbYes Then
+            useracc.Clear()
             con.Close()
             login.Show()
             Me.Close()
         ElseIf vbNo Then
             Return
         End If
+    End Sub
+
+    Private Sub btn_reportsmempec_Click(sender As Object, e As EventArgs) Handles btn_reportmemspec.Click
+
+        report.Show()
+        report.ReportViewer1.Refresh()
+        report.ReportViewer1.RefreshReport()
+        If radio_repmemmid.Checked Then
+
+            report.MembersTableAdapter.FillBy(report.databaseDataSet.Members, ListView1.Items(0).SubItems(0).Text)
+
+        ElseIf radio_repmemmshipid.Checked Then
+
+            report.MembersTableAdapter.FillBy1(report.databaseDataSet.Members, ListView1.Items(0).SubItems(1).Text)
+
+        ElseIf radio_repmemfname.Checked Then
+
+            report.MembersTableAdapter.FillBy2(report.databaseDataSet.Members, ListView1.Items(0).SubItems(2).Text)
+
+        ElseIf radio_repmemlname.Checked Then
+
+            report.MembersTableAdapter.FillBy3(report.databaseDataSet.Members, ListView1.Items(0).SubItems(3).Text)
+
+        End If
+
+        report.ReportViewer1.Refresh()
+        report.ReportViewer1.RefreshReport()
+    End Sub
+
+    Private Sub btn_reportmemall_Click(sender As Object, e As EventArgs) Handles btn_reportmemall.Click
+        cache.Clear()
+        sql = "select * from Members"
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(cache)
+        If cache.Rows.Count < 1 Then
+            MessageBox.Show("Nothing to report!", "Empty")
+            Return
+        End If
+
+        report.MembersTableAdapter.GetData()
+        report.Show()
+
+    End Sub
+
+    Private Sub btn_reportpayall_Click(sender As Object, e As EventArgs) Handles btn_reportpayall.Click
+        cache.Clear()
+        sql = "select * from Members"
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(cache)
+        If cache.Rows.Count < 1 Then
+            MessageBox.Show("Nothing to report!", "Empty")
+            Return
+        End If
+
+        reportpayment.PaymentTableAdapter.GetData()
+        reportpayment.Show()
+    End Sub
+
+    Private Sub RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles radio_repmemmid.CheckedChanged, radio_repmemfname.CheckedChanged, radio_repmemlname.CheckedChanged, radio_repmemmshipid.CheckedChanged
+        label_memsearch.Visible = True
+        txt_repmem.Visible = True
+        txt_repmem.Text = Nothing
+    End Sub
+
+    Private Sub radio_reppaymid_CheckedChanged(sender As Object, e As EventArgs) Handles radio_reppaymid.CheckedChanged, radio_reppaymshipid.CheckedChanged, radio_reppaypid.CheckedChanged
+        label_paysearch.Visible = True
+        txt_reppay.Visible = True
+        txt_reppay.Text = Nothing
+    End Sub
+
+    Private Sub txt_repmem_TextChanged(sender As Object, e As EventArgs) Handles txt_repmem.TextChanged
+        
+        If Not txt_repmem.Text = Nothing Then
+            btn_reportmemspec.Visible = True
+            If radio_repmemmid.Checked Then
+                sql = "select MID, MSHIP_ID, First_Name, Last_Name from Members where MID LIKE '%" & txt_repmem.Text & "%'"
+                forlistview1()
+            ElseIf radio_repmemmshipid.Checked Then
+                sql = "select MID, MSHIP_ID, First_Name, Last_Name from Members where MSHIP_ID LIKE '%" & txt_repmem.Text & "%'"
+                forlistview1()
+            ElseIf radio_repmemfname.Checked Then
+                sql = "select MID, MSHIP_ID, First_Name, Last_Name from Members where First_Name LIKE '%" & txt_repmem.Text & "%'"
+                forlistview1()
+            ElseIf radio_repmemlname.Checked Then
+                sql = "select MID, MSHIP_ID, First_Name, Last_Name from Members where Last_Name LIKE '%" & txt_repmem.Text & "%'"
+                forlistview1()
+            End If
+        Else
+            btn_reportmemspec.Visible = False
+        End If
+    End Sub
+
+    Public Sub forlistview1()
+        dt5.Clear()
+        ListView1.Items.Clear()
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(dt5)
+        Dim listrow As DataRow
+        For Each listrow In dt5.Rows
+            ListView1.Items.Add(listrow.Item(0))
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(listrow.Item(1))
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(listrow.Item(2))
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(listrow.Item(3))
+        Next
+    End Sub
+
+    Private Sub txt_reppay_TextChanged(sender As Object, e As EventArgs) Handles txt_reppay.TextChanged
+        
+        If Not txt_reppay.Text = Nothing Then
+            btn_reportpayspec.Visible = True
+            If radio_reppaymid.Checked Then
+                sql = "select PID, MID, MSHIP_ID, Payment_Type, Amount_Paid, Amount_Due from Payment where MID LIKE '%" & txt_reppay.Text & "%'"
+                forlistview2()
+            ElseIf radio_reppaymshipid.Checked Then
+                sql = "select PID, MID, MSHIP_ID, Payment_Type, Amount_Paid, Amount_Due from Payment where MSHIP_ID LIKE '%" & txt_reppay.Text & "%'"
+                forlistview2()
+            ElseIf radio_reppaypid.Checked Then
+                sql = "select PID, MID, MSHIP_ID, Payment_Type, Amount_Paid, Amount_Due from Payment where PID LIKE '%" & txt_reppay.Text & "%'"
+                forlistview2()
+            End If
+        Else
+            btn_reportpayspec.Visible = False
+        End If
+    End Sub
+    Public Sub forlistview2()
+        dt6.Clear()
+        ListView2.Items.Clear()
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(dt6)
+        Dim listrow As DataRow
+        For Each listrow In dt6.Rows
+            ListView2.Items.Add(listrow.Item(0))
+            ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(listrow.Item(1))
+            ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(listrow.Item(2))
+            ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(listrow.Item(3))
+            ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(listrow.Item(4))
+            ListView2.Items(ListView2.Items.Count - 1).SubItems.Add(listrow.Item(5))
+        Next
+    End Sub
+    
+    Private Sub btn_reportpayspec_Click(sender As Object, e As EventArgs) Handles btn_reportpayspec.Click
+        reportpayment.Show()
+        reportpayment.ReportViewer1.Refresh()
+        reportpayment.ReportViewer1.RefreshReport()
+        If radio_reppaymid.Checked Then
+
+            reportpayment.PaymentTableAdapter.FillBy(reportpayment.databaseDataSet1.Payment, ListView2.Items(0).SubItems(1).Text)
+
+        ElseIf radio_reppaymshipid.Checked Then
+
+            reportpayment.PaymentTableAdapter.FillBy(reportpayment.databaseDataSet1.Payment, ListView2.Items(0).SubItems(2).Text)
+
+        ElseIf radio_reppaypid.Checked Then
+
+            reportpayment.PaymentTableAdapter.FillBy(reportpayment.databaseDataSet1.Payment, ListView2.Items(0).SubItems(0).Text)
+
+        End If
+
+        reportpayment.ReportViewer1.Refresh()
+        reportpayment.ReportViewer1.RefreshReport()
+    End Sub
+
+    Private Sub txt_reup_id_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_id.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub txt_reup_shipid_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_reup_shipid.KeyPress
+        e.Handled = True
     End Sub
 End Class

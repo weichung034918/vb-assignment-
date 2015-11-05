@@ -11,9 +11,6 @@ Public Class Initialise
     Dim cmd As New OleDbCommand
     Dim sql As String
 
-
-    
-
     Partial Class Initialise
         Inherits MaterialSkin.Controls.MaterialForm
     End Class
@@ -24,7 +21,6 @@ Public Class Initialise
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
         SkinManager.ColorScheme = New ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.DeepPurple700, Accent.DeepOrange700, TextShade.WHITE)
 
-        MaterialLabel1.ForeColor = Color.BlueViolet
         Me.ClientSize = New System.Drawing.Size(251, 264)
         label_uname.Visible = False
         label_pwd.Visible = False
@@ -32,43 +28,17 @@ Public Class Initialise
         field_uname.Visible = False
         field_pwd.Visible = False
         field_conpwd.Visible = False
+        MaterialLabel1.Visible = False
         btn_appearance() ' :)
 
         If File.Exists(dirdb) Or File.Exists(dirdb2) Then
             login.Show()
             Me.Close()
         Else
-            MessageBox.Show("Please select a suitable access database file extension type.", "Database is not detected")
-            MaterialLabel1.Text = "Select from the following:"
+            MessageBox.Show("Database is not detected. Either place a suitable database in the application directory or click on create database.", "Database is not detected")
         End If
 
-        'add_element() 'debug purpose for the initial create account new_element. I will remove it by myself.
 
-    End Sub
-
-    Private Sub mdb_btn_Click(sender As Object, e As EventArgs) Handles mdb_btn.Click
-        cat.Create("Provider=Microsoft.Jet.OLEDB.4.0;" &
-                    "Data Source=" & dirdb &
-                    ";Jet OLEDB:Engine Type=5")
-        cat = Nothing
-
-        MessageBox.Show("Database has been successfully created. " +
-                        "This type of database is compatible with Microsoft Access 2002 and above.", "Successful!")
-
-        con = New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" &
-                    "Data Source=" & dirdb)
-        Try
-            con.Open()
-            MessageBox.Show("Database is connected.", "Database")
-        Catch ex As Exception
-            MessageBox.Show("Cannot connect to database!", "Database Error")
-        End Try
-
-        Call create_table()
-
-        con.Close()
-
-        add_element()
 
     End Sub
 
@@ -139,7 +109,15 @@ Public Class Initialise
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-        
+
+        cmd = New OleDbCommand("ALTER TABLE [Members] ADD [MSHIP_ID] TEXT(10), CONSTRAINT FKMemberMSHIP_ID FOREIGN KEY (MSHIP_ID) REFERENCES Membership(MSHIP_ID) ON UPDATE CASCADE ON DELETE CASCADE", con)
+
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
         cmd = New OleDbCommand("CREATE TABLE [Payment] ([PID] TEXT(10) PRIMARY KEY, " +
                                "[MID] TEXT(10), CONSTRAINT FKPaymentMID FOREIGN KEY (MID) REFERENCES Members(MID) ON UPDATE CASCADE ON DELETE CASCADE, " +
                                "[MSHIP_ID] TEXT(10), " +
@@ -204,21 +182,21 @@ Public Class Initialise
     End Sub
 
     Private Sub btn_appearance() 'override buttons' appearances in the form of size and position
-        mdb_btn.Width = 200
+
         accdb_btn.Width = 200
-        mdb_btn.Height = 30
+
         accdb_btn.Height = 30
-        mdb_btn.Left = (Me.Width / 2) - (mdb_btn.Width / 2)
+
         accdb_btn.Left = (Me.Width / 2) - (accdb_btn.Width / 2)
     End Sub
 
     Public Sub add_element() 'positioning and sizing elements on the right in design view
-        mdb_btn.Dispose()
+
         accdb_btn.Dispose()
 
         MyBase.Height = 370
         MyBase.Width = 251
-
+        MaterialLabel1.Visible = True
         MaterialLabel1.Text = "Please create a new " & vbNewLine & "administrator account."
 
         label_uname.Location = New Point(13, 130)
