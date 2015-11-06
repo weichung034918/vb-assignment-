@@ -16,4 +16,8 @@ Public Class memtype
         Label12.Text = "No voting and equity Rights" & Environment.NewLine & "No reciprocal  / affiliated Club privileges" & Environment.NewLine & "No Weekend bookings available"
         mainpage.Enabled = False
     End Sub
+
+    Private Sub MaterialLabel3_Click(sender As Object, e As EventArgs) Handles MaterialLabel3.Click
+
+    End Sub
 End Class

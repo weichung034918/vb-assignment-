@@ -24,6 +24,7 @@ Public Class paymentform
     End Sub
 
     Private Sub paymentform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mainpage.Enabled = False
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
         SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
