@@ -161,7 +161,7 @@ Public Class Permission
         Try
             MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
-            MsgBox("User Added!")
+            MsgBox("User Added!", MsgBoxStyle.OkOnly, "Successful")
             txt_uname.Clear()
             txt_pwd.Clear()
             txt_conpwd.Clear()
@@ -285,7 +285,7 @@ Public Class Permission
         Try
             MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
-            MsgBox("Removed!")
+            MsgBox("Removed!", MsgBoxStyle.OkOnly, "Successful")
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")

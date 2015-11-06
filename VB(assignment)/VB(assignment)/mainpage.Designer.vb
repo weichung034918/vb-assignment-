@@ -135,6 +135,7 @@ Partial Class mainpage
         Me.btn_reportmemspec = New MaterialSkin.Controls.MaterialRaisedButton()
         Me.MaterialContextMenuStrip1 = New MaterialSkin.Controls.MaterialContextMenuStrip()
         Me.PermissionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mshipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.label_uname = New MaterialSkin.Controls.MaterialLabel()
         Me.label_unamelbl = New MaterialSkin.Controls.MaterialLabel()
         Me.label_time = New MaterialSkin.Controls.MaterialLabel()
@@ -1483,16 +1484,22 @@ Partial Class mainpage
         '
         Me.MaterialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MaterialContextMenuStrip1.Depth = 0
-        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermissionToolStripMenuItem})
+        Me.MaterialContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermissionToolStripMenuItem, Me.mshipToolStripMenuItem})
         Me.MaterialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialContextMenuStrip1.Name = "MaterialContextMenuStrip1"
-        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(156, 26)
+        Me.MaterialContextMenuStrip1.Size = New System.Drawing.Size(244, 70)
         '
         'PermissionToolStripMenuItem
         '
         Me.PermissionToolStripMenuItem.Name = "PermissionToolStripMenuItem"
-        Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.PermissionToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.PermissionToolStripMenuItem.Text = "Admin Settings"
+        '
+        'mshipToolStripMenuItem
+        '
+        Me.mshipToolStripMenuItem.Name = "mshipToolStripMenuItem"
+        Me.mshipToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.mshipToolStripMenuItem.Text = "Membership Fees and Privileges"
         '
         'label_uname
         '
@@ -1764,4 +1771,5 @@ Partial Class mainpage
     Friend WithEvents list2_fname As System.Windows.Forms.ColumnHeader
     Friend WithEvents list2_lname As System.Windows.Forms.ColumnHeader
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents mshipToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

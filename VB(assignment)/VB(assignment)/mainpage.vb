@@ -95,9 +95,9 @@ Public Class mainpage
         End If
 
         If useracc.Rows(0).Item(2) = "Admin" Then
-            MaterialContextMenuStrip1.Enabled = True
+            PermissionToolStripMenuItem.Enabled = True
         ElseIf useracc.Rows(0).Item(2) = "Staff" Then
-            MaterialContextMenuStrip1.Enabled = False
+            PermissionToolStripMenuItem.Enabled = False
         Else
             Return
         End If
@@ -207,7 +207,7 @@ Public Class mainpage
             txt_add_lastname.Text & "', " & txt_add_cont.Text & ", '" & txt_add_email.Text & "', 'Active', '" & label_date.Text & "')"
         cmd = New OleDbCommand(sql, con)
         Try
-            MessageBox.Show(sql, "Debug purpose")
+
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
@@ -228,7 +228,7 @@ Public Class mainpage
         End If
         cmd = New OleDbCommand(sql, con)
         Try
-            MessageBox.Show(sql, "Debug purpose")
+
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
@@ -238,9 +238,9 @@ Public Class mainpage
         sql = "UPDATE Members set MSHIP_ID='" & label_add_shipid.Text & txt_add_shipid.Text & "' where MID='" & txt_add_id.Text & "'"
         cmd = New OleDbCommand(sql, con)
         Try
-            MessageBox.Show(sql, "Debug purpose")
+
             cmd.ExecuteNonQuery()
-            MsgBox("Member Added!")
+            MsgBox("Member Added!", MsgBoxStyle.OkOnly, "Successful")
             txt_add_cont.Clear()
             txt_add_email.Clear()
             txt_add_firstname.Clear()
@@ -517,10 +517,10 @@ Public Class mainpage
     End Sub
     Public Sub addset()
         If ds.Tables("TempSet").Rows.Count = 0 Then
-            MessageBox.Show("Member list is empty.", "No members found.")
+            MessageBox.Show("Member is not found.", "No members found.")
             Return
         End If
-        MsgBox(ds.Tables("TempSet").Rows.Count) ' debug purpose
+
         txt_reup_id.Text = ds.Tables("TempSet").Rows(0).Item(0)
         Dim mshipid As String = ds.Tables("TempSet").Rows(0).Item(8)
         txt_reup_shipid.Text = mshipid.TrimStart("D", "E", "N", "W")
@@ -549,7 +549,7 @@ Public Class mainpage
         Try
             cmd = New OleDbCommand(sql, con)
             cmd.ExecuteNonQuery()
-            MsgBox("Deleted")
+            MsgBox("Deleted.", MsgBoxStyle.OkOnly, "Successful")
             ds.Tables("TempSet").Clear()
             txt_reup_search.Clear()
             txt_reup_id.Clear()
@@ -559,7 +559,7 @@ Public Class mainpage
             txt_reup_cont.Clear()
             txt_reup_email.Clear()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
+            MessageBox.Show("Unable to delete the record. See the error message." & vbNewLine & ex.Message, "Error")
         End Try
     End Sub
 
@@ -712,9 +712,9 @@ Public Class mainpage
         Try
             cmd = New OleDbCommand(sql, con)
             cmd.ExecuteNonQuery()
-            MsgBox("Success update")
+            MsgBox("Update successful!", MsgBoxStyle.OkOnly, "Success")
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
+            MessageBox.Show("Cannot update!" & vbNewLine & ex.Message, "Error")
         End Try
 
         sql = "UPDATE Membership SET Member_Type='"
@@ -735,9 +735,9 @@ Public Class mainpage
         Try
             cmd = New OleDbCommand(sql, con)
             cmd.ExecuteNonQuery()
-            MsgBox("Success update")
+            MsgBox("Update successful!", MsgBoxStyle.OkOnly, "Success")
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
+            MessageBox.Show("Cannot update!" & vbNewLine & ex.Message, "Error")
         End Try
 
     End Sub
@@ -1184,5 +1184,9 @@ Public Class mainpage
             txt_reup_email.Text = Nothing
             Return
         End If
+    End Sub
+
+    Private Sub mshipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mshipToolStripMenuItem.Click
+        memtype.Show()
     End Sub
 End Class

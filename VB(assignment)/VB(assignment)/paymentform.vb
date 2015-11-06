@@ -80,7 +80,7 @@ Public Class paymentform
         da = New OleDbDataAdapter(sql, con)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
-            MessageBox.Show("There is no new member yet. Please add a new member", "Error")
+            MessageBox.Show("There is no new member yet. Please add a new member", "No New Member")
             Return
         End If
         dt2.Clear()
@@ -289,7 +289,7 @@ Public Class paymentform
             ", " & label_due.Text & ", '" & label_paydate.Text & "')"
         cmd = New OleDbCommand(sql, con)
         cmd.ExecuteNonQuery()
-        MsgBox("Added!")
+        MsgBox("Added!", MsgBoxStyle.OkOnly, "Successful")
 
         label_doe.Text = Nothing
         label_log.Text = Nothing
@@ -321,11 +321,10 @@ Public Class paymentform
         cmd = New OleDbCommand(sql, con)
 
         Try
-            MsgBox(sql)
             cmd.ExecuteNonQuery()
-            MessageBox.Show("Successfully Updated!", "Successful")
+            MessageBox.Show("Updated Successfully!", "Successful")
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
+            MessageBox.Show("Cannot Update. See error message for details. " & Environment.NewLine & ex.Message, "Error")
         End Try
 
     End Sub

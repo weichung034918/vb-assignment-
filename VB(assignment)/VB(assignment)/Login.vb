@@ -60,7 +60,7 @@ Public Class login
         If dt.Rows.Count > 0 Then 'this is one of the simple ways to detect the presence of the account, curi ayam style
             Dim per As String = dt.Rows(0).Item(2)
             Dim name As String = dt.Rows(0).Item(0)
-            MessageBox.Show("You're logged as: " + name + Environment.NewLine + "Permission      : " + per, "Login Successful")
+            MessageBox.Show("You're logged as: " & name & Environment.NewLine & Environment.NewLine & "Permission: " + per, "Login Successful")
         Else
             MessageBox.Show("Username or password not match.", "Login Failed")
             field_username.Text = Nothing
