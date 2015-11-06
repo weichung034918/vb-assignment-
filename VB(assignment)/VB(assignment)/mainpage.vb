@@ -12,7 +12,7 @@ Public Class mainpage
     Dim dt5 As New DataTable("listview1")
     Dim dt6 As New DataTable("listview2")
     Dim useracc As New DataTable("useracc")
-    Dim cache As New DataTable("cache")
+    Dim cache As New DataTable("cache") 'take all these dt as marbles and ds as a plastic bag, what i'm doing is placing marbles into 1 plastic bag
     Dim con As New OleDb.OleDbConnection
     Dim dirdb As String = Application.StartupPath + "\database.mdb"
     Dim dirdb2 As String = Application.StartupPath + "\database.accdb"
@@ -69,7 +69,6 @@ Public Class mainpage
 
         Add.Left = (Me.Width / 2) - (Add.Width / 2)
         combobox_reup_search.Width = combobox_reup_search_membershiptype.Width
-        'combobox_update_search.Width = combobox_reup_search.Width
         txt_reup_search.Width = combobox_reup_search.Width
         btn_first.Left = 396
         btn_first.Top = MaterialLabel53.Top + 39
@@ -611,28 +610,11 @@ Public Class mainpage
     'why u separate delete and update to two tabs T_T
     'wei chung: so that you can delete moar things and to prevent me from forgetting anything, boss.
     '===============================Update member function starts====================================
-    'Private Sub combobox_update_search_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    If combobox_update_search.Text <> String.Empty Then
-
-    '        If combobox_update_search.Text.Equals("Membership ID") = True Then
-    '            combobox_update_search_membershiptype.Visible = True
-    '            MaterialLabel51.Visible = True
-
-    '        Else
-    '            combobox_update_search_membershiptype.Visible = False
-    '            MaterialLabel51.Visible = False
-    '        End If
-    '        txt_update_search.Visible = True
-    '        label_update_search.Visible = True
-    '        label_update_search.Text = combobox_update_search.Text & ":"
-    '    Else
-    '        txt_update_search.Visible = False
-    '    End If
-    'End Sub
+    
     Private Sub btn_update_search_Click(sender As Object, e As EventArgs)
 
     End Sub
-    ' i think i dowan to do update members liao, i will move update codes into remove tab and add an update btn, below onwards
+    ' combining update codes with delete tab, below onwards
 
     Private Sub combobox_modeselect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combobox_modeselect.SelectedIndexChanged
         refresh_reup()
@@ -662,8 +644,6 @@ Public Class mainpage
             combobox_reup_status.Enabled = True
             combobox_reup_membertype.Enabled = True
             label_reup_shipid.Enabled = True
-            'no point disabling the goddamn label wei chung... 
-            'wei chung : accident happens ck... accidents
         ElseIf combobox_modeselect.SelectedIndex = 2 Then
             btn_remove.Visible = False
             btn_update.Visible = False
@@ -676,7 +656,7 @@ Public Class mainpage
             txt_reup_shipid.Enabled = False
             combobox_reup_status.Enabled = False
             combobox_reup_membertype.Enabled = False
-            label_reup_shipid.Enabled = False
+            label_reup_shipid.Enabled = False 'some enabling booleans
         Else
             Return
         End If
@@ -796,9 +776,6 @@ Public Class mainpage
         paymentform.Show()
     End Sub
 
-    Private Sub pay_memshipid_SelectedIndexChanged(sender As Object, e As EventArgs)
-        
-    End Sub
 
     Private Sub memshipid_radio_CheckedChanged(sender As Object, e As EventArgs) Handles radio_mshipid.CheckedChanged
         
@@ -894,7 +871,7 @@ Public Class mainpage
         paymentform.txt_amount.Enabled = False
         paymentform.radio_rfee.Enabled = False
         paymentform.radio_mfee.Enabled = False
-        If payment_listview.SelectedItems.Count > 0 Then
+        If payment_listview.SelectedItems.Count > 0 Then 'edit payment details and copying all selected values to payment form
             paymentform.label_pid2.Text = payment_listview.SelectedItems(0).SubItems(0).Text.TrimStart("P", "M")
             paymentform.txt_mid.Text = payment_listview.SelectedItems(0).SubItems(1).Text
             paymentform.label_mshipid.Text = payment_listview.SelectedItems(0).SubItems(2).Text
@@ -952,7 +929,7 @@ Public Class mainpage
         End If
 
         report.ReportViewer1.Refresh()
-        report.ReportViewer1.RefreshReport()
+        report.ReportViewer1.RefreshReport() 'refresh the report, i'm using both refresh() and refreshreport() to refresh
     End Sub
 
     Private Sub btn_reportmemall_Click(sender As Object, e As EventArgs) Handles btn_reportmemall.Click
@@ -1018,7 +995,7 @@ Public Class mainpage
         End If
     End Sub
 
-    Public Sub forlistview1()
+    Public Sub forlistview1() 'for member list view in report tab!
         dt5.Clear()
         ListView1.Items.Clear()
         da = New OleDbDataAdapter(sql, con)
@@ -1050,7 +1027,7 @@ Public Class mainpage
             btn_reportpayspec.Visible = False
         End If
     End Sub
-    Public Sub forlistview2()
+    Public Sub forlistview2() 'for payment list view on report tab!
         dt6.Clear()
         ListView2.Items.Clear()
         da = New OleDbDataAdapter(sql, con)

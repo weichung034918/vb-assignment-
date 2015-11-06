@@ -160,7 +160,6 @@ Public Class Permission
             ComboBox_per.Text & "')"
         cmd = New OleDbCommand(sql, con)
         Try
-            MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
             MsgBox("User Added!", MsgBoxStyle.OkOnly, "Successful")
             txt_uname.Clear()
@@ -284,7 +283,6 @@ Public Class Permission
         End If
         cmd = New OleDbCommand(sql, con)
         Try
-            MessageBox.Show(sql, "Debug purpose")
             cmd.ExecuteNonQuery()
             MsgBox("Removed!", MsgBoxStyle.OkOnly, "Successful")
 
