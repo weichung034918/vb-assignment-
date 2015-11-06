@@ -55,3 +55,4 @@ C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\
 C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\RdlCompile.cache
 C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\RdlCompile.compiled
 C:\Users\User\Desktop\APU Stuffs\SEM4\VB.NET\Assignment\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.memtype.resources
+C:\Users\User\Documents\GitHub\vb-assignment-\VB(assignment)\VB(assignment)\obj\Debug\VB_assignment_.memtype.resources
