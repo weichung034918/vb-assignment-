@@ -320,4 +320,11 @@ Public Class Permission
             sql = "UPDATE Admin SET Password='" & txt_myset_pwd.Text & "' where username='" & useracc.Rows(0).Item(0).ToString & "'"
         End If
     End Sub
+
+    Private Sub MaterialTabSelector1_Click(sender As Object, e As EventArgs) Handles MaterialTabSelector1.Click
+        sql = "select Username, Permission from Admin"
+        ds.Tables("UserSet").Clear()
+        da = New OleDbDataAdapter(sql, con)
+        da.Fill(ds, "UserSet")
+    End Sub
 End Class
